@@ -58,6 +58,15 @@ Swagger: http://127.0.0.1:8002/docs. Проверка: http://127.0.0.1:8002/hea
 
 ## Данные и обучение
 
+Текущая версия `pkp-main-298694c` переобучена из проверенного снимка `main` (коммит `298694c0dccc564bc686560a9e98bbaae3c76900`). PKP в нём совпал с прежним набором после нормализации переносов строк Git; новых реальных обучающих примеров нет. Результаты воспроизвелись без улучшения или ухудшения. [Отчёт переобучения](services/ai/reports/main_retraining.md) объясняет, почему DISPLIB и синтетическое расписание KZ не являются дополнительными размеченными примерами.
+
+```powershell
+.\.venv\Scripts\python.exe -m services.ai.scripts.sync_main_data --ref 298694c0dccc564bc686560a9e98bbaae3c76900
+.\.venv\Scripts\python.exe -m services.ai.training.train --data-dir data/main-source/data/external/pkp/pkp_intercity_delays_dataset --output-dir services/ai/models/forecast_main --model-version pkp-main-298694c --source-commit 298694c0dccc564bc686560a9e98bbaae3c76900
+```
+
+Для новой итерации выбирайте отдельный `--output-dir`, проверьте метрики и только после этого меняйте `model_directory` в `services/ai/config/forecast.yaml`. Предыдущие артефакты `forecast_v1` сохранены для сравнения/отката. `--output-dir` не меняет порог работающей модели; инференс использует порог из загруженного артефакта. `sync_main_data --ref main` фиксирует текущий SHA, проверяет Git blob SHA каждого файла и сохраняет документы/данные в gitignored `data/main-source`.
+
 ```powershell
 .\.venv\Scripts\python.exe services/ai/scripts/download_data.py
 .\.venv\Scripts\python.exe services/ai/scripts/audit_data.py

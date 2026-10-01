@@ -1,0 +1,322 @@
+{
+  "commit": "298694c0dccc564bc686560a9e98bbaae3c76900",
+  "tree_sha": "d89316bef2943b54a1b6e3559c8f93cea8ca523c",
+  "source_documents": [
+    "CONTRACTS_AND_METRICS.md",
+    "README.md",
+    "data/external/pkp/pkp_intercity_delays_dataset/README.md",
+    "data/kz_demo/README.md"
+  ],
+  "pkp_blob_comparison": [
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/README.md",
+      "git_blob_sha": "165bc34ffbb5db9af447593c0e6fc55404106091",
+      "sha256": "0f309236b21f0dc124307e535b3a5344c3bfdd63cab22e81be112044f9dc807a",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/examples/dataset_loader_demo.py",
+      "git_blob_sha": "a45cfee31d1a9d1fb94a0b1dc8d297f55ef122e2",
+      "sha256": "39473295126f7fc14e4f5120b9fe0ecec0d1c0471bbe00e211d205ec2a4f0c90",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/graph_and_sequences/graph/edges_features.parquet",
+      "git_blob_sha": "1af698a898504a53f6bf49ad51c9f0070d6a95e0",
+      "sha256": "9fad359adf3cc86e27f9da9712ca9ab1187fa8acb289928f50eb3f87b9d62589",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/graph_and_sequences/graph/nodes_features.parquet",
+      "git_blob_sha": "f164e4d9c6f85f471a3bec24f310e2e43a584125",
+      "sha256": "3f1d19996a1e8c464e89b3f71ee1ce33524ef95532b713560f8c784211586d0d",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/graph_and_sequences/sequences/route_sequences.parquet",
+      "git_blob_sha": "1f8f5ee619027c43814f8dcb899b5b366cdbfc84",
+      "sha256": "935d7a4f0598fdde42224a653d7e70ad8cb549d6037e201d7fad47dc4b52de29",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/graph_and_sequences/splits.json",
+      "git_blob_sha": "2a4919f1e442dca01962bc217325ed0b7cc77dd6",
+      "sha256": "190ec0f57c62e97e8517fbd080e290d9a90a8771f821a3e221eb2a751144453f",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/processed_tabular/train_delays_tabular.parquet",
+      "git_blob_sha": "37c475b4e604f4943e378035c32faa1158a4609c",
+      "sha256": "18a38860552b8ccc82bd77ffbbaae400c47e4af0c06a6b54b8d699fe744863e4",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/processed_tabular/train_delays_tabular_sample.csv",
+      "git_blob_sha": "f9877f73d81497d4296e6fc0a99f7e4f67842de2",
+      "sha256": "6eed023f10018667b378dee1db4a456b5aa7382a3fb55dbc3edb21dcd3fc2671",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/database_schema.png",
+      "git_blob_sha": "5077af2a859b79880d260cc327ed134493aa2e73",
+      "sha256": "176fed76c07f0ea7d20ba799afef1a57c272b482f45560220069deca9e8bfeae",
+      "comparison": "identical"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/difficulties.csv",
+      "git_blob_sha": "b3bab22715847b240569d1e47fe76fcbdaaa224c",
+      "sha256": "99622ddc141bfd9f541c8af3a0b4b98be20fee56bb5e7314c02bb08c4407e84f",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/line_speeds.csv",
+      "git_blob_sha": "2935effaed7c27c81f493f6d2f48b26cd4b6b1e5",
+      "sha256": "2babdfb3bce55b5368044aeb4043beb93d2a69b441bda1a2d5e1ed0d9f9979e1",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/line_stations.csv",
+      "git_blob_sha": "ca5593cdf97ba0bd4430f48bdbe92fe908c2400a",
+      "sha256": "662c50e2e7e85320d618214dc9475d712c7c6e9b74ef274daa0e2654062349fb",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/occupancies.csv",
+      "git_blob_sha": "dda9564d8705c56b423083f47f9455e7fd7b2b6a",
+      "sha256": "e7ef7747892d14be0fede43e50ac83354160562932c18521fb98bded5cbcef42",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/platforms.csv",
+      "git_blob_sha": "79b54855e91116e78e290f4bd308c7748c743580",
+      "sha256": "105ad939d8d2a3052e0309964ba413242ef3ffce79010222e0703b72597289bc",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/railway_lines.csv",
+      "git_blob_sha": "2ea0e671879f4477bd507e938d5be480cabdac48",
+      "sha256": "5aa970b216df5e7bb1aadc59f932c1867b30f6157e2ef3d09062f7ea12922b85",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/run_stop_difficulties.csv",
+      "git_blob_sha": "e4f827a9d62d48af1be664d9edf901009408c1ef",
+      "sha256": "9bc6a351a9a9fc83179d88b81d6532f90278e0da6c047aa1a1705a2ee74620c4",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/run_stops.csv",
+      "git_blob_sha": "6c2e3adea21fcf2ff59cca9df24f10e98cb6d05d",
+      "sha256": "b944314bd7e0d3c31e2db94bebb3c44f687bd80e63c5fda8c618942ac460a808",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/service_line_segments.csv",
+      "git_blob_sha": "620cb860087216d16ecd96a816d45013b0d68b5b",
+      "sha256": "39faad818a150e63c241351bd8360ddc49ad80e15c71a42ce37a893557fb2182",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/speed_warnings.csv",
+      "git_blob_sha": "e61313e4af1c24feaf4db223cc414909be5709b1",
+      "sha256": "cc3ca89f086e6ff62039ecf18fe4bc4a693e46e92d8ce416979aa91daeef8db5",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/stations.csv",
+      "git_blob_sha": "2f6573a82b28d98454747596e35b9137703dd7d9",
+      "sha256": "e65853a0d6192c3c9c69f45275c5e0c510cac9ae597f56446af0f7203c218811",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/track_closures.csv",
+      "git_blob_sha": "b8b62cf01691cc65a5ccb707198f5c2060959c9c",
+      "sha256": "9fec6c8e721e7b64f03d89a818a2bddae70fff60650b2b71b3e31aaeb0649dae",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/train_categories.csv",
+      "git_blob_sha": "003ac05dd973d43647a36a4ba96fe2d026471593",
+      "sha256": "36a8efde15e733eebbfd5ecf46485825744cbe6d95897351ca7e25446e4d6c49",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/train_services.csv",
+      "git_blob_sha": "dc69ff5cc6aba1e8516d632764cd5030f4fa413a",
+      "sha256": "969753d3b893950e5c860049b843a853791201397828a13336f9a6c7ba398fd5",
+      "comparison": "line_endings_only"
+    },
+    {
+      "path": "data/external/pkp/pkp_intercity_delays_dataset/raw/weather.csv",
+      "git_blob_sha": "3262461fc66f99b2f1380f7260b468b14abb8066",
+      "sha256": "a4d310f1485e070ba51ea538dab67d49c6f181797a0ca15264f99279ea33c7c6",
+      "comparison": "line_endings_only"
+    }
+  ],
+  "rows": {
+    "train": 372800,
+    "val": 79655,
+    "test": 78432
+  },
+  "before": {
+    "model_version": "pkp-serving-v1",
+    "regression": {
+      "mae": 0.5859171516842133,
+      "rmse": 2.505772464760252,
+      "r2": 0.07080368960504424
+    },
+    "classification": {
+      "roc_auc": 0.8797299984006958,
+      "pr_auc": 0.26583226531629545,
+      "brier": 0.03613671824171146,
+      "ece": 0.001278741786085212,
+      "precision": 0.1981793762125056,
+      "recall": 0.7556187766714082,
+      "calibration": [
+        {
+          "predicted": 0.012614777253634683,
+          "observed": 0.013209288020913425,
+          "count": 65030
+        },
+        {
+          "predicted": 0.1375299128396815,
+          "observed": 0.13891737891737893,
+          "count": 8775
+        },
+        {
+          "predicted": 0.2480017216551551,
+          "observed": 0.2329430763019782,
+          "count": 2477
+        },
+        {
+          "predicted": 0.3167259786476869,
+          "observed": 0.3110687022900763,
+          "count": 524
+        },
+        {
+          "predicted": 0.4301075268817203,
+          "observed": 0.4275092936802974,
+          "count": 1614
+        },
+        {
+          "predicted": 1.0,
+          "observed": 0.5833333333333334,
+          "count": 12
+        }
+      ]
+    },
+    "threshold": 0.10363247863247864
+  },
+  "after": {
+    "model_version": "pkp-main-298694c",
+    "regression": {
+      "mae": 0.5859171516842133,
+      "rmse": 2.505772464760252,
+      "r2": 0.07080368960504424
+    },
+    "classification": {
+      "roc_auc": 0.8797299984006958,
+      "pr_auc": 0.26583226531629545,
+      "brier": 0.03613671824171146,
+      "ece": 0.001278741786085212,
+      "precision": 0.1981793762125056,
+      "recall": 0.7556187766714082,
+      "calibration": [
+        {
+          "predicted": 0.012614777253634683,
+          "observed": 0.013209288020913425,
+          "count": 65030
+        },
+        {
+          "predicted": 0.1375299128396815,
+          "observed": 0.13891737891737893,
+          "count": 8775
+        },
+        {
+          "predicted": 0.2480017216551551,
+          "observed": 0.2329430763019782,
+          "count": 2477
+        },
+        {
+          "predicted": 0.3167259786476869,
+          "observed": 0.3110687022900763,
+          "count": 524
+        },
+        {
+          "predicted": 0.4301075268817203,
+          "observed": 0.4275092936802974,
+          "count": 1614
+        },
+        {
+          "predicted": 1.0,
+          "observed": 0.5833333333333334,
+          "count": 12
+        }
+      ]
+    },
+    "threshold": 0.10363247863247864
+  },
+  "same_data_after_git_line_endings": true,
+  "new_real_training_examples": 0,
+  "source_roles": {
+    "PKP": "real passenger delay labels; used for training",
+    "DISPLIB": "resource scheduling benchmark; no compatible realized delay target; excluded",
+    "KZ": "28 synthetic services and 156 scheduled stops; no actual delay labels; excluded"
+  },
+  "acceptance": {
+    "training_gate": true,
+    "regression_non_regression": true,
+    "classifier_non_regression": true,
+    "model_files_identical": true
+  },
+  "temporal": {
+    "model_version": "pkp-main-298694c-temporal",
+    "rows": {
+      "train": 184776,
+      "val": 206422,
+      "test": 139689
+    },
+    "regression": {
+      "mae": 0.8226773063087509,
+      "rmse": 2.983525559376105,
+      "r2": 0.04501142436294103
+    },
+    "classification": {
+      "roc_auc": 0.8380290047942462,
+      "pr_auc": 0.233757951484885,
+      "brier": 0.05141491561644986,
+      "ece": 0.006702782988401617,
+      "precision": 0.18184412619344126,
+      "recall": 0.8011201280146303,
+      "calibration": [
+        {
+          "predicted": 0.01749747014831777,
+          "observed": 0.024158472434334503,
+          "count": 111969
+        },
+        {
+          "predicted": 0.15955864145013193,
+          "observed": 0.16363636363636364,
+          "count": 13915
+        },
+        {
+          "predicted": 0.263184514039666,
+          "observed": 0.2728721477725462,
+          "count": 13805
+        }
+      ]
+    },
+    "threshold": 0.07816526370039512,
+    "accepted": true,
+    "same_metrics_as_previous": true
+  },
+  "serving_model_directory": "forecast_main",
+  "tests_passed": 22,
+  "live_smoke": {
+    "status": "ok",
+    "model_version": "pkp-main-298694c",
+    "trains": 25,
+    "ml_trains": 17,
+    "fallback_trains": 8
+  }
+}

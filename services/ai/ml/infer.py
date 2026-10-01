@@ -8,8 +8,8 @@ from ..settings import SERVICE
 
 class Forecaster:
     def __init__(self, model_dir: Path | None = None):
-        self.model_dir = model_dir or SERVICE / 'models' / 'forecast_v1'
         self.config = yaml.safe_load((SERVICE / 'config/forecast.yaml').read_text(encoding='utf-8'))
+        self.model_dir = model_dir or SERVICE / 'models' / self.config.get('model_directory', 'forecast_v1')
         self.labels = yaml.safe_load((SERVICE / 'config/feature_labels_ru.yaml').read_text(encoding='utf-8'))
         self.profiles = {}
         self.reg = self.clf = None
@@ -30,6 +30,7 @@ class Forecaster:
             self.reg = lgb.Booster(model_file=str(self.model_dir / 'reg.txt'))
             self.clf = lgb.Booster(model_file=str(self.model_dir / 'clf.txt'))
             self.info = info
+            self.threshold = float(info['threshold'])
         except Exception:
             # Corrupt native model files must not prevent advisory service startup.
             self.reg = self.clf = None
@@ -64,5 +65,5 @@ class Forecaster:
                                expected_delay_s=round(expected, 2), top_features=top,
                                model_version='rule_fallback' if fallback else self.info['model_version'],
                                horizon_min=None, horizon_semantics='next_segment_proxy_not_validated_15m',
-                               alert=p >= self.config['alert_threshold'], degraded=fallback))
+                               alert=p >= (self.config['alert_threshold'] if fallback else self.threshold), degraded=fallback))
         return result

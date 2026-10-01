@@ -3,6 +3,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import argparse
 import json
+import hashlib
 import time
 import numpy as np
 import pandas as pd
@@ -28,8 +29,50 @@ def dump(path, obj):
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2, default=lambda x: x.item() if hasattr(x, 'item') else str(x), allow_nan=False), encoding='utf-8')
 
 
-def prepare():
-    base = next((ROOT / 'data/pkp').rglob('train_delays_tabular.parquet')).parents[1]
+def resolve_data_dir(path=None):
+    if path is not None:
+        base = Path(path)
+        if not (base / 'processed_tabular/train_delays_tabular.parquet').is_file():
+            raise FileNotFoundError(f'No training table at {base}')
+        return base
+    main_path = ROOT / 'data/external/pkp/pkp_intercity_delays_dataset'
+    if (main_path / 'processed_tabular/train_delays_tabular.parquet').is_file():
+        return main_path
+    legacy = ROOT / 'data/pkp/pkp_intercity_delays_dataset'
+    if (legacy / 'processed_tabular/train_delays_tabular.parquet').is_file():
+        return legacy
+    raise FileNotFoundError('Specify --data-dir with the PKP dataset root')
+
+
+def input_provenance(base, source_commit=None):
+    paths = ['processed_tabular/train_delays_tabular.parquet', 'raw/run_stops.csv',
+             'graph_and_sequences/splits.json', 'README.md']
+    files = []
+    for relative in paths:
+        content = (base / relative).read_bytes()
+        files.append({'path': relative, 'bytes': len(content), 'sha256': hashlib.sha256(content).hexdigest(),
+                      'git_blob_sha': hashlib.sha1(b'blob ' + str(len(content)).encode() + b'\0' + content).hexdigest()})
+    if source_commit:
+        # A provenance claim must be backed by the verified Git tree beside the snapshot.
+        tree_path = next((p / 'tree.json' for p in base.parents if (p / 'tree.json').is_file()), None)
+        if tree_path is None: raise ValueError('A source commit requires the verified snapshot tree.json')
+        tree = json.loads(tree_path.read_text(encoding='utf-8'))
+        entries = {e['path']: e for e in tree['tree']}
+        for file in files:
+            relative = (base / file['path']).relative_to(tree_path.parent).as_posix()
+            if entries.get(relative, {}).get('sha') != file['git_blob_sha']:
+                raise ValueError(f'Input differs from pinned Git blob: {relative}')
+        manifest_path = tree_path.parent / 'snapshot.json'
+        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        if manifest['commit'] != source_commit or manifest['tree_sha'] != tree['sha']:
+            raise ValueError('Source commit/tree mismatch')
+    return {'repository': 'Mevinss/TurkiSib' if source_commit else None,
+            'commit': source_commit, 'files': files, 'dataset': 'PKP Intercity',
+            'licence': 'CC-BY-4.0', 'attribution': 'Marek Kostrz, Zenodo 21700869'}
+
+
+def prepare(data_dir=None):
+    base = resolve_data_dir(data_dir)
     frame = pd.read_parquet(base / 'processed_tabular/train_delays_tabular.parquet').drop_duplicates()
     raw = pd.read_csv(base / 'raw/run_stops.csv')
     raw = raw.sort_values(['run_id', 'stop_order'])
@@ -52,7 +95,7 @@ def prepare():
     # would accidentally pool different days; deliberately omit block_load from ML v1.
     config = yaml.safe_load((SERVICE / 'config/forecast.yaml').read_text())
     frame['proxy'] = ((frame.delta_delay >= config['proxy_delta_threshold_min']) | frame.difficulty_id.isin([5, 6, 7, 34, 36, 39])).astype(int)
-    splits = json.loads(next(base.rglob('splits.json')).read_text())
+    splits = json.loads((base / 'graph_and_sequences/splits.json').read_text())
     return frame.reset_index(drop=True), splits
 
 
@@ -107,7 +150,7 @@ def classification(y, p, threshold):
                 recall=float(recall_score(y, p >= threshold, zero_division=0)), calibration=calibration)
 
 
-def fit(train, val, test, out, label):
+def fit(train, val, test, out, label, *, model_version='pkp-serving-v1', provenance=None):
     started = time.perf_counter()
     xt, xv, xs, stats = matrices(train, val, test)
     # Deterministic small search on validation; no test-dependent parameter selection.
@@ -140,7 +183,7 @@ def fit(train, val, test, out, label):
     logistic = make_pipeline(SimpleImputer(), StandardScaler(), LogisticRegression(max_iter=1000, random_state=42))
     logistic.fit(xt, train.proxy)
     logistic_probs = logistic.predict_proba(xs)[:, 1]
-    metrics = dict(model_version='pkp-serving-v1', evaluation=label, source='PKP Intercity / real passenger data',
+    metrics = dict(model_version=model_version, evaluation=label, source='PKP Intercity / real passenger data',
                    trained_at=datetime.now(timezone.utc).isoformat(),
                    rows={'train': len(train), 'val': len(val), 'test': len(test)},
                    runs={'train': int(train.run_id.nunique()), 'val': int(val.run_id.nunique()), 'test': int(test.run_id.nunique())},
@@ -152,6 +195,7 @@ def fit(train, val, test, out, label):
                    threshold=threshold, proxy_prevalence=float(test.proxy.mean()), features=FEATURES,
                    warning='Прокси ближайшего перегона; перенос на синтетический участок не проверен; грузовые используют правила.',
                    search='Two fixed leaf-count candidates selected by validation MAE; no Optuna.')
+    metrics['provenance'] = provenance
     metrics['accepted'] = bool(metrics['regression']['mae'] < min(metrics['baselines'][b]['mae'] for b in ['zero', 'edge_median'])
                                and metrics['classification']['pr_auc'] > metrics['baselines']['logistic']['pr_auc']
                                and metrics['classification']['brier'] < metrics['baselines']['logistic']['brier'])
@@ -198,8 +242,14 @@ def fit(train, val, test, out, label):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--temporal', action='store_true')
+    parser.add_argument('--data-dir', type=Path, help='PKP root; main uses data/external/pkp/pkp_intercity_delays_dataset')
+    parser.add_argument('--output-dir', type=Path, help='Candidate directory; explicit output never changes serving threshold')
+    parser.add_argument('--model-version', default='pkp-serving-v1')
+    parser.add_argument('--source-commit', help='Pinned commit from scripts.sync_main_data verified snapshot')
     args = parser.parse_args()
-    frame, splits = prepare()
+    base = resolve_data_dir(args.data_dir)
+    provenance = input_provenance(base, args.source_commit)
+    frame, splits = prepare(base)
     print('Prepared', frame.shape, 'official split counts', pd.Series(splits).value_counts().to_dict(), flush=True)
     if args.temporal:
         months = sorted(frame.month.unique())
@@ -222,8 +272,9 @@ def main():
         assert not set(a.run_id) & set(b.run_id), 'Run leakage'
     assert min(len(train), len(val), len(test)) > 0
     folder = 'forecast_temporal' if args.temporal else 'forecast_v1'
-    metrics = fit(train, val, test, SERVICE / 'models' / folder, label)
-    if not args.temporal:
+    metrics = fit(train, val, test, args.output_dir or SERVICE / 'models' / folder, label,
+                  model_version=args.model_version, provenance=provenance)
+    if not args.temporal and args.output_dir is None:
         config_path = SERVICE / 'config/forecast.yaml'
         config = yaml.safe_load(config_path.read_text())
         config['alert_threshold'] = metrics['threshold']
