@@ -1,0 +1,17 @@
+{
+  "train_id": "SIM-KOK_AST-F01",
+  "station_id": "BOR",
+  "eta": "2026-10-01T09:03:00+05:00",
+  "minutes_remaining": 3.0,
+  "scheduled_arrival": "2026-10-01T09:03:00+05:00",
+  "delay_min": 0,
+  "recommended_track": null,
+  "track_status": "UNKNOWN",
+  "source": "PLAN_BASED",
+  "status": "AVAILABLE",
+  "reason": "VALIDATED_RESERVATION_TIMING",
+  "safety_scope_complete": true,
+  "train_number": null,
+  "category": "intercity",
+  "confidence": "DETERMINISTIC_DEMO_ESTIMATE_NOT_CALIBRATED"
+}

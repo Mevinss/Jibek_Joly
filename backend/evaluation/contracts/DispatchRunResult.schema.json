@@ -1,0 +1,445 @@
+{
+  "$defs": {
+    "TrainRunResult": {
+      "properties": {
+        "train_id": {
+          "title": "Train Id",
+          "type": "string"
+        },
+        "scheduled_final_arrival": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scheduled Final Arrival"
+        },
+        "actual_final_arrival": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actual Final Arrival"
+        },
+        "final_delay_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Delay Min"
+        },
+        "delay_at_incident_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay At Incident Min"
+        },
+        "added_delay_after_incident_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Added Delay After Incident Min"
+        },
+        "priority_weight": {
+          "default": 1,
+          "title": "Priority Weight",
+          "type": "number"
+        },
+        "holding_minutes": {
+          "default": 0,
+          "title": "Holding Minutes",
+          "type": "number"
+        },
+        "full_stop_count": {
+          "default": 0,
+          "title": "Full Stop Count",
+          "type": "integer"
+        },
+        "full_stop_avoided": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Stop Avoided"
+        },
+        "energy_proxy_units": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Energy Proxy Units"
+        },
+        "completed": {
+          "default": false,
+          "title": "Completed",
+          "type": "boolean"
+        },
+        "termination_reason": {
+          "default": "OUTSIDE_HORIZON",
+          "title": "Termination Reason",
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Category"
+        }
+      },
+      "required": [
+        "train_id"
+      ],
+      "title": "TrainRunResult",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    },
+    "dataset_version": {
+      "title": "Dataset Version",
+      "type": "string"
+    },
+    "policy": {
+      "title": "Policy",
+      "type": "string"
+    },
+    "initial_snapshot_version": {
+      "title": "Initial Snapshot Version",
+      "type": "integer"
+    },
+    "started_at_virtual": {
+      "title": "Started At Virtual",
+      "type": "string"
+    },
+    "finished_at_virtual": {
+      "title": "Finished At Virtual",
+      "type": "string"
+    },
+    "initial_conditions": {
+      "additionalProperties": true,
+      "title": "Initial Conditions",
+      "type": "object"
+    },
+    "plan_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Plan Id"
+    },
+    "plan_policy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Plan Policy"
+    },
+    "planning_config": {
+      "additionalProperties": true,
+      "title": "Planning Config",
+      "type": "object"
+    },
+    "movement_rules_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Movement Rules Id"
+    },
+    "status": {
+      "default": "NOT_EXECUTED",
+      "title": "Status",
+      "type": "string"
+    },
+    "train_results": {
+      "items": {
+        "$ref": "#/$defs/TrainRunResult"
+      },
+      "title": "Train Results",
+      "type": "array"
+    },
+    "total_arrival_delay_min": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Total Arrival Delay Min"
+    },
+    "added_delay_after_incident_min": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Added Delay After Incident Min"
+    },
+    "weighted_delay_min": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Weighted Delay Min"
+    },
+    "completed_delay_subtotal_min": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Completed Delay Subtotal Min"
+    },
+    "conflict_count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Conflict Count"
+    },
+    "stop_count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stop Count"
+    },
+    "full_stop_avoided_count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Full Stop Avoided Count"
+    },
+    "energy_proxy_units": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Energy Proxy Units"
+    },
+    "planner_ms": {
+      "default": 0,
+      "title": "Planner Ms",
+      "type": "number"
+    },
+    "simulation_ms": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Simulation Ms"
+    },
+    "valid": {
+      "default": false,
+      "title": "Valid",
+      "type": "boolean"
+    },
+    "safety_scope_complete": {
+      "default": false,
+      "title": "Safety Scope Complete",
+      "type": "boolean"
+    },
+    "validation": {
+      "additionalProperties": true,
+      "title": "Validation",
+      "type": "object"
+    },
+    "runtime_violations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Runtime Violations",
+      "type": "array"
+    },
+    "runtime_events": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Runtime Events",
+      "type": "array"
+    },
+    "resource_observations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Resource Observations",
+      "type": "array"
+    },
+    "fallback_count": {
+      "default": 0,
+      "title": "Fallback Count",
+      "type": "integer"
+    },
+    "auto_fifo_timeout_count": {
+      "default": 0,
+      "title": "Auto Fifo Timeout Count",
+      "type": "integer"
+    },
+    "fallback_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fallback Reason"
+    },
+    "termination_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Termination Reason"
+    },
+    "source_type": {
+      "default": "SIMULATED_DEMO",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "source": {
+      "default": "RUNTIME_EVALUATION",
+      "title": "Source",
+      "type": "string"
+    },
+    "energy_proxy_label": {
+      "default": "dimensionless; unavailable without observed speed telemetry",
+      "title": "Energy Proxy Label",
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_id",
+    "scenario_id",
+    "seed",
+    "dataset_version",
+    "policy",
+    "initial_snapshot_version",
+    "started_at_virtual",
+    "finished_at_virtual",
+    "initial_conditions"
+  ],
+  "title": "DispatchRunResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

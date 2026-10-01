@@ -1,0 +1,85 @@
+{
+  "root_train_id": "SIM-DEMO-A",
+  "root_delay_min": 5,
+  "affected_trains": [
+    {
+      "train_id": "SIM-DEMO-B",
+      "added_delay_min": 5.0,
+      "cause": "CONNECTION_WAIT",
+      "depth": 1
+    },
+    {
+      "train_id": "SIM-DEMO-C",
+      "added_delay_min": 3.0,
+      "cause": "CONNECTION_WAIT",
+      "depth": 2
+    },
+    {
+      "train_id": "SIM-DEMO-D",
+      "added_delay_min": 5.0,
+      "cause": "CONNECTION_WAIT",
+      "depth": 1
+    },
+    {
+      "train_id": "SIM-DEMO-E",
+      "added_delay_min": 1.0,
+      "cause": "CONNECTION_WAIT",
+      "depth": 2
+    }
+  ],
+  "network_added_delay_min": 19.0,
+  "chain": [
+    {
+      "from_train_id": "SIM-DEMO-A",
+      "to_train_id": "SIM-DEMO-B",
+      "station_id": "AST",
+      "resource_id": null,
+      "cause": "CONNECTION_WAIT",
+      "slack_min": 0.0,
+      "added_delay_min": 5.0,
+      "depth": 1
+    },
+    {
+      "from_train_id": "SIM-DEMO-A",
+      "to_train_id": "SIM-DEMO-D",
+      "station_id": "AST",
+      "resource_id": null,
+      "cause": "CONNECTION_WAIT",
+      "slack_min": 0.0,
+      "added_delay_min": 5.0,
+      "depth": 1
+    },
+    {
+      "from_train_id": "SIM-DEMO-B",
+      "to_train_id": "SIM-DEMO-C",
+      "station_id": "KAR",
+      "resource_id": null,
+      "cause": "CONNECTION_WAIT",
+      "slack_min": 2.0,
+      "added_delay_min": 3.0,
+      "depth": 2
+    },
+    {
+      "from_train_id": "SIM-DEMO-D",
+      "to_train_id": "SIM-DEMO-E",
+      "station_id": "SHU",
+      "resource_id": null,
+      "cause": "CONNECTION_WAIT",
+      "slack_min": 4.0,
+      "added_delay_min": 1.0,
+      "depth": 2
+    }
+  ],
+  "max_depth": 4,
+  "horizon_min": 60,
+  "cycle_detected": false,
+  "truncated": false,
+  "source_type": "SYNTHETIC_DEMO",
+  "method": "BOUNDED_SCHEDULE_SLACK_PROPAGATION",
+  "initial_snapshot_hash": null,
+  "assumptions": [
+    "Delay at a dependency consumes its baseline slack; excess delays its successor.",
+    "At joins take the largest required delay, never sum the same train twice.",
+    "Network total includes root once. This is an analytical estimate, not a completed run."
+  ]
+}

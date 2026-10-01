@@ -1,0 +1,172 @@
+{
+  "$defs": {
+    "TrainETA": {
+      "properties": {
+        "train_id": {
+          "title": "Train Id",
+          "type": "string"
+        },
+        "station_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Station Id"
+        },
+        "eta": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Eta"
+        },
+        "minutes_remaining": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minutes Remaining"
+        },
+        "scheduled_arrival": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scheduled Arrival"
+        },
+        "delay_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Min"
+        },
+        "recommended_track": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recommended Track"
+        },
+        "track_status": {
+          "default": "UNKNOWN",
+          "title": "Track Status",
+          "type": "string"
+        },
+        "source": {
+          "default": "UNAVAILABLE",
+          "title": "Source",
+          "type": "string"
+        },
+        "status": {
+          "default": "UNAVAILABLE",
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "default": "TIMING_DATA_MISSING",
+          "title": "Reason",
+          "type": "string"
+        },
+        "safety_scope_complete": {
+          "default": false,
+          "title": "Safety Scope Complete",
+          "type": "boolean"
+        },
+        "train_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Train Number"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Category"
+        },
+        "confidence": {
+          "default": "DETERMINISTIC_DEMO_ESTIMATE_NOT_CALIBRATED",
+          "title": "Confidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "train_id",
+        "station_id"
+      ],
+      "title": "TrainETA",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "station_id": {
+      "title": "Station Id",
+      "type": "string"
+    },
+    "virtual_time": {
+      "title": "Virtual Time",
+      "type": "string"
+    },
+    "arrivals": {
+      "items": {
+        "$ref": "#/$defs/TrainETA"
+      },
+      "title": "Arrivals",
+      "type": "array"
+    },
+    "source_type": {
+      "default": "SIMULATED_DEMO",
+      "title": "Source Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "station_id",
+    "virtual_time"
+  ],
+  "title": "StationArrivalsResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

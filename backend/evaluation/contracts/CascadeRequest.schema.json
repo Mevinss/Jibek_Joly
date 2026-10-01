@@ -1,0 +1,55 @@
+{
+  "properties": {
+    "edges": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "root_train_id": {
+      "title": "Root Train Id",
+      "type": "string"
+    },
+    "root_delay_min": {
+      "title": "Root Delay Min",
+      "type": "number"
+    },
+    "source_type": {
+      "default": "SYNTHETIC_DEMO",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "virtual_time": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Virtual Time"
+    },
+    "max_depth": {
+      "default": 4,
+      "title": "Max Depth",
+      "type": "integer"
+    },
+    "horizon_min": {
+      "default": 60,
+      "title": "Horizon Min",
+      "type": "number"
+    }
+  },
+  "required": [
+    "edges",
+    "root_train_id",
+    "root_delay_min"
+  ],
+  "title": "CascadeRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,2931 @@
+{
+  "scenario_id": "SCN-ALL",
+  "seed": 20261001,
+  "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+  "comparable": true,
+  "status": "COMPARABLE",
+  "fifo": {
+    "run_id": "PERSON3-SHORT-DEMO:FIFO:PLAN-997b110a61ae0971b68d",
+    "scenario_id": "SCN-ALL",
+    "seed": 20261001,
+    "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+    "policy": "FIFO",
+    "initial_snapshot_version": 0,
+    "started_at_virtual": "2026-10-01T09:00:00+05:00",
+    "finished_at_virtual": "2026-10-01T09:05:01+05:00",
+    "initial_conditions": {
+      "scenario_id": "SCN-ALL",
+      "seed": 20261001,
+      "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+      "initial_snapshot_version": 0,
+      "snapshot_hash": "51294bf20a3826c93a55f61f69be6c5f6935ca5a5ae8a09a40c497ca9b10dbb8",
+      "incidents_hash": "643d5437104296e21d906ecb15b2c96ad278f20cfc4af53b12bb6069bd853726",
+      "rules_hash": "a0d06b5491a281cefbc93cb6ae00c037d28de5807ef3ffac784738071e4bdc06",
+      "cohort": [
+        "SIM-KOK_AST-F01",
+        "SIM-KOK_AST-F02",
+        "SIM-KOK_AST-F03"
+      ],
+      "incident_id": null
+    },
+    "plan_id": "PLAN-997b110a61ae0971b68d",
+    "plan_policy": "FIFO",
+    "planning_config": {
+      "horizon_seconds": 600,
+      "time_limit_seconds": 1,
+      "headway_seconds": 0,
+      "category_weights": {
+        "intercity": 3,
+        "regional": 2,
+        "freight": 1
+      }
+    },
+    "movement_rules_id": "backend-engine-v1/block-route-plan-gate-v1/step-1s",
+    "status": "COMPLETED",
+    "train_results": [
+      {
+        "train_id": "SIM-KOK_AST-F01",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:03:01+05:00",
+        "final_delay_min": 0.016666666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 3,
+        "holding_minutes": 0,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "intercity"
+      },
+      {
+        "train_id": "SIM-KOK_AST-F02",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:04:01+05:00",
+        "final_delay_min": 1.0166666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 2,
+        "holding_minutes": 1.0000000000000013,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "regional"
+      },
+      {
+        "train_id": "SIM-KOK_AST-F03",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:05:01+05:00",
+        "final_delay_min": 2.0166666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 1,
+        "holding_minutes": 1.9999999999999978,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "freight"
+      }
+    ],
+    "total_arrival_delay_min": 3.05,
+    "added_delay_after_incident_min": null,
+    "weighted_delay_min": 4.1,
+    "completed_delay_subtotal_min": 3.05,
+    "conflict_count": 0,
+    "stop_count": 0,
+    "full_stop_avoided_count": null,
+    "energy_proxy_units": null,
+    "planner_ms": 0.48600000081933104,
+    "simulation_ms": 835.65,
+    "valid": true,
+    "safety_scope_complete": true,
+    "validation": {
+      "valid": true,
+      "fully_validated": true,
+      "violations": [],
+      "warnings": [],
+      "validation_scope": [
+        "BLOCK",
+        "DIRECTION",
+        "INCIDENT",
+        "STATION_TRACK",
+        "ROUTE_ORDER",
+        "MINIMUM_TRAVEL_TIME",
+        "MINIMUM_DWELL",
+        "HEADWAY",
+        "TRAIN_TIME"
+      ],
+      "unverified_scope": []
+    },
+    "runtime_violations": [],
+    "runtime_events": [
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:01:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:02:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      }
+    ],
+    "resource_observations": [
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:00:01+05:00",
+        "end_time": "2026-10-01T09:01:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:01:01+05:00",
+        "end_time": "2026-10-01T09:02:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:01:01+05:00",
+        "end_time": "2026-10-01T09:02:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:03:01+05:00",
+        "end_time": "2026-10-01T09:04:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:03:01+05:00",
+        "end_time": "2026-10-01T09:04:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:04:01+05:00",
+        "end_time": "2026-10-01T09:05:01+05:00"
+      }
+    ],
+    "fallback_count": 0,
+    "auto_fifo_timeout_count": 0,
+    "fallback_reason": null,
+    "termination_reason": "ALL_ELIGIBLE_TRAINS_COMPLETED",
+    "source_type": "SIMULATED_DEMO",
+    "source": "RUNTIME_EVALUATION",
+    "energy_proxy_label": "dimensionless; unavailable without observed speed telemetry"
+  },
+  "cp_sat": {
+    "run_id": "PERSON3-SHORT-DEMO:CP_SAT:PLAN-972a92436f6320c16f83",
+    "scenario_id": "SCN-ALL",
+    "seed": 20261001,
+    "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+    "policy": "CP_SAT",
+    "initial_snapshot_version": 0,
+    "started_at_virtual": "2026-10-01T09:00:00+05:00",
+    "finished_at_virtual": "2026-10-01T09:05:01+05:00",
+    "initial_conditions": {
+      "scenario_id": "SCN-ALL",
+      "seed": 20261001,
+      "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+      "initial_snapshot_version": 0,
+      "snapshot_hash": "51294bf20a3826c93a55f61f69be6c5f6935ca5a5ae8a09a40c497ca9b10dbb8",
+      "incidents_hash": "643d5437104296e21d906ecb15b2c96ad278f20cfc4af53b12bb6069bd853726",
+      "rules_hash": "a0d06b5491a281cefbc93cb6ae00c037d28de5807ef3ffac784738071e4bdc06",
+      "cohort": [
+        "SIM-KOK_AST-F01",
+        "SIM-KOK_AST-F02",
+        "SIM-KOK_AST-F03"
+      ],
+      "incident_id": null
+    },
+    "plan_id": "PLAN-972a92436f6320c16f83",
+    "plan_policy": "CP_SAT",
+    "planning_config": {
+      "horizon_seconds": 600,
+      "time_limit_seconds": 1,
+      "headway_seconds": 0,
+      "category_weights": {
+        "intercity": 3,
+        "regional": 2,
+        "freight": 1
+      }
+    },
+    "movement_rules_id": "backend-engine-v1/block-route-plan-gate-v1/step-1s",
+    "status": "COMPLETED",
+    "train_results": [
+      {
+        "train_id": "SIM-KOK_AST-F01",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:03:01+05:00",
+        "final_delay_min": 0.016666666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 3,
+        "holding_minutes": 0,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "intercity"
+      },
+      {
+        "train_id": "SIM-KOK_AST-F02",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:04:01+05:00",
+        "final_delay_min": 1.0166666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 2,
+        "holding_minutes": 1.0000000000000013,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "regional"
+      },
+      {
+        "train_id": "SIM-KOK_AST-F03",
+        "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+        "actual_final_arrival": "2026-10-01T09:05:01+05:00",
+        "final_delay_min": 2.0166666666666666,
+        "delay_at_incident_min": null,
+        "added_delay_after_incident_min": null,
+        "priority_weight": 1,
+        "holding_minutes": 1.9999999999999978,
+        "full_stop_count": 0,
+        "full_stop_avoided": null,
+        "energy_proxy_units": null,
+        "completed": true,
+        "termination_reason": "DESTINATION_REACHED",
+        "category": "freight"
+      }
+    ],
+    "total_arrival_delay_min": 3.05,
+    "added_delay_after_incident_min": null,
+    "weighted_delay_min": 4.1,
+    "completed_delay_subtotal_min": 3.05,
+    "conflict_count": 0,
+    "stop_count": 0,
+    "full_stop_avoided_count": null,
+    "energy_proxy_units": null,
+    "planner_ms": 53.5085,
+    "simulation_ms": 1371.1,
+    "valid": true,
+    "safety_scope_complete": true,
+    "validation": {
+      "valid": true,
+      "fully_validated": true,
+      "violations": [],
+      "warnings": [],
+      "validation_scope": [
+        "BLOCK",
+        "DIRECTION",
+        "INCIDENT",
+        "STATION_TRACK",
+        "ROUTE_ORDER",
+        "MINIMUM_TRAVEL_TIME",
+        "MINIMUM_DWELL",
+        "HEADWAY",
+        "TRAIN_TIME"
+      ],
+      "unverified_scope": []
+    },
+    "runtime_violations": [],
+    "runtime_events": [
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:00:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:00:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F02",
+        "at": "2026-10-01T09:01:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:01+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:02+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:03+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:04+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:05+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:06+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:07+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:08+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:09+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:10+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:11+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:12+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:13+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:14+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:15+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:16+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:17+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:18+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:19+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:20+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:21+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:22+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:23+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:24+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:25+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:26+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:27+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:28+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:29+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:30+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:31+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:32+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:33+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:34+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:35+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:36+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:37+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:38+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:39+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:40+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:41+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:42+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:43+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:44+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:45+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:46+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:47+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:48+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:49+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:50+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:51+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:52+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:53+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:54+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:55+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:56+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:57+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:58+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:01:59+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      },
+      {
+        "type": "WAIT_OBSERVED",
+        "train_id": "SIM-KOK_AST-F03",
+        "at": "2026-10-01T09:02:00+05:00",
+        "status": "waiting",
+        "reason": "UNATTRIBUTED_MOVEMENT_WAIT"
+      }
+    ],
+    "resource_observations": [
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:00:01+05:00",
+        "end_time": "2026-10-01T09:01:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:01:01+05:00",
+        "end_time": "2026-10-01T09:02:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:01:01+05:00",
+        "end_time": "2026-10-01T09:02:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F01",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B01",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:02:01+05:00",
+        "end_time": "2026-10-01T09:03:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F02",
+        "start_time": "2026-10-01T09:03:01+05:00",
+        "end_time": "2026-10-01T09:04:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B02",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:03:01+05:00",
+        "end_time": "2026-10-01T09:04:01+05:00"
+      },
+      {
+        "resource_type": "block",
+        "resource_id": "KOK-BOR-B03",
+        "train_id": "SIM-KOK_AST-F03",
+        "start_time": "2026-10-01T09:04:01+05:00",
+        "end_time": "2026-10-01T09:05:01+05:00"
+      }
+    ],
+    "fallback_count": 0,
+    "auto_fifo_timeout_count": 0,
+    "fallback_reason": null,
+    "termination_reason": "ALL_ELIGIBLE_TRAINS_COMPLETED",
+    "source_type": "SIMULATED_DEMO",
+    "source": "RUNTIME_EVALUATION",
+    "energy_proxy_label": "dimensionless; unavailable without observed speed telemetry"
+  },
+  "human": null,
+  "improvement_vs_fifo_pct": 0.0,
+  "human_minus_cp_sat_delay_min": null,
+  "validation": {
+    "scenario_id": true,
+    "seed": true,
+    "dataset_version": true,
+    "initial_snapshot_version": true,
+    "snapshot_hash": true,
+    "incidents_hash": true,
+    "rules_hash": true,
+    "cohort": true,
+    "incident_id": true,
+    "provenance_consistent": true
+  },
+  "source": "RUNTIME_EVALUATION"
+}

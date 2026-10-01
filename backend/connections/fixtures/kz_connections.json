@@ -1,0 +1,11 @@
+{
+  "source_type": "SYNTHETIC_DEMO",
+  "description": "Separate illustrative Kazakhstan connection schedule. SIM-DEMO IDs and times are invented demonstration inputs, not the 28-train live snapshot or passenger counts.",
+  "edges": [
+    {"from_train_id":"SIM-DEMO-A","to_train_id":"SIM-DEMO-B","station_id":"AST","minimum_transfer_min":3,"scheduled_arrival_from":"2026-10-01T10:00:00+05:00","scheduled_departure_to":"2026-10-01T10:03:00+05:00"},
+    {"from_train_id":"SIM-DEMO-B","to_train_id":"SIM-DEMO-C","station_id":"KAR","minimum_transfer_min":2,"scheduled_arrival_from":"2026-10-01T10:10:00+05:00","scheduled_departure_to":"2026-10-01T10:14:00+05:00"},
+    {"from_train_id":"SIM-DEMO-A","to_train_id":"SIM-DEMO-D","station_id":"AST","minimum_transfer_min":3,"scheduled_arrival_from":"2026-10-01T10:00:00+05:00","scheduled_departure_to":"2026-10-01T10:03:00+05:00"},
+    {"from_train_id":"SIM-DEMO-C","to_train_id":"SIM-DEMO-E","station_id":"SHU","minimum_transfer_min":2,"scheduled_arrival_from":"2026-10-01T10:20:00+05:00","scheduled_departure_to":"2026-10-01T10:26:00+05:00"},
+    {"from_train_id":"SIM-DEMO-D","to_train_id":"SIM-DEMO-E","station_id":"SHU","minimum_transfer_min":2,"scheduled_arrival_from":"2026-10-01T10:20:00+05:00","scheduled_departure_to":"2026-10-01T10:26:00+05:00"}
+  ]
+}

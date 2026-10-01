@@ -1,0 +1,84 @@
+{
+  "source": "RUNTIME_EVALUATION",
+  "source_type": "SIMULATED_DEMO",
+  "run_id": "PERSON3-SHORT-DEMO:FIFO:PLAN-997b110a61ae0971b68d",
+  "resource_utilization": [
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B01",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    },
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B02",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    },
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B03",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    }
+  ],
+  "bottleneck_blocks": [
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B01",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    },
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B02",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    },
+    {
+      "resource_type": "block",
+      "resource_id": "KOK-BOR-B03",
+      "occupied_seconds": 180.0,
+      "occupied_time_fraction": 0.5980066445182725,
+      "basis": "OBSERVED_OCCUPIED_TIME_UNION"
+    }
+  ],
+  "delay_reasons": {
+    "UNATTRIBUTED_MOVEMENT_WAIT": 180
+  },
+  "delay_reason_scope": "Observed wait states; un-attributed waits are not assigned a causal incident.",
+  "incident_impact": {
+    "added_delay_after_incident_min": null,
+    "events": [],
+    "causal_attribution": "NOT_ESTABLISHED"
+  },
+  "category_delay": {
+    "intercity": {
+      "completed_count": 1,
+      "incomplete_count": 0,
+      "completed_delay_min": 0.016666666666666666
+    },
+    "regional": {
+      "completed_count": 1,
+      "incomplete_count": 0,
+      "completed_delay_min": 1.0166666666666666
+    },
+    "freight": {
+      "completed_count": 1,
+      "incomplete_count": 0,
+      "completed_delay_min": 2.0166666666666666
+    }
+  },
+  "stop_count": 0,
+  "full_stop_avoided_count": null,
+  "energy_proxy_units": null,
+  "energy_proxy_label": "dimensionless; unavailable without observed speed telemetry",
+  "planner_fallback_count": 0,
+  "validator_rejection_count": 0,
+  "runtime_violations": []
+}

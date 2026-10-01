@@ -1,0 +1,91 @@
+{
+  "properties": {
+    "root_train_id": {
+      "title": "Root Train Id",
+      "type": "string"
+    },
+    "root_delay_min": {
+      "title": "Root Delay Min",
+      "type": "number"
+    },
+    "affected_trains": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Affected Trains",
+      "type": "array"
+    },
+    "network_added_delay_min": {
+      "title": "Network Added Delay Min",
+      "type": "number"
+    },
+    "chain": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Chain",
+      "type": "array"
+    },
+    "max_depth": {
+      "title": "Max Depth",
+      "type": "integer"
+    },
+    "horizon_min": {
+      "title": "Horizon Min",
+      "type": "number"
+    },
+    "cycle_detected": {
+      "default": false,
+      "title": "Cycle Detected",
+      "type": "boolean"
+    },
+    "truncated": {
+      "default": false,
+      "title": "Truncated",
+      "type": "boolean"
+    },
+    "source_type": {
+      "default": "SYNTHETIC_DEMO",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "method": {
+      "default": "BOUNDED_SCHEDULE_SLACK_PROPAGATION",
+      "title": "Method",
+      "type": "string"
+    },
+    "initial_snapshot_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Initial Snapshot Hash"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "root_train_id",
+    "root_delay_min",
+    "affected_trains",
+    "network_added_delay_min",
+    "chain",
+    "max_depth",
+    "horizon_min"
+  ],
+  "title": "CascadingDelayResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

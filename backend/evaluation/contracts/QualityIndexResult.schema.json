@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Score"
+    },
+    "factors": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Factors",
+      "type": "array"
+    },
+    "status": {
+      "default": "UNAVAILABLE",
+      "title": "Status",
+      "type": "string"
+    },
+    "method": {
+      "default": "100_MINUS_WEIGHTED_NORMALIZED_PENALTIES",
+      "title": "Method",
+      "type": "string"
+    },
+    "calibration": {
+      "default": "CONFIGURABLE_DEMO_INDEX_NOT_SCIENTIFICALLY_CALIBRATED",
+      "title": "Calibration",
+      "type": "string"
+    }
+  },
+  "required": [
+    "score"
+  ],
+  "title": "QualityIndexResult",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

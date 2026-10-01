@@ -1,0 +1,1776 @@
+{
+  "schema_version": "2.0",
+  "scenario_id": "SCN-ALL",
+  "seed": 20261001,
+  "run_id": "PERSON3-SHORT-DEMO",
+  "dataset_version": "person3-short-route-synthetic-v1:sha256:bfefb9272d10047b",
+  "virtual_time": "2026-10-01T09:00:00+05:00",
+  "snapshot_version": 0,
+  "source_type": "SIMULATED_DEMO",
+  "trains": [
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "route": [
+        "KOK-BOR-B01",
+        "KOK-BOR-B02",
+        "KOK-BOR-B03"
+      ],
+      "block_seconds": [
+        60,
+        60,
+        60
+      ],
+      "entry_signals": [
+        "SIG-KOK-BOR-B01-KOK",
+        "SIG-KOK-BOR-B02-KOK",
+        "SIG-KOK-BOR-B03-KOK"
+      ],
+      "entry_switches": [
+        "SW-BOR-ENTRY",
+        null,
+        null
+      ],
+      "required_tracks": [
+        "BOR-T1",
+        null,
+        null
+      ],
+      "planned_start": "2026-10-01T09:00:00+05:00",
+      "block_index": -1,
+      "progress": 0.0,
+      "block_elapsed": 0.0,
+      "travel_elapsed": 0.0,
+      "delay_min": 0.0,
+      "hold_until": null,
+      "departure_shift_seconds": 0,
+      "status": "scheduled",
+      "block_id": null,
+      "train_number": null,
+      "category": "intercity",
+      "direction": "forward",
+      "route_id": "KOK_AST",
+      "origin_station_id": "KOK",
+      "destination_station_id": "BOR",
+      "current_segment_id": null,
+      "current_block_id": null,
+      "route_progress_0_1": 0.0,
+      "block_progress_0_1": 0.0,
+      "speed_kmh": null,
+      "next_station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T09:03:00+05:00",
+      "estimated_arrival": null,
+      "data_mode": "SIMULATED_DEMO",
+      "source_type": "SIMULATED_DEMO",
+      "updated_at": "2026-10-01T09:00:00+05:00",
+      "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+      "station_stops": []
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "route": [
+        "KOK-BOR-B01",
+        "KOK-BOR-B02",
+        "KOK-BOR-B03"
+      ],
+      "block_seconds": [
+        60,
+        60,
+        60
+      ],
+      "entry_signals": [
+        "SIG-KOK-BOR-B01-KOK",
+        "SIG-KOK-BOR-B02-KOK",
+        "SIG-KOK-BOR-B03-KOK"
+      ],
+      "entry_switches": [
+        "SW-BOR-ENTRY",
+        null,
+        null
+      ],
+      "required_tracks": [
+        "BOR-T2",
+        null,
+        null
+      ],
+      "planned_start": "2026-10-01T09:00:00+05:00",
+      "block_index": -1,
+      "progress": 0.0,
+      "block_elapsed": 0.0,
+      "travel_elapsed": 0.0,
+      "delay_min": 0.0,
+      "hold_until": null,
+      "departure_shift_seconds": 0,
+      "status": "scheduled",
+      "block_id": null,
+      "train_number": null,
+      "category": "regional",
+      "direction": "forward",
+      "route_id": "KOK_AST",
+      "origin_station_id": "KOK",
+      "destination_station_id": "BOR",
+      "current_segment_id": null,
+      "current_block_id": null,
+      "route_progress_0_1": 0.0,
+      "block_progress_0_1": 0.0,
+      "speed_kmh": null,
+      "next_station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T09:03:00+05:00",
+      "estimated_arrival": null,
+      "data_mode": "SIMULATED_DEMO",
+      "source_type": "SIMULATED_DEMO",
+      "updated_at": "2026-10-01T09:00:00+05:00",
+      "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+      "station_stops": []
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "route": [
+        "KOK-BOR-B01",
+        "KOK-BOR-B02",
+        "KOK-BOR-B03"
+      ],
+      "block_seconds": [
+        60,
+        60,
+        60
+      ],
+      "entry_signals": [
+        "SIG-KOK-BOR-B01-KOK",
+        "SIG-KOK-BOR-B02-KOK",
+        "SIG-KOK-BOR-B03-KOK"
+      ],
+      "entry_switches": [
+        "SW-BOR-ENTRY",
+        null,
+        null
+      ],
+      "required_tracks": [
+        "BOR-T1",
+        null,
+        null
+      ],
+      "planned_start": "2026-10-01T09:00:00+05:00",
+      "block_index": -1,
+      "progress": 0.0,
+      "block_elapsed": 0.0,
+      "travel_elapsed": 0.0,
+      "delay_min": 0.0,
+      "hold_until": null,
+      "departure_shift_seconds": 0,
+      "status": "scheduled",
+      "block_id": null,
+      "train_number": null,
+      "category": "freight",
+      "direction": "forward",
+      "route_id": "KOK_AST",
+      "origin_station_id": "KOK",
+      "destination_station_id": "BOR",
+      "current_segment_id": null,
+      "current_block_id": null,
+      "route_progress_0_1": 0.0,
+      "block_progress_0_1": 0.0,
+      "speed_kmh": null,
+      "next_station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T09:03:00+05:00",
+      "estimated_arrival": null,
+      "data_mode": "SIMULATED_DEMO",
+      "source_type": "SIMULATED_DEMO",
+      "updated_at": "2026-10-01T09:00:00+05:00",
+      "scheduled_final_arrival": "2026-10-01T09:03:00+05:00",
+      "station_stops": []
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "KOK-BOR-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KOK-BOR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KOK-BOR-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KOK-BOR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KOK-BOR-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KOK-BOR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "BOR-AKK-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "BOR-AKK",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "BOR-AKK-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "BOR-AKK",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "BOR-AKK-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "BOR-AKK",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "BOR-AKK-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "BOR-AKK",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKK-AST-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKK-AST",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKK-AST-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKK-AST",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKK-AST-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKK-AST",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKK-AST-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKK-AST",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B05",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B06",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AST-KAR-B07",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AST-KAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B05",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B06",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B07",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "KAR-AKD-B08",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "KAR-AKD",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B05",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B06",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B07",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B08",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "AKD-SAR-B09",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "AKD-SAR",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B05",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B06",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B07",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B08",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B09",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B10",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SAR-SHU-B11",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SAR-SHU",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B01",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B02",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B03",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B04",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B05",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B06",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B07",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B08",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B09",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    },
+    {
+      "block_id": "SHU-ALM-B10",
+      "occupied_by": null,
+      "closed": false,
+      "segment_id": "SHU-ALM",
+      "capacity": 1,
+      "occupied_train_ids": [],
+      "direction_lock": null,
+      "direction_lock_rule": "one_direction_at_a_time",
+      "speed_limit_kmh": null,
+      "entry_signal_id": null,
+      "state_conflict": false
+    }
+  ],
+  "station_tracks": [],
+  "signals": [
+    {
+      "signal_id": "SIG-KOK-BOR-B01-KOK",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KOK-BOR-B01-BOR",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KOK-BOR-B02-KOK",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KOK-BOR-B02-BOR",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KOK-BOR-B03-KOK",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KOK-BOR-B03-BOR",
+      "aspect": "CLEAR",
+      "block_id": "KOK-BOR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B01-BOR",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B01-AKK",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B02-BOR",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B02-AKK",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B03-BOR",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B03-AKK",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B04-BOR",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-BOR-AKK-B04-AKK",
+      "aspect": "CLEAR",
+      "block_id": "BOR-AKK-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B01-AKK",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B01-AST",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B02-AKK",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B02-AST",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B03-AKK",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B03-AST",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B04-AKK",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKK-AST-B04-AST",
+      "aspect": "CLEAR",
+      "block_id": "AKK-AST-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B01-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B01-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B02-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B02-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B03-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B03-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B04-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B04-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B05-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B05-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B06-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B06-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B07-AST",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AST-KAR-B07-KAR",
+      "aspect": "CLEAR",
+      "block_id": "AST-KAR-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B01-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B01-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B02-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B02-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B03-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B03-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B04-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B04-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B05-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B05-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B06-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B06-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B07-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B07-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B08-KAR",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-KAR-AKD-B08-AKD",
+      "aspect": "CLEAR",
+      "block_id": "KAR-AKD-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B01-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B01-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B02-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B02-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B03-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B03-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B04-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B04-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B05-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B05-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B06-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B06-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B07-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B07-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B08-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B08-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B09-AKD",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-AKD-SAR-B09-SAR",
+      "aspect": "CLEAR",
+      "block_id": "AKD-SAR-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B01-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B01-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B02-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B02-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B03-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B03-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B04-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B04-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B05-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B05-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B06-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B06-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B07-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B07-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B08-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B08-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B09-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B09-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B10-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B10",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B10-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B10",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B11-SAR",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B11",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SAR-SHU-B11-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SAR-SHU-B11",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B01-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B01-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B01",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B02-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B02-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B02",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B03-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B03-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B03",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B04-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B04-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B04",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B05-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B05-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B05",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B06-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B06-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B06",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B07-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B07-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B07",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B08-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B08-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B08",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B09-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B09-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B09",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B10-SHU",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B10",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    },
+    {
+      "signal_id": "SIG-SHU-ALM-B10-ALM",
+      "aspect": "CLEAR",
+      "block_id": "SHU-ALM-B10",
+      "failed": false,
+      "updated_at": "2026-10-01T09:00:00+05:00"
+    }
+  ],
+  "switches": [
+    {
+      "switch_id": "SW-BOR-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "BOR-T1",
+        "BOR-T2"
+      ]
+    },
+    {
+      "switch_id": "SW-AKK-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "AKK-T1",
+        "AKK-T2"
+      ]
+    },
+    {
+      "switch_id": "SW-AST-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "AST-T1",
+        "AST-T2",
+        "AST-T3",
+        "AST-T4"
+      ]
+    },
+    {
+      "switch_id": "SW-KAR-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "KAR-T1",
+        "KAR-T2"
+      ]
+    },
+    {
+      "switch_id": "SW-AKD-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "AKD-T1",
+        "AKD-T2"
+      ]
+    },
+    {
+      "switch_id": "SW-SAR-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "SAR-T1",
+        "SAR-T2"
+      ]
+    },
+    {
+      "switch_id": "SW-SHU-ENTRY",
+      "position": "T1",
+      "failed": false,
+      "locked": false,
+      "available_routes": [
+        "SHU-T1",
+        "SHU-T2"
+      ]
+    }
+  ],
+  "active_incidents": [],
+  "planned_incidents": []
+}

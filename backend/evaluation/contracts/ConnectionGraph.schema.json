@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "ConnectionEdge": {
+      "properties": {
+        "from_train_id": {
+          "title": "From Train Id",
+          "type": "string"
+        },
+        "to_train_id": {
+          "title": "To Train Id",
+          "type": "string"
+        },
+        "station_id": {
+          "title": "Station Id",
+          "type": "string"
+        },
+        "minimum_transfer_min": {
+          "title": "Minimum Transfer Min",
+          "type": "number"
+        },
+        "scheduled_arrival_from": {
+          "title": "Scheduled Arrival From",
+          "type": "string"
+        },
+        "scheduled_departure_to": {
+          "title": "Scheduled Departure To",
+          "type": "string"
+        },
+        "connection_type": {
+          "default": "CONNECTION_WAIT",
+          "title": "Connection Type",
+          "type": "string"
+        },
+        "passenger_weight_proxy": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Passenger Weight Proxy"
+        },
+        "resource_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resource Id"
+        }
+      },
+      "required": [
+        "from_train_id",
+        "to_train_id",
+        "station_id",
+        "minimum_transfer_min",
+        "scheduled_arrival_from",
+        "scheduled_departure_to"
+      ],
+      "title": "ConnectionEdge",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/ConnectionEdge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "source_type": {
+      "default": "SYNTHETIC_DEMO",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "description": {
+      "default": "Assumes each listed connection waits. No passenger counts; no operational claim.",
+      "title": "Description",
+      "type": "string"
+    }
+  },
+  "required": [
+    "edges"
+  ],
+  "title": "ConnectionGraph",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

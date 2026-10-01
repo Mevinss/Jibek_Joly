@@ -1,0 +1,35 @@
+{
+  "score": 97.45833333333333,
+  "factors": [
+    {
+      "name": "mean_final_delay_min",
+      "weight": 0.5,
+      "value": 1.0166666666666666,
+      "cap": 20,
+      "normalized": 0.05083333333333333,
+      "contribution": 2.5416666666666665,
+      "reason": "Penalty clipped to [0,1] using documented configurable cap."
+    },
+    {
+      "name": "stops_per_train",
+      "weight": 0.25,
+      "value": 0.0,
+      "cap": 2,
+      "normalized": 0,
+      "contribution": 0.0,
+      "reason": "Penalty clipped to [0,1] using documented configurable cap."
+    },
+    {
+      "name": "invalid_run",
+      "weight": 0.25,
+      "value": 0,
+      "cap": 1,
+      "normalized": 0,
+      "contribution": 0.0,
+      "reason": "Penalty clipped to [0,1] using documented configurable cap."
+    }
+  ],
+  "status": "AVAILABLE",
+  "method": "100_MINUS_WEIGHTED_NORMALIZED_PENALTIES",
+  "calibration": "CONFIGURABLE_DEMO_INDEX_NOT_SCIENTIFICALLY_CALIBRATED"
+}
