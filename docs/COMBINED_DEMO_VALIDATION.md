@@ -1,30 +1,33 @@
-# Combined preview verification — 2026-10-01
+# Realtime demo verification — 2026-10-01
 
-Base commit: `068b85a`. Branch: `codex/combined-demo`. Local FastAPI preview on port 8012. No backend/schema changes.
+Branch: `codex/combined-demo`. Repair base: `a190bcc`. Local FastAPI preview: port 8012.
 
 ## Automated checks
 
-- `node --test tests/combined-demo.test.mjs`: four passing tests for average speed, cap violation, expired window, invalid inputs and holding instead of a crawl-speed recommendation.
-- Node syntax checks: app.js, engine.js, scene.js, workspace.js, locales.js and approach.mjs.
-- `python -m pytest services/ai/tests -q`: **38 passed, 1 failed**, 13.52 s. Existing `test_canonical_demo_state_and_topology_routes` submits seed `20261001`, but `/api/v2/state` caps seed at `999999`, returning 422. Both values verified in unchanged `git show HEAD` baseline. This failure was not introduced or hidden by the frontend branch.
-- Impeccable detector on frontend/index.html returned no findings but could not resolve FastAPI's absolute stylesheet routes to disk; this is a limited HTML scan, not full CSS certification.
-- Independent source review found and corrected stale train capture in forecasts, reversed southbound map positions and SSE reconnect clock rollback. Final review reported no unresolved critical/important source issue.
+- `python -m pytest services/ai/tests -q`: **39 passed**, 12.83 s, one Starlette/httpx deprecation warning. The existing canonical-state test was reproduced failing with 422 for seed `20261001`; the endpoint now accepts a nonnegative signed-32-bit seed. HTTP smoke check after restarting the preview returned 200 with the same seed.
+- `node --test tests/combined-demo.test.mjs tests/realtime-demo.test.mjs`: **11 passed**. Seven realtime tests cover ISO/numeric UTC+5 clocks, separate station axes, history vs timetable, nine stations, reverse routes, terminal arrival at current speed, station dwell, speed restrictions/closure/unreachable timing, stale/duplicate/malformed frames and explicit reset.
+- Regression test for a train at 260 km travelling 60 km/h to AST at 269 km failed before the continuation fix and passes after it: arrival at 540 seconds, then a stationary segment.
+- Node syntax checks through `node --input-type=module --check` passed for app.js, realtime.js and scene.js. The older local Node binary does not support `--experimental-default-type=module`; stdin module checks were used instead.
+- RU/KK locale key sets match. No literal interface translation keys are missing.
+- Contract export ran successfully; generated files have no semantic changes.
+- Independent source review identified and corrected replay/context mixing, stale closure rendering in 3D, hash navigation, distorted terminal continuation and partial-initialization retry. Closed stream callbacks are excluded during snapshot refresh.
+- Impeccable CSS scan: off-ramp literal text sizes aligned to the documented 12/14/16/20/28 px ramp. The Inter-font warning is retained because the established project brief explicitly preserves Inter. This scan is not performance certification.
 
-## Browser and runtime checks
+## Browser checks
 
-- Desktop: Kazakhstan map and actual Three.js station render with SIM trains, station building, rails, camera controls and arrival board. Proof: `demo-preview/station.jpg`.
-- Narrow viewport 390 × 844: scenario/speed, game and dispatcher pages stay inside viewport; diagrams/tables scroll locally. No page-wide overflow observed.
-- Scenario: default 4 km / 12 minute approach calculates 20 km/h. Input 50 km marks the same window unreachable and removes the recommendation.
-- Game: completed all four B decisions. Delay carries between stages; final cost 1059 versus baseline 1668, best 850 and score 80/100. These are computed training-game outputs, not backend optimizer or real-world performance evidence.
-- API workspace: 28 rows, one-hertz stream, pause, current clock, train selection and keyboard Tab focus. Train register DOM remains stable during updates.
-- Advisory request returned captured time and known wait 0.0 min, with unvalidated Kazakhstan ML and heuristic boundaries visible. No fabricated ML values.
-- Actual planner at captured 11:00:09: pair SIM-KOK_AST-F01 / SIM-KOK_AST-R01 `OPTIMAL`, validator passed; full 28 plan `INFEASIBLE`, displayed separately.
-- History: Home returns to the first snapshot, 11:00:00. Planner on that recorded state uses its saved incident context.
-- CSV downloaded to the user's Downloads: 1288 records, five expected columns, SIM IDs. Browser automation download event timed out, so file existence and contents were verified independently on disk.
-- RU/KK and light/dark: model page shows actual `pkp-main-298694c` and `kz-synthetic-schedule-v1`, plus the unreviewed Kazakh notice.
-- API outage: stopped only this preview's verified uvicorn process. Last snapshot froze at 11:00:29, 28 rows stayed visible, error/retry appeared. Restart resumed beyond 11:00:29 without resetting and hid the connection error.
-- No console errors observed before the deliberate API outage; connection errors during that outage are expected.
+- All nine `main` station names visible; 28 SIM train rows from API. Whole-corridor diagram displays nine station rows. North and south selection filters the diagram/map.
+- Train combo, diagram Enter selection, map and station selection work. Actual Three.js canvas displays trains with SIM identifiers from the same snapshot. Camera controls remain available.
+- SSE advances once per real second; ×10 changes virtual tempo. History contains actual received coordinates. No optimized-plan or ML substitution.
+- Closure at 11:00:23 reduced the actual demo index from 93.1 to 57.1. Selected affected train displayed no speed and the hold/closure explanation.
+- Replay returned to 11:00:00. Changing an incident restored the latest 11:04:06 snapshot before injection and retained pause, preventing backward/mixed future history.
+- RU/KK and theme changes preserved snapshot 11:04:06 and 48 stored rows. Kazakh notice remains unreviewed.
+- Brand link switched 3D to map; browser Back restored the selected station's 3D view.
+- Real CP-SAT pair plan passed validation and showed 11 block reservations using actual `resource_id`, `start` and `end`. Full 28-train plan was not confirmed. Restriction scenario showed unsupported status.
+- CSV downloaded and verified on disk: six columns (`timestamp,train_id,block_id,speed_kmh,delay_min,quality_index`), SIM IDs and actual captured snapshot values.
+- Only the preview's verified uvicorn process on port 8012 was stopped. Last snapshot froze at 11:00:50, all 28 rows stayed visible and reconnection error appeared. Restart resumed at 11:01:12 without rollback and hid the error.
+- 390 × 844 viewport: document clientWidth and scrollWidth both 380 px (browser scrollbar occupies the remainder). The diagram scrolls locally at 820 px. Incident select fills its control row (356 px). No page-wide horizontal overflow.
+- Final preview returned to standard viewport, light theme, RU and live SSE. Screenshots: `demo-preview/realtime.jpg` and `demo-preview/realtime-mobile.jpg`.
 
-## Explicit limits
+## Limits
 
-WebGL initialization fallback and disposal were source-reviewed; GPU loss/no-WebGL was not forced in this browser. Kazakh has not been reviewed by a native speaker. No frame-rate/performance certification, operational train-control claim or end-to-end execution of a 28-train optimized plan. Reference game/map and backend snapshot remain distinct states.
+Synthetic Kazakhstan data only, advisory demo. 3D lanes and switch drawings are illustrative; exact track allocation is unavailable. Pair reservations are not executed in playback. Physical acceleration/braking, energy, signal/switch telemetry, PDF export and full 28-train conflict-free execution remain incomplete. Quality excludes block overlaps and energy; block overlaps are reported separately. No <500 ms / frame-rate certification, native-speaker Kazakh review, or forced GPU-loss test.

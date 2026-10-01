@@ -143,7 +143,7 @@ def resource_topology():
 def canonical_demo_state(elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
                          incident: Literal['none','closure','restriction','chaos']='none',
                          incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
-                         seed: int = Query(42, ge=0, le=999999)):
+                         seed: int = Query(42, ge=0, le=2147483647)):
     return canonical_from_demo_snapshot(snapshot(elapsed, incident, incident_at), seed)
 
 
