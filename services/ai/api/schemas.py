@@ -129,3 +129,13 @@ class DispatchAnalysisRequest(DataModel):
 
 class DispatchDecisionRequest(DispatchAnalysisRequest):
     choice: Literal['A', 'B', 'C']
+
+
+class EcoAdviceRequest(DataModel):
+    train_id: str = Field(min_length=5, max_length=80, pattern=r'^SIM-[\w-]+$')
+    distance_km: float = Field(ge=0, le=200)
+    current_speed_kmh: float = Field(ge=0, le=200)
+    speed_limit_kmh: float = Field(gt=0, le=200)
+    now_min: float = Field(ge=0, le=500)
+    signal_open_min: float | None = Field(default=None, ge=-1, le=600)
+    mass_tons: float = Field(default=1000, gt=0, le=20000)

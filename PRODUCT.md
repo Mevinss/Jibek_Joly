@@ -1,6 +1,14 @@
 <!-- impeccable:product-schema 1 -->
 # Jibek Joly
 
+Current branch `codex/jibekjoly-eco-demo` restores the user's actual team reference
+as the main entry point, branded **JibekJoly**. It retains the continuous nine-station
+3D corridor and original navigation, and adds synthetic freight Eco-driving,
+station arrival boards and calculated scenario comparisons. Its live motion is a
+browser simulation; the Eco API computes from submitted inputs. This branch's
+current scope and run instructions are in `docs/REFERENCE_ECO_DEMO.md`. Earlier
+workspace descriptions below apply to preserved legacy pages and prior branches.
+
 Jibek Joly is an advisory hackathon railway dispatch demo for presenters, judges and people exploring dispatch decisions. It is not a train control or railway safety system. The own rail SVG and the name Jibek Joly are the only brand identity: no subtitle, organizer logo, organizer slogan or organizer photos are authorized.
 
 The original dispatcher, preserved in this branch at `/dispatch-original.html`, is the FastAPI-served workspace, using the shared `services/ai/web/dispatch.css` and `dispatch.js`. Both `/` and `/frontend/` show this single page, so future dashboard panels can be added without a second copy of the interface or its API logic. Plain HTML/CSS/JavaScript, locally bundled i18next/MapLibre and local fonts require no Node build or runtime CDN. Light theme and Russian are defaults; a saved preference can select dark theme or Kazakh. RU and KK are the only requested interface languages. Kazakh translation review by a native speaker remains a separate quality requirement. The desktop-first workspace adapts to narrow screens; no dedicated mobile driver interface is in scope. Dispatcher and manager roles change presentation only, not permissions.

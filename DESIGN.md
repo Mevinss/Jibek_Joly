@@ -115,6 +115,19 @@ components:
     rounded: "{rounded.panel}"
     padding: "16px"
 ---
+
+The active main entry point on `codex/jibekjoly-eco-demo` uses the user's chosen
+team reference, overriding the earlier workspace palette below. Preserve its
+Manrope body / Unbounded brand, dark navy `#0c141b`, panels `#131f29`, teal
+`#35d2b6`, amber `#f3bd64`, red `#ff787d` and source light theme. Brand is exactly
+JibekJoly, own rail SVG, no subtitle. `services/ai/web/jibekjoly/style.css` is the
+visual authority and `eco.css` extends it. The continuous 3D corridor remains the
+main artifact; Eco card and station arrival board follow the train ribbon. On
+narrow screens the two panels stack, all five stats remain visible, and SIM labels
+retain enough width. Red/yellow states have explicit delay text. See
+`docs/REFERENCE_ECO_DEMO.md` for behavior and demonstration limits.
+
+
 # Design System: Jibek Joly
 
 ## Overview

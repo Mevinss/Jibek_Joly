@@ -12,7 +12,7 @@ from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from .settings import settings, SERVICE
-from .api.schemas import State, Forecast, ChatRequest, TelegramRequest, ReportRequest, DispatchAnalysisRequest, DispatchDecisionRequest
+from .api.schemas import State, Forecast, ChatRequest, TelegramRequest, ReportRequest, DispatchAnalysisRequest, DispatchDecisionRequest, EcoAdviceRequest
 from .ml.infer import Forecaster
 from .agent.tools import Tools
 from .agent.chat import stream_chat
@@ -181,6 +181,19 @@ async def demo_stream(request: Request, elapsed: float = Query(0, ge=0, le=86400
             yield 'event: state\ndata: '+json.dumps(payload,ensure_ascii=False)+'\n\n'
             await asyncio.sleep(1)
     return StreamingResponse(events(),media_type='text/event-stream',headers={'Cache-Control':'no-cache','X-Accel-Buffering':'no'})
+
+
+@app.post('/eco/advice')
+def eco_demo_advice(request: EcoAdviceRequest):
+    from .demo.eco import eco_advice
+    values=request.model_dump()
+    train_id=values.pop('train_id')
+    return {'train_id':train_id, **eco_advice(**values)}
+
+
+@app.get('/eco/package')
+def eco_demo_package():
+    return json.loads((SERVICE / 'demo' / 'eco-package.json').read_text(encoding='utf-8'))
 
 
 @app.get('/', include_in_schema=False)
