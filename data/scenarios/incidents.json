@@ -1,0 +1,42 @@
+[
+  {
+    "incident_id": "INC-01",
+    "type": "TRAIN_DELAY",
+    "at": "2026-10-01T09:40:00+05:00",
+    "duration_min": 22,
+    "train_id": "SIM-KOK_AST-F03",
+    "description_kk": "Көкшетаудан шығатын пойыздың бастапқы 22 минут кешігуі",
+    "operational_effect": "shift_departure_and_replan",
+    "source_type": "SIMULATED_DEMO"
+  },
+  {
+    "incident_id": "INC-02",
+    "type": "SIGNAL_FAILURE",
+    "at": "2026-10-01T09:50:00+05:00",
+    "duration_min": 18,
+    "signal_id": "SIG-BOR-AKK-B01-BOR",
+    "description_kk": "Курорт-Бурабай жақтағы сигнал STOP күйінде қалып қояды",
+    "operational_effect": "deny_new_entry_at_signal",
+    "source_type": "SIMULATED_DEMO"
+  },
+  {
+    "incident_id": "INC-03",
+    "type": "SWITCH_FAILURE",
+    "at": "2026-10-01T09:25:00+05:00",
+    "duration_min": 30,
+    "switch_id": "SW-AST-ENTRY",
+    "description_kk": "Астана-1 торабындағы стрелка T1 қалпында бекітіледі",
+    "operational_effect": "only_T1_route_available",
+    "source_type": "SIMULATED_DEMO"
+  },
+  {
+    "incident_id": "INC-04",
+    "type": "BLOCK_CLOSURE",
+    "at": "2026-10-01T12:05:00+05:00",
+    "duration_min": 35,
+    "block_id": "KAR-AKD-B01",
+    "description_kk": "Қарағанды–Ақадыр бағытындағы бір блок 35 минутқа жабылады",
+    "operational_effect": "deny_new_entry_to_block",
+    "source_type": "SIMULATED_DEMO"
+  }
+]

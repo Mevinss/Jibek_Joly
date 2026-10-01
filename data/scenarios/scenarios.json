@@ -1,0 +1,50 @@
+[
+  {
+    "scenario_id": "SCN-01",
+    "seed": 20261002,
+    "start_time": "2026-10-01T09:00:00+05:00",
+    "incident_ids": [
+      "INC-01"
+    ],
+    "description_kk": "Көкшетаудан шығатын пойыздың бастапқы 22 минут кешігуі"
+  },
+  {
+    "scenario_id": "SCN-02",
+    "seed": 20261003,
+    "start_time": "2026-10-01T09:00:00+05:00",
+    "incident_ids": [
+      "INC-02"
+    ],
+    "description_kk": "Курорт-Бурабай жақтағы сигнал STOP күйінде қалып қояды"
+  },
+  {
+    "scenario_id": "SCN-03",
+    "seed": 20261004,
+    "start_time": "2026-10-01T09:00:00+05:00",
+    "incident_ids": [
+      "INC-03"
+    ],
+    "description_kk": "Астана-1 торабындағы стрелка T1 қалпында бекітіледі"
+  },
+  {
+    "scenario_id": "SCN-04",
+    "seed": 20261005,
+    "start_time": "2026-10-01T09:00:00+05:00",
+    "incident_ids": [
+      "INC-04"
+    ],
+    "description_kk": "Қарағанды–Ақадыр бағытындағы бір блок 35 минутқа жабылады"
+  },
+  {
+    "scenario_id": "SCN-ALL",
+    "seed": 20261010,
+    "start_time": "2026-10-01T09:00:00+05:00",
+    "incident_ids": [
+      "INC-01",
+      "INC-02",
+      "INC-03",
+      "INC-04"
+    ],
+    "description_kk": "Төрт түрлі инцидент бірге"
+  }
+]

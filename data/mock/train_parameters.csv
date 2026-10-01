@@ -1,0 +1,4 @@
+﻿category,priority,demo_max_speed_kmh,demo_mass_t,energy_unit,source_type
+intercity,3,120,600,relative_only,SIMULATED_DEMO
+regional,2,100,750,relative_only,SIMULATED_DEMO
+freight,1,80,3000,relative_only,SIMULATED_DEMO

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>TurkiSib state stream</title>
+<body><h1>TurkiSib state stream</h1><p id="status">Connecting…</p><pre id="state"></pre>
+<script>
+let sequence = null;
+let runId = null;
+let lastSeen = 0;
+let staleAfter = 3500;
+let socket;
+const status = document.getElementById("status");
+const state = document.getElementById("state");
+function connect() {
+  const url = new URL("ws://127.0.0.1:8000/ws/state");
+  if (sequence !== null) url.searchParams.set("last_sequence", sequence);
+  socket = new WebSocket(url);
+  socket.onmessage = ({data}) => {
+    const message = JSON.parse(data);
+    if (runId !== null && runId !== message.run_id) sequence = null;
+    runId = message.run_id;
+    if (sequence !== null && message.sequence < sequence) return;
+    sequence = message.sequence;
+    lastSeen = Date.now();
+    staleAfter = message.stale_after_ms || staleAfter;
+    status.textContent = "Connected · " + message.virtual_time + " · sequence " + sequence;
+    if (message.type === "SNAPSHOT") state.textContent = JSON.stringify(message.payload, null, 2);
+  };
+  socket.onclose = () => { status.textContent = "Connection lost"; setTimeout(connect, 1000); };
+  socket.onerror = () => socket.close();
+}
+setInterval(() => { if (lastSeen && Date.now() - lastSeen > staleAfter) status.textContent = "Connection lost"; }, 500);
+connect();
+</script></body></html>
