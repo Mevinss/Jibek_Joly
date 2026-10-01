@@ -1,4 +1,4 @@
-# TurkiSib demo simulator
+# ТүркіСіб
 
 Көкшетау–Астана–Алматы дәлізінің **синтетикалық** диспетчерлік демосы. Негізгі деректер бір жерде: `data/kz_demo/{KZ,mock,scenarios}`. Олар Қазақстандағы нақты пойыз қозғалысы емес. PKP дерегі тек статистикалық калибрлеуге, DISPLIB тек алгоритм benchmark-іне арналған; екеуі де симулятор пойыздарына қосылмайды.
 
@@ -48,8 +48,30 @@ The platform above remains on port8000. A separate advisory AI service serves th
 .\.venv\Scripts\python.exe -m services.ai.main
 ```
 
-Open http://127.0.0.1:8002/. Its current SSE demo is independent timetable playback, not the platform's conflict-free scheduler; platform integration is pending. The previous ML parameter laboratory is `/lab.html`. Models are committed; runtime does not need raw datasets. Local map/SVG and ML work without external internet; OpenAI chat and optional OSM tiles need internet.
+Open http://127.0.0.1:8002/. Its current SSE demo is independent timetable playback, not the platform's conflict-free scheduler; platform integration is pending. The previous ML parameter laboratory is `/lab.html`. Models are committed; runtime does not need raw datasets. Local map/SVG and ML work without external internet; OpenAI chat needs internet; the new map uses local geometry without an external tile server.
 
 The uploaded Kazakhstan archive contains synthetic schedules, not observed delays. `kz-synthetic-schedule-v1` learns scheduled segment duration (test MAE0.566min on SIM services; unseen-segment diagnostic38.245min). It is separate from the PKP delay/proxy model, whose accuracy is unvalidated for Kazakhstan.
 
 See [AI instructions](services/ai/README.md), [full readiness/model audit](services/ai/reports/kz_demo_readiness.md), and `POST /forecast/schedule`, `GET /forecast/schedule-info`, `GET /infra/geometry` in the AI OpenAPI docs. Tests: `python -m pytest services/ai/tests tests -q`.
+
+
+## Обновлённый диспетчерский экран (RU/KK)
+
+Запустите AI-сервис командой выше и откройте http://127.0.0.1:8002/.
+В шапке: РУС / ҚАЗ, светлая / тёмная тема, сценарий, пауза и ×1 / ×10.
+Настройки языка и темы сохраняются локально. Английский и отдельный режим машиниста не включены.
+Светлая тема начальная, все шрифты, i18next и MapLibre загружаются из репозитория.
+Node-сборка не нужна. При отсутствии WebGL выберите «Без WebGL».
+
+«Лаборатория ML» содержит тестовые MAE, калибровку отдельной метки роста задержки ≥3 мин,
+SHAP старого прокси-классификатора и реальный тестовый пробег PKP.
+`POST /forecast/advisory` добавляет известное ожидание, OOD, интервал и опциональный буфер солверу;
+старый `/forecast` сохранён для совместимости. Числа PKP не выдаются за проверенный прогноз Казахстана.
+
+A/B/C — отдельное упражнение на двух поездах; его оценка не меняет индекс движения и траектории.
+CP-SAT добавлен другим участником в backend, но ещё не подключён к AI-экрану, поэтому его строки явно недоступны. Платформа на 8000 и демо AI на 8002 пока независимы.
+Казахские переводы требуют проверки носителем (`TODO-review-kk`). В KK чат сейчас даёт локальную сводку;
+LLM-чат доступен в RU, ключ хранится только в серверном `.env`.
+
+Аудит и ограничения: [модель](docs/MODEL_AUDIT.md), [интеграция солвера](docs/SOLVER_CONTRACT.md),
+[проверка редизайна](docs/design/VALIDATION.md). Скриншоты находятся в `docs/design/`.

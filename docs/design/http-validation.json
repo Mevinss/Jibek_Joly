@@ -1,0 +1,7 @@
+{
+  "advisory_http_warm_n": 10,
+  "p50_ms": 705.7338499998878,
+  "p95_ms": 996.6774949993121,
+  "trains": 28,
+  "suppressed": true
+}

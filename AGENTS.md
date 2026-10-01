@@ -14,10 +14,10 @@
 - Python 3.11. Install `services/ai/requirements.txt`; start `python -m services.ai.main` from the repo root (default localhost:8002).
 - The interactive UI is `services/ai/web`, served by FastAPI. No Node build is required.
 - Run `python -m pytest services/ai/tests -q` after meaningful backend changes. Run `python -m services.ai.scripts.export_contracts` after schema changes.
-- Check UI controls, request failures, keyboard focus and narrow-screen layout when editing the demo. Keep user-visible copy in Russian and use explicit units.
+- Check UI controls, request failures, keyboard focus and narrow-screen layout when editing the demo. Keep user-visible copy in RU/KK locale files, use explicit units, and mark unreviewed Kazakh translations. The visible brand is ТүркіСіб, with an own logo and no subtitle.
 - Read PRODUCT.md and DESIGN.md before extending the interface. They describe the product and current UI; no particular design plugin is required.
 
 ## Data and credentials
 - Never print, commit or send `.env` credentials to the frontend. OpenAI calls are server-side only.
 - Raw datasets, local environments and logs stay gitignored. Commit small model artifacts, source attribution and reproducible evaluation evidence.
-- Do not overwrite another team member's changes. Use `codex/` branches; validate before pushing. Do not merge without authorization.
+- Do not overwrite another team member's changes. Use `codex/` branches unless the user specifies another branch (`feat/design-turkisib` for the redesign); validate before pushing. Do not merge without authorization.
