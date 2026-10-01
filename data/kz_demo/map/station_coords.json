@@ -1,0 +1,101 @@
+[
+  {
+    "station_id": "KOK",
+    "lon": 69.4233693,
+    "lat": 53.288608551025,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 1.712,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "BOR",
+    "lon": 70.1809032,
+    "lat": 52.921070098877,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 1.793,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "AKK",
+    "lon": 70.9394568,
+    "lat": 52.014572143555,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 2.852,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "AST",
+    "lon": 71.4091158,
+    "lat": 51.195598602295,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 2.161,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "KAR",
+    "lon": 73.094763,
+    "lat": 49.793106079102,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 10.997,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "AKD",
+    "lon": 72.8558257,
+    "lat": 48.263378143311,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 0.425,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "SAR",
+    "lon": 73.6060678,
+    "lat": 46.119464874268,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 0.823,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "SHU",
+    "lon": 73.7606205,
+    "lat": 43.601261138916,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 1.119,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  },
+  {
+    "station_id": "ALM",
+    "lon": 76.9393719,
+    "lat": 43.273998260498,
+    "osm_id": null,
+    "osm_name": null,
+    "distance_to_anchor_km": 8.414,
+    "confidence": "unverified",
+    "approximate": true,
+    "source": "existing Railwayz.info-derived generalized geometry"
+  }
+]
