@@ -22,6 +22,10 @@ class Train(DataModel):
     ts: datetime
     min_technical_time_min: float = Field(default=10, gt=0, le=180)
     time_reserve_min: float = Field(default=2, ge=0, le=180)
+    deterministic_wait_s: float | None = Field(default=None, ge=0, le=604800)
+    restriction_extra_s: float = Field(default=0, ge=0, le=604800)
+    source_domain: str | None = None
+    next_block_closed: bool = False
 
 
 class Block(DataModel):

@@ -82,7 +82,7 @@ def test_read_only_tools():
 
 def test_demo_assets_and_state(client):
     assert client.get('/').status_code == 200
-    assert 'TurkiSib' in client.get('/').text
+    assert 'ТүркіСіб' in client.get('/').text
     assert client.get('/app.js').status_code == 200
     response = client.get('/demo/state').json()
     assert response['source'] == 'fixture'

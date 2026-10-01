@@ -1,0 +1,3 @@
+solver_buffer_k: 1.0
+# A null buffer is not zero: the platform must choose its own policy for OOD.
+allow_unvalidated_domain_buffer: false

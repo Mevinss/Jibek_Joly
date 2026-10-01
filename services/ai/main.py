@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 import json
 import time
 import asyncio
+from datetime import datetime, timezone
 from typing import Literal
 import numpy as np
 from fastapi import FastAPI, HTTPException, Query, Request
@@ -18,6 +19,7 @@ from .agent.chat import stream_chat
 from .texts.generate import telegram_template, report_template, polish
 from .demo.simulation import geometry, snapshot
 from .ml.kz_schedule import ScheduleForecaster
+from .ml.advisory import Advisory
 
 latencies = deque(maxlen=2000)
 requests = deque()
@@ -26,6 +28,7 @@ requests = deque()
 @asynccontextmanager
 async def lifespan(app):
     app.state.forecaster = Forecaster()
+    app.state.advisory = Advisory(app.state.forecaster)
     app.state.tools = Tools(app.state.forecaster)
     try:
         app.state.schedule_forecaster = ScheduleForecaster()
@@ -66,6 +69,11 @@ def forecast(state: State):
 @app.get('/forecast/model-info')
 def model_info():
     return app.state.forecaster.info
+
+
+@app.post('/forecast/advisory')
+def advisory_forecast(state: State):
+    return app.state.advisory.forecast(state)
 
 
 @app.get('/forecast/schedule-info')
@@ -136,7 +144,9 @@ async def demo_stream(request: Request, elapsed: float = Query(0, ge=0, le=86400
         start=time.monotonic()
         while not await request.is_disconnected():
             clock=min(86400.,elapsed+(time.monotonic()-start)*int(speed))
-            yield 'event: state\ndata: '+json.dumps(snapshot(clock,incident,incident_at),ensure_ascii=False)+'\n\n'
+            payload=snapshot(clock,incident,incident_at)
+            payload['sent_at']=datetime.now(timezone.utc).isoformat()
+            yield 'event: state\ndata: '+json.dumps(payload,ensure_ascii=False)+'\n\n'
             await asyncio.sleep(1)
     return StreamingResponse(events(),media_type='text/event-stream',headers={'Cache-Control':'no-cache','X-Accel-Buffering':'no'})
 
