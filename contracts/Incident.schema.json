@@ -1,0 +1,65 @@
+{
+  "$defs": {
+    "IncidentParams": {
+      "additionalProperties": false,
+      "properties": {
+        "minutes": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1440,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Длительность закрытия или задержки в минутах; поле называется minutes",
+          "title": "Minutes"
+        }
+      },
+      "title": "IncidentParams",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "id": {
+      "maxLength": 80,
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "delay",
+        "signal_fault",
+        "block_closed"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "target_id": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Target Id",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "#/$defs/IncidentParams"
+    },
+    "ts": {
+      "format": "date-time",
+      "title": "Ts",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "target_id",
+    "ts"
+  ],
+  "title": "Incident",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

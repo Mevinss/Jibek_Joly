@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "Block": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "occupied": {
+          "default": false,
+          "title": "Occupied",
+          "type": "boolean"
+        },
+        "closed": {
+          "default": false,
+          "title": "Closed",
+          "type": "boolean"
+        },
+        "speed_limit": {
+          "default": 100,
+          "maximum": 500,
+          "minimum": 0,
+          "title": "Speed Limit",
+          "type": "number"
+        },
+        "block_load": {
+          "anyOf": [
+            {
+              "maximum": 1000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Load"
+        },
+        "num_platform_tracks": {
+          "default": 2,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Num Platform Tracks",
+          "type": "integer"
+        },
+        "is_passing_loop": {
+          "default": true,
+          "title": "Is Passing Loop",
+          "type": "boolean"
+        },
+        "is_node": {
+          "default": false,
+          "title": "Is Node",
+          "type": "boolean"
+        },
+        "active_disruption_group": {
+          "default": 0,
+          "maximum": 7,
+          "minimum": 0,
+          "title": "Active Disruption Group",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "Block",
+      "type": "object"
+    },
+    "Infra": {
+      "properties": {
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/Block"
+          },
+          "title": "Blocks",
+          "type": "array"
+        },
+        "signals": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Signals",
+          "type": "array"
+        },
+        "switches": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Switches",
+          "type": "array"
+        }
+      },
+      "required": [
+        "blocks"
+      ],
+      "title": "Infra",
+      "type": "object"
+    },
+    "Message": {
+      "properties": {
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "content": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "content"
+      ],
+      "title": "Message",
+      "type": "object"
+    },
+    "Position": {
+      "properties": {
+        "block_id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Block Id",
+          "type": "string"
+        },
+        "km": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Km",
+          "type": "number"
+        }
+      },
+      "required": [
+        "block_id"
+      ],
+      "title": "Position",
+      "type": "object"
+    },
+    "State": {
+      "properties": {
+        "trains": {
+          "items": {
+            "$ref": "#/$defs/Train"
+          },
+          "maxItems": 500,
+          "title": "Trains",
+          "type": "array"
+        },
+        "infra": {
+          "$ref": "#/$defs/Infra"
+        }
+      },
+      "required": [
+        "trains",
+        "infra"
+      ],
+      "title": "State",
+      "type": "object"
+    },
+    "Train": {
+      "properties": {
+        "train_id": {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[\\w-]+$",
+          "title": "Train Id",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "priority": {
+          "default": 1,
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "position": {
+          "$ref": "#/$defs/Position"
+        },
+        "speed": {
+          "default": 0,
+          "maximum": 500,
+          "minimum": 0,
+          "title": "Speed",
+          "type": "number"
+        },
+        "delay_s": {
+          "maximum": 604800,
+          "minimum": 0,
+          "title": "Delay S",
+          "type": "number"
+        },
+        "ts": {
+          "format": "date-time",
+          "title": "Ts",
+          "type": "string"
+        },
+        "min_technical_time_min": {
+          "default": 10,
+          "exclusiveMinimum": 0,
+          "maximum": 180,
+          "title": "Min Technical Time Min",
+          "type": "number"
+        },
+        "time_reserve_min": {
+          "default": 2,
+          "maximum": 180,
+          "minimum": 0,
+          "title": "Time Reserve Min",
+          "type": "number"
+        }
+      },
+      "required": [
+        "train_id",
+        "type",
+        "position",
+        "delay_s",
+        "ts"
+      ],
+      "title": "Train",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "messages": {
+      "items": {
+        "$ref": "#/$defs/Message"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Messages",
+      "type": "array"
+    },
+    "session_id": {
+      "default": "demo",
+      "maxLength": 80,
+      "title": "Session Id",
+      "type": "string"
+    },
+    "state": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/State"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "messages"
+  ],
+  "title": "ChatRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

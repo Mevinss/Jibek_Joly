@@ -1,0 +1,8 @@
+{
+  "trains": 25,
+  "repeats": 100,
+  "http_testclient_p95_ms": 6.802714999594173,
+  "compute_p95_ms": 4.230840000263924,
+  "model_version": "pkp-serving-v1",
+  "method": "Warm in-process HTTP TestClient including validation/serialization; local machine, not network or production load."
+}

@@ -1,0 +1,76 @@
+{
+  "archive_sha256": "adc942a361248d9bcc8b598de3c0e18c2a5621cf6ecceada88fa6959aae0dffe",
+  "files": [
+    {
+      "path": "data/KZ/blocks.csv",
+      "sha256": "8312b19241b22e2604c60d92b974b33dceaf8a9a5f8bfa87aeed4069f5eb769b",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/line_speeds.csv",
+      "sha256": "5d5073b7c77e1f1a02408b72831dd61bd6b2f77fdfd4ccba7d154a3cebe6e063",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/reference_services.csv",
+      "sha256": "6b1e6b169ed8aa3df294fa2bc1eff86b41828a360f9c2a4fda51c64c109f42b4",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/run_stops.csv",
+      "sha256": "cf0926bfdbab28a11804dc2d5888cdd72f3d56a1d38940f3291e4157730d5c85",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/segments.csv",
+      "sha256": "d37034917d02847de8551f5face7e89e58130292779d1c1eb97292ca8e2859df",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/station_tracks.csv",
+      "sha256": "716e71d72cc509c8dd48b27dc602e2b1e1232c772110fb72004ec492f4841d18",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/stations.csv",
+      "sha256": "69d42c6903a9906a0eebe1532e680822afbdf02575aaae0c9df245f9d8b0f884",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/KZ/train_services.csv",
+      "sha256": "7487a35fad6f3274c97c5813773f783b96d54c589942e6dd68ed1e4e4bd50e29",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/mock/signals.csv",
+      "sha256": "f0767b617b8e6f48047f5650bea77f907c161a65841706b142ed18e77f4b4339",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/mock/switches.csv",
+      "sha256": "2a9a3b5f858e8ef923589f68f4e54f47c38a935bc947d4d2996d215a0440cb62",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/mock/train_parameters.csv",
+      "sha256": "070aa72ed0e21e53bbe1dec15778acbcfab7cb995c7cace932a31775322e28c2",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/scenarios/incidents.json",
+      "sha256": "a79308b22a69c4e8839e7b16a000468f6295cbdd2f4ce4e9ba9f80d83675a6b6",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/scenarios/initial_state.json",
+      "sha256": "ceed67b93cb76d949cdaa5370853c04d46d2650826c0d0992e975b17cf295d45",
+      "matches_main_normalized": true
+    },
+    {
+      "path": "data/scenarios/scenarios.json",
+      "sha256": "628674883c7af68dda31598a2bc2ab1bd164714aca2df857fa7f388c2b98b792",
+      "matches_main_normalized": true
+    }
+  ],
+  "actual_delay_labels_present": false
+}

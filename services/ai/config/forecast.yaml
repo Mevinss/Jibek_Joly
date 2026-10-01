@@ -1,0 +1,5 @@
+proxy_delta_threshold_min: 3
+model_directory: forecast_main
+alert_threshold: 0.10363247863247864
+use_weather: false
+seed: 42

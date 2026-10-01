@@ -72,7 +72,7 @@ class Simulator:
         self.services = read_csv(self.data_root / "KZ/train_services.csv")
         self.stops = read_csv(self.data_root / "KZ/run_stops.csv")
         self.station_tracks = read_csv(self.data_root / "KZ/station_tracks.csv")
-        chaos_spec = json.loads((ROOT / "data/fixtures/chaos_spec.json").read_text(encoding="utf-8"))
+        chaos_spec = json.loads((self.data_root / "scenarios/chaos_spec.json").read_text(encoding="utf-8"))
         self.scenarios["SCN-CHAOS"] = {"scenario_id": "SCN-CHAOS", "seed": chaos_spec["seed"], "start_time": self.scenarios["SCN-ALL"]["start_time"], "incident_ids": []}
         train_ids = [row["train_id"] for row in self.services]
         block_ids = [row["block_id"] for row in self.blocks_def]

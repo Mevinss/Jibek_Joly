@@ -1,0 +1,15 @@
+{
+  "1001": {
+    "train_id": "1001",
+    "segments": [
+      {
+        "from_km": 0,
+        "to_km": 10,
+        "v_recommend": 60,
+        "v_limit": 100
+      }
+    ],
+    "eta": "2026-10-01T10:00:00+05:00",
+    "energy_kwh": 20
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "model_version": "kz-synthetic-schedule-v1",
+  "target": "scheduled_segment_travel_min",
+  "synthetic_only": true,
+  "features": [
+    "distance_km",
+    "speed_limit_kmh",
+    "category_code",
+    "destination_tracks",
+    "direction"
+  ],
+  "rows": {
+    "total": 128,
+    "train": 67,
+    "validation": 29,
+    "test": 32
+  },
+  "trains": {
+    "train": [
+      "SIM-AST_ALM-F02",
+      "SIM-AST_ALM-F03",
+      "SIM-AST_ALM-F04",
+      "SIM-AST_ALM-F05",
+      "SIM-AST_ALM-F06",
+      "SIM-AST_ALM-R05",
+      "SIM-KOK_ALM-F02",
+      "SIM-KOK_ALM-R01",
+      "SIM-KOK_AST-F03",
+      "SIM-KOK_AST-F04",
+      "SIM-KOK_AST-F05",
+      "SIM-KOK_AST-R01",
+      "SIM-KOK_AST-R02",
+      "SIM-KOK_AST-R03",
+      "SIM-KOK_AST-R05"
+    ],
+    "validation": [
+      "SIM-AST_ALM-R01",
+      "SIM-AST_ALM-R02",
+      "SIM-AST_ALM-R06",
+      "SIM-KOK_ALM-R02",
+      "SIM-KOK_AST-F01",
+      "SIM-KOK_AST-R06"
+    ],
+    "test": [
+      "SIM-AST_ALM-F01",
+      "SIM-AST_ALM-R03",
+      "SIM-AST_ALM-R04",
+      "SIM-KOK_ALM-F01",
+      "SIM-KOK_AST-F02",
+      "SIM-KOK_AST-F06",
+      "SIM-KOK_AST-R04"
+    ]
+  },
+  "metrics": {
+    "mae_min": 0.5656138426084054,
+    "rmse_min": 0.9273425946109194,
+    "validation_mae_min": 0.433790902850569,
+    "distance_over_limit_baseline_mae_min": 61.00473484848485,
+    "unseen_shu_almaty_mae_min": 38.24511036452401,
+    "segment_median_baseline_mae_min": 22.09375
+  },
+  "limitations": [
+    "All labels are synthetic scheduled times, not actual journeys or delays.",
+    "Service split shares route segments. A low test error can reflect timetable memorization.",
+    "Cannot measure actual Kazakhstan delay or conflict accuracy.",
+    "Not a replacement for the PKP delay model."
+  ],
+  "files": [
+    {
+      "path": "blocks.csv",
+      "sha256": "8312b19241b22e2604c60d92b974b33dceaf8a9a5f8bfa87aeed4069f5eb769b"
+    },
+    {
+      "path": "line_speeds.csv",
+      "sha256": "5d5073b7c77e1f1a02408b72831dd61bd6b2f77fdfd4ccba7d154a3cebe6e063"
+    },
+    {
+      "path": "reference_services.csv",
+      "sha256": "6b1e6b169ed8aa3df294fa2bc1eff86b41828a360f9c2a4fda51c64c109f42b4"
+    },
+    {
+      "path": "run_stops.csv",
+      "sha256": "cf0926bfdbab28a11804dc2d5888cdd72f3d56a1d38940f3291e4157730d5c85"
+    },
+    {
+      "path": "segments.csv",
+      "sha256": "d37034917d02847de8551f5face7e89e58130292779d1c1eb97292ca8e2859df"
+    },
+    {
+      "path": "stations.csv",
+      "sha256": "69d42c6903a9906a0eebe1532e680822afbdf02575aaae0c9df245f9d8b0f884"
+    },
+    {
+      "path": "station_tracks.csv",
+      "sha256": "716e71d72cc509c8dd48b27dc602e2b1e1232c772110fb72004ec492f4841d18"
+    },
+    {
+      "path": "train_services.csv",
+      "sha256": "7487a35fad6f3274c97c5813773f783b96d54c589942e6dd68ed1e4e4bd50e29"
+    }
+  ],
+  "accepted_for_operational_use": false,
+  "archive_sha256": "adc942a361248d9bcc8b598de3c0e18c2a5621cf6ecceada88fa6959aae0dffe"
+}

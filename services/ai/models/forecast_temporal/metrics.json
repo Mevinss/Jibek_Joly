@@ -1,0 +1,195 @@
+{
+  "model_version": "pkp-serving-v1",
+  "evaluation": "month_holdout",
+  "source": "PKP Intercity / real passenger data",
+  "trained_at": "2026-10-01T05:44:53.117977+00:00",
+  "rows": {
+    "train": 184776,
+    "val": 206422,
+    "test": 139689
+  },
+  "runs": {
+    "train": 11610,
+    "val": 12925,
+    "test": 8783
+  },
+  "date_range": {
+    "absolute_run_dates": "not supplied",
+    "train_months": [
+      3
+    ],
+    "test_months": [
+      5
+    ]
+  },
+  "regression": {
+    "mae": 0.8226773063087509,
+    "rmse": 2.983525559376105,
+    "r2": 0.04501142436294103
+  },
+  "classification": {
+    "roc_auc": 0.8380290047942462,
+    "pr_auc": 0.233757951484885,
+    "brier": 0.05141491561644986,
+    "ece": 0.006702782988401617,
+    "precision": 0.18184412619344126,
+    "recall": 0.8011201280146303,
+    "calibration": [
+      {
+        "predicted": 0.01749747014831777,
+        "observed": 0.024158472434334503,
+        "count": 111969
+      },
+      {
+        "predicted": 0.15955864145013193,
+        "observed": 0.16363636363636364,
+        "count": 13915
+      },
+      {
+        "predicted": 0.263184514039666,
+        "observed": 0.2728721477725462,
+        "count": 13805
+      }
+    ]
+  },
+  "baselines": {
+    "zero": {
+      "mae": 0.8860182262024927,
+      "rmse": 3.069589735891451,
+      "r2": -0.010879335556958747
+    },
+    "edge_median": {
+      "mae": 0.8811824839464811,
+      "rmse": 3.0559316926929596,
+      "r2": -0.0019035969552232412
+    },
+    "logistic": {
+      "roc_auc": 0.8099865112778255,
+      "pr_auc": 0.23091457157820475,
+      "brier": 0.05410819897832601,
+      "ece": 0.017402324091107594,
+      "precision": 0.43902439024390244,
+      "recall": 0.041147559721110984,
+      "calibration": [
+        {
+          "predicted": 0.025820876734353806,
+          "observed": 0.03938225221930379,
+          "count": 120308
+        },
+        {
+          "predicted": 0.13584108080047388,
+          "observed": 0.1600909931044288,
+          "count": 14067
+        },
+        {
+          "predicted": 0.2408296239406442,
+          "observed": 0.299526707234618,
+          "count": 2958
+        },
+        {
+          "predicted": 0.3427503951361548,
+          "observed": 0.3408450704225352,
+          "count": 1065
+        },
+        {
+          "predicted": 0.4462873667199988,
+          "observed": 0.3184713375796178,
+          "count": 471
+        },
+        {
+          "predicted": 0.5386222880916043,
+          "observed": 0.36727272727272725,
+          "count": 275
+        },
+        {
+          "predicted": 0.6569531299025484,
+          "observed": 0.3576158940397351,
+          "count": 151
+        },
+        {
+          "predicted": 0.7513255345308721,
+          "observed": 0.4016393442622951,
+          "count": 122
+        },
+        {
+          "predicted": 0.8511338802170676,
+          "observed": 0.5486111111111112,
+          "count": 144
+        },
+        {
+          "predicted": 0.9441033828627632,
+          "observed": 0.6015625,
+          "count": 128
+        }
+      ]
+    }
+  },
+  "threshold": 0.07816526370039512,
+  "proxy_prevalence": 0.06263198963411579,
+  "features": [
+    "train_kind",
+    "prev_delay_departure_min",
+    "time_reserve_min",
+    "min_technical_time_min",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week",
+    "is_track_closure",
+    "is_speed_warning",
+    "active_disruption_group",
+    "num_platform_tracks",
+    "is_passing_loop",
+    "is_node",
+    "edge_delta_delay_P50",
+    "edge_delta_delay_P90",
+    "edge_delta_delay_MAD",
+    "station_delta_stop_min_P50",
+    "station_delta_stop_min_P90"
+  ],
+  "warning": "Прокси ближайшего перегона; перенос на синтетический участок не проверен; грузовые используют правила.",
+  "search": "Two fixed leaf-count candidates selected by validation MAE; no Optuna.",
+  "accepted": true,
+  "by_category": {
+    "IC": {
+      "mae": 0.8130880602359721,
+      "rmse": 2.8240577193544363,
+      "r2": 0.04768003649251196
+    },
+    "TLK": {
+      "mae": 0.6626495672528645,
+      "rmse": 2.0196717729895464,
+      "r2": 0.0829103482824215
+    },
+    "EIP": {
+      "mae": 1.0160806304902996,
+      "rmse": 4.123742174155826,
+      "r2": 0.03568307430690676
+    },
+    "EIC": {
+      "mae": 1.3259471806669285,
+      "rmse": 6.053652625874107,
+      "r2": 0.01832280110148632
+    }
+  },
+  "by_delay_bucket": {
+    "0-3": {
+      "n": 87760,
+      "mae": 0.5737395071006254,
+      "rmse": 2.555708772917434,
+      "r2": 0.0017039060223712488
+    },
+    "3-10": {
+      "n": 28565,
+      "mae": 1.0561224650724719,
+      "rmse": 3.4051192020365386,
+      "r2": 0.05640013684064715
+    },
+    "10+": {
+      "n": 23364,
+      "mae": 1.4723272077990521,
+      "rmse": 3.809174678581932,
+      "r2": 0.09393486820923147
+    }
+  },
+  "training_seconds": 17.67124429999967
+}

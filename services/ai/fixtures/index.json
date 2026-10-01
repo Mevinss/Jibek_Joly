@@ -1,0 +1,13 @@
+{
+  "score": 76,
+  "grade": "C",
+  "category": "Внимание",
+  "factors": [
+    {
+      "name": "Расписание",
+      "weight": 0.4,
+      "value": 0.6,
+      "contribution": 24
+    }
+  ]
+}

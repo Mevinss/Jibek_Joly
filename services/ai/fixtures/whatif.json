@@ -1,0 +1,60 @@
+{
+  "scenario_id": "fixture-B-C-20",
+  "notice": "Подготовленные фикстуры интеграционного контракта; не результаты оптимизации.",
+  "incident": {
+    "id": "whatif-demo",
+    "kind": "block_closed",
+    "target_id": "Б-В",
+    "params": {
+      "minutes": 20
+    },
+    "ts": "2026-10-01T10:00:00+05:00"
+  },
+  "variants": [
+    {
+      "label": "A",
+      "profile": "min_delay",
+      "plan": {
+        "plan_id": "fixture-A",
+        "metrics": {
+          "total_delay_s": 720,
+          "energy_kwh": 150
+        }
+      },
+      "index": {
+        "score": 70
+      },
+      "recalc_ms": null
+    },
+    {
+      "label": "B",
+      "profile": "balance",
+      "plan": {
+        "plan_id": "fixture-B",
+        "metrics": {
+          "total_delay_s": 900,
+          "energy_kwh": 130
+        }
+      },
+      "index": {
+        "score": 74
+      },
+      "recalc_ms": null
+    },
+    {
+      "label": "C",
+      "profile": "min_energy",
+      "plan": {
+        "plan_id": "fixture-C",
+        "metrics": {
+          "total_delay_s": 1200,
+          "energy_kwh": 110
+        }
+      },
+      "index": {
+        "score": 68
+      },
+      "recalc_ms": null
+    }
+  ]
+}

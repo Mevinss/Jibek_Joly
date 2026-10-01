@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+services/ai/models/** linguist-generated=true
+services/ai/docs/openapi.json linguist-generated=true

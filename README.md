@@ -37,3 +37,19 @@ Start жылдамдықтары: `1`, `10`, `60` виртуалды секун�
 `python -m unittest discover -s tests -v` бір seed детерминизмін, блоктағы жалғыз occupancy-ді, маршрут прогресін, инциденттердің басталып аяқталуын, Chaos fixture-ді, SQLite restart/replay-ді тексереді. FastAPI мен WebSocket үшін қосымша интеграциялық тексеру `python -m pytest tests/test_api.py` командасында.
 
 Бұл repository-де тапсырма атаған бастапқы `PROJECT_IDEA.md` және `CONTRACTS_AND_METRICS.md` болмады. Екіншісі осы жұмыста нақты интерфейс сипаттамасы ретінде жасалды. Симулятор уақытын 60 секундтан аспайтын қадаммен есептейді; ұсақ қозғалыс пен бекетте тұру уақыты қарапайымдандырылған. Бастапқы кесте синтетикалық, нақты диспетчерлік шешімге арналмаған.
+
+
+## ML/LLM service and Kazakhstan web demo
+
+The platform above remains on port8000. A separate advisory AI service serves the Kazakhstan-only map, linked train diagram, station scheme and chat on port8002:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r services/ai/requirements.txt
+.\.venv\Scripts\python.exe -m services.ai.main
+```
+
+Open http://127.0.0.1:8002/. Its current SSE demo is independent timetable playback, not the platform's conflict-free scheduler; platform integration is pending. The previous ML parameter laboratory is `/lab.html`. Models are committed; runtime does not need raw datasets. Local map/SVG and ML work without external internet; OpenAI chat and optional OSM tiles need internet.
+
+The uploaded Kazakhstan archive contains synthetic schedules, not observed delays. `kz-synthetic-schedule-v1` learns scheduled segment duration (test MAE0.566min on SIM services; unseen-segment diagnostic38.245min). It is separate from the PKP delay/proxy model, whose accuracy is unvalidated for Kazakhstan.
+
+See [AI instructions](services/ai/README.md), [full readiness/model audit](services/ai/reports/kz_demo_readiness.md), and `POST /forecast/schedule`, `GET /forecast/schedule-info`, `GET /infra/geometry` in the AI OpenAPI docs. Tests: `python -m pytest services/ai/tests tests -q`.

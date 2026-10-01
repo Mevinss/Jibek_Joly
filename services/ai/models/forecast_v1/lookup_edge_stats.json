@@ -1,0 +1,26 @@
+{
+  "profiles": {
+    "low": {
+      "edge_delta_delay_P50": 0.0,
+      "edge_delta_delay_P90": 0.0,
+      "edge_delta_delay_MAD": 0.0,
+      "station_delta_stop_min_P50": 0.0,
+      "station_delta_stop_min_P90": 0.0
+    },
+    "median": {
+      "edge_delta_delay_P50": 0.0,
+      "edge_delta_delay_P90": 0.7500000000000107,
+      "edge_delta_delay_MAD": 0.0,
+      "station_delta_stop_min_P50": 0.0,
+      "station_delta_stop_min_P90": 0.0
+    },
+    "high": {
+      "edge_delta_delay_P50": 0.0,
+      "edge_delta_delay_P90": 1.1750000000000005,
+      "edge_delta_delay_MAD": 0.0,
+      "station_delta_stop_min_P50": 0.0,
+      "station_delta_stop_min_P90": 0.0
+    }
+  },
+  "source": "train-only quantiles of edge/station statistics"
+}

@@ -1,0 +1,3455 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            69.4233693,
+            53.288608551025
+          ],
+          [
+            69.6758806,
+            53.16609573364234
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KOK-BOR-B01",
+        "segment_id": "KOK-BOR",
+        "from_station": "KOK",
+        "to_station": "BOR",
+        "start_km": 0.0,
+        "end_km": 21.666666666666664,
+        "length_km": 21.666666666666664,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 18.333333333333332,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            69.6758806,
+            53.16609573364234
+          ],
+          [
+            69.92839190000001,
+            53.043582916259666
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KOK-BOR-B02",
+        "segment_id": "KOK-BOR",
+        "from_station": "KOK",
+        "to_station": "BOR",
+        "start_km": 21.666666666666664,
+        "end_km": 43.33333333333333,
+        "length_km": 21.666666666666664,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 18.333333333333332,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            69.92839190000001,
+            53.043582916259666
+          ],
+          [
+            70.1809032,
+            52.921070098877
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KOK-BOR-B03",
+        "segment_id": "KOK-BOR",
+        "from_station": "KOK",
+        "to_station": "BOR",
+        "start_km": 43.33333333333333,
+        "end_km": 65.0,
+        "length_km": 21.66666666666667,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 18.333333333333332,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70.1809032,
+            52.921070098877
+          ],
+          [
+            70.3705416,
+            52.6944456100465
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BOR-AKK-B01",
+        "segment_id": "BOR-AKK",
+        "from_station": "BOR",
+        "to_station": "AKK",
+        "start_km": 65.0,
+        "end_km": 92.25,
+        "length_km": 27.25,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 90,
+        "min_technical_time_min": 24.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70.3705416,
+            52.6944456100465
+          ],
+          [
+            70.56018,
+            52.467821121216005
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BOR-AKK-B02",
+        "segment_id": "BOR-AKK",
+        "from_station": "BOR",
+        "to_station": "AKK",
+        "start_km": 92.25,
+        "end_km": 119.5,
+        "length_km": 27.25,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 90,
+        "min_technical_time_min": 24.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70.56018,
+            52.467821121216005
+          ],
+          [
+            70.74981840000001,
+            52.2411966323855
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BOR-AKK-B03",
+        "segment_id": "BOR-AKK",
+        "from_station": "BOR",
+        "to_station": "AKK",
+        "start_km": 119.5,
+        "end_km": 146.75,
+        "length_km": 27.25,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 90,
+        "min_technical_time_min": 24.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70.74981840000001,
+            52.2411966323855
+          ],
+          [
+            70.9394568,
+            52.014572143555
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BOR-AKK-B04",
+        "segment_id": "BOR-AKK",
+        "from_station": "BOR",
+        "to_station": "AKK",
+        "start_km": 146.75,
+        "end_km": 174.0,
+        "length_km": 27.25,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 90,
+        "min_technical_time_min": 24.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            70.9394568,
+            52.014572143555
+          ],
+          [
+            71.05687155,
+            51.80982875824
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKK-AST-B01",
+        "segment_id": "AKK-AST",
+        "from_station": "AKK",
+        "to_station": "AST",
+        "start_km": 174.0,
+        "end_km": 197.75,
+        "length_km": 23.75,
+        "tracks": 1,
+        "station_tracks": 4,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.0,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.05687155,
+            51.80982875824
+          ],
+          [
+            71.1742863,
+            51.605085372925004
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKK-AST-B02",
+        "segment_id": "AKK-AST",
+        "from_station": "AKK",
+        "to_station": "AST",
+        "start_km": 197.75,
+        "end_km": 221.5,
+        "length_km": 23.75,
+        "tracks": 1,
+        "station_tracks": 4,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.0,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.1742863,
+            51.605085372925004
+          ],
+          [
+            71.29170105,
+            51.40034198761
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKK-AST-B03",
+        "segment_id": "AKK-AST",
+        "from_station": "AKK",
+        "to_station": "AST",
+        "start_km": 221.5,
+        "end_km": 245.25,
+        "length_km": 23.75,
+        "tracks": 1,
+        "station_tracks": 4,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.0,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.29170105,
+            51.40034198761
+          ],
+          [
+            71.4091158,
+            51.195598602295
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKK-AST-B04",
+        "segment_id": "AKK-AST",
+        "from_station": "AKK",
+        "to_station": "AST",
+        "start_km": 245.25,
+        "end_km": 269.0,
+        "length_km": 23.75,
+        "tracks": 1,
+        "station_tracks": 4,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.0,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.4091158,
+            51.195598602295
+          ],
+          [
+            71.64992254285714,
+            50.995242527553145
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B01",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 269.0,
+        "end_km": 300.42857142857144,
+        "length_km": 31.428571428571445,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.64992254285714,
+            50.995242527553145
+          ],
+          [
+            71.89072928571429,
+            50.794886452811284
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B02",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 300.42857142857144,
+        "end_km": 331.85714285714283,
+        "length_km": 31.428571428571388,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            71.89072928571429,
+            50.794886452811284
+          ],
+          [
+            72.13153602857143,
+            50.59453037806943
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B03",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 331.85714285714283,
+        "end_km": 363.2857142857143,
+        "length_km": 31.428571428571445,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.13153602857143,
+            50.59453037806943
+          ],
+          [
+            72.37234277142856,
+            50.394174303327574
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B04",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 363.2857142857143,
+        "end_km": 394.7142857142857,
+        "length_km": 31.428571428571445,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.37234277142856,
+            50.394174303327574
+          ],
+          [
+            72.61314951428571,
+            50.19381822858572
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B05",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 394.7142857142857,
+        "end_km": 426.1428571428571,
+        "length_km": 31.428571428571388,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61314951428571,
+            50.19381822858572
+          ],
+          [
+            72.85395625714285,
+            49.99346215384386
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B06",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 426.1428571428571,
+        "end_km": 457.57142857142856,
+        "length_km": 31.428571428571445,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.85395625714285,
+            49.99346215384386
+          ],
+          [
+            73.094763,
+            49.793106079102
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AST-KAR-B07",
+        "segment_id": "AST-KAR",
+        "from_station": "AST",
+        "to_station": "KAR",
+        "start_km": 457.57142857142856,
+        "end_km": 489.0,
+        "length_km": 31.428571428571445,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 120,
+        "min_technical_time_min": 24.857142857142858,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.094763,
+            49.793106079102
+          ],
+          [
+            73.0648958375,
+            49.601890087128126
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B01",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 489.0,
+        "end_km": 517.75,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.0648958375,
+            49.601890087128126
+          ],
+          [
+            73.035028675,
+            49.41067409515425
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B02",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 517.75,
+        "end_km": 546.5,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.035028675,
+            49.41067409515425
+          ],
+          [
+            73.0051615125,
+            49.21945810318038
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B03",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 546.5,
+        "end_km": 575.25,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.0051615125,
+            49.21945810318038
+          ],
+          [
+            72.97529435,
+            49.0282421112065
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B04",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 575.25,
+        "end_km": 604.0,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97529435,
+            49.0282421112065
+          ],
+          [
+            72.9454271875,
+            48.837026119232625
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B05",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 604.0,
+        "end_km": 632.75,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9454271875,
+            48.837026119232625
+          ],
+          [
+            72.91556002499999,
+            48.645810127258756
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B06",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 632.75,
+        "end_km": 661.5,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.91556002499999,
+            48.645810127258756
+          ],
+          [
+            72.8856928625,
+            48.45459413528488
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B07",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 661.5,
+        "end_km": 690.25,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.8856928625,
+            48.45459413528488
+          ],
+          [
+            72.8558257,
+            48.263378143311
+          ]
+        ]
+      },
+      "properties": {
+        "id": "KAR-AKD-B08",
+        "segment_id": "KAR-AKD",
+        "from_station": "KAR",
+        "to_station": "AKD",
+        "start_km": 690.25,
+        "end_km": 719.0,
+        "length_km": 28.75,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 23.5,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.8558257,
+            48.263378143311
+          ],
+          [
+            72.93918593333333,
+            48.025165557861776
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B01",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 719.0,
+        "end_km": 746.2222222222222,
+        "length_km": 27.22222222222217,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.93918593333333,
+            48.025165557861776
+          ],
+          [
+            73.02254616666667,
+            47.78695297241256
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B02",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 746.2222222222222,
+        "end_km": 773.4444444444445,
+        "length_km": 27.222222222222285,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.02254616666667,
+            47.78695297241256
+          ],
+          [
+            73.1059064,
+            47.54874038696333
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B03",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 773.4444444444445,
+        "end_km": 800.6666666666666,
+        "length_km": 27.22222222222217,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.1059064,
+            47.54874038696333
+          ],
+          [
+            73.18926663333333,
+            47.31052780151411
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B04",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 800.6666666666666,
+        "end_km": 827.8888888888889,
+        "length_km": 27.222222222222285,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.18926663333333,
+            47.31052780151411
+          ],
+          [
+            73.27262686666667,
+            47.07231521606489
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B05",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 827.8888888888889,
+        "end_km": 855.1111111111111,
+        "length_km": 27.22222222222217,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.27262686666667,
+            47.07231521606489
+          ],
+          [
+            73.35598710000001,
+            46.83410263061567
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B06",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 855.1111111111111,
+        "end_km": 882.3333333333333,
+        "length_km": 27.22222222222217,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.35598710000001,
+            46.83410263061567
+          ],
+          [
+            73.43934733333333,
+            46.59589004516644
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B07",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 882.3333333333333,
+        "end_km": 909.5555555555555,
+        "length_km": 27.222222222222285,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.43934733333333,
+            46.59589004516644
+          ],
+          [
+            73.52270756666667,
+            46.35767745971722
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B08",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 909.5555555555555,
+        "end_km": 936.7777777777778,
+        "length_km": 27.222222222222285,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.52270756666667,
+            46.35767745971722
+          ],
+          [
+            73.6060678,
+            46.119464874268
+          ]
+        ]
+      },
+      "properties": {
+        "id": "AKD-SAR-B09",
+        "segment_id": "AKD-SAR",
+        "from_station": "AKD",
+        "to_station": "SAR",
+        "start_km": 936.7777777777778,
+        "end_km": 964.0,
+        "length_km": 27.22222222222217,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 22.77777777777778,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.6060678,
+            46.119464874268
+          ],
+          [
+            73.62011804545455,
+            45.89053726196327
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B01",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 964.0,
+        "end_km": 994.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.62011804545455,
+            45.89053726196327
+          ],
+          [
+            73.6341682909091,
+            45.661609649658544
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B02",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 994.0,
+        "end_km": 1024.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.6341682909091,
+            45.661609649658544
+          ],
+          [
+            73.64821853636364,
+            45.432682037353814
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B03",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1024.0,
+        "end_km": 1054.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.64821853636364,
+            45.432682037353814
+          ],
+          [
+            73.66226878181818,
+            45.20375442504909
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B04",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1054.0,
+        "end_km": 1084.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.66226878181818,
+            45.20375442504909
+          ],
+          [
+            73.67631902727273,
+            44.97482681274436
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B05",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1084.0,
+        "end_km": 1114.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.67631902727273,
+            44.97482681274436
+          ],
+          [
+            73.69036927272728,
+            44.74589920043964
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B06",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1114.0,
+        "end_km": 1144.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.69036927272728,
+            44.74589920043964
+          ],
+          [
+            73.70441951818182,
+            44.51697158813491
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B07",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1144.0,
+        "end_km": 1174.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.70441951818182,
+            44.51697158813491
+          ],
+          [
+            73.71846976363636,
+            44.288043975830185
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B08",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1174.0,
+        "end_km": 1204.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.71846976363636,
+            44.288043975830185
+          ],
+          [
+            73.7325200090909,
+            44.059116363525455
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B09",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1204.0,
+        "end_km": 1234.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.7325200090909,
+            44.059116363525455
+          ],
+          [
+            73.74657025454546,
+            43.83018875122073
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B10",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1234.0,
+        "end_km": 1264.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.74657025454546,
+            43.83018875122073
+          ],
+          [
+            73.7606205,
+            43.601261138916
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SAR-SHU-B11",
+        "segment_id": "SAR-SHU",
+        "from_station": "SAR",
+        "to_station": "SHU",
+        "start_km": 1264.0,
+        "end_km": 1294.0,
+        "length_km": 30.0,
+        "tracks": 1,
+        "station_tracks": 2,
+        "direction": 1,
+        "speed_limit": 100,
+        "min_technical_time_min": 23.636363636363637,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.7606205,
+            43.601261138916
+          ],
+          [
+            74.07849564,
+            43.568534851074205
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B01",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1294.0,
+        "end_km": 1325.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            74.07849564,
+            43.568534851074205
+          ],
+          [
+            74.39637078,
+            43.5358085632324
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B02",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1325.0,
+        "end_km": 1356.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            74.39637078,
+            43.5358085632324
+          ],
+          [
+            74.71424592,
+            43.5030822753906
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B03",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1356.0,
+        "end_km": 1387.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            74.71424592,
+            43.5030822753906
+          ],
+          [
+            75.03212106,
+            43.4703559875488
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B04",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1387.0,
+        "end_km": 1418.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.03212106,
+            43.4703559875488
+          ],
+          [
+            75.34999619999999,
+            43.437629699707
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B05",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1418.0,
+        "end_km": 1449.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.34999619999999,
+            43.437629699707
+          ],
+          [
+            75.66787134,
+            43.4049034118652
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B06",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1449.0,
+        "end_km": 1480.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.66787134,
+            43.4049034118652
+          ],
+          [
+            75.98574648,
+            43.3721771240234
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B07",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1480.0,
+        "end_km": 1511.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.98574648,
+            43.3721771240234
+          ],
+          [
+            76.30362162,
+            43.3394508361816
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B08",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1511.0,
+        "end_km": 1542.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.30362162,
+            43.3394508361816
+          ],
+          [
+            76.62149676,
+            43.3067245483398
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B09",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1542.0,
+        "end_km": 1573.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.62149676,
+            43.3067245483398
+          ],
+          [
+            76.9393719,
+            43.273998260498
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SHU-ALM-B10",
+        "segment_id": "SHU-ALM",
+        "from_station": "SHU",
+        "to_station": "ALM",
+        "start_km": 1573.0,
+        "end_km": 1604.0,
+        "length_km": 31.0,
+        "tracks": 1,
+        "station_tracks": 3,
+        "direction": 1,
+        "speed_limit": 110,
+        "min_technical_time_min": 22.6,
+        "training_rows": 0
+      }
+    }
+  ],
+  "stations": [
+    {
+      "id": "KOK",
+      "name": "Көкшетау-1",
+      "km": 0.0,
+      "coordinates": [
+        69.4233693,
+        53.288608551025
+      ],
+      "country": "KZ",
+      "tracks": 3,
+      "coordinate_source": "https://railwayz.info/photolines/station/23460"
+    },
+    {
+      "id": "BOR",
+      "name": "Курорт-Бурабай",
+      "km": 65.0,
+      "coordinates": [
+        70.1809032,
+        52.921070098877
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/21619"
+    },
+    {
+      "id": "AKK",
+      "name": "Ақкөл",
+      "km": 174.0,
+      "coordinates": [
+        70.9394568,
+        52.014572143555
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/21561"
+    },
+    {
+      "id": "AST",
+      "name": "Астана-1",
+      "km": 269.0,
+      "coordinates": [
+        71.4091158,
+        51.195598602295
+      ],
+      "country": "KZ",
+      "tracks": 4,
+      "coordinate_source": "https://railwayz.info/photolines/station/23469"
+    },
+    {
+      "id": "KAR",
+      "name": "Қарағанды",
+      "km": 489.0,
+      "coordinates": [
+        73.094763,
+        49.793106079102
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/23475"
+    },
+    {
+      "id": "AKD",
+      "name": "Ақадыр",
+      "km": 719.0,
+      "coordinates": [
+        72.8558257,
+        48.263378143311
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/21708"
+    },
+    {
+      "id": "SAR",
+      "name": "Сарышаған",
+      "km": 964.0,
+      "coordinates": [
+        73.6060678,
+        46.119464874268
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/21380"
+    },
+    {
+      "id": "SHU",
+      "name": "Шу",
+      "km": 1294.0,
+      "coordinates": [
+        73.7606205,
+        43.601261138916
+      ],
+      "country": "KZ",
+      "tracks": 2,
+      "coordinate_source": "https://railwayz.info/photolines/station/21318"
+    },
+    {
+      "id": "ALM",
+      "name": "Алматы-2",
+      "km": 1604.0,
+      "coordinates": [
+        76.9393719,
+        43.273998260498
+      ],
+      "country": "KZ",
+      "tracks": 3,
+      "coordinate_source": "https://railwayz.info/photolines/station/21331"
+    }
+  ],
+  "length_km": 1604.0,
+  "name": "Көкшетау-1 — Астана-1 — Алматы-2",
+  "country": "KZ",
+  "geometry_accuracy": "Straight station connections; synthetic block lengths, not surveyed tracks.",
+  "provenance": {
+    "commit": "298694c0dccc564bc686560a9e98bbaae3c76900",
+    "files": [
+      {
+        "path": "blocks.csv",
+        "sha256": "8312b19241b22e2604c60d92b974b33dceaf8a9a5f8bfa87aeed4069f5eb769b"
+      },
+      {
+        "path": "line_speeds.csv",
+        "sha256": "5d5073b7c77e1f1a02408b72831dd61bd6b2f77fdfd4ccba7d154a3cebe6e063"
+      },
+      {
+        "path": "reference_services.csv",
+        "sha256": "6b1e6b169ed8aa3df294fa2bc1eff86b41828a360f9c2a4fda51c64c109f42b4"
+      },
+      {
+        "path": "run_stops.csv",
+        "sha256": "cf0926bfdbab28a11804dc2d5888cdd72f3d56a1d38940f3291e4157730d5c85"
+      },
+      {
+        "path": "segments.csv",
+        "sha256": "d37034917d02847de8551f5face7e89e58130292779d1c1eb97292ca8e2859df"
+      },
+      {
+        "path": "stations.csv",
+        "sha256": "69d42c6903a9906a0eebe1532e680822afbdf02575aaae0c9df245f9d8b0f884"
+      },
+      {
+        "path": "station_tracks.csv",
+        "sha256": "716e71d72cc509c8dd48b27dc602e2b1e1232c772110fb72004ec492f4841d18"
+      },
+      {
+        "path": "train_services.csv",
+        "sha256": "7487a35fad6f3274c97c5813773f783b96d54c589942e6dd68ed1e4e4bd50e29"
+      }
+    ],
+    "coordinate_attribution": "Railwayz.info, individual station links. Non-commercial demo with attribution.",
+    "archive_sha256": "adc942a361248d9bcc8b598de3c0e18c2a5621cf6ecceada88fa6959aae0dffe"
+  },
+  "services": [
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "pattern_id": "KOK_AST",
+      "category": "intercity",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T09:00:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "pattern_id": "KOK_AST",
+      "category": "regional",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T09:25:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "pattern_id": "KOK_AST",
+      "category": "freight",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T09:50:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-F04",
+      "pattern_id": "KOK_AST",
+      "category": "intercity",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T10:15:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-F05",
+      "pattern_id": "KOK_AST",
+      "category": "regional",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T10:40:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-F06",
+      "pattern_id": "KOK_AST",
+      "category": "freight",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T11:05:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R01",
+      "pattern_id": "KOK_AST",
+      "category": "intercity",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T09:12:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R02",
+      "pattern_id": "KOK_AST",
+      "category": "regional",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T09:37:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R03",
+      "pattern_id": "KOK_AST",
+      "category": "freight",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T10:02:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R04",
+      "pattern_id": "KOK_AST",
+      "category": "intercity",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T10:27:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R05",
+      "pattern_id": "KOK_AST",
+      "category": "regional",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T10:52:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_AST-R06",
+      "pattern_id": "KOK_AST",
+      "category": "freight",
+      "direction": "reverse",
+      "origin_station_id": "AST",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T11:17:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "pattern_id": "AST_ALM",
+      "category": "intercity",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T09:15:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "pattern_id": "AST_ALM",
+      "category": "regional",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T09:40:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "pattern_id": "AST_ALM",
+      "category": "freight",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T10:05:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "pattern_id": "AST_ALM",
+      "category": "intercity",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T10:30:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "pattern_id": "AST_ALM",
+      "category": "regional",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T10:55:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "pattern_id": "AST_ALM",
+      "category": "freight",
+      "direction": "forward",
+      "origin_station_id": "AST",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T11:20:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "pattern_id": "AST_ALM",
+      "category": "intercity",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T09:27:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "pattern_id": "AST_ALM",
+      "category": "regional",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T09:52:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "pattern_id": "AST_ALM",
+      "category": "freight",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T10:17:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "pattern_id": "AST_ALM",
+      "category": "intercity",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T10:42:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "pattern_id": "AST_ALM",
+      "category": "regional",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T11:07:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "pattern_id": "AST_ALM",
+      "category": "freight",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "AST",
+      "planned_start": "2026-10-01T11:32:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "pattern_id": "KOK_ALM",
+      "category": "intercity",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T09:35:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "pattern_id": "KOK_ALM",
+      "category": "regional",
+      "direction": "forward",
+      "origin_station_id": "KOK",
+      "destination_station_id": "ALM",
+      "planned_start": "2026-10-01T10:55:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "pattern_id": "KOK_ALM",
+      "category": "intercity",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T09:47:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "pattern_id": "KOK_ALM",
+      "category": "regional",
+      "direction": "reverse",
+      "origin_station_id": "ALM",
+      "destination_station_id": "KOK",
+      "planned_start": "2026-10-01T11:07:00+05:00",
+      "source_type": "SIMULATED_DEMO",
+      "public_train_number": ""
+    }
+  ],
+  "timetable": [
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:00:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T09:55:00+05:00",
+      "scheduled_departure": "2026-10-01T10:00:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T11:38:00+05:00",
+      "scheduled_departure": "2026-10-01T11:43:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F01",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T13:11:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:25:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T10:27:00+05:00",
+      "scheduled_departure": "2026-10-01T10:32:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T12:22:00+05:00",
+      "scheduled_departure": "2026-10-01T12:27:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F02",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T14:06:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:50:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T11:03:00+05:00",
+      "scheduled_departure": "2026-10-01T11:13:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T13:23:00+05:00",
+      "scheduled_departure": "2026-10-01T13:33:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F03",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T15:30:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F04",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:15:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F04",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T11:10:00+05:00",
+      "scheduled_departure": "2026-10-01T11:15:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F04",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T12:53:00+05:00",
+      "scheduled_departure": "2026-10-01T12:58:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F04",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T14:26:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F05",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:40:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F05",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T11:42:00+05:00",
+      "scheduled_departure": "2026-10-01T11:47:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F05",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T13:37:00+05:00",
+      "scheduled_departure": "2026-10-01T13:42:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F05",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T15:21:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F06",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:05:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F06",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T12:18:00+05:00",
+      "scheduled_departure": "2026-10-01T12:28:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F06",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T14:38:00+05:00",
+      "scheduled_departure": "2026-10-01T14:48:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-F06",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T16:45:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R01",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:12:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R01",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T10:40:00+05:00",
+      "scheduled_departure": "2026-10-01T10:45:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R01",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T12:23:00+05:00",
+      "scheduled_departure": "2026-10-01T12:28:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R01",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T13:23:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R02",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:37:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R02",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T11:16:00+05:00",
+      "scheduled_departure": "2026-10-01T11:21:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R02",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T13:11:00+05:00",
+      "scheduled_departure": "2026-10-01T13:16:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R02",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T14:18:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R03",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:02:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R03",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T11:59:00+05:00",
+      "scheduled_departure": "2026-10-01T12:09:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R03",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T14:19:00+05:00",
+      "scheduled_departure": "2026-10-01T14:29:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R03",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T15:42:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R04",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:27:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R04",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T11:55:00+05:00",
+      "scheduled_departure": "2026-10-01T12:00:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R04",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T13:38:00+05:00",
+      "scheduled_departure": "2026-10-01T13:43:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R04",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T14:38:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R05",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:52:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R05",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T12:31:00+05:00",
+      "scheduled_departure": "2026-10-01T12:36:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R05",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T14:26:00+05:00",
+      "scheduled_departure": "2026-10-01T14:31:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R05",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T15:33:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R06",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:17:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R06",
+      "stop_order": "2",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T13:14:00+05:00",
+      "scheduled_departure": "2026-10-01T13:24:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R06",
+      "stop_order": "3",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T15:34:00+05:00",
+      "scheduled_departure": "2026-10-01T15:44:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_AST-R06",
+      "stop_order": "4",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-01T16:57:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:15:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T12:09:00+05:00",
+      "scheduled_departure": "2026-10-01T12:14:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T15:22:00+05:00",
+      "scheduled_departure": "2026-10-01T15:27:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T18:52:00+05:00",
+      "scheduled_departure": "2026-10-01T18:57:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T23:17:00+05:00",
+      "scheduled_departure": "2026-10-01T23:22:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F01",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T03:08:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:40:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T12:55:00+05:00",
+      "scheduled_departure": "2026-10-01T13:00:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T16:31:00+05:00",
+      "scheduled_departure": "2026-10-01T16:36:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T20:26:00+05:00",
+      "scheduled_departure": "2026-10-01T20:31:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T01:23:00+05:00",
+      "scheduled_departure": "2026-10-02T01:28:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F02",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T05:42:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:05:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T13:55:00+05:00",
+      "scheduled_departure": "2026-10-01T14:05:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T18:14:00+05:00",
+      "scheduled_departure": "2026-10-01T18:24:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T22:55:00+05:00",
+      "scheduled_departure": "2026-10-01T23:05:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T04:49:00+05:00",
+      "scheduled_departure": "2026-10-02T04:59:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F03",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T09:58:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:30:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T13:24:00+05:00",
+      "scheduled_departure": "2026-10-01T13:29:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T16:37:00+05:00",
+      "scheduled_departure": "2026-10-01T16:42:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T20:07:00+05:00",
+      "scheduled_departure": "2026-10-01T20:12:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T00:32:00+05:00",
+      "scheduled_departure": "2026-10-02T00:37:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F04",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T04:23:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:55:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T14:10:00+05:00",
+      "scheduled_departure": "2026-10-01T14:15:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T17:46:00+05:00",
+      "scheduled_departure": "2026-10-01T17:51:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T21:41:00+05:00",
+      "scheduled_departure": "2026-10-01T21:46:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T02:38:00+05:00",
+      "scheduled_departure": "2026-10-02T02:43:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F05",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T06:57:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "1",
+      "station_id": "AST",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:20:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "2",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T15:10:00+05:00",
+      "scheduled_departure": "2026-10-01T15:20:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "3",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T19:29:00+05:00",
+      "scheduled_departure": "2026-10-01T19:39:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "4",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-02T00:10:00+05:00",
+      "scheduled_departure": "2026-10-02T00:20:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "5",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T06:04:00+05:00",
+      "scheduled_departure": "2026-10-02T06:14:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-F06",
+      "stop_order": "6",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T11:13:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:27:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T13:13:00+05:00",
+      "scheduled_departure": "2026-10-01T13:18:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T17:38:00+05:00",
+      "scheduled_departure": "2026-10-01T17:43:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T21:08:00+05:00",
+      "scheduled_departure": "2026-10-01T21:13:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T00:21:00+05:00",
+      "scheduled_departure": "2026-10-02T00:26:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R01",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T03:20:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:52:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T14:06:00+05:00",
+      "scheduled_departure": "2026-10-01T14:11:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T19:03:00+05:00",
+      "scheduled_departure": "2026-10-01T19:08:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T22:58:00+05:00",
+      "scheduled_departure": "2026-10-01T23:03:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T02:34:00+05:00",
+      "scheduled_departure": "2026-10-02T02:39:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R02",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T05:54:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:17:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T15:16:00+05:00",
+      "scheduled_departure": "2026-10-01T15:26:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T21:10:00+05:00",
+      "scheduled_departure": "2026-10-01T21:20:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-02T01:51:00+05:00",
+      "scheduled_departure": "2026-10-02T02:01:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T06:10:00+05:00",
+      "scheduled_departure": "2026-10-02T06:20:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R03",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T10:10:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:42:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T14:28:00+05:00",
+      "scheduled_departure": "2026-10-01T14:33:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T18:53:00+05:00",
+      "scheduled_departure": "2026-10-01T18:58:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T22:23:00+05:00",
+      "scheduled_departure": "2026-10-01T22:28:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T01:36:00+05:00",
+      "scheduled_departure": "2026-10-02T01:41:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R04",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T04:35:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:07:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T15:21:00+05:00",
+      "scheduled_departure": "2026-10-01T15:26:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T20:18:00+05:00",
+      "scheduled_departure": "2026-10-01T20:23:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-02T00:13:00+05:00",
+      "scheduled_departure": "2026-10-02T00:18:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T03:49:00+05:00",
+      "scheduled_departure": "2026-10-02T03:54:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R05",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T07:09:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:32:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T16:31:00+05:00",
+      "scheduled_departure": "2026-10-01T16:41:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T22:25:00+05:00",
+      "scheduled_departure": "2026-10-01T22:35:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-02T03:06:00+05:00",
+      "scheduled_departure": "2026-10-02T03:16:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T07:25:00+05:00",
+      "scheduled_departure": "2026-10-02T07:35:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-AST_ALM-R06",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T11:25:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:35:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T10:30:00+05:00",
+      "scheduled_departure": "2026-10-01T10:35:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T12:13:00+05:00",
+      "scheduled_departure": "2026-10-01T12:18:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T13:46:00+05:00",
+      "scheduled_departure": "2026-10-01T13:51:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T16:45:00+05:00",
+      "scheduled_departure": "2026-10-01T16:50:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "6",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T19:58:00+05:00",
+      "scheduled_departure": "2026-10-01T20:03:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "7",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T23:28:00+05:00",
+      "scheduled_departure": "2026-10-01T23:33:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "8",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T03:53:00+05:00",
+      "scheduled_departure": "2026-10-02T03:58:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F01",
+      "stop_order": "9",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T07:44:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "1",
+      "station_id": "KOK",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T10:55:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "2",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-01T11:57:00+05:00",
+      "scheduled_departure": "2026-10-01T12:02:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "3",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-01T13:52:00+05:00",
+      "scheduled_departure": "2026-10-01T13:57:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "4",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-01T15:36:00+05:00",
+      "scheduled_departure": "2026-10-01T15:41:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-01T18:56:00+05:00",
+      "scheduled_departure": "2026-10-01T19:01:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "6",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T22:32:00+05:00",
+      "scheduled_departure": "2026-10-01T22:37:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "7",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-02T02:27:00+05:00",
+      "scheduled_departure": "2026-10-02T02:32:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "8",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-02T07:24:00+05:00",
+      "scheduled_departure": "2026-10-02T07:29:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-F02",
+      "stop_order": "9",
+      "station_id": "ALM",
+      "scheduled_arrival": "2026-10-02T11:43:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T09:47:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T13:33:00+05:00",
+      "scheduled_departure": "2026-10-01T13:38:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T17:58:00+05:00",
+      "scheduled_departure": "2026-10-01T18:03:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-01T21:28:00+05:00",
+      "scheduled_departure": "2026-10-01T21:33:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T00:41:00+05:00",
+      "scheduled_departure": "2026-10-02T00:46:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T03:40:00+05:00",
+      "scheduled_departure": "2026-10-02T03:45:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "7",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-02T05:13:00+05:00",
+      "scheduled_departure": "2026-10-02T05:18:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "8",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-02T06:56:00+05:00",
+      "scheduled_departure": "2026-10-02T07:01:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R01",
+      "stop_order": "9",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-02T07:56:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "1",
+      "station_id": "ALM",
+      "scheduled_arrival": "",
+      "scheduled_departure": "2026-10-01T11:07:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "2",
+      "station_id": "SHU",
+      "scheduled_arrival": "2026-10-01T15:21:00+05:00",
+      "scheduled_departure": "2026-10-01T15:26:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "3",
+      "station_id": "SAR",
+      "scheduled_arrival": "2026-10-01T20:18:00+05:00",
+      "scheduled_departure": "2026-10-01T20:23:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "4",
+      "station_id": "AKD",
+      "scheduled_arrival": "2026-10-02T00:13:00+05:00",
+      "scheduled_departure": "2026-10-02T00:18:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "5",
+      "station_id": "KAR",
+      "scheduled_arrival": "2026-10-02T03:49:00+05:00",
+      "scheduled_departure": "2026-10-02T03:54:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "6",
+      "station_id": "AST",
+      "scheduled_arrival": "2026-10-02T07:09:00+05:00",
+      "scheduled_departure": "2026-10-02T07:14:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "7",
+      "station_id": "AKK",
+      "scheduled_arrival": "2026-10-02T08:53:00+05:00",
+      "scheduled_departure": "2026-10-02T08:58:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "8",
+      "station_id": "BOR",
+      "scheduled_arrival": "2026-10-02T10:48:00+05:00",
+      "scheduled_departure": "2026-10-02T10:53:00+05:00",
+      "source_type": "SIMULATED_DEMO"
+    },
+    {
+      "train_id": "SIM-KOK_ALM-R02",
+      "stop_order": "9",
+      "station_id": "KOK",
+      "scheduled_arrival": "2026-10-02T11:55:00+05:00",
+      "scheduled_departure": "",
+      "source_type": "SIMULATED_DEMO"
+    }
+  ],
+  "source_notice": "KZ synthetic fixture; all SIM trains and times are simulated. PKP-trained ML transfer is unvalidated."
+}
