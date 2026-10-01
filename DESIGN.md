@@ -1,5 +1,5 @@
 ---
-name: ТүркіСіб
+name: Jibek Joly
 description: Kazakhstan synthetic dispatch workspace in Russian and Kazakh.
 colors:
   bg: "#f5f3ee"
@@ -115,7 +115,7 @@ components:
     rounded: "{rounded.panel}"
     padding: "16px"
 ---
-# Design System: ТүркіСіб
+# Design System: Jibek Joly
 
 ## Overview
 
@@ -127,7 +127,7 @@ The approved world is A, “Степной свет”, with the warm ground and
 
 **Key Characteristics:**
 - Light by default, with a token-matched dark theme.
-- Own ТүркіСіб rail mark; no subtitle, organizer logo or organizer photography.
+- Own Jibek Joly rail mark; no subtitle, organizer logo or organizer photography.
 - Compact white panels, soft structural shadows and visible keyboard focus.
 - Kazakhstan-only SIM context and RU/KK labels with explicit units.
 

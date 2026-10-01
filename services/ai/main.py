@@ -8,7 +8,7 @@ from typing import Literal
 import numpy as np
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from .settings import settings, SERVICE
@@ -21,6 +21,8 @@ from .demo.simulation import geometry, snapshot
 from .ml.kz_schedule import ScheduleForecaster
 from .ml.advisory import Advisory
 from .demo.integration import analyze as analyze_dispatch, check_decision
+
+FRONTEND = SERVICE.parent.parent / 'frontend'
 
 latencies = deque(maxlen=2000)
 requests = deque()
@@ -38,7 +40,7 @@ async def lifespan(app):
     yield
 
 
-app = FastAPI(title='Автодиспетчер — ML/LLM', version='0.1.0', lifespan=lifespan,
+app = FastAPI(title='Jibek Joly — AI API', version='0.1.0', lifespan=lifespan,
               description='Демонстрационная консультативная система. Не заменяет СЦБ.')
 app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:5173', 'http://127.0.0.1:5173'],
                    allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
@@ -164,6 +166,14 @@ async def demo_stream(request: Request, elapsed: float = Query(0, ge=0, le=86400
             yield 'event: state\ndata: '+json.dumps(payload,ensure_ascii=False)+'\n\n'
             await asyncio.sleep(1)
     return StreamingResponse(events(),media_type='text/event-stream',headers={'Cache-Control':'no-cache','X-Accel-Buffering':'no'})
+
+
+@app.get('/', include_in_schema=False)
+@app.get('/frontend', include_in_schema=False)
+@app.get('/frontend/', include_in_schema=False)
+@app.get('/frontend/index.html', include_in_schema=False)
+def frontend_home():
+    return FileResponse(FRONTEND / 'index.html')
 
 
 if (SERVICE / 'web').is_dir():

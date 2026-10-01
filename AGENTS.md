@@ -1,4 +1,4 @@
-# TurkiSib project instructions
+# Jibek Joly project instructions
 
 ## Scope and truth
 - This repository's AI service is an advisory hackathon demo, not a train control system.
@@ -12,9 +12,9 @@
 
 ## Development
 - Python 3.11. Install `services/ai/requirements.txt`; start `python -m services.ai.main` from the repo root (default localhost:8002).
-- The interactive UI is `services/ai/web`, served by FastAPI. No Node build is required.
+- The interactive UI entry point is `frontend/index.html`; shared assets are in `services/ai/web`. FastAPI serves both at port 8002. No Node build is required.
 - Run `python -m pytest services/ai/tests -q` after meaningful backend changes. Run `python -m services.ai.scripts.export_contracts` after schema changes.
-- Check UI controls, request failures, keyboard focus and narrow-screen layout when editing the demo. Keep user-visible copy in RU/KK locale files, use explicit units, and mark unreviewed Kazakh translations. The visible brand is ТүркіСіб, with an own logo and no subtitle.
+- Check UI controls, request failures, keyboard focus and narrow-screen layout when editing the demo. Keep user-visible copy in RU/KK locale files, use explicit units, and mark unreviewed Kazakh translations. The visible brand is Jibek Joly, with an own logo and no subtitle.
 - Read PRODUCT.md and DESIGN.md before extending the interface. They describe the product and current UI; no particular design plugin is required.
 
 ## Data and credentials

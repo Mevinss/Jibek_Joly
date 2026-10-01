@@ -120,7 +120,7 @@ async def lifespan(app: FastAPI):
         runtime.store.connection.close()
 
 
-app = FastAPI(title="TurkiSib simulator", lifespan=lifespan)
+app = FastAPI(title="Jibek Joly simulator", lifespan=lifespan)
 
 
 def active() -> Runtime:
