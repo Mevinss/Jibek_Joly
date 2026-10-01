@@ -21,6 +21,8 @@ from .demo.simulation import geometry, snapshot
 from .ml.kz_schedule import ScheduleForecaster
 from .ml.advisory import Advisory
 from .demo.integration import analyze as analyze_dispatch, check_decision
+from .demo.state_adapter import canonical_from_demo_snapshot
+from backend.simulator.state_contract import topology
 
 FRONTEND = SERVICE.parent.parent / 'frontend'
 
@@ -130,6 +132,19 @@ def demo_state():
 @app.get('/infra/geometry')
 def infra_geometry():
     return geometry()
+
+
+@app.get('/api/topology')
+def resource_topology():
+    return topology(geometry=geometry())
+
+
+@app.get('/api/v2/state')
+def canonical_demo_state(elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
+                         incident: Literal['none','closure','restriction','chaos']='none',
+                         incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
+                         seed: int = Query(42, ge=0, le=999999)):
+    return canonical_from_demo_snapshot(snapshot(elapsed, incident, incident_at), seed)
 
 
 @app.get('/demo/snapshot')

@@ -13,6 +13,7 @@ from fastapi import FastAPI, HTTPException, Query, WebSocket, WebSocketDisconnec
 from pydantic import BaseModel
 
 from .simulator import Simulator
+from .simulator.state_contract import canonical_from_backend_snapshot, topology
 from .store import EventStore, ROOT
 from .speed_profile import build_speed_profile
 
@@ -64,13 +65,18 @@ class Runtime:
 
     def envelope(self, kind: str, payload: dict) -> dict:
         sequence = self.store.current(self.simulator.scenario_id)["last_sequence"]
-        return {"schema_version": 1, "scenario_id": self.simulator.scenario_id, "run_id": self.run_id, "sequence": sequence, "event_id": f"{self.run_id}:{sequence}:{kind}", "virtual_time": self.simulator.snapshot().virtual_time, "server_sent_at": datetime.now().astimezone().isoformat(timespec="milliseconds"), "type": kind, "payload": payload, "stale_after_ms": 3500}
+        return {"schema_version": 1, "scenario_id": self.simulator.scenario_id, "run_id": self.run_id, "snapshot_version": self.simulator.version, "sequence": sequence, "event_id": f"{self.run_id}:{sequence}:{kind}", "virtual_time": self.simulator.snapshot().virtual_time, "server_sent_at": datetime.now().astimezone().isoformat(timespec="milliseconds"), "type": kind, "payload": payload, "stale_after_ms": 3500}
 
     def public_event(self, event: dict) -> dict:
         message = dict(event)
         if message["type"] == "STATE":
             message["type"] = "SNAPSHOT"
             message["payload"] = message["payload"]["engine_state"]["snapshot"]
+            message["snapshot_version"] = message["payload"]["version"]
+        else:
+            # Pre-v2 SQLite incident rows have no stored version; null keeps
+            # historical replay honest instead of using today's live version.
+            message["snapshot_version"] = message["payload"].get("snapshot_version")
         message["stale_after_ms"] = 3500
         return message
 
@@ -143,6 +149,18 @@ def metrics() -> dict:
 @app.get("/api/state")
 def state() -> dict:
     return active().simulator.snapshot().to_dict()
+
+
+@app.get("/api/v2/state")
+def canonical_state() -> dict:
+    rt = active()
+    return canonical_from_backend_snapshot(rt.simulator.snapshot().to_dict(),
+                                           run_id=rt.run_id, data_root=rt.simulator.data_root)
+
+
+@app.get("/api/topology")
+def resource_topology() -> dict:
+    return topology(data_root=active().simulator.data_root)
 
 
 @app.get("/api/trains/{train_id}/speed-profile")
@@ -220,6 +238,16 @@ def replay(scenario_id: str, at: str, run_id: str | None = None) -> dict:
     if snapshot is None:
         raise HTTPException(404, "no state at requested time")
     return snapshot
+
+
+@app.get("/api/v2/replay")
+def canonical_replay(scenario_id: str, at: str, run_id: str | None = None) -> dict:
+    legacy = replay(scenario_id, at, run_id)
+    rt = active()
+    current = rt.store.current(scenario_id)
+    return canonical_from_backend_snapshot(legacy,
+                                           run_id=run_id or (current["run_id"] if current else None),
+                                           data_root=rt.simulator.data_root)
 
 
 class HumanAction(BaseModel):

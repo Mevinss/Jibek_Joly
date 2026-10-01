@@ -81,6 +81,11 @@ class EventStore:
         out = []
         with self.connection:
             for entry in entries + [{"type": "STATE", "virtual_time": engine_state["snapshot"]["virtual_time"], "engine_state": engine_state}]:
+                # The containing movement step has one snapshot_version. Keep
+                # it with incident events so reconnect can replay their exact
+                # version without consulting the current live simulator.
+                if entry["type"] != "STATE":
+                    entry = {**entry, "snapshot_version": engine_state["snapshot"]["version"]}
                 sequence += 1
                 event_id = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{scenario_id}/{sequence}"))
                 envelope = {"schema_version": 1, "scenario_id": scenario_id, "run_id": run_id, "sequence": sequence, "event_id": event_id, "virtual_time": entry["virtual_time"], "server_sent_at": now, "type": entry["type"], "payload": entry}

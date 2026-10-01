@@ -14,6 +14,7 @@ import json
 import math
 
 from backend.planner.fifo import plan_fifo
+from backend.simulator.state_contract import infrastructure
 from backend.validator.resources import validate_human_decision, validate_plan
 from .simulation import BASE, geometry, snapshot
 
@@ -44,17 +45,25 @@ def platform_snapshot(demo: dict, seed: int) -> dict:
     for block in template['blocks']:
         observed = blocks_by_id[block['block_id']]
         block['closed'] = observed['closed']
-        block['occupied_by'] = next((row['train_id'] for row in state_by_id.values()
-                                     if row['position']['block_id'] == block['block_id']), None)
+        occupants = [row['train_id'] for row in state_by_id.values()
+                     if row['position']['block_id'] == block['block_id']]
+        block['occupied_train_ids'] = occupants
+        block['capacity'] = int(infrastructure()['blocks'][block['block_id']]['demo_capacity_trains'])
+        block['state_conflict'] = len(occupants) > block['capacity']
+        # Deprecated planner-v1 compatibility field. The canonical list above
+        # preserves every occupant, including timetable-playback overlaps.
+        block['occupied_by'] = occupants[0] if occupants else None
     at = datetime.fromisoformat(demo['ts'])
     for train in template['trains']:
         observed = state_by_id[train['train_id']]
         if at < datetime.fromisoformat(train['planned_start']):
             train.update(block_index=-1, block_id=None, progress=0., status='scheduled',
+                         route_progress_0_1=0., block_progress_0_1=0., block_elapsed=0.,
                          delay_min=observed['delay_s'] / 60, hold_until=None)
             continue
         if train['train_id'] in final_arrival and at >= datetime.fromisoformat(final_arrival[train['train_id']]):
             train.update(block_index=len(train['route']) - 1, block_id=None, progress=1.,
+                         route_progress_0_1=1., block_progress_0_1=1.,
                          status='completed', delay_min=observed['delay_s'] / 60, hold_until=None)
             continue
         block_id = observed['position']['block_id']
@@ -65,8 +74,12 @@ def platform_snapshot(demo: dict, seed: int) -> dict:
         progress = observed['position']['km'] / block_length
         if service_by_id[train['train_id']]['direction'] != 'forward':
             progress = 1 - progress
+        block_progress = max(0., min(1., progress))
         train.update(block_index=index, block_id=block_id,
-                     progress=max(0., min(1., progress)),
+                     progress=block_progress,  # planner-v1 expects current-block progress
+                     route_progress_0_1=round((index + block_progress) / len(train['route']), 6),
+                     block_progress_0_1=round(block_progress, 6),
+                     block_elapsed=block_progress * train['block_seconds'][index],
                      delay_min=observed['delay_s'] / 60,
                      status='moving', hold_until=None)
     if demo['incident_active'] and demo['incident'] in ('closure', 'chaos'):
@@ -77,6 +90,7 @@ def platform_snapshot(demo: dict, seed: int) -> dict:
                 template['active_incidents'].append({
                     'incident_id': f'UI-{block["block_id"]}', 'type': 'BLOCK_CLOSURE',
                     'block_id': block['block_id'], 'at': at, 'duration_min': remaining,
+                    'source_type': 'SIMULATED_DEMO',
                 })
     return template
 

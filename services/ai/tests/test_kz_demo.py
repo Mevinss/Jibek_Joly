@@ -17,6 +17,23 @@ def test_kazakhstan_only_geometry_and_services():
     assert len(set(f['properties']['id'] for f in g['features']))==56
     assert math.isclose(sum(f['properties']['length_km'] for f in g['features']),g['length_km'])
 
+
+def test_canonical_demo_state_and_topology_routes():
+    with TestClient(app) as client:
+        response = client.get('/api/v2/state', params={'elapsed': 300, 'incident': 'closure',
+                                                        'incident_at': 0, 'seed': 20261001})
+        assert response.status_code == 200
+        state = response.json()
+        assert state['schema_version'] == '2.0'
+        assert state['scenario_id'] == 'KZ-DEMO-ADVISORY'
+        assert state['seed'] == 20261001
+        assert state['source_type'] == 'SIMULATED_DEMO'
+        assert any(block['state_conflict'] for block in state['blocks'])
+        graph = client.get('/api/topology').json()
+        assert graph['schema_version'] == '1.0'
+        assert graph['geometry_source'] == 'EXTERNAL_REFERENCE_APPROXIMATE'
+        assert {b['block_id'] for b in graph['blocks']} == {b['block_id'] for b in state['blocks']}
+
 @pytest.mark.parametrize('incident',['none','closure','restriction','chaos'])
 def test_playback_positions_and_closure(incident):
     before=snapshot(0);after=snapshot(300,incident,0)
