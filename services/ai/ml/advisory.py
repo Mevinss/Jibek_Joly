@@ -1,10 +1,10 @@
 """Optional advisory contract: legacy forecasts remain unchanged."""
 import json
 import numpy as np
-import lightgbm as lgb
 import yaml
 from ..settings import SERVICE
 from .features import serving_frame
+from .model_file import load_booster
 
 
 class Advisory:
@@ -13,7 +13,7 @@ class Advisory:
         self.config = yaml.safe_load((SERVICE/'config/advisory.yaml').read_text())
         path = SERVICE / 'models/advisory'
         self.meta = json.loads((path/'serving.json').read_text())
-        self.growth = lgb.Booster(model_file=str(path/'growth.txt'))
+        self.growth = load_booster(path/'growth.txt')
 
     def forecast(self, state):
         if not state.trains:

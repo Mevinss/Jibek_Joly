@@ -62,3 +62,63 @@ async def test_synthetic_model_chat_is_explicit():
     answer=''.join(e[1]['text'] for e in events if e[0]=='token')
     assert 'синтетическое расписание' in answer and 'SIM-KOK_AST-F01' in answer
     assert events[-1][1]['mode']=='tool_summary'
+
+
+@pytest.mark.asyncio
+async def test_kz_snapshot_chat_suppresses_unvalidated_pkp_numbers():
+    from services.ai.agent.tools import Tools
+    from services.ai.agent.chat import stream_chat
+    from services.ai.api.schemas import ChatRequest
+    from services.ai.ml.infer import Forecaster
+    state=State.model_validate(snapshot()['state'])
+    tools=Tools(Forecaster(),snapshot=state)
+    result=await tools.call('get_forecast',{'train_id':state.trains[0].train_id})
+    row=result['data'][0]
+    assert not row['reliable'] and row['ml_delta_min'] is None
+    assert row['delay_growth_probability'] is None
+    assert 'expected_delay_s' not in row and 'p_conflict_15m' not in row
+    request=ChatRequest(messages=[{'role':'user','content':f'Прогноз {state.trains[0].train_id}'}],state=state)
+    events=[event async for event in stream_chat(request,tools,use_llm=False)]
+    answer=''.join(e[1]['text'] for e in events if e[0]=='token')
+    assert 'Численная ML-добавка и риск недоступны' in answer
+    assert 'синтетический Казахстан' in answer
+
+
+def test_dispatch_analysis_uses_one_snapshot_and_validates_pair_plan():
+    from services.ai.demo.integration import analyze
+    first=analyze(300,'closure',0,42)
+    again=analyze(300,'closure',0,42,solve=False)
+    assert first['snapshot_id']==again['snapshot_id']
+    assert first['pair_train_ids']==['SIM-KOK_AST-F01','SIM-KOK_AST-R01']
+    assert set(first['fifo']['ordered_train_ids'])==set(first['pair_train_ids'])
+    assert first['cp_sat']['status'] in ('OPTIMAL','FEASIBLE')
+    assert first['cp_sat']['valid'] is True
+    assert first['cp_sat']['reservation_count']>0
+    assert all(row['train_id'] in first['pair_train_ids'] for row in first['cp_sat']['reservations'])
+    assert first['snapshot_overlaps']
+    assert all(len(item['train_ids'])>1 for item in first['snapshot_overlaps'])
+    assert first['full_cp_sat']['status'] in ('OPTIMAL','FEASIBLE','INFEASIBLE','TIMEOUT')
+    assert analyze(300,'restriction',0,42)['cp_sat']['status']=='UNSUPPORTED_SCENARIO'
+
+
+def test_dispatch_analysis_endpoint():
+    with TestClient(app) as c:
+        response=c.post('/dispatch/analysis',json={'elapsed_s':300,'incident':'closure','incident_at_s':0,'seed':42})
+        assert response.status_code==200
+        assert response.json()['cp_sat']['valid'] is True
+        assert c.post('/dispatch/analysis',json={'elapsed_s':-1}).status_code==422
+
+
+def test_game_decision_uses_same_snapshot_and_platform_validator():
+    from services.ai.demo.integration import analyze, check_decision
+    analysis=analyze(300,'closure',0,42,solve=False)
+    first=check_decision(300,'closure',0,42,'A')
+    hold=check_decision(300,'closure',0,42,'C')
+    assert first['snapshot_id']==hold['snapshot_id']==analysis['snapshot_id']
+    assert not first['accepted'] and 'BLOCK_CLOSED' in first['actions'][0]['issue_codes']
+    assert hold['accepted'] and all(row['action']=='HOLD_TRAIN' for row in hold['actions'])
+    assert not first['applied'] and not hold['applied']
+    with TestClient(app) as c:
+        body={'elapsed_s':300,'incident':'closure','incident_at_s':0,'seed':42,'choice':'A'}
+        assert c.post('/dispatch/decision',json=body).json()==first
+        assert c.post('/dispatch/decision',json={**body,'choice':'D'}).status_code==422

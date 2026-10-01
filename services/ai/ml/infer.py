@@ -4,6 +4,7 @@ import numpy as np
 import yaml
 from .features import FEATURES, serving_frame
 from ..settings import SERVICE
+from .model_file import load_booster
 
 
 class Forecaster:
@@ -27,8 +28,8 @@ class Forecaster:
             self.calibration = json.loads((self.model_dir / 'calibrator.json').read_text())
             if not info['accepted']:
                 raise ValueError('Model failed baseline acceptance gate')
-            self.reg = lgb.Booster(model_file=str(self.model_dir / 'reg.txt'))
-            self.clf = lgb.Booster(model_file=str(self.model_dir / 'clf.txt'))
+            self.reg = load_booster(self.model_dir / 'reg.txt')
+            self.clf = load_booster(self.model_dir / 'clf.txt')
             self.info = info
             self.threshold = float(info['threshold'])
         except Exception:

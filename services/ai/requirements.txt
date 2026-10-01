@@ -22,6 +22,7 @@ lightgbm==4.7.0
 matplotlib==3.11.2
 narwhals==2.17.0
 numpy==2.4.2
+ortools>=9.10,<10
 opentelemetry-api==1.45.0
 packaging==26.0
 pandas==2.3.3

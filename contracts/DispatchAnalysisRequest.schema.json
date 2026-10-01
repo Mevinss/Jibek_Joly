@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "elapsed_s": {
+      "maximum": 86400,
+      "minimum": 0,
+      "title": "Elapsed S",
+      "type": "number"
+    },
+    "incident": {
+      "default": "none",
+      "enum": [
+        "none",
+        "closure",
+        "restriction",
+        "chaos"
+      ],
+      "title": "Incident",
+      "type": "string"
+    },
+    "incident_at_s": {
+      "default": 0,
+      "maximum": 86400,
+      "minimum": 0,
+      "title": "Incident At S",
+      "type": "number"
+    },
+    "seed": {
+      "default": 42,
+      "maximum": 999999,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "elapsed_s"
+  ],
+  "title": "DispatchAnalysisRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

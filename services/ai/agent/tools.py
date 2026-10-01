@@ -7,6 +7,7 @@ from functools import lru_cache
 from jsonschema import validate
 from ..settings import SERVICE, settings
 from ..api.schemas import State, Incident
+from ..ml.advisory import Advisory
 
 EMPTY = {'type': 'object', 'properties': {}, 'additionalProperties': False}
 TRAIN = {'type': 'object', 'properties': {'train_id': {'type': 'string', 'maxLength': 80}}, 'required': ['train_id'], 'additionalProperties': False}
@@ -52,7 +53,7 @@ class Tools:
         try:
             validate(args, SPECS[name][1])
             data = await self._call(name, args)
-            if name == 'get_forecast' and isinstance(data, list):
+            if name == 'get_forecast' and isinstance(data, list) and data and 'expected_delay_s' in data[0]:
                 data = [dict(row, display={'expected_delay_min': round(row['expected_delay_s'] / 60, 2),
                                           'proxy_probability_percent': round(row['p_conflict_15m'] * 100, 2)}) for row in data]
             return {'source': 'demo_snapshot' if self.snapshot is not None else ('fixture' if self.config.use_fixtures else 'api'), 'data': data}
@@ -75,7 +76,9 @@ class Tools:
             if name == 'get_train_status':
                 return next((t for t in state['trains'] if t['train_id'] == args['train_id']), {'error': 'train_not_found'})
             if name == 'get_forecast':
-                results = self.forecaster.forecast(self.snapshot)
+                # The dispatcher card and snapshot chat must use the same
+                # reliability gate. Legacy /forecast remains a separate API.
+                results = Advisory(self.forecaster).forecast(self.snapshot)
                 return [r for r in results if not args.get('train_id') or r['train_id'] == args['train_id']]
             return {'error': 'not_computed_for_demo_snapshot', 'reason': 'Для отредактированного сценария доступны состояние поездов и прогноз ML. План, индекс и оптимизация не рассчитывались.'}
         if self.config.use_fixtures:

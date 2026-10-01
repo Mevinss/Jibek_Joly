@@ -4,13 +4,13 @@ import pandas as pd
 from ..settings import SERVICE
 from ..demo.simulation import geometry
 from ..training.train_kz_schedule import FEATURES,CATEGORIES
+from .model_file import load_booster
 
 class ScheduleForecaster:
     def __init__(self):
-        import lightgbm as lgb
         directory=SERVICE/'models/kz_schedule_demo'
         self.info=json.loads((directory/'metrics.json').read_text(encoding='utf-8'))
-        self.model=lgb.Booster(model_file=str(directory/'model.txt'))
+        self.model=load_booster(directory/'model.txt')
 
     def forecast(self,state):
         geo=geometry();services={s['train_id']:s for s in geo['services']};stations={s['id']:s for s in geo['stations']};rows=[];metadata=[]

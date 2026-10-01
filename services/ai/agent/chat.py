@@ -48,6 +48,20 @@ def template(evidence):
         data = result.get('data', {})
         if result.get('error') or isinstance(data, dict) and data.get('error'):
             lines.append('Запрошенные сведения недоступны; результат не рассчитан.')
+        elif isinstance(data, list) and data and all('reliable' in r and 'current_delay_min' in r for r in data):
+            for row in data:
+                lines.append(f"Поезд {row['train_id']}: текущая задержка {row['current_delay_min']:.1f} мин.")
+                if row.get('known_wait_min') is not None:
+                    lines.append(f"Известное ожидание {row['known_wait_min']:.1f} мин.")
+                if row.get('restriction_extra_min'):
+                    lines.append(f"Демонстрационная добавка ограничения {row['restriction_extra_min']:.1f} мин.")
+                if row['reliable']:
+                    interval = row['delay_interval_min']
+                    lines.append(f"Интервал PKP {interval[0]:.1f}–{interval[2]:.1f} мин; вероятность роста задержки на следующем перегоне {row['delay_growth_probability'] * 100:.1f}%.")
+                    lines.append('Это прогноз модели, не подтверждённый конфликт и не причина задержки.')
+                else:
+                    reason = 'перенос модели PKP на синтетический Казахстан не проверен' if 'unvalidated_kazakhstan' in row.get('reasons', []) else 'входные данные вне проверенного применения модели'
+                    lines.append(f'Численная ML-добавка и риск недоступны: {reason}.')
         elif isinstance(data, list) and data and all('expected_delay_s' in r for r in data):
             for row in data:
                 display = row.get('display')
@@ -127,7 +141,7 @@ async def stream_chat(request, tools, *, use_llm=True, responder=respond):
     # total delay from added delay or establish a FIFO comparison.
     variants = [e for e in evidence if isinstance(e.get('data'), dict) and 'variants' in e['data']]
     forecasts = [e for e in evidence if isinstance(e.get('data'), list) and e['data']
-                 and all(isinstance(row, dict) and ('expected_delay_s' in row or 'scheduled_segment_travel_min' in row) for row in e['data'])]
+                 and all(isinstance(row, dict) and ('expected_delay_s' in row or 'scheduled_segment_travel_min' in row or 'reliable' in row) for row in e['data'])]
     if variants:
         text, mode = template(variants), 'tool_summary'
     elif forecasts:

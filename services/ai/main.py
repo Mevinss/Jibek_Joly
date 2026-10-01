@@ -12,7 +12,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from .settings import settings, SERVICE
-from .api.schemas import State, Forecast, ChatRequest, TelegramRequest, ReportRequest
+from .api.schemas import State, Forecast, ChatRequest, TelegramRequest, ReportRequest, DispatchAnalysisRequest, DispatchDecisionRequest
 from .ml.infer import Forecaster
 from .agent.tools import Tools
 from .agent.chat import stream_chat
@@ -20,6 +20,7 @@ from .texts.generate import telegram_template, report_template, polish
 from .demo.simulation import geometry, snapshot
 from .ml.kz_schedule import ScheduleForecaster
 from .ml.advisory import Advisory
+from .demo.integration import analyze as analyze_dispatch, check_decision
 
 latencies = deque(maxlen=2000)
 requests = deque()
@@ -134,6 +135,20 @@ def demo_snapshot(elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False)
                   incident: Literal['none','closure','restriction','chaos']='none',
                   incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False)):
     return snapshot(elapsed, incident, incident_at)
+
+
+@app.post('/dispatch/analysis')
+async def dispatch_analysis(request: DispatchAnalysisRequest):
+    """FIFO and checked CP-SAT from the exact demo clock and incident input."""
+    return await run_in_threadpool(analyze_dispatch, request.elapsed_s,
+                                   request.incident, request.incident_at_s, request.seed)
+
+
+@app.post('/dispatch/decision')
+async def dispatch_decision(request: DispatchDecisionRequest):
+    return await run_in_threadpool(check_decision, request.elapsed_s,
+                                   request.incident, request.incident_at_s,
+                                   request.seed, request.choice)
 
 
 @app.get('/demo/stream')

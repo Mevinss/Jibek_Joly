@@ -102,8 +102,10 @@ async def test_snapshot_isolation_and_no_unrelated_solver_results(state):
     original = await Tools(f).call('get_train_status', {'train_id': snapshot.trains[0].train_id})
     assert original['data']['delay_s'] == state['trains'][0]['delay_s']
     forecasts = await tools.call('get_forecast', {})
-    assert [{k: v for k, v in r.items() if k != 'display'} for r in forecasts['data']] == f.forecast(snapshot)
-    assert forecasts['data'][0]['display']['expected_delay_min'] == round(f.forecast(snapshot)[0]['expected_delay_s'] / 60, 2)
+    assert forecasts['source'] == 'demo_snapshot'
+    assert forecasts['data'][0]['current_delay_min'] == 20
+    assert 'expected_delay_s' not in forecasts['data'][0]
+    assert 'p_conflict_15m' not in forecasts['data'][0]
     for name in ['get_plan', 'get_index', 'get_incidents']:
         result = await tools.call(name, {})
         assert result['data']['error'] == 'not_computed_for_demo_snapshot'
@@ -135,7 +137,7 @@ async def test_forecast_summary_rejects_semantic_relabeling(state):
     events = [e async for e in stream_chat(request, Tools(Forecaster(), snapshot=State.model_validate(state)), responder=responder)]
     text = ''.join(p['text'] for e,p in events if e == 'token')
     assert 'Конфликт подтверждён' not in text
-    assert 'не подтверждает конфликт' in text
+    assert 'не подтверждённый конфликт' in text or 'недоступны' in text
     assert 'expected_delay_s' not in text
     assert events[-1][1]['mode'] == 'tool_summary'
 

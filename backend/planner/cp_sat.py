@@ -350,7 +350,7 @@ def solve_intervals(
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = float(time_limit_seconds)
     solver.parameters.num_search_workers = 1
-    solver.parameters.random_seed = 0
+    solver.parameters.random_seed = int(snapshot.get("seed", 0))
     status = solver.solve(model)
     status_names = {
         cp_model.OPTIMAL: "OPTIMAL",

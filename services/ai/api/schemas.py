@@ -118,3 +118,14 @@ class TelegramRequest(DataModel):
 
 class ReportRequest(DataModel):
     analytics: dict
+
+
+class DispatchAnalysisRequest(DataModel):
+    elapsed_s: float = Field(ge=0, le=86400)
+    incident: Literal['none', 'closure', 'restriction', 'chaos'] = 'none'
+    incident_at_s: float = Field(default=0, ge=0, le=86400)
+    seed: int = Field(default=42, ge=0, le=999999)
+
+
+class DispatchDecisionRequest(DispatchAnalysisRequest):
+    choice: Literal['A', 'B', 'C']
