@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jibek Joly — карта</title><link rel="icon" href="/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/vendor/maplibre-gl.css"><link rel="stylesheet" href="/dispatch.css"><link rel="stylesheet" href="/map-stage1.css">
+  <script defer src="/vendor/i18next.min.js"></script><script defer src="/vendor/maplibre-gl.js"></script>
+  <script defer src="/js/map-config.js"></script><script defer src="/js/data-source.js"></script><script defer src="/js/map-stage1.js"></script>
+</head>
+<body class="stage1-body"><a class="skip" href="#stage1-main" data-i18n="skip"></a>
+  <header class="stage1-header"><a class="brand" href="/"><img src="/brand.svg" alt="" width="32" height="32">Jibek Joly</a><nav aria-label="Навигация"><a href="/" data-i18n="stage1Back"></a></nav><div class="stage1-header-end"><span class="badge" data-i18n="stage1Mock"></span><select id="stage1-language" aria-label="Language"><option value="ru">РУС</option><option value="kk">ҚАЗ</option></select><button id="stage1-theme" type="button" data-i18n="dark"></button></div></header>
+  <main id="stage1-main" tabindex="-1"><div class="stage1-heading"><div><h1 data-i18n="stage1Title"></h1><p data-i18n="stage1Intro"></p></div><span id="stage1-map-state" class="badge" role="status" data-i18n="loading"></span></div>
+    <div id="stage1-error" class="error" role="alert" hidden></div>
+    <section class="panel stage1-map-panel" aria-label="Карта"><div class="stage1-map-actions"><button id="stage1-fit" type="button" data-i18n="fit"></button><button id="stage1-online" type="button" data-i18n="stage1TryOnline"></button><span class="caption" data-i18n="stage1MapNote"></span></div><div id="stage1-map" role="application" aria-label="Карта Казахстана"></div><div id="stage1-attribution" class="caption">© OpenStreetMap contributors · OpenFreeMap · OpenMapTiles</div></section>
+    <section class="panel stage1-controls" aria-labelledby="stage1-controls-title"><h2 id="stage1-controls-title" data-i18n="stage1Time"></h2><div class="stage1-control-row"><button id="stage1-play" type="button" data-i18n="pause"></button><label><span data-i18n="scenario"></span><select id="stage1-scenario"></select></label><label><span data-i18n="tempo"></span><select id="stage1-speed"><option value="1">×1</option><option value="10">×10</option><option value="60">×60</option></select></label><time id="stage1-clock" class="mono">09:00:00 +05:00</time><button id="stage1-disconnect" type="button" data-i18n="stage1Disconnect"></button></div><label class="stage1-slider"><span data-i18n="stage1Timeline"></span><input id="stage1-range" type="range" min="0" max="900" step="1" value="0"></label><p id="stage1-connection" class="caption" role="status"></p></section>
+    <section class="panel stage1-index"><div class="panel-title"><h2 data-i18n="stage1Stations"></h2><span class="badge" data-i18n="stage1Mock"></span></div><div id="stage1-station-list" class="stage1-station-list"></div></section>
+  </main>
+  <aside id="stage1-drawer" class="stage1-drawer" hidden aria-labelledby="stage1-drawer-title"><div class="panel-title"><h2 id="stage1-drawer-title"></h2><button id="stage1-close" type="button" data-i18n="close"></button></div><div id="stage1-drawer-content"></div></aside>
+  <footer class="stage1-footer"><span data-i18n="stage1Safety"></span><span class="badge" data-i18n="stage1Simulation"></span><span id="stage1-review" class="caption" hidden>TODO-review-kk</span></footer>
+</body></html>

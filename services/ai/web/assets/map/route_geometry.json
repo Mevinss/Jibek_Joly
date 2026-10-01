@@ -1,0 +1,1146 @@
+[
+  {
+    "segment_id": "KOK-BOR",
+    "from_station_id": "KOK",
+    "to_station_id": "BOR",
+    "polyline": [
+      [
+        69.4233693,
+        53.288608551025
+      ],
+      [
+        69.6758806,
+        53.16609573364234
+      ],
+      [
+        69.92839190000001,
+        53.043582916259666
+      ],
+      [
+        70.1809032,
+        52.921070098877
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 65.0,
+    "blocks": [
+      {
+        "block_id": "KOK-BOR-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.3333333333333333,
+        "start_coord": [
+          69.4233693,
+          53.288608551025
+        ],
+        "end_coord": [
+          69.67631572253151,
+          53.165884621952515
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KOK-BOR-B02",
+        "start_fraction": 0.3333333333333333,
+        "end_fraction": 0.6666666666666666,
+        "start_coord": [
+          69.67631572253151,
+          53.165884621952515
+        ],
+        "end_coord": [
+          69.92882620479857,
+          53.04337220131552
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KOK-BOR-B03",
+        "start_fraction": 0.6666666666666666,
+        "end_fraction": 1.0,
+        "start_coord": [
+          69.92882620479857,
+          53.04337220131552
+        ],
+        "end_coord": [
+          70.1809032,
+          52.921070098877
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "BOR-AKK",
+    "from_station_id": "BOR",
+    "to_station_id": "AKK",
+    "polyline": [
+      [
+        70.1809032,
+        52.921070098877
+      ],
+      [
+        70.3705416,
+        52.6944456100465
+      ],
+      [
+        70.56018,
+        52.467821121216005
+      ],
+      [
+        70.74981840000001,
+        52.2411966323855
+      ],
+      [
+        70.9394568,
+        52.014572143555
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 109.0,
+    "blocks": [
+      {
+        "block_id": "BOR-AKK-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.25,
+        "start_coord": [
+          70.1809032,
+          52.921070098877
+        ],
+        "end_coord": [
+          70.37084375268806,
+          52.6940845270671
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "BOR-AKK-B02",
+        "start_fraction": 0.25,
+        "end_fraction": 0.5,
+        "start_coord": [
+          70.37084375268806,
+          52.6940845270671
+        ],
+        "end_coord": [
+          70.56058258548417,
+          52.46734001754945
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "BOR-AKK-B03",
+        "start_fraction": 0.5,
+        "end_fraction": 0.75,
+        "start_coord": [
+          70.56058258548417,
+          52.46734001754945
+        ],
+        "end_coord": [
+          70.75012012235258,
+          52.240836063671985
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "BOR-AKK-B04",
+        "start_fraction": 0.75,
+        "end_fraction": 1.0,
+        "start_coord": [
+          70.75012012235258,
+          52.240836063671985
+        ],
+        "end_coord": [
+          70.9394568,
+          52.014572143555
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "AKK-AST",
+    "from_station_id": "AKK",
+    "to_station_id": "AST",
+    "polyline": [
+      [
+        70.9394568,
+        52.014572143555
+      ],
+      [
+        71.05687155,
+        51.80982875824
+      ],
+      [
+        71.1742863,
+        51.605085372925004
+      ],
+      [
+        71.29170105,
+        51.40034198761
+      ],
+      [
+        71.4091158,
+        51.195598602295
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 95.0,
+    "blocks": [
+      {
+        "block_id": "AKK-AST-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.25,
+        "start_coord": [
+          70.9394568,
+          52.014572143555
+        ],
+        "end_coord": [
+          71.0569609451515,
+          51.80967287436723
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKK-AST-B02",
+        "start_fraction": 0.25,
+        "end_fraction": 0.5,
+        "start_coord": [
+          71.0569609451515,
+          51.80967287436723
+        ],
+        "end_coord": [
+          71.17440548004687,
+          51.604877551282
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKK-AST-B03",
+        "start_fraction": 0.5,
+        "end_fraction": 0.75,
+        "start_coord": [
+          71.17440548004687,
+          51.604877551282
+        ],
+        "end_coord": [
+          71.29179042409012,
+          51.400186140463276
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKK-AST-B04",
+        "start_fraction": 0.75,
+        "end_fraction": 1.0,
+        "start_coord": [
+          71.29179042409012,
+          51.400186140463276
+        ],
+        "end_coord": [
+          71.4091158,
+          51.195598602295
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "AST-KAR",
+    "from_station_id": "AST",
+    "to_station_id": "KAR",
+    "polyline": [
+      [
+        71.4091158,
+        51.195598602295
+      ],
+      [
+        71.64992254285714,
+        50.995242527553145
+      ],
+      [
+        71.89072928571429,
+        50.794886452811284
+      ],
+      [
+        72.13153602857143,
+        50.59453037806943
+      ],
+      [
+        72.37234277142856,
+        50.394174303327574
+      ],
+      [
+        72.61314951428571,
+        50.19381822858572
+      ],
+      [
+        72.85395625714285,
+        49.99346215384386
+      ],
+      [
+        73.094763,
+        49.793106079102
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 220.0,
+    "blocks": [
+      {
+        "block_id": "AST-KAR-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.14285714285714285,
+        "start_coord": [
+          71.4091158,
+          51.195598602295
+        ],
+        "end_coord": [
+          71.65105656862782,
+          50.99429899520279
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B02",
+        "start_fraction": 0.14285714285714285,
+        "end_fraction": 0.2857142857142857,
+        "start_coord": [
+          71.65105656862782,
+          50.99429899520279
+        ],
+        "end_coord": [
+          71.89261626629224,
+          50.793316446850376
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B03",
+        "start_fraction": 0.2857142857142857,
+        "end_fraction": 0.42857142857142855,
+        "start_coord": [
+          71.89261626629224,
+          50.793316446850376
+        ],
+        "end_coord": [
+          72.13379672433793,
+          50.592649433522006
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B04",
+        "start_fraction": 0.42857142857142855,
+        "end_fraction": 0.5714285714285714,
+        "start_coord": [
+          72.13379672433793,
+          50.592649433522006
+        ],
+        "end_coord": [
+          72.37459978043661,
+          50.39229642623766
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B05",
+        "start_fraction": 0.5714285714285714,
+        "end_fraction": 0.7142857142857143,
+        "start_coord": [
+          72.37459978043661,
+          50.39229642623766
+        ],
+        "end_coord": [
+          72.61502727817121,
+          50.192255891099116
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B06",
+        "start_fraction": 0.7142857142857143,
+        "end_fraction": 0.8571428571428571,
+        "start_coord": [
+          72.61502727817121,
+          50.192255891099116
+        ],
+        "end_coord": [
+          72.85508106662846,
+          49.99252628962887
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AST-KAR-B07",
+        "start_fraction": 0.8571428571428571,
+        "end_fraction": 1.0,
+        "start_coord": [
+          72.85508106662846,
+          49.99252628962887
+        ],
+        "end_coord": [
+          73.094763,
+          49.793106079102
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "KAR-AKD",
+    "from_station_id": "KAR",
+    "to_station_id": "AKD",
+    "polyline": [
+      [
+        73.094763,
+        49.793106079102
+      ],
+      [
+        73.0648958375,
+        49.601890087128126
+      ],
+      [
+        73.035028675,
+        49.41067409515425
+      ],
+      [
+        73.0051615125,
+        49.21945810318038
+      ],
+      [
+        72.97529435,
+        49.0282421112065
+      ],
+      [
+        72.9454271875,
+        48.837026119232625
+      ],
+      [
+        72.91556002499999,
+        48.645810127258756
+      ],
+      [
+        72.8856928625,
+        48.45459413528488
+      ],
+      [
+        72.8558257,
+        48.263378143311
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 230.0,
+    "blocks": [
+      {
+        "block_id": "KAR-AKD-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.125,
+        "start_coord": [
+          73.094763,
+          49.793106079102
+        ],
+        "end_coord": [
+          73.06489167125103,
+          49.60186341390705
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B02",
+        "start_fraction": 0.125,
+        "end_fraction": 0.25,
+        "start_coord": [
+          73.06489167125103,
+          49.60186341390705
+        ],
+        "end_coord": [
+          73.03502153085408,
+          49.41062835679697
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B03",
+        "start_fraction": 0.25,
+        "end_fraction": 0.375,
+        "start_coord": [
+          73.03502153085408,
+          49.41062835679697
+        ],
+        "end_coord": [
+          73.00515257987853,
+          49.21940091461838
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B04",
+        "start_fraction": 0.375,
+        "end_fraction": 0.5,
+        "start_coord": [
+          73.00515257987853,
+          49.21940091461838
+        ],
+        "end_coord": [
+          72.97528481934025,
+          49.02818109387484
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B05",
+        "start_fraction": 0.5,
+        "end_fraction": 0.625,
+        "start_coord": [
+          72.97528481934025,
+          49.02818109387484
+        ],
+        "end_coord": [
+          72.94541825020143,
+          48.836968900726774
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B06",
+        "start_fraction": 0.625,
+        "end_fraction": 0.75,
+        "start_coord": [
+          72.94541825020143,
+          48.836968900726774
+        ],
+        "end_coord": [
+          72.9155528733707,
+          48.64576434099137
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B07",
+        "start_fraction": 0.75,
+        "end_fraction": 0.875,
+        "start_coord": [
+          72.9155528733707,
+          48.64576434099137
+        ],
+        "end_coord": [
+          72.8856886897031,
+          48.454567420142574
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "KAR-AKD-B08",
+        "start_fraction": 0.875,
+        "end_fraction": 1.0,
+        "start_coord": [
+          72.8856886897031,
+          48.454567420142574
+        ],
+        "end_coord": [
+          72.8558257,
+          48.263378143311
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "AKD-SAR",
+    "from_station_id": "AKD",
+    "to_station_id": "SAR",
+    "polyline": [
+      [
+        72.8558257,
+        48.263378143311
+      ],
+      [
+        72.93918593333333,
+        48.025165557861776
+      ],
+      [
+        73.02254616666667,
+        47.78695297241256
+      ],
+      [
+        73.1059064,
+        47.54874038696333
+      ],
+      [
+        73.18926663333333,
+        47.31052780151411
+      ],
+      [
+        73.27262686666667,
+        47.07231521606489
+      ],
+      [
+        73.35598710000001,
+        46.83410263061567
+      ],
+      [
+        73.43934733333333,
+        46.59589004516644
+      ],
+      [
+        73.52270756666667,
+        46.35767745971722
+      ],
+      [
+        73.6060678,
+        46.119464874268
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 245.0,
+    "blocks": [
+      {
+        "block_id": "AKD-SAR-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.11111111111111109,
+        "start_coord": [
+          72.8558257,
+          48.263378143311
+        ],
+        "end_coord": [
+          72.93926604395058,
+          48.02493663147215
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B02",
+        "start_fraction": 0.11111111111111109,
+        "end_fraction": 0.22222222222222218,
+        "start_coord": [
+          72.93926604395058,
+          48.02493663147215
+        ],
+        "end_coord": [
+          73.02268635002612,
+          47.78655238043776
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B03",
+        "start_fraction": 0.22222222222222218,
+        "end_fraction": 0.33333333333333326,
+        "start_coord": [
+          73.02268635002612,
+          47.78655238043776
+        ],
+        "end_coord": [
+          73.10608662050318,
+          47.54822538370221
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B04",
+        "start_fraction": 0.33333333333333326,
+        "end_fraction": 0.44444444444444436,
+        "start_coord": [
+          73.10608662050318,
+          47.54822538370221
+        ],
+        "end_coord": [
+          73.18946685906623,
+          47.30995563073676
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B05",
+        "start_fraction": 0.44444444444444436,
+        "end_fraction": 0.5555555555555555,
+        "start_coord": [
+          73.18946685906623,
+          47.30995563073676
+        ],
+        "end_coord": [
+          73.27282707080221,
+          47.07174310700476
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B06",
+        "start_fraction": 0.5555555555555555,
+        "end_fraction": 0.6666666666666666,
+        "start_coord": [
+          73.27282707080221,
+          47.07174310700476
+        ],
+        "end_coord": [
+          73.35616726219526,
+          46.83358779397697
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B07",
+        "start_fraction": 0.6666666666666666,
+        "end_fraction": 0.7777777777777778,
+        "start_coord": [
+          73.35616726219526,
+          46.83358779397697
+        ],
+        "end_coord": [
+          73.43948744112117,
+          46.59548966914721
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B08",
+        "start_fraction": 0.7777777777777778,
+        "end_fraction": 0.8888888888888888,
+        "start_coord": [
+          73.43948744112117,
+          46.59548966914721
+        ],
+        "end_coord": [
+          73.52278761684195,
+          46.357448706048274
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "AKD-SAR-B09",
+        "start_fraction": 0.8888888888888888,
+        "end_fraction": 1.0,
+        "start_coord": [
+          73.52278761684195,
+          46.357448706048274
+        ],
+        "end_coord": [
+          73.6060678,
+          46.119464874268
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "SAR-SHU",
+    "from_station_id": "SAR",
+    "to_station_id": "SHU",
+    "polyline": [
+      [
+        73.6060678,
+        46.119464874268
+      ],
+      [
+        73.62011804545455,
+        45.89053726196327
+      ],
+      [
+        73.6341682909091,
+        45.661609649658544
+      ],
+      [
+        73.64821853636364,
+        45.432682037353814
+      ],
+      [
+        73.66226878181818,
+        45.20375442504909
+      ],
+      [
+        73.67631902727273,
+        44.97482681274436
+      ],
+      [
+        73.69036927272728,
+        44.74589920043964
+      ],
+      [
+        73.70441951818182,
+        44.51697158813491
+      ],
+      [
+        73.71846976363636,
+        44.288043975830185
+      ],
+      [
+        73.7325200090909,
+        44.059116363525455
+      ],
+      [
+        73.74657025454546,
+        43.83018875122073
+      ],
+      [
+        73.7606205,
+        43.601261138916
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 330.0,
+    "blocks": [
+      {
+        "block_id": "SAR-SHU-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.09090909090909091,
+        "start_coord": [
+          73.6060678,
+          46.119464874268
+        ],
+        "end_coord": [
+          73.62011857301657,
+          45.890528666133676
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B02",
+        "start_fraction": 0.09090909090909091,
+        "end_fraction": 0.18181818181818182,
+        "start_coord": [
+          73.62011857301657,
+          45.890528666133676
+        ],
+        "end_coord": [
+          73.63416924053935,
+          45.66159417686233
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B03",
+        "start_fraction": 0.18181818181818182,
+        "end_fraction": 0.2727272727272727,
+        "start_coord": [
+          73.63416924053935,
+          45.66159417686233
+        ],
+        "end_coord": [
+          73.64821980254861,
+          45.43266140677455
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B04",
+        "start_fraction": 0.2727272727272727,
+        "end_fraction": 0.36363636363636365,
+        "start_coord": [
+          73.64821980254861,
+          45.43266140677455
+        ],
+        "end_coord": [
+          73.66227025903146,
+          45.20373035608112
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B05",
+        "start_fraction": 0.36363636363636365,
+        "end_fraction": 0.45454545454545453,
+        "start_coord": [
+          73.66227025903146,
+          45.20373035608112
+        ],
+        "end_coord": [
+          73.67632060998169,
+          44.974801024882986
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B06",
+        "start_fraction": 0.45454545454545453,
+        "end_fraction": 0.5454545454545454,
+        "start_coord": [
+          73.67632060998169,
+          44.974801024882986
+        ],
+        "end_coord": [
+          73.69037085539983,
+          44.745873413171324
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B07",
+        "start_fraction": 0.5454545454545454,
+        "end_fraction": 0.6363636363636364,
+        "start_coord": [
+          73.69037085539983,
+          44.745873413171324
+        ],
+        "end_coord": [
+          73.70442099529318,
+          44.516947520827486
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B08",
+        "start_fraction": 0.6363636363636364,
+        "end_fraction": 0.7272727272727273,
+        "start_coord": [
+          73.70442099529318,
+          44.516947520827486
+        ],
+        "end_coord": [
+          73.71847102967575,
+          44.28802334762306
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B09",
+        "start_fraction": 0.7272727272727273,
+        "end_fraction": 0.8181818181818182,
+        "start_coord": [
+          73.71847102967575,
+          44.28802334762306
+        ],
+        "end_coord": [
+          73.73252095856829,
+          44.05910089321986
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B10",
+        "start_fraction": 0.8181818181818182,
+        "end_fraction": 0.9090909090909091,
+        "start_coord": [
+          73.73252095856829,
+          44.05910089321986
+        ],
+        "end_coord": [
+          73.74657078199832,
+          43.830180157170034
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SAR-SHU-B11",
+        "start_fraction": 0.9090909090909091,
+        "end_fraction": 1.0,
+        "start_coord": [
+          73.74657078199832,
+          43.830180157170034
+        ],
+        "end_coord": [
+          73.7606205,
+          43.601261138916
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  },
+  {
+    "segment_id": "SHU-ALM",
+    "from_station_id": "SHU",
+    "to_station_id": "ALM",
+    "polyline": [
+      [
+        73.7606205,
+        43.601261138916
+      ],
+      [
+        74.07849564,
+        43.568534851074205
+      ],
+      [
+        74.39637078,
+        43.5358085632324
+      ],
+      [
+        74.71424592,
+        43.5030822753906
+      ],
+      [
+        75.03212106,
+        43.4703559875488
+      ],
+      [
+        75.34999619999999,
+        43.437629699707
+      ],
+      [
+        75.66787134,
+        43.4049034118652
+      ],
+      [
+        75.98574648,
+        43.3721771240234
+      ],
+      [
+        76.30362162,
+        43.3394508361816
+      ],
+      [
+        76.62149676,
+        43.3067245483398
+      ],
+      [
+        76.9393719,
+        43.273998260498
+      ]
+    ],
+    "real_length_km": null,
+    "demo_distance_km": 310.0,
+    "blocks": [
+      {
+        "block_id": "SHU-ALM-B01",
+        "start_fraction": 0.0,
+        "end_fraction": 0.1,
+        "start_coord": [
+          73.7606205,
+          43.601261138916
+        ],
+        "end_coord": [
+          74.07925605891695,
+          43.56845656345361
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B02",
+        "start_fraction": 0.1,
+        "end_fraction": 0.2,
+        "start_coord": [
+          74.07925605891695,
+          43.56845656345361
+        ],
+        "end_coord": [
+          74.3977216505043,
+          43.535669486685045
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B03",
+        "start_fraction": 0.2,
+        "end_fraction": 0.3,
+        "start_coord": [
+          74.3977216505043,
+          43.535669486685045
+        ],
+        "end_coord": [
+          74.71601764609149,
+          43.50289987038073
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B04",
+        "start_fraction": 0.3,
+        "end_fraction": 0.4,
+        "start_coord": [
+          74.71601764609149,
+          43.50289987038073
+        ],
+        "end_coord": [
+          75.0341444159615,
+          43.470147676418826
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B05",
+        "start_fraction": 0.4,
+        "end_fraction": 0.5,
+        "start_coord": [
+          75.0341444159615,
+          43.470147676418826
+        ],
+        "end_coord": [
+          75.35210232935435,
+          43.43741286678486
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B06",
+        "start_fraction": 0.5,
+        "end_fraction": 0.6,
+        "start_coord": [
+          75.35210232935435,
+          43.43741286678486
+        ],
+        "end_coord": [
+          75.66989175447061,
+          43.40469540357136
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B07",
+        "start_fraction": 0.6,
+        "end_fraction": 0.7,
+        "start_coord": [
+          75.66989175447061,
+          43.40469540357136
+        ],
+        "end_coord": [
+          75.98751305847502,
+          43.371995248977534
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B08",
+        "start_fraction": 0.7,
+        "end_fraction": 0.8,
+        "start_coord": [
+          75.98751305847502,
+          43.371995248977534
+        ],
+        "end_coord": [
+          76.30496660749992,
+          43.339312365308835
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B09",
+        "start_fraction": 0.8,
+        "end_fraction": 0.9,
+        "start_coord": [
+          76.30496660749992,
+          43.339312365308835
+        ],
+        "end_coord": [
+          76.62225276664886,
+          43.30664671497667
+        ],
+        "source": "MOCK"
+      },
+      {
+        "block_id": "SHU-ALM-B10",
+        "start_fraction": 0.9,
+        "end_fraction": 1.0,
+        "start_coord": [
+          76.62225276664886,
+          43.30664671497667
+        ],
+        "end_coord": [
+          76.9393719,
+          43.273998260498
+        ],
+        "source": "MOCK"
+      }
+    ],
+    "geometry_quality": "generalized",
+    "source": "existing generalized geometry"
+  }
+]
