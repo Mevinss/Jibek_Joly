@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from typing import Any
 
 from ..validator.resources import load_infrastructure
+from ..validator.state import occupants, remaining_block_seconds
 
 
 def build_snapshot_block_operations(
@@ -38,8 +39,7 @@ def build_snapshot_block_operations(
             start_at += timedelta(seconds=int(train.get("departure_shift_seconds", 0)))
             earliest = max(0, math.ceil((start_at - base).total_seconds()))
         else:
-            current_duration = durations[block_index] if block_index < len(durations) else 0
-            remaining = max(0, math.ceil(int(current_duration) * (1 - float(train.get("progress", 0)))))
+            remaining = remaining_block_seconds(train)
             earliest = remaining
             if train.get("hold_until"):
                 held_until = datetime.fromisoformat(train["hold_until"])
@@ -124,9 +124,14 @@ def solve_intervals(
         return {
             "policy": "CP_SAT", "status": "INFEASIBLE", "valid": False,
             "reason": reason, "scenario_id": snapshot.get("scenario_id"),
-            "seed": snapshot.get("seed"), "snapshot_version": snapshot.get("version"),
+            "seed": snapshot.get("seed"), "snapshot_version": snapshot.get("snapshot_version", snapshot.get("version")),
             "solver_wall_time_seconds": 0.0, "reservations": [],
         }
+
+    if snapshot.get("schema_version") == "2.0":
+        for block in blocks.values():
+            if block.get("state_conflict") or len(occupants(block)) > int(block.get("capacity", 1)):
+                return infeasible(f"INITIAL_CAPACITY_CONFLICT: {block['block_id']}")
 
     for op in operations:
         op_id = op.get("operation_id")
@@ -197,10 +202,10 @@ def solve_intervals(
                     model.add(right["end"] <= left["start"]).only_enforce_if(before.Not())
 
     # Snapshot occupancy reserves the current block until its estimated remaining
-    # block time. This is the simulator's block_seconds/progress, not a movement copy.
+    # block time, using explicit block progress (never the route progress alias).
     occupied_intervals: dict[str, list[Any]] = {}
     for train in trains.values():
-        block_id = train.get("block_id")
+        block_id = train.get("current_block_id", train.get("block_id"))
         if not block_id or block_id not in infra["blocks"]:
             continue
         represented = any(
@@ -216,9 +221,7 @@ def solve_intervals(
         if index < 0 or index >= len(durations):
             release = horizon_seconds
         else:
-            release = min(horizon_seconds, max(1, math.ceil(
-                int(durations[index]) * (1 - float(train.get("progress", 0)))
-            )))
+            release = min(horizon_seconds, max(1, remaining_block_seconds(train)))
         fixed = model.new_fixed_size_interval_var(0, release, f"occupied_{train['train_id']}_{block_id}")
         occupied_intervals.setdefault(block_id, []).append(fixed)
     for (kind, resource_id), items in by_resource.items():
@@ -228,7 +231,7 @@ def solve_intervals(
     # A train already on a single-track segment keeps its direction lock until
     # its current block is expected to clear.
     for train in trains.values():
-        block_id = train.get("block_id")
+        block_id = train.get("current_block_id", train.get("block_id"))
         if not block_id or block_id not in infra["blocks"]:
             continue
         segment_id = infra["blocks"][block_id]["segment_id"]
@@ -239,9 +242,7 @@ def solve_intervals(
         signal_id = signal_ids[index] if 0 <= index < len(signal_ids) else None
         direction = infra["signals"].get(signal_id, {}).get("entry_direction_from")
         durations = train.get("block_seconds", [])
-        remaining = horizon_seconds if index < 0 or index >= len(durations) else max(
-            1, math.ceil(int(durations[index]) * (1 - float(train.get("progress", 0))))
-        )
+        remaining = horizon_seconds if index < 0 or index >= len(durations) else max(1, remaining_block_seconds(train))
         if not direction:
             continue
         for item in direction_items.get(segment_id, []):
@@ -341,7 +342,7 @@ def solve_intervals(
         return {
             "policy": "CP_SAT", "status": "OPTIMAL", "valid": None,
             "reason": "No operations supplied.", "scenario_id": snapshot.get("scenario_id"),
-            "seed": snapshot.get("seed"), "snapshot_version": snapshot.get("version"),
+            "seed": snapshot.get("seed"), "snapshot_version": snapshot.get("snapshot_version", snapshot.get("version")),
             "solver_wall_time_seconds": 0.0, "reservations": [],
         }
 
@@ -363,7 +364,7 @@ def solve_intervals(
     result: dict[str, Any] = {
         "policy": "CP_SAT", "status": status_name,
         "scenario_id": snapshot.get("scenario_id"), "seed": snapshot.get("seed"),
-        "snapshot_version": snapshot.get("version"),
+        "snapshot_version": snapshot.get("snapshot_version", snapshot.get("version")),
         "solver_wall_time_seconds": solver.wall_time,
         "solver_time_limit_seconds": float(time_limit_seconds),
         "reservations": [],

@@ -70,7 +70,7 @@ def plan_fifo(
         "status": "DISPATCH_ORDER_ONLY",
         "scenario_id": snapshot.get("scenario_id"),
         "seed": snapshot.get("seed"),
-        "snapshot_version": snapshot.get("version"),
+        "snapshot_version": snapshot.get("snapshot_version", snapshot.get("version")),
         "source_type": snapshot.get("source_type"),
         "ordered_train_ids": [item["train_id"] for item in ordered],
         "requests": [
@@ -88,3 +88,9 @@ def plan_fifo(
             "ScenarioSnapshot v1 does not include train priority or station dwell windows.",
         ],
     }
+
+
+def plan_fifo_snapshot(snapshot, *, config=None, infrastructure=None):
+    """Canonical v2 full-plan path; plan_fifo remains an ordering-only API."""
+    from .service import build_fifo_plan
+    return build_fifo_plan(snapshot, config=config, infrastructure=infrastructure)

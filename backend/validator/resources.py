@@ -10,6 +10,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
+from .state import remaining_block_seconds
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data" / "kz_demo"
 
@@ -26,10 +28,16 @@ class ValidationIssue:
 class ValidationResult:
     valid: bool
     issues: tuple[ValidationIssue, ...]
+    snapshot_version: int | None = None
+    affected_resource: str | None = None
+    run_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {"valid": self.valid, "accepted": self.valid,
                 "issues": [asdict(issue) for issue in self.issues],
+                "snapshot_version": self.snapshot_version,
+                "affected_resource": self.affected_resource, "run_id": self.run_id,
+                "reason_code": self.issues[0].code if self.issues else "ACCEPTED",
                 "reason": "; ".join(issue.message for issue in self.issues)}
 
 
@@ -68,6 +76,9 @@ def validate_human_decision(
     infrastructure: dict[str, Any] | None = None,
 ) -> ValidationResult:
     """Check a proposed action against one immutable snapshot and return a reason."""
+    if snapshot.get("schema_version") == "2.0":
+        from .dispatch import validate_canonical_human_decision
+        return validate_canonical_human_decision(snapshot, decision, infrastructure)
     infra = infrastructure or load_infrastructure()
     train_id = decision.get("train_id")
     trains = {t["train_id"]: t for t in snapshot.get("trains", [])}
@@ -174,6 +185,9 @@ def validate_plan(
     Reservation schema: {train_id, resource_type, resource_id, start, end,
     direction?, entry_signal_id?}. Intervals use [start, end).
     """
+    if getattr(plan, "schema_version", None) == "dispatch-2.0" or (isinstance(plan, dict) and plan.get("schema_version") == "dispatch-2.0"):
+        from .dispatch import validate_dispatch_plan
+        return validate_dispatch_plan(snapshot, plan, infrastructure)
     infra = infrastructure or load_infrastructure()
     issues: list[ValidationIssue] = []
     trains = {t["train_id"]: t for t in snapshot.get("trains", [])}
@@ -343,7 +357,7 @@ def validate_plan(
                 index = int(occupant.get("block_index", -1))
                 durations = occupant.get("block_seconds", [])
                 if 0 <= index < len(durations):
-                    remaining = max(0, int(int(durations[index]) * (1 - float(occupant.get("progress", 0)))))
+                    remaining = remaining_block_seconds(occupant)
                     release = now + timedelta(seconds=remaining)
                 else:
                     release = item["_end"]

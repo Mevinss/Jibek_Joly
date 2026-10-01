@@ -1,0 +1,460 @@
+{
+  "source": "synthetic_unit_test_contract_example",
+  "input": {
+    "schema_version": "2.0",
+    "scenario_id": "SCN-TEST",
+    "seed": 42,
+    "run_id": "RUN-1",
+    "dataset_version": "test-v1",
+    "snapshot_version": 9,
+    "virtual_time": "2026-10-01T09:00:00+05:00",
+    "source_type": "SIMULATED_DEMO",
+    "trains": [
+      {
+        "train_id": "SIM-0",
+        "route": [
+          "B0"
+        ],
+        "block_seconds": [
+          100
+        ],
+        "entry_signals": [
+          "SIG0"
+        ],
+        "entry_switches": [
+          null
+        ],
+        "required_tracks": [
+          null
+        ],
+        "block_index": -1,
+        "current_block_id": null,
+        "block_id": null,
+        "block_progress_0_1": 0.0,
+        "route_progress_0_1": 0.0,
+        "progress": 0.0,
+        "status": "scheduled",
+        "planned_start": "2026-10-01T09:00:00+05:00",
+        "scheduled_final_arrival": "2026-10-01T09:01:40+05:00",
+        "category": "passenger",
+        "priority": 0,
+        "speed_kmh": 80,
+        "station_stops": []
+      }
+    ],
+    "blocks": [
+      {
+        "block_id": "B0",
+        "segment_id": "SEG",
+        "capacity": 1,
+        "occupied_train_ids": [],
+        "occupied_by": null,
+        "closed": false,
+        "state_conflict": false,
+        "speed_limit_kmh": 80
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "SIG0",
+        "aspect": "CLEAR",
+        "failed": false
+      }
+    ],
+    "switches": [],
+    "active_incidents": [
+      {
+        "type": "BLOCK_CLOSURE",
+        "incident_id": "I",
+        "block_id": "B0",
+        "at": "2026-10-01T09:00:00+05:00",
+        "duration_min": 10
+      }
+    ],
+    "station_tracks": [
+      {
+        "track_id": "S-T1",
+        "station_id": "S",
+        "capacity": 1,
+        "occupied_train_ids": [],
+        "available": true,
+        "occupancy_source": "SIMULATED"
+      }
+    ]
+  },
+  "infrastructure": {
+    "blocks": {
+      "B0": {
+        "segment_id": "SEG",
+        "demo_capacity_trains": 1
+      }
+    },
+    "segments": {
+      "SEG": {
+        "direction_lock": "one_direction_at_a_time"
+      }
+    },
+    "signals": {
+      "SIG0": {
+        "block_id": "B0",
+        "entry_direction_from": "S"
+      }
+    },
+    "switches": {},
+    "station_tracks": {
+      "S-T1": {
+        "station_id": "S",
+        "demo_capacity_trains": 1
+      }
+    }
+  },
+  "fifo": {
+    "plan_id": "PLAN-7e21be27fe77393919a2",
+    "scenario_id": "SCN-TEST",
+    "seed": 42,
+    "run_id": "RUN-1",
+    "dataset_version": "test-v1",
+    "snapshot_version": 9,
+    "policy": "FIFO",
+    "created_at": "2026-10-01T09:00:00+05:00",
+    "planning_horizon_start": "2026-10-01T09:00:00+05:00",
+    "planning_horizon_end": "2026-10-01T10:00:00+05:00",
+    "solver_status": "FEASIBLE",
+    "solver_wall_time_ms": 0.11370005086064339,
+    "schema_version": "dispatch-2.0",
+    "advisory": true,
+    "source_type": "SIMULATED_DEMO",
+    "valid": true,
+    "fully_validated": true,
+    "eligible_for_application": true,
+    "fallback_used": false,
+    "fallback_reason": null,
+    "train_plans": [
+      {
+        "train_id": "SIM-0",
+        "status": "planned",
+        "route": [
+          "B0"
+        ],
+        "resource_sequence": [
+          "B0"
+        ],
+        "planned_departure": "2026-10-01T09:10:00+05:00",
+        "planned_arrival": "2026-10-01T09:11:40+05:00",
+        "final_arrival_time": "2026-10-01T09:11:40+05:00",
+        "holding_minutes": 10.0,
+        "selected_station_tracks": [],
+        "resource_reservations": [
+          {
+            "resource_type": "block",
+            "resource_id": "B0",
+            "train_id": "SIM-0",
+            "start_time": "2026-10-01T09:10:00+05:00",
+            "end_time": "2026-10-01T09:11:40+05:00",
+            "traversal_end_time": "2026-10-01T09:11:40+05:00",
+            "direction": "S",
+            "route_index": 0,
+            "sequence": 0,
+            "existing_occupancy": false,
+            "release_requires_replan": false
+          }
+        ],
+        "next_route_index": null
+      }
+    ],
+    "resource_intervals": [
+      {
+        "resource_type": "block",
+        "resource_id": "B0",
+        "train_id": "SIM-0",
+        "start_time": "2026-10-01T09:10:00+05:00",
+        "end_time": "2026-10-01T09:11:40+05:00",
+        "traversal_end_time": "2026-10-01T09:11:40+05:00",
+        "direction": "S",
+        "route_index": 0,
+        "sequence": 0,
+        "existing_occupancy": false,
+        "release_requires_replan": false
+      }
+    ],
+    "validation": {
+      "valid": true,
+      "fully_validated": true,
+      "violations": [],
+      "warnings": [],
+      "validation_scope": [
+        "BLOCK",
+        "DIRECTION",
+        "INCIDENT",
+        "STATION_TRACK",
+        "ROUTE_ORDER",
+        "MINIMUM_TRAVEL_TIME",
+        "MINIMUM_DWELL",
+        "HEADWAY",
+        "TRAIN_TIME"
+      ],
+      "unverified_scope": []
+    },
+    "considered_train_ids": [
+      "SIM-0"
+    ],
+    "deferred_train_ids": [],
+    "objective_components": {
+      "basis": "weighted_final_arrival_delay_lower_bound_seconds",
+      "secondary": "maximize_planned_prefix_operations",
+      "trains": {
+        "SIM-0": {
+          "projected_final_arrival_lower_bound": "2026-10-01T09:11:40+05:00",
+          "weight": 1,
+          "weighted_delay_seconds_lower_bound": 600
+        }
+      },
+      "completed_simulation_metric": false
+    },
+    "diagnostics": {
+      "considered_train_count": 1,
+      "resource_interval_count": 1,
+      "horizon_seconds": 3600,
+      "solver_time_limit_seconds": 5.0
+    },
+    "config": {
+      "horizon_seconds": 3600,
+      "time_limit_seconds": 5.0,
+      "headway_seconds": 0,
+      "category_weights": {}
+    }
+  },
+  "cp_sat": {
+    "plan_id": "PLAN-a60f790be6e3c2b6150f",
+    "scenario_id": "SCN-TEST",
+    "seed": 42,
+    "run_id": "RUN-1",
+    "dataset_version": "test-v1",
+    "snapshot_version": 9,
+    "policy": "CP_SAT",
+    "created_at": "2026-10-01T09:00:00+05:00",
+    "planning_horizon_start": "2026-10-01T09:00:00+05:00",
+    "planning_horizon_end": "2026-10-01T10:00:00+05:00",
+    "solver_status": "OPTIMAL",
+    "solver_wall_time_ms": 11.007600000000002,
+    "schema_version": "dispatch-2.0",
+    "advisory": true,
+    "source_type": "SIMULATED_DEMO",
+    "valid": true,
+    "fully_validated": true,
+    "eligible_for_application": true,
+    "fallback_used": false,
+    "fallback_reason": null,
+    "train_plans": [
+      {
+        "train_id": "SIM-0",
+        "status": "planned",
+        "route": [
+          "B0"
+        ],
+        "resource_sequence": [
+          "B0"
+        ],
+        "planned_departure": "2026-10-01T09:10:00+05:00",
+        "planned_arrival": "2026-10-01T09:11:40+05:00",
+        "final_arrival_time": "2026-10-01T09:11:40+05:00",
+        "holding_minutes": 10.0,
+        "selected_station_tracks": [],
+        "resource_reservations": [
+          {
+            "resource_type": "block",
+            "resource_id": "B0",
+            "train_id": "SIM-0",
+            "start_time": "2026-10-01T09:10:00+05:00",
+            "end_time": "2026-10-01T09:11:40+05:00",
+            "traversal_end_time": "2026-10-01T09:11:40+05:00",
+            "direction": "S",
+            "route_index": 0,
+            "sequence": 0,
+            "existing_occupancy": false,
+            "release_requires_replan": false
+          }
+        ],
+        "next_route_index": null
+      }
+    ],
+    "resource_intervals": [
+      {
+        "resource_type": "block",
+        "resource_id": "B0",
+        "train_id": "SIM-0",
+        "start_time": "2026-10-01T09:10:00+05:00",
+        "end_time": "2026-10-01T09:11:40+05:00",
+        "traversal_end_time": "2026-10-01T09:11:40+05:00",
+        "direction": "S",
+        "route_index": 0,
+        "sequence": 0,
+        "existing_occupancy": false,
+        "release_requires_replan": false
+      }
+    ],
+    "validation": {
+      "valid": true,
+      "fully_validated": true,
+      "violations": [],
+      "warnings": [],
+      "validation_scope": [
+        "BLOCK",
+        "DIRECTION",
+        "INCIDENT",
+        "STATION_TRACK",
+        "ROUTE_ORDER",
+        "MINIMUM_TRAVEL_TIME",
+        "MINIMUM_DWELL",
+        "HEADWAY",
+        "TRAIN_TIME"
+      ],
+      "unverified_scope": []
+    },
+    "considered_train_ids": [
+      "SIM-0"
+    ],
+    "deferred_train_ids": [],
+    "objective_components": {
+      "basis": "weighted_final_arrival_delay_lower_bound_seconds",
+      "secondary": "maximize_planned_prefix_operations",
+      "trains": {
+        "SIM-0": {
+          "projected_final_arrival_lower_bound": "2026-10-01T09:11:40+05:00",
+          "weight": 1,
+          "weighted_delay_seconds_lower_bound": 600
+        }
+      },
+      "completed_simulation_metric": false
+    },
+    "diagnostics": {
+      "considered_train_count": 1,
+      "resource_interval_count": 1,
+      "horizon_seconds": 3600,
+      "solver_time_limit_seconds": 5.0
+    },
+    "config": {
+      "horizon_seconds": 3600,
+      "time_limit_seconds": 5.0,
+      "headway_seconds": 0,
+      "category_weights": {}
+    }
+  },
+  "fork_schedule": {
+    "plan_id": "PLAN-a60f790be6e3c2b6150f",
+    "scenario_id": "SCN-TEST",
+    "seed": 42,
+    "run_id": "RUN-1",
+    "dataset_version": "test-v1",
+    "snapshot_version": 9,
+    "policy": "CP_SAT",
+    "advisory": true,
+    "scope": "simulation_fork_only",
+    "transitions": [
+      {
+        "at": "2026-10-01T09:10:00+05:00",
+        "train_id": "SIM-0",
+        "action": "ENTER_RESOURCE",
+        "resource_type": "block",
+        "resource_id": "B0",
+        "release_previous": null,
+        "minimum_traversal_end": "2026-10-01T09:11:40+05:00",
+        "sequence": 0
+      },
+      {
+        "at": "2026-10-01T09:11:40+05:00",
+        "train_id": "SIM-0",
+        "action": "COMPLETE_TRAIN",
+        "release_previous": {
+          "resource_type": "block",
+          "resource_id": "B0"
+        },
+        "sequence": 1
+      }
+    ],
+    "terminal_holds": [],
+    "simultaneous_transitions": "Apply equal-time transitions atomically as a batch.",
+    "validation": {
+      "valid": true,
+      "fully_validated": true,
+      "violations": [],
+      "warnings": [],
+      "validation_scope": [
+        "BLOCK",
+        "DIRECTION",
+        "INCIDENT",
+        "STATION_TRACK",
+        "ROUTE_ORDER",
+        "MINIMUM_TRAVEL_TIME",
+        "MINIMUM_DWELL",
+        "HEADWAY",
+        "TRAIN_TIME"
+      ],
+      "unverified_scope": []
+    }
+  },
+  "speed_advice": {
+    "train_id": "SIM-0",
+    "plan_id": "PLAN-a60f790be6e3c2b6150f",
+    "advisory": true,
+    "profile_type": "demonstration_advisory_profile",
+    "current_speed_kmh": 80,
+    "recommended_speed_kmh": 42.0,
+    "target_resource_id": "B0",
+    "target_arrival_time": "2026-10-01T09:10:00+05:00",
+    "full_stop_avoided": true,
+    "energy_proxy_units_before": 3.07916667,
+    "energy_proxy_units_after": 0.45125,
+    "energy_proxy_delta": -2.62791667,
+    "energy_proxy_basis": {
+      "formula": "full_stops + sum((delta_speed/speed_limit)^2) + idle_minutes/60",
+      "before_components": {
+        "full_stops": 1,
+        "acceleration_changes": [
+          80
+        ],
+        "braking_changes": [
+          80
+        ],
+        "speed_limit_kmh": 80.0,
+        "idle_waiting_minutes": 4.75
+      },
+      "after_components": {
+        "full_stops": 0,
+        "acceleration_changes": [
+          38.0
+        ],
+        "braking_changes": [
+          38.0
+        ],
+        "speed_limit_kmh": 80.0,
+        "idle_waiting_minutes": 0.0
+      },
+      "scope": "idealized_control_point_approach_and_return_to_reference_speed"
+    },
+    "profile_points": [
+      {
+        "distance_km": 0.0,
+        "speed_kmh": 42.0,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "distance_km": 3.5,
+        "speed_kmh": 42.0,
+        "elapsed_seconds": 300.0
+      },
+      {
+        "distance_km": 7.0,
+        "speed_kmh": 42.0,
+        "elapsed_seconds": 600.0
+      }
+    ],
+    "reason_code": "ARRIVE_WHEN_RESOURCE_OPENS",
+    "reason": "Средняя скорость рассчитана по расстоянию и времени входа из проверенного плана.",
+    "assumptions": [
+      "Синтетическая модель с мгновенным изменением скорости; тормозной путь не рассчитан.",
+      "Совет действителен только для указанного плана и снимка; запрещающий сигнал сохраняет приоритет.",
+      "Энергетический индекс — условная оценка событий, без физических единиц энергии."
+    ]
+  }
+}
