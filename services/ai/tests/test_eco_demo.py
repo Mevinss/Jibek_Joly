@@ -10,6 +10,9 @@ def inputs(**overrides):
 def test_green_target_avoids_red_stop_and_proxy_is_computed():
     a = eco_advice(**inputs())
     assert a['recommended_speed_kmh'] == 42
+    assert 35 < a['cruise_speed_kmh'] < 42
+    assert a['recommended_speed_profile'][0]['speed_kmh'] == 80
+    assert a['recommended_speed_profile'][1]['speed_kmh'] < 80
     assert a['full_stop_avoided'] is True
     assert a['target_arrival_time'].endswith('08:10:00+05:00')
     assert a['energy_proxy_units'] < a['baseline_energy_proxy_units']

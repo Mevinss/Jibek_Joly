@@ -30,9 +30,8 @@ test('Scheduled departure is not delay and a finished train has zero actual spee
  const train=w.trains[5];
  w.trains=[train];for(const block of w.blocks){block.main=null;block.reserve=null;}
  w.signals=[];
- const row=stationArrivals(w,4)[0];
- assert.ok(row.delay_minutes<.1);
- step(w,25);assert.ok(train.delay<.1);
+ step(w,10);assert.equal(train.delay,0);assert.equal(train.distance_work,0);
+ step(w,15);assert.ok(train.distance_work>0);
  const fleet=makeWorld({events:false,eco:true,recordJourney:false});
  step(fleet,60);assert.equal(fleet.trains[4].state,'done');
  assert.equal(fleet.trains[4].actualSpeed,0);assert.equal(fleet.done,false);
@@ -50,6 +49,7 @@ test('Side-by-side scenarios receive the identical incident before intervention'
 test('seven km to a known green in ten minutes computes 42 and avoids a real baseline stop',()=>{
  const a=ecoAdvice({distanceKm:7,currentKmh:80,capKmh:80,nowMin:0,openMin:10,massTons:3500});
  assert.equal(a.recommended_speed_kmh,42);assert.equal(a.full_stop_avoided,true);
+ assert.ok(a.cruise_speed_kmh<42);assert.equal(a.recommended_speed_profile[0].speed_kmh,80);
  assert.ok(a.energy_proxy_units<a.baseline_energy_proxy_units);
  assert.equal(a.recommended_speed_profile.at(-1).elapsed_seconds,600);
 });

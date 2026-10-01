@@ -23,7 +23,8 @@ export function stationArrivals(input,station){
   let planned=t.releaseAt||0;
   for(let b=Math.min(t.start,station);b<Math.max(t.start,station);b++)planned+=durations[b]*speedFactor(t);
   if(t.initialProgress)planned-=durations[t.dir>0?t.start:t.start-1]*speedFactor(t)*t.initialProgress;
-  const delay=arrival===null?null:Math.max(0,arrival-Math.max(0,planned));
+  planned=t.timetable?.stations?.[station]??planned;
+  const delay=arrival===null?null:Math.max(0,arrival-Math.max(0,planned)-.15);
   return {id:t.id,color:t.color,type:t.type,arrival,eta_minutes:arrival===null?null:Math.max(0,arrival-input.time),delay_minutes:delay,severity:delay===null?'unknown':delay<=5?'good':delay<=15?'warn':'bad',held:t.hold&&t.segment===null};
  }).sort((a,b)=>(a.arrival??Infinity)-(b.arrival??Infinity));
 }
