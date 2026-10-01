@@ -1,0 +1,47 @@
+id,description
+28,Inne
+29,Inne przyczyny związane z działalnością przewoźnika kolejowego
+30,Awaria taboru
+31,Przyczyny związane z realizacją inwestycji
+32,Awaria sieci trakcyjnej
+34,Inne przyczyny związane z utrzymaniem linii kolejowych
+36,Inne przyczyny związane z działalnością zarządcy infrastruktury
+38,Opóźnienie z winy innego zarządcy infrastruktury
+47,Wypadek z udziałem pojazdów drogowych
+139,Trudne warunki atmosferyczne
+140,Kolizja ze zwierzętami
+141,Awaria urządzeń sterowania ruchem kolejowym
+142,Ograniczenie prędkości pociągu
+143,Usterka systemu łączności
+144,Interwencja służb porządkowych
+145,Wydłużone lokowanie pasażerów
+146,Wydłużone przygotowanie wagonów do drogi
+147,Opóźnienie innego pociągu
+148,Awaria elementów infrastruktury kolejowej
+149,Wydłużone oczekiwanie na obsługę
+151,Brak zasilania sieci trakcyjnej
+152,Sprawdzenie stanu technicznego taboru
+153,Interwencja służb medycznych
+154,Kradzież elementów infrastruktury kolejowej
+155,Awaria urządzeń energetycznych
+156,Interwencja służb ratowniczych
+157,Oczekiwanie na skomunikowanie
+159,Utrudnienia w realizacji przejazdu leżące po stronie Przewoźnika
+160,Wypadek z udziałem człowieka
+161,Przyczyny niezależne od Zarzadcy Infrastruktury i Przewoźnika
+166,Wydłużona kontrola graniczna
+170,Dodatkowe postoje
+172,Awaria systemu informatycznego
+173,Utrudnienia w prowadzeniu ruchu leżące po stronie Zarządcy Infrastruktury
+199,Wypadek powodujący przerwę w ruchu pociągów
+313,Zdarzenie związane z prowadzeniem ruchu kolejowego
+360,Wydłużona obsługa przesyłek konduktorskich
+391,Oczekiwanie na przejazd innego pociągu
+427,Włączanie/wyłączanie wagonów
+608,Oczekiwanie na tabor z innego pociągu
+694,Wypadek z udziałem  człowieka i pociągu towarowego
+695,Przewrócone drzewo na sieć trakcyjną
+704,Pociąg odwołany
+749,W związku z prognozowanym przez IMGW wystąpieniem wysokich temperatur oraz burz mogą wystąpić utrudnienia i opóźnienia w kursowaniu pociągów
+750,Wypadek z udziałem pociągów nr 85432 (POLREGIO Spółka Akcyjna) relacji Piła Główna - Bydgoszcz Główna oraz nr 8130/1 (PKP INTERCITY Spółka Akcyjna ) relacji Białogard - Warszawa Wschodnia
+751,Wykolejenie pociągu towarowego
