@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import shutil
+import subprocess
 import time
 import urllib.error
 import urllib.request
@@ -27,12 +28,19 @@ FALLBACK = {
 def download(url: str, target: Path, expected_md5: str | None = None) -> dict:
     target.parent.mkdir(parents=True, exist_ok=True)
     part = target.with_name(target.name + ".part")
+    if target.is_file():
+        existing_md5 = hashlib.md5(target.read_bytes()).hexdigest()
+        if expected_md5 is None or existing_md5 == expected_md5:
+            return {"url": url, "retrieved_at": datetime.fromtimestamp(target.stat().st_mtime, timezone.utc).isoformat(), "bytes": target.stat().st_size, "md5": existing_md5, "sha256": hashlib.sha256(target.read_bytes()).hexdigest(), "download_path": str(target.relative_to(ROOT)), "cached": True}
     last_error = None
     for attempt in range(4):
         try:
             request = urllib.request.Request(url, headers={"User-Agent": "TurkiSib-data-import/1.0"})
             with urllib.request.urlopen(request, timeout=45) as response, part.open("wb") as output:
                 shutil.copyfileobj(response, output, length=1024 * 1024)
+                stated_length = response.headers.get("Content-Length")
+            if stated_length and part.stat().st_size != int(stated_length):
+                raise ValueError(f"incomplete download: {part.stat().st_size} != {stated_length}")
             digest = hashlib.md5()
             sha = hashlib.sha256()
             with part.open("rb") as source:
@@ -50,6 +58,20 @@ def download(url: str, target: Path, expected_md5: str | None = None) -> dict:
                 break
             if attempt < 3:
                 time.sleep(min(2 ** attempt, 8))
+    if expected_md5 and last_error and "MD5 mismatch" in last_error:
+        curl = shutil.which("curl.exe") or shutil.which("curl")
+        if curl:
+            try:
+                subprocess.run([curl, "-L", "--fail", "--retry", "3", "--retry-delay", "2", "--silent", "--show-error", "--output", str(part), url], check=True, capture_output=True, text=True, timeout=1200)
+                digest = hashlib.md5(part.read_bytes()).hexdigest()
+                if digest != expected_md5:
+                    raise ValueError(f"curl fallback MD5 mismatch: {digest} != {expected_md5}")
+                sha = hashlib.sha256(part.read_bytes()).hexdigest()
+                os.replace(part, target)
+                return {"url": url, "retrieved_at": datetime.now(timezone.utc).isoformat(), "bytes": target.stat().st_size, "md5": digest, "sha256": sha, "download_path": str(target.relative_to(ROOT)), "transport": "curl fallback"}
+            except (subprocess.SubprocessError, OSError, ValueError) as exc:
+                last_error = f"{last_error}; curl fallback: {type(exc).__name__}: {exc}"
+                part.unlink(missing_ok=True)
     raise RuntimeError(f"{url}: {last_error}")
 
 
@@ -58,6 +80,7 @@ def extract(archive_path: Path, destination: Path, required: set[str] | None = N
     with zipfile.ZipFile(archive_path) as archive:
         members = archive.infolist()
         normalized = []
+        seen: set[Path] = set()
         for info in members:
             raw = info.filename.replace("\\", "/")
             path = PurePosixPath(raw)
@@ -74,6 +97,9 @@ def extract(archive_path: Path, destination: Path, required: set[str] | None = N
             if info.is_dir():
                 continue
             output = destination.joinpath(*path.parts)
+            if output in seen:
+                raise ValueError(f"duplicate ZIP member: {info.filename}")
+            seen.add(output)
             output.parent.mkdir(parents=True, exist_ok=True)
             with archive.open(info) as source, output.open("wb") as target:
                 shutil.copyfileobj(source, target)
@@ -83,7 +109,7 @@ def extract(archive_path: Path, destination: Path, required: set[str] | None = N
 
 def main() -> None:
     result = {"kz_demo": {"source_type": "SIMULATED_DEMO", "path": "data/kz_demo", "note": "Bundled Kazakhstan synthetic data; no real train claims"}, "sources": {}}
-    pkp = {"source_type": "FOREIGN_CALIBRATION", "licence_attribution": "Marek Kostrz, PKP Intercity delays, Zenodo record 21700869; see archive LICENSE", "url": PKP_URL}
+    pkp = {"source_type": "FOREIGN_CALIBRATION", "licence_attribution": "Marek Kostrz, PKP Intercity delays, Zenodo record 21700869, CC-BY 4.0", "url": PKP_URL}
     try:
         target = EXTERNAL / "pkp" / "_downloads" / "pkp_intercity_delays_dataset.zip"
         pkp.update(download(PKP_URL, target, PKP_MD5))
@@ -92,11 +118,16 @@ def main() -> None:
     except Exception as exc:
         pkp.update(status="failed", error=str(exc))
     result["sources"]["pkp"] = pkp
-    displib = {"source_type": "FOREIGN_BENCHMARK", "licence_attribution": "DISPLIB project, displib.github.io; see source specification and archive licence", "url": DISPLIB_URL}
+    displib = {"source_type": "FOREIGN_BENCHMARK", "licence_attribution": "DISPLIB project, Bjørnar Luteberget and Giorgio Sartor, displib.github.io; no licence stated on download page", "url": DISPLIB_URL}
     try:
         target = EXTERNAL / "displib" / "_downloads" / "displib_problems_2025-09-17.zip"
         displib.update(download(DISPLIB_URL, target))
         displib["extracted_paths"] = extract(target, EXTERNAL / "displib")
+        for name in FALLBACK:
+            path = EXTERNAL / "displib" / name
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or not {"trains", "objective"} <= data.keys():
+                raise ValueError(f"invalid DISPLIB root keys: {name}")
         displib["status"] = "full_downloaded"
     except Exception as exc:
         displib.update(status="full_failed", error=str(exc), fallback={})

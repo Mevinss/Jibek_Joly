@@ -3,6 +3,5 @@ __pycache__/
 .pytest_cache/
 *.pyc
 data/external/
-data/kz_demo/
 data/*.sqlite3
 *.part

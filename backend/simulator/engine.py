@@ -164,6 +164,8 @@ class Simulator:
                     train = self.trains[incident["train_id"]]
                     if train.block_index < 0:
                         train.departure_shift_seconds += int(incident["duration_min"]) * 60
+                        train.delay_min = round(train.departure_shift_seconds / 60, 2)
+                        train.status = "delayed"
                     else:
                         train.hold_until = iso(end)
                 elif incident["type"] == "BLOCK_CLOSURE":
@@ -206,7 +208,9 @@ class Simulator:
         failures = {item["signal_id"] for item in self.active_incidents.values() if item["type"] == "SIGNAL_FAILURE"}
         for row in self.signals_def:
             block = self.blocks[row["block_id"]]
-            self.signals[row["signal_id"]]["aspect"] = "STOP" if row["signal_id"] in failures or block["closed"] or block["occupied_by"] else "CLEAR"
+            segment_id = row["block_id"].rsplit("-B", 1)[0]
+            opposite = any(train.block_id and train.block_id.startswith(segment_id + "-B") and self._entry_direction(train, train.block_index) != row["entry_direction_from"] for train in self.trains.values())
+            self.signals[row["signal_id"]]["aspect"] = "STOP" if row["signal_id"] in failures or block["closed"] or block["occupied_by"] or opposite else "CLEAR"
 
     def advance(self, seconds: int) -> ScenarioSnapshot:
         if seconds < 0:

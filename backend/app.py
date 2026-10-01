@@ -116,6 +116,7 @@ async def lifespan(app: FastAPI):
         task.cancel()
         with suppress(asyncio.CancelledError):
             await task
+        runtime.store.connection.close()
 
 
 app = FastAPI(title="TurkiSib simulator", lifespan=lifespan)

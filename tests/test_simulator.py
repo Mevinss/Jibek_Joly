@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 from backend.simulator import Simulator
 from backend.store import EventStore
+from scripts.import_kz_demo import safe_members
 
 
 class SimulatorTests(unittest.TestCase):
@@ -52,6 +54,10 @@ class SimulatorTests(unittest.TestCase):
         self.assertEqual(len({item["incident_id"] for item in incidents}), 40)
         self.assertEqual({item["type"] for item in incidents}, {"TRAIN_DELAY", "SIGNAL_FAILURE", "SWITCH_FAILURE", "BLOCK_CLOSURE"})
         self.assertNotEqual(simulator.seed, Simulator("SCN-ALL").seed)
+        simulator.advance(4 * 3600)
+        self.assertEqual(len([event for event in simulator.events if event["type"] == "INCIDENT_ONSET"]), 40)
+        self.assertEqual(len([event for event in simulator.events if event["type"] == "INCIDENT_RESOLUTION"]), 40)
+        self.assertFalse(simulator.active_incidents)
 
     def test_sqlite_restart_and_replay_do_not_mutate_live_state(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -71,6 +77,14 @@ class SimulatorTests(unittest.TestCase):
             self.assertEqual(restored.snapshot().to_dict(), later)
             self.assertGreater(store.current("SCN-01")["last_sequence"], 1)
             store.connection.close()
+
+    def test_import_rejects_archive_traversal(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "malicious.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("../KZ/blocks.csv", "bad")
+            with zipfile.ZipFile(path) as archive, self.assertRaisesRegex(ValueError, "unsafe ZIP member"):
+                safe_members(archive)
 
 
 if __name__ == "__main__":

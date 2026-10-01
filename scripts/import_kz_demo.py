@@ -10,6 +10,7 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "data" / "kz_demo"
 REQUIRED = ("KZ/blocks.csv", "KZ/train_services.csv", "KZ/run_stops.csv", "mock/signals.csv", "mock/switches.csv", "scenarios/scenarios.json", "scenarios/incidents.json", "scenarios/initial_state.json")
+DOCUMENTS = ("README.md", "validation.json")
 
 
 def safe_members(archive: zipfile.ZipFile) -> list[tuple[zipfile.ZipInfo, Path]]:
@@ -25,9 +26,14 @@ def safe_members(archive: zipfile.ZipFile) -> list[tuple[zipfile.ZipInfo, Path]]
         start = next((i for i, part in enumerate(parts) if part in {"KZ", "mock", "scenarios"}), None)
         if start is not None and len(parts) > start + 1 and not info.is_dir():
             members.append((info, Path(*parts[start:])))
+        elif not info.is_dir() and parts[-1] in DOCUMENTS:
+            members.append((info, Path(parts[-1])))
     names = {p.as_posix() for _, p in members}
-    if not set(REQUIRED) <= names:
-        raise ValueError(f"ZIP missing required files: {sorted(set(REQUIRED) - names)}")
+    if len(names) != len(members):
+        raise ValueError("duplicate normalized ZIP member")
+    required = set(REQUIRED) | set(DOCUMENTS)
+    if not required <= names:
+        raise ValueError(f"ZIP missing required files: {sorted(required - names)}")
     return members
 
 
@@ -45,18 +51,11 @@ def main() -> None:
                     shutil.copyfileobj(source, dest)
         source = str(args.zip.resolve())
     else:
-        for rel in REQUIRED:
-            if not (ROOT / "data" / rel).is_file():
-                raise FileNotFoundError(ROOT / "data" / rel)
-        for folder in ("KZ", "mock", "scenarios"):
-            shutil.copytree(ROOT / "data" / folder, TARGET / folder, dirs_exist_ok=True)
-        shutil.copy2(ROOT / "README.md", TARGET / "README.md")
-        shutil.copy2(ROOT / "validation.json", TARGET / "validation.json")
-        source = "repository bundled data"
-    for rel in REQUIRED:
+        source = "repository canonical data"
+    for rel in REQUIRED + DOCUMENTS:
         if not (TARGET / rel).is_file():
             raise ValueError(f"import missing {rel}")
-    print(json.dumps({"source": source, "target": str(TARGET), "validated": len(REQUIRED)}, ensure_ascii=False))
+    print(json.dumps({"source": source, "target": str(TARGET), "validated": len(REQUIRED) + len(DOCUMENTS)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

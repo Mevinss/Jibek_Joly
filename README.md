@@ -1,6 +1,6 @@
 # TurkiSib demo simulator
 
-Көкшетау–Астана–Алматы дәлізінің **синтетикалық** диспетчерлік демосы. Репозиторийдегі `data/KZ`, `data/mock`, `data/scenarios` бастапқы деректері Қазақстандағы нақты пойыз қозғалысы емес. PKP дерегі тек статистикалық калибрлеуге, DISPLIB тек алгоритм benchmark-іне арналған; екеуі де симулятор пойыздарына қосылмайды.
+Көкшетау–Астана–Алматы дәлізінің **синтетикалық** диспетчерлік демосы. Негізгі деректер бір жерде: `data/kz_demo/{KZ,mock,scenarios}`. Олар Қазақстандағы нақты пойыз қозғалысы емес. PKP дерегі тек статистикалық калибрлеуге, DISPLIB тек алгоритм benchmark-іне арналған; екеуі де симулятор пойыздарына қосылмайды.
 
 ## Windows-та іске қосу
 
@@ -14,7 +14,7 @@ py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-Егер `py` launcher орнатылмаса, бірінші жолда орнатылған `python.exe` толық жолын пайдаланыңыз. Docker қажет емес. Негізгі ZIP берілген жерде табылмады; importer әдепкіде репозиторийдегі бірдей `data/KZ`, `data/mock`, `data/scenarios` құрылымын `data/kz_demo/` ішіне көшіреді. Нақты ZIP қолжетімді болса: `python scripts\import_kz_demo.py --zip C:\path\to\kz_kokshetau_astana_almaty_data.zip`. Importer ZIP мүшелерінің жолдарын және міндетті файлдарды тексереді. `validation.json` мен бастапқы README сақталады.
+Егер `py` launcher орнатылмаса, бірінші жолда орнатылған `python.exe` толық жолын пайдаланыңыз. Docker қажет емес. Демо деректер репозиторийде `data/kz_demo/` ішінде дайын тұр; аргументсіз importer оларды тексереді және көшірме жасамайды. Нақты ZIP қолжетімді болса: `python scripts\import_kz_demo.py --zip C:\path\to\kz_kokshetau_astana_almaty_data.zip`. Importer ZIP мүшелерінің жолдарын және міндетті файлдарды тексереді. `validation.json` мен деректер README-і сол каталогта сақталады.
 
 Сыртқы екі дерек көзін тікелей жүктеу:
 
@@ -22,7 +22,7 @@ py -3 -m venv .venv
 .\.venv\Scripts\python.exe scripts\fetch_external_data.py
 ```
 
-Нәтиже `data/source_manifest.json` ішінде көрсетіледі. PKP ZIP үшін жарияланған MD5 міндетті түрде тексеріледі. DISPLIB толық ZIP алынбаса, ресми екі JSON fallback қолданылады және manifest оған `full_downloaded` деп жазбайды. `data/external/` және импортталған `data/kz_demo/` git-ке кірмейді.
+Нәтиже `data/source_manifest.json` ішінде көрсетіледі. PKP ZIP үшін жарияланған MD5 міндетті түрде тексеріледі. DISPLIB толық ZIP алынбаса, ресми екі JSON fallback қолданылады және manifest оған `full_downloaded` деп жазбайды. `data/external/` git-ке кірмейді; `data/kz_demo/` — репозиторийдегі жалғыз негізгі демо дерек орны.
 
 ## API
 

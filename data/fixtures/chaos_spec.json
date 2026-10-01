@@ -1,5 +1,0 @@
-{
-  "seed": 20269999,
-  "events_per_type": 10,
-  "description": "Forty distinct incident IDs across varied trains, signals, switches, blocks and times. Independent of the main demo seed."
-}
