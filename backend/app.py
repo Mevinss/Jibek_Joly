@@ -14,6 +14,7 @@ from pydantic import BaseModel
 
 from .simulator import Simulator
 from .store import EventStore, ROOT
+from .speed_profile import build_speed_profile
 
 
 class Metrics:
@@ -142,6 +143,16 @@ def metrics() -> dict:
 @app.get("/api/state")
 def state() -> dict:
     return active().simulator.snapshot().to_dict()
+
+
+@app.get("/api/trains/{train_id}/speed-profile")
+def train_speed_profile(train_id: str) -> dict:
+    """Return a limit-only advisory profile from the checked-in demo model."""
+    rt = active()
+    try:
+        return build_speed_profile(rt.simulator.snapshot().to_dict(), train_id)
+    except KeyError:
+        raise HTTPException(404, "unknown train") from None
 
 
 @app.post("/api/scenarios/{scenario_id}/reset")
