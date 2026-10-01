@@ -61,6 +61,7 @@
     $('stage1-range').value=Math.max(0,Math.min(900,Math.floor((simMs-Date.parse('2026-10-01T09:00:00+05:00'))/60000)));
     const trainFeatures=profile().map(train=>{const state=trainState(train);return {type:'Feature',geometry:{type:'Point',coordinates:state.position},properties:{train_id:train.train_id,category:train.category,delay:state.delayMin}};}).filter(feature=>feature.geometry.coordinates);
     const incidentFeatures=activeIncidents().map(row=>({type:'Feature',geometry:{type:'Point',coordinates:incidentPoint(row)},properties:{incident_id:row.incident_id}})).filter(feature=>feature.geometry.coordinates);
+    if(offline&&!map)renderOfflineMap(trainFeatures,incidentFeatures);
     if(map?.getSource('stage-trains'))map.getSource('stage-trains').setData({type:'FeatureCollection',features:trainFeatures});
     if(map?.getSource('stage-incidents'))map.getSource('stage-incidents').setData({type:'FeatureCollection',features:incidentFeatures});
     $('stage1-connection').textContent=staleSince ? T('stage1Stale',{seconds:Math.floor((Date.now()-staleSince)/1000)}) : T('stage1Connected');
@@ -68,6 +69,18 @@
     if(drawer&&drawerMinute!==Math.floor(simMs/60000)){drawerMinute=Math.floor(simMs/60000);renderDrawer();}
   }
   function localStyle(){return {version:8,sources:{},layers:[{id:'local-paper',type:'background',paint:{'background-color':getComputedStyle(document.documentElement).getPropertyValue('--bg').trim()}}]};}
+  function renderOfflineMap(trains,incidents) {
+    const point=coordinates=>[75+(coordinates[0]-68)*85,45+(53.7-coordinates[1])*46.4];
+    const path=coordinates=>coordinates.map((coordinates,index)=>`${index?'L':'M'}${point(coordinates).map(value=>value.toFixed(1)).join(' ')}`).join(' ')+' Z';
+    const country=source.country.features.flatMap(feature=>feature.geometry.type==='Polygon'?feature.geometry.coordinates:feature.geometry.coordinates.flat()).map(path).join(' ');
+    const routes=source.routes.map(row=>`<polyline points="${row.polyline.map(coordinates=>point(coordinates).map(value=>value.toFixed(1)).join(',')).join(' ')}"/>`).join('');
+    const stations=source.stations.map(row=>{const [x,y]=point([row.lon,row.lat]);return `<g data-station="${esc(row.station_id)}" role="button" tabindex="0" aria-label="${esc(station(row.station_id)?.name_kk||row.station_id)}"><circle cx="${x}" cy="${y}" r="8"/><text x="${x+13}" y="${y+4}">${esc(station(row.station_id)?.name_kk||row.station_id)}</text></g>`;}).join('');
+    const trainMarks=trains.map(feature=>{const [x,y]=point(feature.geometry.coordinates);return `<g data-train="${esc(feature.properties.train_id)}" role="button" tabindex="0" aria-label="${esc(feature.properties.train_id)}"><circle cx="${x}" cy="${y}" r="5"/><title>${esc(feature.properties.train_id)}</title></g>`;}).join('');
+    const incidentMarks=incidents.map(feature=>{const [x,y]=point(feature.geometry.coordinates);return `<g data-incident="${esc(feature.properties.incident_id)}" role="button" tabindex="0" aria-label="${esc(feature.properties.incident_id)}"><circle cx="${x}" cy="${y}" r="12"/><text x="${x-3}" y="${y+4}">!</text></g>`;}).join('');
+    const focused=document.activeElement?.closest('#stage1-map [data-station],#stage1-map [data-train],#stage1-map [data-incident]');
+    $('stage1-map').innerHTML=`<svg class="stage1-offline-map" viewBox="0 0 1000 600" role="img" aria-label="${esc(T('stage1MapNote'))}"><path class="stage1-country" d="${country}"/><g class="stage1-routes">${routes}</g><g class="stage1-stations">${stations}</g><g class="stage1-trains">${trainMarks}</g><g class="stage1-incidents">${incidentMarks}</g></svg>`;
+    if(focused){const key=focused.dataset.station?'station':focused.dataset.train?'train':'incident';$('stage1-map').querySelector(`[data-${key}="${CSS.escape(focused.dataset[key])}"]`)?.focus({preventScroll:true});}
+  }
   async function initializeMap(forceOnline=false) {
     if(map){map.remove();map=null;}
     styleFallback=false;
@@ -80,6 +93,8 @@
     }
     $('stage1-map-state').textContent=T(offline?'stage1Offline':'stage1Online');
     $('stage1-attribution').textContent=offline?T('stage1LocalCredit'):config.attribution;
+    if(offline){paint();return;}
+    $('stage1-map').innerHTML='';
     try {
       map=new maplibregl.Map({container:'stage1-map',style,center:config.center,zoom:config.zoom,attributionControl:false});
       map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
@@ -166,9 +181,9 @@
   function localize(){document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(node=>node.textContent=T(node.dataset.i18n));$('stage1-language').value=lang;$('stage1-theme').textContent=T(document.documentElement.dataset.theme==='dark'?'light':'dark');$('stage1-review').hidden=lang!=='kk';$('stage1-map-state').textContent=T(offline?'stage1Offline':'stage1Online');if(source){renderScenarios();renderStations();renderDrawer();paint();}}
   function renderScenarios(){$('stage1-scenario').innerHTML=source.dataset.scenarios.map(row=>`<option value="${row.scenario_id}">${row.scenario_id} · ${esc(T('stage1Scenario_'+row.scenario_id))}</option>`).join('');$('stage1-scenario').value=scenarioId;}
   function tick(now){const delta=Math.min(2,(now-lastTick)/1000);lastTick=now;if(playing&&!staleSince){simMs=Math.min(Date.parse('2026-10-02T00:00:00+05:00'),simMs+delta*speed*1000);}if(source)paint();setTimeout(()=>requestAnimationFrame(tick),1000);}
-  document.addEventListener('click',event=>{const stationButton=event.target.closest('[data-station]');if(stationButton)openDrawer('station',stationButton.dataset.station);const trainButton=event.target.closest('[data-train]');if(trainButton)openDrawer('train',trainButton.dataset.train,trainButton.dataset.stationContext||null);const tab=event.target.closest('[data-stage-tab]');if(tab&&drawer){const old=tab.dataset.stageTab;renderDrawer();$('stage1-tab-board')?.setAttribute('aria-selected',String(old==='board'));$('stage1-tab-scheme')?.setAttribute('aria-selected',String(old==='scheme'));$('stage1-drawer-content').innerHTML=renderStation(drawer.id);$(old==='board'?'stage1-tab-board':'stage1-tab-scheme')?.focus({preventScroll:true});}});
+  document.addEventListener('click',event=>{const stationButton=event.target.closest('[data-station]');if(stationButton)openDrawer('station',stationButton.dataset.station);const trainButton=event.target.closest('[data-train]');if(trainButton)openDrawer('train',trainButton.dataset.train,trainButton.dataset.stationContext||null);const incidentButton=event.target.closest('[data-incident]');if(incidentButton)openDrawer('incident',incidentButton.dataset.incident);const tab=event.target.closest('[data-stage-tab]');if(tab&&drawer){const old=tab.dataset.stageTab;renderDrawer();$('stage1-tab-board')?.setAttribute('aria-selected',String(old==='board'));$('stage1-tab-scheme')?.setAttribute('aria-selected',String(old==='scheme'));$('stage1-drawer-content').innerHTML=renderStation(drawer.id);$(old==='board'?'stage1-tab-board':'stage1-tab-scheme')?.focus({preventScroll:true});}});
   document.addEventListener('change',event=>{if(event.target.id==='stage1-attention')renderDrawer();});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&drawer)closeDrawer();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&drawer)closeDrawer();if(['Enter',' '].includes(event.key)&&event.target.matches('#stage1-map [role="button"]')){event.preventDefault();event.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
   $('stage1-close').onclick=closeDrawer;
   $('stage1-play').onclick=()=>{playing=!playing;$('stage1-play').textContent=T(playing?'pause':'resume');};
   $('stage1-speed').onchange=event=>speed=Number(event.target.value);
