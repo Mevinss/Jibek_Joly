@@ -1,0 +1,9 @@
+{
+  "source_type": "MOCK",
+  "station_id": "AST",
+  "virtual_time": "2026-10-01T11:00:00+05:00",
+  "arrivals": [
+    {"train_id":"SIM-KOK_AST-F01","train_number":null,"category":"intercity","eta":"2026-10-01T12:15:00+05:00","minutes_remaining":75,"scheduled_arrival":"2026-10-01T12:10:00+05:00","delay_min":5,"track_id":null,"track_status":"UNKNOWN","data_source":"MOCK"},
+    {"train_id":"SIM-KOK_AST-F03","train_number":null,"category":"freight","eta":null,"minutes_remaining":null,"scheduled_arrival":"2026-10-01T13:05:00+05:00","delay_min":12,"track_id":null,"track_status":"UNKNOWN","data_source":"MOCK"}
+  ]
+}

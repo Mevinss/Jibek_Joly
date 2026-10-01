@@ -1,0 +1,9 @@
+{
+  "source_type": "MOCK",
+  "snapshot_id": "FRONTEND-EXAMPLE",
+  "rows": [
+    {"policy":"HUMAN","total_delay_min":28,"incident_delay_min":12,"conflicts":2,"compute_ms":null,"energy_proxy_units":4.2,"validation":"UNAVAILABLE"},
+    {"policy":"FIFO","total_delay_min":25,"incident_delay_min":9,"conflicts":1,"compute_ms":8,"energy_proxy_units":3.8,"validation":"PARTIALLY_VALIDATED"},
+    {"policy":"CP-SAT","total_delay_min":21,"incident_delay_min":6,"conflicts":0,"compute_ms":180,"energy_proxy_units":3.2,"validation":"PARTIALLY_VALIDATED"}
+  ]
+}

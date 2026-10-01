@@ -1,0 +1,10 @@
+{
+  "source_type": "MOCK",
+  "country": "KZ",
+  "cities": [
+    {"city_id":"KOKSHETAU","name_ru":"Кокшетау","name_kk":"Көкшетау","station_ids":["KOK"]},
+    {"city_id":"BURABAY","name_ru":"Бурабай","name_kk":"Бурабай","station_ids":["BOR"]},
+    {"city_id":"ASTANA","name_ru":"Астана","name_kk":"Астана","station_ids":["AST"]},
+    {"city_id":"ALMATY","name_ru":"Алматы","name_kk":"Алматы","station_ids":["ALM"]}
+  ]
+}

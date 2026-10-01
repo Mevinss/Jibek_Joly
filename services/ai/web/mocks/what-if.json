@@ -1,0 +1,9 @@
+{
+  "source_type": "MOCK",
+  "status": "READY",
+  "current": {"delay_min":28,"conflicts":2,"stops":3,"energy_proxy_units":4.2,"affected_trains":4},
+  "what_if": {"delay_min":34,"conflicts":3,"stops":4,"energy_proxy_units":4.8,"affected_trains":6},
+  "delta": {"delay_min":6,"conflicts":1,"stops":1,"energy_proxy_units":0.6,"affected_trains":2},
+  "affected_resource_ids": ["BOR-AKK-B01"],
+  "note": "Static frontend illustration; submitted inputs do not change these numbers"
+}

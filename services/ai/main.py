@@ -1,6 +1,7 @@
 from collections import deque
 from contextlib import asynccontextmanager
 import json
+import mimetypes
 import time
 import asyncio
 from datetime import datetime, timezone
@@ -22,9 +23,14 @@ from .ml.kz_schedule import ScheduleForecaster
 from .ml.advisory import Advisory
 from .demo.integration import analyze as analyze_dispatch, check_decision
 from .demo.state_adapter import canonical_from_demo_snapshot
+from .dashboard_api import router as dashboard_router
+from .runtime_api import router as runtime_router, register_active_incidents
+from backend.app import active as active_simulator
 from backend.simulator.state_contract import topology
+from backend.app import app as simulator_app, lifespan as simulator_lifespan
 
 FRONTEND = SERVICE.parent.parent / 'frontend'
+mimetypes.add_type('application/javascript', '.mjs')
 
 latencies = deque(maxlen=2000)
 requests = deque()
@@ -32,20 +38,24 @@ requests = deque()
 
 @asynccontextmanager
 async def lifespan(app):
-    app.state.forecaster = Forecaster()
-    app.state.advisory = Advisory(app.state.forecaster)
-    app.state.tools = Tools(app.state.forecaster)
-    try:
-        app.state.schedule_forecaster = ScheduleForecaster()
-    except (OSError, ValueError):
-        app.state.schedule_forecaster = None
-    yield
+    async with simulator_lifespan(simulator_app):
+        register_active_incidents(active_simulator().simulator)
+        app.state.forecaster = Forecaster()
+        app.state.advisory = Advisory(app.state.forecaster)
+        app.state.tools = Tools(app.state.forecaster)
+        try:
+            app.state.schedule_forecaster = ScheduleForecaster()
+        except (OSError, ValueError):
+            app.state.schedule_forecaster = None
+        yield
 
 
 app = FastAPI(title='Jibek Joly — AI API', version='0.1.0', lifespan=lifespan,
               description='Демонстрационная консультативная система. Не заменяет СЦБ.')
 app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:5173', 'http://127.0.0.1:5173'],
                    allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
+app.include_router(dashboard_router)
+app.include_router(runtime_router)
 
 
 def rate_limit():
@@ -143,7 +153,7 @@ def resource_topology():
 def canonical_demo_state(elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
                          incident: Literal['none','closure','restriction','chaos']='none',
                          incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
-                         seed: int = Query(42, ge=0, le=999999)):
+                         seed: int = Query(42, ge=0, le=99999999)):
     return canonical_from_demo_snapshot(snapshot(elapsed, incident, incident_at), seed)
 
 
@@ -184,6 +194,12 @@ async def demo_stream(request: Request, elapsed: float = Query(0, ge=0, le=86400
 
 
 @app.get('/', include_in_schema=False)
+@app.get('/dispatch-dashboard.html', include_in_schema=False)
+def dashboard_home():
+    return FileResponse(SERVICE / 'web' / 'dispatch-dashboard.html')
+
+
+@app.get('/legacy', include_in_schema=False)
 @app.get('/frontend', include_in_schema=False)
 @app.get('/frontend/', include_in_schema=False)
 @app.get('/frontend/index.html', include_in_schema=False)

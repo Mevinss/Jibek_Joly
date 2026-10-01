@@ -1,0 +1,19 @@
+{
+  "source_type": "MOCK",
+  "train_id": "SIM-KOK_AST-F03",
+  "plan_id": "FRONTEND-MOCK-PLAN",
+  "current_speed_kmh": 78,
+  "recommended_speed_kmh": 42,
+  "target_arrival": "2026-10-01T11:45:00+05:00",
+  "resource_opens": "2026-10-01T11:44:00+05:00",
+  "full_stop_avoided": null,
+  "energy_proxy_before": 2.1,
+  "energy_proxy_after": 1.7,
+  "energy_proxy_delta": -0.4,
+  "reason": "Illustrative frontend fixture; not a locomotive instruction",
+  "profile_points": [
+    {"distance_km":0,"recommended_speed_kmh":42,"speed_limit_kmh":100},
+    {"distance_km":5,"recommended_speed_kmh":42,"speed_limit_kmh":100},
+    {"distance_km":10,"recommended_speed_kmh":42,"speed_limit_kmh":80}
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jibek Joly · Autodispatch</title><link rel="icon" href="/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/vendor/maplibre-gl.css"><link rel="stylesheet" href="/dashboard.css">
+  <script defer src="/vendor/i18next.min.js"></script><script defer src="/vendor/maplibre-gl.js"></script>
+  <script type="module" src="/dashboard.mjs"></script>
+</head>
+<body>
+<a class="skip-link" href="#dashboard-main" data-i18n="dSkip"></a>
+<header class="header">
+  <a class="brand" href="/"><img src="/brand.svg" alt="" width="32" height="32"><span>Jibek Joly</span></a>
+  <nav class="header-links" aria-label="Navigation"><a href="/legacy" data-i18n="dOldSite"></a><a href="/map-stage1.html" data-i18n="dStage1"></a><a href="/lab.html" data-i18n="dLab"></a></nav>
+  <div class="header-controls">
+    <label class="compact-label"><span data-i18n="dMode"></span><select id="data-mode"><option value="LIVE" data-i18n="dLive"></option><option value="MOCK" data-i18n="dMock"></option></select></label>
+    <select id="language" aria-label="Language"><option value="ru">РУС</option><option value="kk">ҚАЗ</option></select>
+    <button id="theme" type="button" data-i18n="dTheme"></button>
+  </div>
+</header>
+<main id="dashboard-main" tabindex="-1">
+  <section class="headline" aria-labelledby="dashboard-title">
+    <div><p class="eyebrow" data-i18n="dEyebrow"></p><h1 id="dashboard-title" data-i18n="dTitle"></h1><p data-i18n="dSubtitle"></p></div>
+    <div class="headline-status"><span id="mode-badge" class="badge">LIVE</span><span id="synthetic-badge" class="badge synthetic" data-i18n="dSynthetic"></span><span id="connection" class="badge" role="status" aria-live="polite"></span><span id="source-badge" class="badge" data-i18n="dGeneralized"></span></div>
+  </section>
+  <div id="global-error" class="message error" role="alert" hidden></div>
+  <section class="control-bar panel" aria-label="Scenario controls">
+    <label><span data-i18n="dScenario"></span><select id="scenario"><option value="SCN-RUNTIME" selected>28 поездов · единый симулятор</option><option value="SCN-ALL">28 поездов · расписание</option><option value="SCN-SHORT" data-i18n="dShortScenario"></option><option value="SCN-01">SCN-01</option><option value="SCN-02">SCN-02</option><option value="SCN-03">SCN-03</option><option value="SCN-04">SCN-04</option></select></label>
+    <label><span data-i18n="dIncident"></span><select id="incident"><option value="none" data-i18n="dNormal"></option><option value="closure" data-i18n="dClosure"></option><option value="restriction" data-i18n="dRestriction"></option><option value="chaos" data-i18n="dChaos"></option></select></label>
+    <label><span data-i18n="dSpeed"></span><select id="speed"><option value="1">×1</option><option value="10">×10</option><option value="60">×60</option></select></label>
+    <button id="play" type="button" data-i18n="dPause"></button><button id="reset" type="button" data-i18n="dReset"></button>
+    <div class="clock-group"><time id="virtual-time">—</time><span>UTC+5</span></div>
+    <div class="clock-group"><span data-i18n="dLastUpdate"></span><time id="last-update">—</time></div>
+  </section>
+  <div class="main-grid">
+    <section class="panel map-panel" aria-labelledby="map-title"><div class="panel-heading"><div><h2 id="map-title" data-i18n="dMapTitle"></h2><p class="caption" data-i18n="dMapNote"></p></div><span class="badge" data-i18n="dGeneralized"></span></div>
+      <div class="map-toolbar"><div role="group" aria-label="Map mode"><button id="map-mode" type="button" aria-pressed="true" data-i18n="dMap"></button><button id="scheme-mode" type="button" aria-pressed="false" data-i18n="dScheme"></button></div><button id="preview-map" type="button" hidden>Карта прогноза</button><button id="fit" type="button" data-i18n="dFit"></button></div>
+      <div id="map-wrap"><div id="map" aria-label="Kazakhstan rail map"></div><svg id="map-svg" viewBox="0 0 1000 420" role="img" aria-label="Railway schematic" hidden></svg><div id="map-overlay-note" class="map-note"></div></div>
+      <div class="map-legend"><span><i class="dot train-dot"></i><span data-i18n="dTrain"></span></span><span><i class="dot conflict-dot"></i><span data-i18n="dConflict"></span></span><span><i class="dot closed-dot"></i><span data-i18n="dClosed"></span></span><span><i class="dot unknown-dot"></i><span data-i18n="dUnknown"></span></span></div>
+      <p class="caption">© OpenStreetMap contributors · Railwayz.info · <span data-i18n="dGeometryNotCertified"></span></p>
+    </section>
+    <div class="side-column">
+      <section class="panel conflict-panel" aria-labelledby="conflict-title"><div class="panel-heading"><h2 id="conflict-title" data-i18n="dCurrentConflict"></h2><span id="conflict-source" class="badge"></span></div><div id="conflict-content" class="panel-body" role="status"></div></section>
+      <section class="panel human-panel" aria-labelledby="human-title"><div class="panel-heading"><h2 id="human-title" data-i18n="dHuman"></h2><span class="badge" data-i18n="dDemoTimer"></span></div><p class="caption" data-i18n="dHumanBoundary"></p><p id="human-pair" class="mono">—</p><div class="human-actions"><button data-choice="A" type="button" data-i18n="dFirst"></button><button data-choice="B" type="button" data-i18n="dSecond"></button><button data-choice="C" type="button" data-i18n="dHold"></button></div><div id="runtime-decisions" hidden><p id="runtime-identity" class="mono caption"></p><div id="runtime-options"></div><label class="preview-horizon"><span data-i18n="dRuntimePreviewHorizon"></span><select id="preview-horizon"><option value="10">10 мин</option><option value="20" selected>20 мин</option><option value="30">30 мин</option></select></label><div class="human-actions"><button id="preview-decision" type="button">Предпросмотр</button><button id="apply-decision" type="button">Применить</button></div><div id="runtime-preview" role="status"></div></div><p id="legacy-timer"><span data-i18n="dDecisionTime"></span> <strong id="timer">20</strong> s</p><p id="human-status" role="status" aria-live="polite"></p></section>
+      <section class="panel plan-panel" aria-labelledby="plan-title"><div class="panel-heading"><h2 id="plan-title" data-i18n="dRecommendation"></h2><button id="run-plan" type="button" data-i18n="dRunPlan"></button></div><div id="plan-content" role="status"></div></section>
+    </div>
+  </div>
+  <section class="panel graph-panel" id="train-graph-panel" aria-labelledby="graph-title"><div class="panel-heading"><div><h2 id="graph-title" data-i18n="dRuntimeTrainGraph"></h2><p class="caption" data-i18n="dRuntimeGraphBoundary"></p></div><span id="graph-source" class="badge"></span></div><div id="train-graph" role="list"></div></section>
+  <div class="lower-grid">
+    <section class="panel station-panel" id="station-panel"><div class="panel-heading"><h2 data-i18n="dStationArrivals"></h2><span id="arrival-source" class="badge"></span></div><div class="breadcrumb"><label><span data-i18n="dCountry"></span><select disabled><option>Қазақстан</option></select></label><label><span data-i18n="dCity"></span><select id="city"></select></label><label><span data-i18n="dStation"></span><select id="station"></select></label></div><div id="station-scheme" class="station-scheme"></div><div class="table-scroll"><table><thead><tr><th data-i18n="dTrain"></th><th>ETA</th><th data-i18n="dDelay"></th><th data-i18n="dTrack"></th></tr></thead><tbody id="arrivals-body"></tbody></table></div></section>
+    <section class="panel train-panel" id="train-panel"><div class="panel-heading"><h2 data-i18n="dTrainDetails"></h2><span id="train-source" class="badge"></span></div><label class="train-select"><span data-i18n="dSelectTrain"></span><select id="train-select"></select></label><div id="train-details"></div><button id="open-train-drawer" type="button" data-i18n="dMoreDetails"></button></section>
+    <section class="panel compare-panel" id="analysis-panel"><div class="panel-heading"><h2 data-i18n="dCompare"></h2><span id="compare-source" class="badge"></span></div><p class="caption" data-i18n="dCompareBoundary"></p><p id="compare-scope" class="caption"></p><div class="table-scroll"><table><thead><tr><th data-i18n="dPolicy"></th><th data-i18n="dTotalDelay"></th><th data-i18n="dIncidentDelay"></th><th data-i18n="dConflicts"></th><th data-i18n="dCompute"></th><th data-i18n="dEnergyProxy"></th><th data-i18n="dValidation"></th></tr></thead><tbody id="compare-body"></tbody></table></div></section>
+    <section class="panel eco-panel"><div class="panel-heading"><h2 data-i18n="dEco"></h2><span id="eco-source" class="badge"></span></div><div id="eco-content"></div><div id="speed-chart" class="speed-chart" role="img" aria-label="Speed profile"></div></section>
+    <section class="panel cascade-panel"><div class="panel-heading"><h2 data-i18n="dCascade"></h2><span id="cascade-source" class="badge"></span></div><div id="cascade-content"></div><div id="connections-content"></div></section>
+    <section class="panel quality-panel"><div class="panel-heading"><h2 data-i18n="dQuality"></h2><span id="quality-source" class="badge"></span></div><div id="quality-content"></div></section>
+    <section class="panel whatif-panel" id="whatif-panel"><div class="panel-heading"><h2 data-i18n="dWhatIf"></h2><span id="whatif-source" class="badge"></span></div><form id="whatif-form"><label><span data-i18n="dIncidentType"></span><select name="incident_type"><option>TRAIN_DELAY</option><option>SIGNAL_FAILURE</option><option>SWITCH_FAILURE</option><option>BLOCK_CLOSURE</option></select></label><label><span data-i18n="dTrainResource"></span><select name="resource_id" id="whatif-resource"></select></label><label><span data-i18n="dStartTime"></span><input name="start_time" type="datetime-local" required></label><label><span data-i18n="dDuration"></span><input name="duration_min" type="number" min="1" max="240" value="15" required></label><button type="submit" data-i18n="dRunWhatIf"></button></form><div id="whatif-content" role="status"></div></section>
+    <section class="panel timeline-panel"><div class="panel-heading"><h2 data-i18n="dTimeline"></h2><span class="badge" data-i18n="dDemo"></span></div><ol id="timeline-content"></ol><div id="replay-detail"></div><button id="replay-map" type="button" hidden></button></section>
+  </div>
+</main>
+<aside id="detail-drawer" class="drawer" hidden aria-labelledby="drawer-title"><div class="panel-heading"><h2 id="drawer-title"></h2><button id="close-drawer" type="button" data-i18n="dClose"></button></div><div id="drawer-content"></div></aside>
+<footer><p data-i18n="dSafety"></p><span id="kk-review" hidden>TODO-review-kk</span></footer>
+</body></html>

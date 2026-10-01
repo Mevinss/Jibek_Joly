@@ -1,0 +1,16 @@
+{
+  "source_type": "MOCK",
+  "total_added_delay_min": 18,
+  "nodes": [
+    {"train_id":"SIM-KOK_AST-F01","added_delay_min":5,"cause":"INCIDENT"},
+    {"train_id":"SIM-KOK_AST-F03","added_delay_min":5,"cause":"BLOCK_RELEASE"},
+    {"train_id":"SIM-AST_ALM-F03","added_delay_min":3,"cause":"CONNECTION_WAIT"},
+    {"train_id":"SIM-AST_ALM-F06","added_delay_min":5,"cause":"RESOURCE_CONFLICT"}
+  ],
+  "edges": [
+    {"from_train_id":"SIM-KOK_AST-F01","to_train_id":"SIM-KOK_AST-F03"},
+    {"from_train_id":"SIM-KOK_AST-F03","to_train_id":"SIM-AST_ALM-F03"},
+    {"from_train_id":"SIM-AST_ALM-F03","to_train_id":"SIM-AST_ALM-F06"}
+  ],
+  "connections": []
+}

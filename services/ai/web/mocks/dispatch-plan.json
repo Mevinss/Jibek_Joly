@@ -1,0 +1,16 @@
+{
+  "source_type": "MOCK",
+  "plan_id": "FRONTEND-MOCK-PLAN",
+  "policy": "CP-SAT",
+  "solver_status": "FEASIBLE",
+  "solver_wall_time_ms": 180,
+  "valid": true,
+  "fully_validated": false,
+  "validation_scope": "BLOCKS_ONLY",
+  "unverified_scope": ["station_track_occupancy_unverified"],
+  "fallback_used": false,
+  "fallback_reason": null,
+  "holding_minutes": 4,
+  "selected_station_track": null,
+  "reservations": []
+}

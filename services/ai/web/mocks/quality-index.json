@@ -1,0 +1,9 @@
+{
+  "source_type": "MOCK",
+  "score": 74,
+  "factors": [
+    {"key":"delay","points":12},
+    {"key":"conflict","points":9},
+    {"key":"closure","points":5}
+  ]
+}
