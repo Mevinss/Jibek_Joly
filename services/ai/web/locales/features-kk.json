@@ -1,0 +1,20 @@
+{
+  "train_kind": "Пойыз түрі",
+  "prev_delay_departure_min": "Алдыңғы кешігу",
+  "time_reserve_min": "Кесте қоры",
+  "min_technical_time_min": "Ең аз қозғалыс уақыты",
+  "hour_sin": "Сағат (синус)",
+  "hour_cos": "Сағат (косинус)",
+  "day_of_week": "Апта күні",
+  "is_track_closure": "Жол жабылуы",
+  "is_speed_warning": "Жылдамдық шектеуі",
+  "active_disruption_group": "Оқиғалар тобы",
+  "num_platform_tracks": "Станция жолдары",
+  "is_passing_loop": "Айырылысу жолы",
+  "is_node": "Торап станция",
+  "edge_delta_delay_P50": "Аралық P50",
+  "edge_delta_delay_P90": "Аралық P90",
+  "edge_delta_delay_MAD": "Аралық MAD",
+  "station_delta_stop_min_P50": "Станция P50",
+  "station_delta_stop_min_P90": "Станция P90"
+}

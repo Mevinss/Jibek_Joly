@@ -1,0 +1,667 @@
+{
+  "version": "pkp-advisory-v2",
+  "buckets": [
+    {
+      "bucket": "all",
+      "n": 78432,
+      "model": 0.5859171516842133,
+      "zero": 0.6532282829284668,
+      "p50": 0.6471465728274174
+    },
+    {
+      "bucket": "0–3",
+      "n": 57417,
+      "model": 0.3784888565092419,
+      "zero": 0.40360867977142334,
+      "p50": 0.40045631084870337
+    },
+    {
+      "bucket": "3–10",
+      "n": 12035,
+      "model": 0.9932227294877911,
+      "zero": 1.1489821672439575,
+      "p50": 1.1389281262982967
+    },
+    {
+      "bucket": "10+",
+      "n": 8980,
+      "model": 1.3663166834431517,
+      "zero": 1.5848551988601685,
+      "p50": 1.565367483296214
+    }
+  ],
+  "growth_metrics": {
+    "roc_auc": 0.8795526110061564,
+    "pr_auc": 0.3098430015041266,
+    "brier": 0.03539242242009709,
+    "ece": 0.002091799388323888,
+    "precision": 0.21619523973784063,
+    "recall": 0.7132290184921763,
+    "calibration": [
+      {
+        "predicted": 0.014361421154096584,
+        "observed": 0.01508169250104734,
+        "count": 66836
+      },
+      {
+        "predicted": 0.13641231817967658,
+        "observed": 0.1308891553880418,
+        "count": 5837
+      },
+      {
+        "predicted": 0.23695012657603715,
+        "observed": 0.2404466501240695,
+        "count": 4030
+      },
+      {
+        "predicted": 0.36411520199936503,
+        "observed": 0.3375796178343949,
+        "count": 628
+      },
+      {
+        "predicted": 0.46104464323794153,
+        "observed": 0.4306569343065693,
+        "count": 274
+      },
+      {
+        "predicted": 0.5339027128939637,
+        "observed": 0.49409780775716694,
+        "count": 593
+      },
+      {
+        "predicted": 0.6437417305165296,
+        "observed": 0.5714285714285714,
+        "count": 105
+      },
+      {
+        "predicted": 0.7886316814291239,
+        "observed": 0.6810344827586207,
+        "count": 116
+      },
+      {
+        "predicted": 0.9942475513803173,
+        "observed": 0.9230769230769231,
+        "count": 13
+      }
+    ]
+  },
+  "interval_coverage": 0.813468992248062,
+  "residual_quantiles_min": [
+    -0.8475581276131463,
+    0.0,
+    1.0
+  ],
+  "replay": {
+    "run_id": 66336,
+    "source": "held-out PKP; stop order, no absolute dates",
+    "points": [
+      {
+        "stop": 2,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 3,
+        "actual": 1.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 4,
+        "actual": 0.0,
+        "predicted": -0.04500090472347936,
+        "previous_delay": 1.0
+      },
+      {
+        "stop": 5,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 6,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 7,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 8,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 9,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 10,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 11,
+        "actual": 2.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 12,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 2.0
+      },
+      {
+        "stop": 13,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 2.0
+      },
+      {
+        "stop": 14,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 2.0
+      },
+      {
+        "stop": 15,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 16,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 17,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 18,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 19,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 20,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 21,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 22,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 23,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 24,
+        "actual": 2.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 25,
+        "actual": -2.0,
+        "predicted": -1.2691416607374642,
+        "previous_delay": 2.0
+      },
+      {
+        "stop": 26,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 27,
+        "actual": 1.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 28,
+        "actual": -1.0,
+        "predicted": 0.2392835458612917,
+        "previous_delay": 1.0
+      },
+      {
+        "stop": 29,
+        "actual": -1.0,
+        "predicted": -0.1708802154542409,
+        "previous_delay": 1.0
+      },
+      {
+        "stop": 30,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 31,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 32,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 33,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 34,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 35,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 36,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 37,
+        "actual": 1.0,
+        "predicted": 0.21619112765723003,
+        "previous_delay": 1.0
+      },
+      {
+        "stop": 38,
+        "actual": 8.0,
+        "predicted": -0.7920497238348962,
+        "previous_delay": 6.0
+      },
+      {
+        "stop": 39,
+        "actual": -1.0,
+        "predicted": 2.027612012660196,
+        "previous_delay": 14.0
+      },
+      {
+        "stop": 40,
+        "actual": -12.0,
+        "predicted": -9.0096531923518,
+        "previous_delay": 15.0
+      },
+      {
+        "stop": 41,
+        "actual": -1.0,
+        "predicted": -0.013384498455765047,
+        "previous_delay": 3.0
+      },
+      {
+        "stop": 42,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 43,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      },
+      {
+        "stop": 44,
+        "actual": 0.0,
+        "predicted": 0.0,
+        "previous_delay": 0.0
+      }
+    ]
+  },
+  "kz_group_folds": [
+    {
+      "held_segments": [
+        "BOR-AKK",
+        "SHU-ALM"
+      ],
+      "n": 32,
+      "formula_mae": 12.898020783753346,
+      "residual_mae": 14.41450017692069
+    },
+    {
+      "held_segments": [
+        "AST-KAR",
+        "SAR-SHU"
+      ],
+      "n": 32,
+      "formula_mae": 20.821615181403782,
+      "residual_mae": 8.03531073637359
+    },
+    {
+      "held_segments": [
+        "AKK-AST",
+        "KOK-BOR"
+      ],
+      "n": 32,
+      "formula_mae": 16.64129742906879,
+      "residual_mae": 7.705941154474937
+    },
+    {
+      "held_segments": [
+        "AKD-SAR",
+        "KAR-AKD"
+      ],
+      "n": 32,
+      "formula_mae": 10.94269532677454,
+      "residual_mae": 12.776416123676091
+    }
+  ],
+  "latency_28_regression_ms": {
+    "p50": 2.041399999143323,
+    "p95": 7.491680000384803
+  },
+  "shap": {
+    "train_kind": 0.0,
+    "prev_delay_departure_min": 0.07335598957992691,
+    "time_reserve_min": 0.013211234759563867,
+    "min_technical_time_min": 0.05237184285114807,
+    "hour_sin": 0.004688786308552249,
+    "hour_cos": 0.0019324556695719925,
+    "day_of_week": 0.0,
+    "is_track_closure": 0.0,
+    "is_speed_warning": 0.0034076743094346275,
+    "active_disruption_group": 0.2765582025456452,
+    "num_platform_tracks": 0.01456615921744777,
+    "is_passing_loop": 0.0007090117454228341,
+    "is_node": 0.0,
+    "edge_delta_delay_P50": 0.0018097676278706304,
+    "edge_delta_delay_P90": 0.15819149340240937,
+    "edge_delta_delay_MAD": 0.0,
+    "station_delta_stop_min_P50": 0.0,
+    "station_delta_stop_min_P90": 0.0
+  },
+  "model_info": {
+    "model_version": "pkp-main-298694c",
+    "evaluation": "official",
+    "source": "PKP Intercity / real passenger data",
+    "trained_at": "2026-10-01T07:10:16.945174+00:00",
+    "rows": {
+      "train": 372800,
+      "val": 79655,
+      "test": 78432
+    },
+    "runs": {
+      "train": 23327,
+      "val": 4990,
+      "test": 5001
+    },
+    "date_range": {
+      "absolute_run_dates": "not supplied",
+      "train_months": [
+        3,
+        4,
+        5
+      ],
+      "test_months": [
+        3,
+        4,
+        5
+      ]
+    },
+    "regression": {
+      "mae": 0.5859171516842133,
+      "rmse": 2.505772464760252,
+      "r2": 0.07080368960504424
+    },
+    "classification": {
+      "roc_auc": 0.8797299984006958,
+      "pr_auc": 0.26583226531629545,
+      "brier": 0.03613671824171146,
+      "ece": 0.001278741786085212,
+      "precision": 0.1981793762125056,
+      "recall": 0.7556187766714082,
+      "calibration": [
+        {
+          "predicted": 0.012614777253634683,
+          "observed": 0.013209288020913425,
+          "count": 65030
+        },
+        {
+          "predicted": 0.1375299128396815,
+          "observed": 0.13891737891737893,
+          "count": 8775
+        },
+        {
+          "predicted": 0.2480017216551551,
+          "observed": 0.2329430763019782,
+          "count": 2477
+        },
+        {
+          "predicted": 0.3167259786476869,
+          "observed": 0.3110687022900763,
+          "count": 524
+        },
+        {
+          "predicted": 0.4301075268817203,
+          "observed": 0.4275092936802974,
+          "count": 1614
+        },
+        {
+          "predicted": 1.0,
+          "observed": 0.5833333333333334,
+          "count": 12
+        }
+      ]
+    },
+    "baselines": {
+      "zero": {
+        "mae": 0.6532282741738066,
+        "rmse": 2.6060777361526775,
+        "r2": -0.005076094656336849
+      },
+      "edge_median": {
+        "mae": 0.6471465728274174,
+        "rmse": 2.5519190625238855,
+        "r2": 0.036264174460923226
+      },
+      "logistic": {
+        "roc_auc": 0.8529892910790929,
+        "pr_auc": 0.24259106959148805,
+        "brier": 0.03835633920348116,
+        "ece": 0.003878865127521955,
+        "precision": 0.4552683896620278,
+        "recall": 0.06514935988620199,
+        "calibration": [
+          {
+            "predicted": 0.023884928460357228,
+            "observed": 0.024653644264693228,
+            "count": 69726
+          },
+          {
+            "predicted": 0.13809527521844644,
+            "observed": 0.15027797081306463,
+            "count": 5756
+          },
+          {
+            "predicted": 0.24450466308787236,
+            "observed": 0.25786593707250344,
+            "count": 1462
+          },
+          {
+            "predicted": 0.340580109433931,
+            "observed": 0.31059506531204645,
+            "count": 689
+          },
+          {
+            "predicted": 0.44519693064828963,
+            "observed": 0.375,
+            "count": 296
+          },
+          {
+            "predicted": 0.544143754864613,
+            "observed": 0.4105263157894737,
+            "count": 190
+          },
+          {
+            "predicted": 0.660142548719774,
+            "observed": 0.3877551020408163,
+            "count": 98
+          },
+          {
+            "predicted": 0.758170230616728,
+            "observed": 0.4864864864864865,
+            "count": 74
+          },
+          {
+            "predicted": 0.8442203797310732,
+            "observed": 0.4588235294117647,
+            "count": 85
+          },
+          {
+            "predicted": 0.9390588158402059,
+            "observed": 0.6785714285714286,
+            "count": 56
+          }
+        ]
+      }
+    },
+    "threshold": 0.10363247863247864,
+    "proxy_prevalence": 0.04481589147286822,
+    "features": [
+      "train_kind",
+      "prev_delay_departure_min",
+      "time_reserve_min",
+      "min_technical_time_min",
+      "hour_sin",
+      "hour_cos",
+      "day_of_week",
+      "is_track_closure",
+      "is_speed_warning",
+      "active_disruption_group",
+      "num_platform_tracks",
+      "is_passing_loop",
+      "is_node",
+      "edge_delta_delay_P50",
+      "edge_delta_delay_P90",
+      "edge_delta_delay_MAD",
+      "station_delta_stop_min_P50",
+      "station_delta_stop_min_P90"
+    ],
+    "warning": "Прокси ближайшего перегона; перенос на синтетический участок не проверен; грузовые используют правила.",
+    "search": "Two fixed leaf-count candidates selected by validation MAE; no Optuna.",
+    "provenance": {
+      "repository": "Mevinss/TurkiSib",
+      "commit": "298694c0dccc564bc686560a9e98bbaae3c76900",
+      "files": [
+        {
+          "path": "processed_tabular/train_delays_tabular.parquet",
+          "bytes": 13789354,
+          "sha256": "18a38860552b8ccc82bd77ffbbaae400c47e4af0c06a6b54b8d699fe744863e4",
+          "git_blob_sha": "37c475b4e604f4943e378035c32faa1158a4609c"
+        },
+        {
+          "path": "raw/run_stops.csv",
+          "bytes": 31778404,
+          "sha256": "b944314bd7e0d3c31e2db94bebb3c44f687bd80e63c5fda8c618942ac460a808",
+          "git_blob_sha": "6c2e3adea21fcf2ff59cca9df24f10e98cb6d05d"
+        },
+        {
+          "path": "graph_and_sequences/splits.json",
+          "bytes": 660296,
+          "sha256": "190ec0f57c62e97e8517fbd080e290d9a90a8771f821a3e221eb2a751144453f",
+          "git_blob_sha": "2a4919f1e442dca01962bc217325ed0b7cc77dd6"
+        },
+        {
+          "path": "README.md",
+          "bytes": 29841,
+          "sha256": "0f309236b21f0dc124307e535b3a5344c3bfdd63cab22e81be112044f9dc807a",
+          "git_blob_sha": "165bc34ffbb5db9af447593c0e6fc55404106091"
+        }
+      ],
+      "dataset": "PKP Intercity",
+      "licence": "CC-BY-4.0",
+      "attribution": "Marek Kostrz, Zenodo 21700869"
+    },
+    "accepted": true,
+    "by_category": {
+      "IC": {
+        "mae": 0.5743010125389212,
+        "rmse": 2.3657524770244045,
+        "r2": 0.07519063317220642
+      },
+      "TLK": {
+        "mae": 0.4005924218774015,
+        "rmse": 1.6496080500341403,
+        "r2": 0.0785524058544328
+      },
+      "EIP": {
+        "mae": 0.9750914470109735,
+        "rmse": 4.424920626169747,
+        "r2": 0.042329635057529846
+      },
+      "EIC": {
+        "mae": 1.001489290888253,
+        "rmse": 4.292842359738455,
+        "r2": 0.061385961902106545
+      }
+    },
+    "by_delay_bucket": {
+      "0-3": {
+        "n": 57417,
+        "mae": 0.3784888565092419,
+        "rmse": 2.161283366053737,
+        "r2": 0.02063684361266771
+      },
+      "3-10": {
+        "n": 12035,
+        "mae": 0.9932227294877911,
+        "rmse": 2.843318548266636,
+        "r2": 0.10099022356039566
+      },
+      "10+": {
+        "n": 8980,
+        "mae": 1.3663166834431517,
+        "rmse": 3.760163435786612,
+        "r2": 0.13513051585358182
+      }
+    },
+    "training_seconds": 49.45704130000013
+  }
+}

@@ -220,6 +220,44 @@
           "minimum": 0,
           "title": "Time Reserve Min",
           "type": "number"
+        },
+        "deterministic_wait_s": {
+          "anyOf": [
+            {
+              "maximum": 604800,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deterministic Wait S"
+        },
+        "restriction_extra_s": {
+          "default": 0,
+          "maximum": 604800,
+          "minimum": 0,
+          "title": "Restriction Extra S",
+          "type": "number"
+        },
+        "source_domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Domain"
+        },
+        "next_block_closed": {
+          "default": false,
+          "title": "Next Block Closed",
+          "type": "boolean"
         }
       },
       "required": [

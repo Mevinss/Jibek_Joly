@@ -1,0 +1,21 @@
+{
+  "train_kind": "Тип поезда",
+  "prev_delay_departure_min": "Текущее опоздание",
+  "time_reserve_min": "Резерв расписания",
+  "min_technical_time_min": "Время хода",
+  "hour_sin": "Время суток (sin)",
+  "hour_cos": "Время суток (cos)",
+  "day_of_week": "День недели",
+  "block_load": "Поезда на перегоне",
+  "is_track_closure": "Закрытие перегона",
+  "is_speed_warning": "Ограничение скорости",
+  "active_disruption_group": "Активное нарушение",
+  "num_platform_tracks": "Число путей",
+  "is_passing_loop": "Разъезд",
+  "is_node": "Узловая станция",
+  "edge_delta_delay_P50": "Медиана задержки перегона",
+  "edge_delta_delay_P90": "Высокие задержки перегона",
+  "edge_delta_delay_MAD": "Разброс задержек перегона",
+  "station_delta_stop_min_P50": "Медиана задержки на станции",
+  "station_delta_stop_min_P90": "Высокие задержки на станции"
+}
