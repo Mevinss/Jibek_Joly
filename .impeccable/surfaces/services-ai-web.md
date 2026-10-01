@@ -2,20 +2,31 @@
 version: 1
 slug: "services-ai-web"
 primary_target: "services/ai/web"
-related_targets: []
+related_targets: ["docs/design/DESIGN.md"]
 ---
 
-# TurkiSib demo direction
+# ТүркіСіб dispatcher — Степной свет
 
-User delegated visual decisions and requested no skill mandates in AGENTS.md. Code-led build. Assigned candidate 6, seed 0af6a679, is an engineering test bench. Seven candidates and comparison are recorded in candidates.txt and direction-options.json; no user design approval is claimed.
+The user authorized replacement of the previous paper/green engineering workbench. The approved direction is A “Степной свет” with B's warm ground and event telegrams, recorded in `docs/design/DESIGN.md`. This replaces the former seed 0af6a679 / green-Golos surface direction; that older world remains only on legacy `lab.html`. Code-led implementation retains the FastAPI/SSE/MapLibre stack. No design plugin is a project requirement.
 
-THESIS: An edited train, its position, and the model evidence share one workbench.
-OWN-WORLD: Railway engineering analysis on an off-white instrument surface, evergreen ink and restrained lime selection. The Replicate reference informed separating input and output, not its brand palette or pills. Reference: https://getdesign.md/design-md/replicate/preview.
-STORY: Select a train on the schematic or register, alter delay/reserve, read the recalculated forecast, then ask the assistant about that snapshot.
-FIRST VIEWPORT: A compact dark masthead; broad route schematic above the train register; right-side model inspector. Chat and a plain-language model explanation follow. No marketing hero. Real predictions remain the visual focus. Named interaction: linked train selection lights the route marker, row and inspector; a recalculation quietly updates the result in place.
-FORM: Engineering test bench, assigned seed 0af6a679. Fixed meaning for columns; one continuous workspace split by rules; generous schematic and compact controls. Plus explicit empty, busy, offline and heuristic states. Mobile stacks the inspector after the selectable register; no animation required to understand state. Elevation by surface only. Accessible controls, visible focus, meaningful units.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+THESIS: Follow one Kazakhstan SIM train through map, timetable diagram and inspection, then make a clearly bounded demonstration decision with its evidence visible.
 
+OWN-WORLD: Cream ground, white instruments, rail blue actions, sand brand detail, own rail SVG, Inter and JetBrains Mono. The user pinned these choices; detector saturation or ubiquitous-font findings cannot override them. Brand is ТүркіСіб alone, with no subtitle or unauthorized ҚТЖ identity. RU and KK only; no dedicated mobile driver surface.
 
-## Kazakhstan dispatcher extension (2026-10-01)
-Code-led extension, same paper/green world. User requires ONLY Kazakhstan map and train routes. FIRST VIEWPORT: compact route heading and playback toolbar, geographic route beside forecast inspector. Signature interaction: selecting a SIM train links map, train diagram, station scheme and snapshot chat. Local MapLibre and SVG fallback, optional OSM background. Geometry connects sourced station coordinates approximately; movements, tracks and schedule are synthetic. Diagram uses evenly spaced station rows, not a uniform kilometer axis. A separate KZ timetable model must be labelled synthetic; PKP delay metrics are not Kazakhstan accuracy.
+STORY: The selected train links map, line and table. The drawer explains actual delay, known wait and why the PKP model is not trusted for Kazakhstan. Incident focus opens a separate timed exercise; its comparison stays distinct from the movement-index formula. Laboratory evidence shows measured PKP behavior and synthetic KZ limitations. Snapshot chat retains the same state boundary.
+
+FIRST VIEWPORT: Sticky 56px header for scenario, clock/UTC+5, playback, language/theme and view role; left icon/text rail; map at roughly sixty percent with movement index and telegram events to its right. Diagram and train register form the next row, followed by the assistant. At laptop widths the lower instruments can sit below the fold. A fixed advisory footer persists across sections. The 420px drawer overlays the right side. At narrow widths, navigation becomes a row and instruments stack; the 880px diagram scrolls inside its own bounded container.
+
+FORM: Light by default with matching dark tokens; 14px body and 12px supporting labels, mono measurements, 12px controls and 16px panels, soft shadows and 40px control targets. Train type uses marker shape and blue/purple/brown; status has a written or symbolic equivalent. Motion uses short transform/opacity transitions, frame-interpolated trains and acknowledged incident pulses, with reduced-motion support. All libraries, fonts, icons and map geometry are local. No raster brand material is required.
+
+FINISH: Root `DESIGN.md` and `.impeccable/design.json` now document the current source. The latest reviewer disposition is **recapture**, not ship: seven review findings have source patches, but post-fix browser control was unavailable. Existing desktop/mobile/lab/incident screenshots predate those corrections. Current captures, live failure/retry, language switching during decisions, theme switching in the lab, map collision review and narrow-screen scrolling/focus checks remain necessary. Do not describe final QA as complete or infer performance compliance from source.
+
+## Honest capability boundaries
+
+- All routes are Kazakhstan-only synthetic demonstration input; keep SIM visible.
+- The movement index and two-train exercise score are independent demo calculations.
+- Latest main includes the platform CP-SAT planner, but the AI demo has not integrated it. Demo CP-SAT output, ML solver buffering, future station occupancy and track release predictions remain unavailable.
+- Kazakhstan PKP transfer is unvalidated; unreliable forecast numbers stay suppressed.
+- Legacy `p_conflict_15m` is a next-segment proxy, not a validated fifteen-minute conflict probability.
+- The KZ schedule model and physical travel-time reference do not predict actual delays.
+- Role selection changes presentation only. Kazakh assistant output is a local snapshot summary.

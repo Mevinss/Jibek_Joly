@@ -1,393 +1,656 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-01T06:53:28.9021737Z",
-  "title": "Design System: TurkiSib",
+  "generatedAt": "2026-10-01T09:59:36.061240+00:00",
+  "title": "Design System: ТүркіСіб",
   "extensions": {
     "colorMeta": {
-      "paper": {
+      "bg": {
         "role": "neutral",
-        "displayName": "Paper",
+        "displayName": "Bg",
         "tonalRamp": [
-          "oklch(15.00% 0.0080 98.88)",
-          "oklch(26.43% 0.0080 98.88)",
-          "oklch(37.86% 0.0080 98.88)",
-          "oklch(49.29% 0.0080 98.88)",
-          "oklch(60.71% 0.0080 98.88)",
-          "oklch(72.14% 0.0080 98.88)",
-          "oklch(83.57% 0.0080 98.88)",
-          "oklch(95.00% 0.0080 98.88)"
+          "oklch(15.0% 0.0070 88.6)",
+          "oklch(26.4% 0.0070 88.6)",
+          "oklch(37.9% 0.0070 88.6)",
+          "oklch(49.3% 0.0070 88.6)",
+          "oklch(60.7% 0.0070 88.6)",
+          "oklch(72.1% 0.0070 88.6)",
+          "oklch(83.6% 0.0070 88.6)",
+          "oklch(95.0% 0.0070 88.6)"
         ]
       },
-      "white": {
+      "surface": {
         "role": "neutral",
-        "displayName": "Warm white",
+        "displayName": "Surface",
         "tonalRamp": [
-          "oklch(15.00% 0.0054 95.10)",
-          "oklch(26.43% 0.0054 95.10)",
-          "oklch(37.86% 0.0054 95.10)",
-          "oklch(49.29% 0.0054 95.10)",
-          "oklch(60.71% 0.0054 95.10)",
-          "oklch(72.14% 0.0054 95.10)",
-          "oklch(83.57% 0.0054 95.10)",
-          "oklch(95.00% 0.0054 95.10)"
+          "oklch(15.0% 0.0000 89.9)",
+          "oklch(26.4% 0.0000 89.9)",
+          "oklch(37.9% 0.0000 89.9)",
+          "oklch(49.3% 0.0000 89.9)",
+          "oklch(60.7% 0.0000 89.9)",
+          "oklch(72.1% 0.0000 89.9)",
+          "oklch(83.6% 0.0000 89.9)",
+          "oklch(95.0% 0.0000 89.9)"
         ]
       },
-      "ink": {
+      "surface2": {
         "role": "neutral",
-        "displayName": "Evergreen ink",
+        "displayName": "Surface2",
         "tonalRamp": [
-          "oklch(15.00% 0.0240 177.93)",
-          "oklch(26.43% 0.0240 177.93)",
-          "oklch(37.86% 0.0240 177.93)",
-          "oklch(49.29% 0.0240 177.93)",
-          "oklch(60.71% 0.0240 177.93)",
-          "oklch(72.14% 0.0240 177.93)",
-          "oklch(83.57% 0.0240 177.93)",
-          "oklch(95.00% 0.0240 177.93)"
+          "oklch(15.0% 0.0057 84.6)",
+          "oklch(26.4% 0.0057 84.6)",
+          "oklch(37.9% 0.0057 84.6)",
+          "oklch(49.3% 0.0057 84.6)",
+          "oklch(60.7% 0.0057 84.6)",
+          "oklch(72.1% 0.0057 84.6)",
+          "oklch(83.6% 0.0057 84.6)",
+          "oklch(95.0% 0.0057 84.6)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "tonalRamp": [
+          "oklch(15.0% 0.0158 86.4)",
+          "oklch(26.4% 0.0158 86.4)",
+          "oklch(37.9% 0.0158 86.4)",
+          "oklch(49.3% 0.0158 86.4)",
+          "oklch(60.7% 0.0158 86.4)",
+          "oklch(72.1% 0.0158 86.4)",
+          "oklch(83.6% 0.0158 86.4)",
+          "oklch(95.0% 0.0158 86.4)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "tonalRamp": [
+          "oklch(15.0% 0.0291 261.4)",
+          "oklch(26.4% 0.0291 261.4)",
+          "oklch(37.9% 0.0291 261.4)",
+          "oklch(49.3% 0.0291 261.4)",
+          "oklch(60.7% 0.0291 261.4)",
+          "oklch(72.1% 0.0291 261.4)",
+          "oklch(83.6% 0.0291 261.4)",
+          "oklch(95.0% 0.0291 261.4)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(15.0% 0.0286 259.8)",
+          "oklch(26.4% 0.0286 259.8)",
+          "oklch(37.9% 0.0286 259.8)",
+          "oklch(49.3% 0.0286 259.8)",
+          "oklch(60.7% 0.0286 259.8)",
+          "oklch(72.1% 0.0286 259.8)",
+          "oklch(83.6% 0.0286 259.8)",
+          "oklch(95.0% 0.0286 259.8)"
         ]
       },
       "muted": {
         "role": "neutral",
-        "displayName": "Muted ink",
+        "displayName": "Muted",
         "tonalRamp": [
-          "oklch(15.00% 0.0194 162.17)",
-          "oklch(26.43% 0.0194 162.17)",
-          "oklch(37.86% 0.0194 162.17)",
-          "oklch(49.29% 0.0194 162.17)",
-          "oklch(60.71% 0.0194 162.17)",
-          "oklch(72.14% 0.0194 162.17)",
-          "oklch(83.57% 0.0194 162.17)",
-          "oklch(95.00% 0.0194 162.17)"
+          "oklch(15.0% 0.0233 259.2)",
+          "oklch(26.4% 0.0233 259.2)",
+          "oklch(37.9% 0.0233 259.2)",
+          "oklch(49.3% 0.0233 259.2)",
+          "oklch(60.7% 0.0233 259.2)",
+          "oklch(72.1% 0.0233 259.2)",
+          "oklch(83.6% 0.0233 259.2)",
+          "oklch(95.0% 0.0233 259.2)"
         ]
       },
-      "line": {
-        "role": "neutral",
-        "displayName": "Rule",
-        "tonalRamp": [
-          "oklch(15.00% 0.0155 123.07)",
-          "oklch(26.43% 0.0155 123.07)",
-          "oklch(37.86% 0.0155 123.07)",
-          "oklch(49.29% 0.0155 123.07)",
-          "oklch(60.71% 0.0155 123.07)",
-          "oklch(72.14% 0.0155 123.07)",
-          "oklch(83.57% 0.0155 123.07)",
-          "oklch(95.00% 0.0155 123.07)"
-        ]
-      },
-      "green": {
+      "primary": {
         "role": "primary",
-        "displayName": "Evergreen",
+        "displayName": "Primary",
         "tonalRamp": [
-          "oklch(15.00% 0.0902 166.63)",
-          "oklch(26.43% 0.0902 166.63)",
-          "oklch(37.86% 0.0902 166.63)",
-          "oklch(49.29% 0.0902 166.63)",
-          "oklch(60.71% 0.0902 166.63)",
-          "oklch(72.14% 0.0902 166.63)",
-          "oklch(83.57% 0.0902 166.63)",
-          "oklch(95.00% 0.0902 166.63)"
+          "oklch(15.0% 0.1338 254.2)",
+          "oklch(26.4% 0.1338 254.2)",
+          "oklch(37.9% 0.1338 254.2)",
+          "oklch(49.3% 0.1338 254.2)",
+          "oklch(60.7% 0.1338 254.2)",
+          "oklch(72.1% 0.1338 254.2)",
+          "oklch(83.6% 0.1338 254.2)",
+          "oklch(95.0% 0.1338 254.2)"
         ]
       },
-      "lime": {
-        "role": "primary",
-        "displayName": "Selection lime",
-        "tonalRamp": [
-          "oklch(15.00% 0.1203 116.20)",
-          "oklch(26.43% 0.1203 116.20)",
-          "oklch(37.86% 0.1203 116.20)",
-          "oklch(49.29% 0.1203 116.20)",
-          "oklch(60.71% 0.1203 116.20)",
-          "oklch(72.14% 0.1203 116.20)",
-          "oklch(83.57% 0.1203 116.20)",
-          "oklch(95.00% 0.1203 116.20)"
-        ]
-      },
-      "wash": {
+      "sand": {
         "role": "neutral",
-        "displayName": "Selection wash",
+        "displayName": "Sand",
         "tonalRamp": [
-          "oklch(15.00% 0.0159 130.42)",
-          "oklch(26.43% 0.0159 130.42)",
-          "oklch(37.86% 0.0159 130.42)",
-          "oklch(49.29% 0.0159 130.42)",
-          "oklch(60.71% 0.0159 130.42)",
-          "oklch(72.14% 0.0159 130.42)",
-          "oklch(83.57% 0.0159 130.42)",
-          "oklch(95.00% 0.0159 130.42)"
+          "oklch(15.0% 0.0370 86.2)",
+          "oklch(26.4% 0.0370 86.2)",
+          "oklch(37.9% 0.0370 86.2)",
+          "oklch(49.3% 0.0370 86.2)",
+          "oklch(60.7% 0.0370 86.2)",
+          "oklch(72.1% 0.0370 86.2)",
+          "oklch(83.6% 0.0370 86.2)",
+          "oklch(95.0% 0.0370 86.2)"
         ]
       },
-      "amber": {
+      "ok": {
         "role": "secondary",
-        "displayName": "Warning amber",
+        "displayName": "Ok",
         "tonalRamp": [
-          "oklch(15.00% 0.1015 59.77)",
-          "oklch(26.43% 0.1015 59.77)",
-          "oklch(37.86% 0.1015 59.77)",
-          "oklch(49.29% 0.1015 59.77)",
-          "oklch(60.71% 0.1015 59.77)",
-          "oklch(72.14% 0.1015 59.77)",
-          "oklch(83.57% 0.1015 59.77)",
-          "oklch(95.00% 0.1015 59.77)"
+          "oklch(15.0% 0.0989 159.3)",
+          "oklch(26.4% 0.0989 159.3)",
+          "oklch(37.9% 0.0989 159.3)",
+          "oklch(49.3% 0.0989 159.3)",
+          "oklch(60.7% 0.0989 159.3)",
+          "oklch(72.1% 0.0989 159.3)",
+          "oklch(83.6% 0.0989 159.3)",
+          "oklch(95.0% 0.0989 159.3)"
         ]
       },
-      "error": {
+      "warning": {
         "role": "secondary",
-        "displayName": "Error red",
+        "displayName": "Warning",
         "tonalRamp": [
-          "oklch(15.00% 0.1435 27.73)",
-          "oklch(26.43% 0.1435 27.73)",
-          "oklch(37.86% 0.1435 27.73)",
-          "oklch(49.29% 0.1435 27.73)",
-          "oklch(60.71% 0.1435 27.73)",
-          "oklch(72.14% 0.1435 27.73)",
-          "oklch(83.57% 0.1435 27.73)",
-          "oklch(95.00% 0.1435 27.73)"
+          "oklch(15.0% 0.1166 65.5)",
+          "oklch(26.4% 0.1166 65.5)",
+          "oklch(37.9% 0.1166 65.5)",
+          "oklch(49.3% 0.1166 65.5)",
+          "oklch(60.7% 0.1166 65.5)",
+          "oklch(72.1% 0.1166 65.5)",
+          "oklch(83.6% 0.1166 65.5)",
+          "oklch(95.0% 0.1166 65.5)"
         ]
       },
-      "inspector": {
+      "critical": {
+        "role": "secondary",
+        "displayName": "Critical",
+        "tonalRamp": [
+          "oklch(15.0% 0.1740 29.7)",
+          "oklch(26.4% 0.1740 29.7)",
+          "oklch(37.9% 0.1740 29.7)",
+          "oklch(49.3% 0.1740 29.7)",
+          "oklch(60.7% 0.1740 29.7)",
+          "oklch(72.1% 0.1740 29.7)",
+          "oklch(83.6% 0.1740 29.7)",
+          "oklch(95.0% 0.1740 29.7)"
+        ]
+      },
+      "ok-bg": {
         "role": "neutral",
-        "displayName": "Inspector tint",
+        "displayName": "Ok Bg",
         "tonalRamp": [
-          "oklch(15.00% 0.0080 114.22)",
-          "oklch(26.43% 0.0080 114.22)",
-          "oklch(37.86% 0.0080 114.22)",
-          "oklch(49.29% 0.0080 114.22)",
-          "oklch(60.71% 0.0080 114.22)",
-          "oklch(72.14% 0.0080 114.22)",
-          "oklch(83.57% 0.0080 114.22)",
-          "oklch(95.00% 0.0080 114.22)"
+          "oklch(15.0% 0.0157 160.6)",
+          "oklch(26.4% 0.0157 160.6)",
+          "oklch(37.9% 0.0157 160.6)",
+          "oklch(49.3% 0.0157 160.6)",
+          "oklch(60.7% 0.0157 160.6)",
+          "oklch(72.1% 0.0157 160.6)",
+          "oklch(83.6% 0.0157 160.6)",
+          "oklch(95.0% 0.0157 160.6)"
         ]
       },
-      "track": {
+      "warn-bg": {
         "role": "neutral",
-        "displayName": "Track",
+        "displayName": "Warn Bg",
         "tonalRamp": [
-          "oklch(15.00% 0.0190 130.19)",
-          "oklch(26.43% 0.0190 130.19)",
-          "oklch(37.86% 0.0190 130.19)",
-          "oklch(49.29% 0.0190 130.19)",
-          "oklch(60.71% 0.0190 130.19)",
-          "oklch(72.14% 0.0190 130.19)",
-          "oklch(83.57% 0.0190 130.19)",
-          "oklch(95.00% 0.0190 130.19)"
+          "oklch(15.0% 0.0349 81.3)",
+          "oklch(26.4% 0.0349 81.3)",
+          "oklch(37.9% 0.0349 81.3)",
+          "oklch(49.3% 0.0349 81.3)",
+          "oklch(60.7% 0.0349 81.3)",
+          "oklch(72.1% 0.0349 81.3)",
+          "oklch(83.6% 0.0349 81.3)",
+          "oklch(95.0% 0.0349 81.3)"
         ]
       },
-      "green-hover": {
+      "critical-bg": {
+        "role": "neutral",
+        "displayName": "Critical Bg",
+        "tonalRamp": [
+          "oklch(15.0% 0.0204 32.5)",
+          "oklch(26.4% 0.0204 32.5)",
+          "oklch(37.9% 0.0204 32.5)",
+          "oklch(49.3% 0.0204 32.5)",
+          "oklch(60.7% 0.0204 32.5)",
+          "oklch(72.1% 0.0204 32.5)",
+          "oklch(83.6% 0.0204 32.5)",
+          "oklch(95.0% 0.0204 32.5)"
+        ]
+      },
+      "passenger": {
+        "role": "secondary",
+        "displayName": "Passenger",
+        "tonalRamp": [
+          "oklch(15.0% 0.1629 291.6)",
+          "oklch(26.4% 0.1629 291.6)",
+          "oklch(37.9% 0.1629 291.6)",
+          "oklch(49.3% 0.1629 291.6)",
+          "oklch(60.7% 0.1629 291.6)",
+          "oklch(72.1% 0.1629 291.6)",
+          "oklch(83.6% 0.1629 291.6)",
+          "oklch(95.0% 0.1629 291.6)"
+        ]
+      },
+      "freight": {
+        "role": "secondary",
+        "displayName": "Freight",
+        "tonalRamp": [
+          "oklch(15.0% 0.0589 65.8)",
+          "oklch(26.4% 0.0589 65.8)",
+          "oklch(37.9% 0.0589 65.8)",
+          "oklch(49.3% 0.0589 65.8)",
+          "oklch(60.7% 0.0589 65.8)",
+          "oklch(72.1% 0.0589 65.8)",
+          "oklch(83.6% 0.0589 65.8)",
+          "oklch(95.0% 0.0589 65.8)"
+        ]
+      },
+      "dark-bg": {
+        "role": "neutral",
+        "displayName": "Dark Bg",
+        "tonalRamp": [
+          "oklch(15.0% 0.0229 254.3)",
+          "oklch(26.4% 0.0229 254.3)",
+          "oklch(37.9% 0.0229 254.3)",
+          "oklch(49.3% 0.0229 254.3)",
+          "oklch(60.7% 0.0229 254.3)",
+          "oklch(72.1% 0.0229 254.3)",
+          "oklch(83.6% 0.0229 254.3)",
+          "oklch(95.0% 0.0229 254.3)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark Surface",
+        "tonalRamp": [
+          "oklch(15.0% 0.0288 253.0)",
+          "oklch(26.4% 0.0288 253.0)",
+          "oklch(37.9% 0.0288 253.0)",
+          "oklch(49.3% 0.0288 253.0)",
+          "oklch(60.7% 0.0288 253.0)",
+          "oklch(72.1% 0.0288 253.0)",
+          "oklch(83.6% 0.0288 253.0)",
+          "oklch(95.0% 0.0288 253.0)"
+        ]
+      },
+      "dark-surface2": {
+        "role": "neutral",
+        "displayName": "Dark Surface2",
+        "tonalRamp": [
+          "oklch(15.0% 0.0324 252.4)",
+          "oklch(26.4% 0.0324 252.4)",
+          "oklch(37.9% 0.0324 252.4)",
+          "oklch(49.3% 0.0324 252.4)",
+          "oklch(60.7% 0.0324 252.4)",
+          "oklch(72.1% 0.0324 252.4)",
+          "oklch(83.6% 0.0324 252.4)",
+          "oklch(95.0% 0.0324 252.4)"
+        ]
+      },
+      "dark-border": {
+        "role": "neutral",
+        "displayName": "Dark Border",
+        "tonalRamp": [
+          "oklch(15.0% 0.0347 251.9)",
+          "oklch(26.4% 0.0347 251.9)",
+          "oklch(37.9% 0.0347 251.9)",
+          "oklch(49.3% 0.0347 251.9)",
+          "oklch(60.7% 0.0347 251.9)",
+          "oklch(72.1% 0.0347 251.9)",
+          "oklch(83.6% 0.0347 251.9)",
+          "oklch(95.0% 0.0347 251.9)"
+        ]
+      },
+      "dark-text": {
+        "role": "neutral",
+        "displayName": "Dark Text",
+        "tonalRamp": [
+          "oklch(15.0% 0.0091 258.3)",
+          "oklch(26.4% 0.0091 258.3)",
+          "oklch(37.9% 0.0091 258.3)",
+          "oklch(49.3% 0.0091 258.3)",
+          "oklch(60.7% 0.0091 258.3)",
+          "oklch(72.1% 0.0091 258.3)",
+          "oklch(83.6% 0.0091 258.3)",
+          "oklch(95.0% 0.0091 258.3)"
+        ]
+      },
+      "dark-secondary": {
+        "role": "neutral",
+        "displayName": "Dark Secondary",
+        "tonalRamp": [
+          "oklch(15.0% 0.0231 254.4)",
+          "oklch(26.4% 0.0231 254.4)",
+          "oklch(37.9% 0.0231 254.4)",
+          "oklch(49.3% 0.0231 254.4)",
+          "oklch(60.7% 0.0231 254.4)",
+          "oklch(72.1% 0.0231 254.4)",
+          "oklch(83.6% 0.0231 254.4)",
+          "oklch(95.0% 0.0231 254.4)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark Muted",
+        "tonalRamp": [
+          "oklch(15.0% 0.0288 255.1)",
+          "oklch(26.4% 0.0288 255.1)",
+          "oklch(37.9% 0.0288 255.1)",
+          "oklch(49.3% 0.0288 255.1)",
+          "oklch(60.7% 0.0288 255.1)",
+          "oklch(72.1% 0.0288 255.1)",
+          "oklch(83.6% 0.0288 255.1)",
+          "oklch(95.0% 0.0288 255.1)"
+        ]
+      },
+      "dark-primary": {
         "role": "primary",
-        "displayName": "Evergreen hover",
+        "displayName": "Dark Primary",
         "tonalRamp": [
-          "oklch(15.00% 0.0746 167.06)",
-          "oklch(26.43% 0.0746 167.06)",
-          "oklch(37.86% 0.0746 167.06)",
-          "oklch(49.29% 0.0746 167.06)",
-          "oklch(60.71% 0.0746 167.06)",
-          "oklch(72.14% 0.0746 167.06)",
-          "oklch(83.57% 0.0746 167.06)",
-          "oklch(95.00% 0.0746 167.06)"
+          "oklch(15.0% 0.1126 256.6)",
+          "oklch(26.4% 0.1126 256.6)",
+          "oklch(37.9% 0.1126 256.6)",
+          "oklch(49.3% 0.1126 256.6)",
+          "oklch(60.7% 0.1126 256.6)",
+          "oklch(72.1% 0.1126 256.6)",
+          "oklch(83.6% 0.1126 256.6)",
+          "oklch(95.0% 0.1126 256.6)"
         ]
       },
-      "button-text": {
+      "dark-sand": {
         "role": "neutral",
-        "displayName": "Pure white button text",
+        "displayName": "Dark Sand",
         "tonalRamp": [
-          "oklch(15.00% 0.0000 89.88)",
-          "oklch(26.43% 0.0000 89.88)",
-          "oklch(37.86% 0.0000 89.88)",
-          "oklch(49.29% 0.0000 89.88)",
-          "oklch(60.71% 0.0000 89.88)",
-          "oklch(72.14% 0.0000 89.88)",
-          "oklch(83.57% 0.0000 89.88)",
-          "oklch(95.00% 0.0000 89.88)"
+          "oklch(15.0% 0.0297 86.9)",
+          "oklch(26.4% 0.0297 86.9)",
+          "oklch(37.9% 0.0297 86.9)",
+          "oklch(49.3% 0.0297 86.9)",
+          "oklch(60.7% 0.0297 86.9)",
+          "oklch(72.1% 0.0297 86.9)",
+          "oklch(83.6% 0.0297 86.9)",
+          "oklch(95.0% 0.0297 86.9)"
+        ]
+      },
+      "dark-ok": {
+        "role": "secondary",
+        "displayName": "Dark Ok",
+        "tonalRamp": [
+          "oklch(15.0% 0.1125 157.3)",
+          "oklch(26.4% 0.1125 157.3)",
+          "oklch(37.9% 0.1125 157.3)",
+          "oklch(49.3% 0.1125 157.3)",
+          "oklch(60.7% 0.1125 157.3)",
+          "oklch(72.1% 0.1125 157.3)",
+          "oklch(83.6% 0.1125 157.3)",
+          "oklch(95.0% 0.1125 157.3)"
+        ]
+      },
+      "dark-warning": {
+        "role": "secondary",
+        "displayName": "Dark Warning",
+        "tonalRamp": [
+          "oklch(15.0% 0.1156 76.1)",
+          "oklch(26.4% 0.1156 76.1)",
+          "oklch(37.9% 0.1156 76.1)",
+          "oklch(49.3% 0.1156 76.1)",
+          "oklch(60.7% 0.1156 76.1)",
+          "oklch(72.1% 0.1156 76.1)",
+          "oklch(83.6% 0.1156 76.1)",
+          "oklch(95.0% 0.1156 76.1)"
+        ]
+      },
+      "dark-critical": {
+        "role": "secondary",
+        "displayName": "Dark Critical",
+        "tonalRamp": [
+          "oklch(15.0% 0.1018 26.2)",
+          "oklch(26.4% 0.1018 26.2)",
+          "oklch(37.9% 0.1018 26.2)",
+          "oklch(49.3% 0.1018 26.2)",
+          "oklch(60.7% 0.1018 26.2)",
+          "oklch(72.1% 0.1018 26.2)",
+          "oklch(83.6% 0.1018 26.2)",
+          "oklch(95.0% 0.1018 26.2)"
+        ]
+      },
+      "dark-ok-bg": {
+        "role": "neutral",
+        "displayName": "Dark Ok Bg",
+        "tonalRamp": [
+          "oklch(15.0% 0.0396 166.9)",
+          "oklch(26.4% 0.0396 166.9)",
+          "oklch(37.9% 0.0396 166.9)",
+          "oklch(49.3% 0.0396 166.9)",
+          "oklch(60.7% 0.0396 166.9)",
+          "oklch(72.1% 0.0396 166.9)",
+          "oklch(83.6% 0.0396 166.9)",
+          "oklch(95.0% 0.0396 166.9)"
+        ]
+      },
+      "dark-warn-bg": {
+        "role": "neutral",
+        "displayName": "Dark Warn Bg",
+        "tonalRamp": [
+          "oklch(15.0% 0.0364 85.1)",
+          "oklch(26.4% 0.0364 85.1)",
+          "oklch(37.9% 0.0364 85.1)",
+          "oklch(49.3% 0.0364 85.1)",
+          "oklch(60.7% 0.0364 85.1)",
+          "oklch(72.1% 0.0364 85.1)",
+          "oklch(83.6% 0.0364 85.1)",
+          "oklch(95.0% 0.0364 85.1)"
+        ]
+      },
+      "dark-critical-bg": {
+        "role": "neutral",
+        "displayName": "Dark Critical Bg",
+        "tonalRamp": [
+          "oklch(15.0% 0.0403 9.8)",
+          "oklch(26.4% 0.0403 9.8)",
+          "oklch(37.9% 0.0403 9.8)",
+          "oklch(49.3% 0.0403 9.8)",
+          "oklch(60.7% 0.0403 9.8)",
+          "oklch(72.1% 0.0403 9.8)",
+          "oklch(83.6% 0.0403 9.8)",
+          "oklch(95.0% 0.0403 9.8)"
+        ]
+      },
+      "dark-passenger": {
+        "role": "secondary",
+        "displayName": "Dark Passenger",
+        "tonalRamp": [
+          "oklch(15.0% 0.1234 295.0)",
+          "oklch(26.4% 0.1234 295.0)",
+          "oklch(37.9% 0.1234 295.0)",
+          "oklch(49.3% 0.1234 295.0)",
+          "oklch(60.7% 0.1234 295.0)",
+          "oklch(72.1% 0.1234 295.0)",
+          "oklch(83.6% 0.1234 295.0)",
+          "oklch(95.0% 0.1234 295.0)"
+        ]
+      },
+      "dark-freight": {
+        "role": "secondary",
+        "displayName": "Dark Freight",
+        "tonalRamp": [
+          "oklch(15.0% 0.0708 63.6)",
+          "oklch(26.4% 0.0708 63.6)",
+          "oklch(37.9% 0.0708 63.6)",
+          "oklch(49.3% 0.0708 63.6)",
+          "oklch(60.7% 0.0708 63.6)",
+          "oklch(72.1% 0.0708 63.6)",
+          "oklch(83.6% 0.0708 63.6)",
+          "oklch(95.0% 0.0708 63.6)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Page heading",
-        "purpose": "Main two-line heading; 30px at max-width 540px."
+        "displayName": "Display",
+        "purpose": "Main page heading."
       },
       "headline": {
-        "displayName": "Section heading",
-        "purpose": "Base section hierarchy, with contextual sizes documented in DESIGN.md."
+        "displayName": "Headline",
+        "purpose": "Brand identity; drawer headings use their component weight."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heading."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Russian interface text using locally served Golos."
+        "purpose": "Interface prose and forms."
       },
-      "result": {
-        "displayName": "Forecast delay",
-        "purpose": "Tabular delay number, always paired with minutes."
+      "label": {
+        "displayName": "Label",
+        "purpose": "Supporting captions and labels."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "Prediction values; other mono sizes are component-specific."
       }
     },
-    "shadows": [],
-    "motion": [
+    "shadows": [
       {
-        "name": "risk-fill",
-        "value": "transform .35s cubic-bezier(.16,1,.3,1)",
-        "purpose": "Quiet in-place risk update; disabled for reduced motion."
+        "name": "panel-light",
+        "value": "0 1px 2px rgba(26,34,48,.06),0 8px 24px rgba(26,34,48,.06)",
+        "purpose": "Light instrument panels and tour."
       },
       {
-        "name": "anchor-scroll",
-        "value": "smooth",
-        "purpose": "Anchor navigation and chat shortcut; auto for reduced motion."
+        "name": "panel-dark",
+        "value": "0 8px 24px rgba(0,0,0,.12)",
+        "purpose": "Dark instrument panels and tour."
+      },
+      {
+        "name": "drawer",
+        "value": "-8px 0 30px rgba(0,0,0,.12)",
+        "purpose": "Right overlay separation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "Source easing for CSS transitions."
+      },
+      {
+        "name": "control",
+        "value": "160ms",
+        "purpose": "Button transform/opacity."
+      },
+      {
+        "name": "entrance",
+        "value": "360ms",
+        "purpose": "Drawer and incident horizontal fade; JS score count-up duration."
+      },
+      {
+        "name": "incident-pulse",
+        "value": "1.5s ease-in-out infinite",
+        "purpose": "Incident ring until acknowledged; disabled for reduced motion."
       }
     ],
     "breakpoints": [
       {
         "name": "wide",
-        "value": "1550px",
-        "query": "min-width"
+        "value": "1700px"
       },
       {
-        "name": "compact-desktop",
-        "value": "1100px",
-        "query": "max-width"
+        "name": "compact",
+        "value": "1400px"
       },
       {
-        "name": "stack-workbench",
-        "value": "800px",
-        "query": "max-width"
+        "name": "small-desktop",
+        "value": "1100px"
       },
       {
-        "name": "narrow",
-        "value": "540px",
-        "query": "max-width"
+        "name": "stack",
+        "value": "760px"
       }
-    ],
-    "focus": {
-      "value": "3px solid var(--green); outline-offset: 4px",
-      "source": "services/ai/web/style.css:69"
-    },
-    "sourceFiles": [
-      "services/ai/web/style.css",
-      "services/ai/web/index.html",
-      "services/ai/web/app.js"
-    ],
-    "provenance": {
-      "font": "Local fonts/GolosText.ttf; Google Fonts OFL in fonts/OFL.txt.",
-      "rasters": "No shipping rasters.",
-      "reference": "Replicate input/output separation informed direction; TurkiSib has its own palette and shapes.",
-      "directionApproval": "Visual decisions delegated by the user; no explicit direction approval claimed.",
-      "tonalRamps": "Synthesized OKLCH preview metadata with fixed source hue/chroma, not shipped tokens.",
-      "nonCanonized": "Existing arrow glyphs in chat shortcut/API link are implementation debt, not an icon-system rule."
-    }
+    ]
   },
   "components": [
     {
       "name": "Primary button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Forecast explanation or chat submission.",
-      "html": "<button class=\"ds-button ds-primary ds-focus\">Объяснить прогноз в чате</button>",
-      "css": ".ds-button{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:14px;padding:10px 14px;min-height:42px;border:1px solid var(--line,#d5d9ce);border-radius:var(--radius,8px);background:var(--white,#fffefa);cursor:pointer;font-variant-numeric:tabular-nums}.ds-button:hover{background:var(--wash,#eaf0e5)}.ds-button:disabled{cursor:wait;opacity:.55}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}.ds-primary{background:var(--green,#146b50);color:white;border:0;font-size:12px;font-weight:500}.ds-primary:hover{background:#0d523d}"
+      "description": "Local, keyboard-visible action with source motion and state styling.",
+      "html": "<button class=\"ds-primary\">Объяснить в чате</button>",
+      "css": ".ds-primary{min-height:40px;padding:8px 12px;border:1px solid var(--border);border-radius:12px;font:14px/1.5 Inter,sans-serif;cursor:pointer;transition:transform 160ms var(--ease),opacity 160ms var(--ease);background:var(--primary);color:var(--surface)}.ds-primary:hover{opacity:.9}.ds-primary:focus-visible{outline:3px solid var(--primary);outline-offset:3px}.ds-primary:active{transform:translateY(1px)}.ds-primary:disabled{opacity:.5;cursor:wait}"
     },
     {
       "name": "Default button",
       "kind": "button",
       "refersTo": "button-default",
-      "description": "Bordered neutral action, inherited by suggestion controls.",
-      "html": "<button class=\"ds-button ds-focus\">Прогноз выбранного поезда</button>",
-      "css": ".ds-button{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:14px;padding:10px 14px;min-height:42px;border:1px solid var(--line,#d5d9ce);border-radius:var(--radius,8px);background:var(--white,#fffefa);cursor:pointer;font-variant-numeric:tabular-nums}.ds-button:hover{background:var(--wash,#eaf0e5)}.ds-button:disabled{cursor:wait;opacity:.55}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}"
+      "description": "Local, keyboard-visible action with source motion and state styling.",
+      "html": "<button class=\"ds-default\">Весь маршрут</button>",
+      "css": ".ds-default{min-height:40px;padding:8px 12px;border:1px solid var(--border);border-radius:12px;font:14px/1.5 Inter,sans-serif;cursor:pointer;transition:transform 160ms var(--ease),opacity 160ms var(--ease);background:var(--surface);color:var(--text)}.ds-default:hover{background:var(--surface2)}.ds-default:focus-visible{outline:3px solid var(--primary);outline-offset:3px}.ds-default:active{transform:translateY(1px)}.ds-default:disabled{opacity:.5;cursor:wait}"
     },
     {
-      "name": "Quiet button",
-      "kind": "button",
-      "refersTo": "button-quiet",
-      "description": "Reset or clear actions.",
-      "html": "<button class=\"ds-button ds-quiet ds-focus\">Сбросить изменения</button>",
-      "css": ".ds-button{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:14px;padding:10px 14px;min-height:42px;border:1px solid var(--line,#d5d9ce);border-radius:var(--radius,8px);background:var(--white,#fffefa);cursor:pointer;font-variant-numeric:tabular-nums}.ds-button:hover{background:var(--wash,#eaf0e5)}.ds-button:disabled{cursor:wait;opacity:.55}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}.ds-quiet{background:transparent;border:0;font-size:12px;padding:5px;min-height:32px;text-decoration:underline;text-underline-offset:4px}"
-    },
-    {
-      "name": "Search field",
+      "name": "Chat field",
       "kind": "input",
-      "refersTo": "search-field",
-      "description": "Train-number filtering with an accessible name.",
-      "html": "<input class=\"ds-search ds-focus\" type=\"search\" aria-label=\"Найти поезд\" placeholder=\"Номер поезда\">",
-      "css": ".ds-search{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:12px;width:150px;padding:8px 12px;border:1px solid var(--line,#d5d9ce);border-radius:var(--radius,8px);background:var(--white,#fffefa);caret-color:var(--green,#146b50)}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}"
+      "refersTo": "text-field",
+      "description": "Snapshot question field with a visible preview label.",
+      "html": "<label class=\"ds-field\">Вопрос ассистенту<textarea rows=\"2\" placeholder=\"Объясни ситуацию выбранного поезда\"></textarea></label>",
+      "css": ".ds-field{display:grid;gap:8px;font:14px/1.5 Inter,sans-serif;color:var(--text)}.ds-field textarea{font:inherit;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px;min-height:56px;resize:vertical;caret-color:var(--primary)}.ds-field textarea:focus-visible{outline:3px solid var(--primary);outline-offset:3px}"
     },
     {
-      "name": "Masthead navigation",
+      "name": "Current navigation",
       "kind": "nav",
-      "description": "Text links on the dark instrument masthead; no selected-tab treatment.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Разделы\"><a class=\"ds-focus\" href=\"#workspace\">Участок</a><a class=\"ds-focus\" href=\"#assistant\">Ассистент</a><a class=\"ds-focus\" href=\"#how\">Как работает ML</a></nav>",
-      "css": ".ds-nav{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);display:flex;gap:24px;font-size:13px;background:var(--ink,#182925);color:var(--white,#fffefa);padding:16px 28px}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{color:var(--lime,#dbea8b)}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}"
+      "refersTo": "navigation-current",
+      "description": "Icon/text current-page control; aria-current accompanies its fill.",
+      "html": "<button class=\"ds-nav\" aria-current=\"page\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z\"/></svg><span>Обзор движения</span></button>",
+      "css": ".ds-nav{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:62px;padding:10px 4px;border:0;border-radius:12px;background:var(--surface2);color:var(--primary);font:600 12px/1.5 Inter,sans-serif;cursor:pointer}.ds-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.ds-nav:focus-visible{outline:3px solid var(--primary);outline-offset:3px}.ds-nav:active{transform:translateY(1px)}"
     },
     {
-      "name": "Model tag",
+      "name": "Context badge",
       "kind": "chip",
-      "refersTo": "tag",
-      "description": "Informational model label, not an interactive filter.",
-      "html": "<span class=\"ds-tag\">Правило · не ML</span>",
-      "css": ".ds-tag{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);display:inline-block;font-size:11px;font-weight:500;letter-spacing:.015em;background:var(--wash,#eaf0e5);color:var(--green,#146b50);padding:3px 9px;border-radius:4px;white-space:nowrap;font-variant-numeric:tabular-nums}"
+      "refersTo": "badge",
+      "description": "Noninteractive context label.",
+      "html": "<span class=\"ds-badge\">Демо-формула</span>",
+      "css": ".ds-badge{display:inline-block;font:12px/1.5 Inter,sans-serif;background:var(--surface2);color:var(--secondary);padding:4px 8px;border-radius:6px;white-space:nowrap}"
     },
     {
-      "name": "Continuous workbench",
+      "name": "Normal status",
+      "kind": "chip",
+      "refersTo": "status-normal",
+      "description": "A state symbol and value accompany semantic color.",
+      "html": "<span class=\"ds-status\">✓ 0 мин</span>",
+      "css": ".ds-status{display:inline-block;font:12px/1.5 Inter,sans-serif;font-variant-numeric:tabular-nums;color:var(--ok);background:var(--ok-bg);padding:4px 6px;border-radius:6px;white-space:nowrap}"
+    },
+    {
+      "name": "Instrument panel",
       "kind": "card",
-      "refersTo": "workbench",
-      "description": "One ruled workspace joining the dispatch view and tinted inspector.",
-      "html": "<div class=\"ds-workbench\"><section class=\"ds-dispatch\"><h2>Участок А — Б — В</h2><p>Демонстрационный снимок</p></section><section class=\"ds-inspector\"><h2>Выберите поезд</h2><p>Измените условия и проверьте прогноз.</p></section></div>",
-      "css": ".ds-workbench{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:14px;display:grid;grid-template-columns:minmax(0,1fr) 350px;background:var(--white,#fffefa);border:1px solid var(--line,#d5d9ce);border-radius:12px;overflow:hidden}.ds-dispatch,.ds-inspector{padding:24px;min-width:0}.ds-inspector{border-left:1px solid var(--line,#d5d9ce);background:#f8f9f3}.ds-workbench h2{margin:0;font-size:18px;line-height:1.35;letter-spacing:-.02em;font-weight:550}.ds-workbench p{font-size:11px;color:var(--muted,#58655e)}@media(max-width:800px){.ds-workbench{grid-template-columns:1fr}.ds-inspector{border-left:0;border-top:1px solid var(--line,#d5d9ce)}}"
-    },
-    {
-      "name": "Selected train marker",
-      "kind": "button",
-      "refersTo": "train-marker-selected",
-      "description": "Pressed route selection; warning dot is independent of selection.",
-      "html": "<button class=\"ds-marker ds-focus\" aria-pressed=\"true\" aria-label=\"Выбрать поезд 1001\">1001</button>",
-      "css": ".ds-marker{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);min-height:28px;padding:4px 2px;font-size:11px;background:var(--white,#fffefa);border:1px solid #a7b7ac;border-radius:4px;position:relative;cursor:pointer;font-variant-numeric:tabular-nums}.ds-marker:hover{background:var(--wash,#eaf0e5)}.ds-marker[aria-pressed=true]{background:var(--lime,#dbea8b);border-color:var(--green,#146b50);font-weight:650}.ds-focus:focus-visible{outline:3px solid var(--green,#146b50);outline-offset:4px}"
-    },
-    {
-      "name": "Forecast waiting state",
-      "kind": "custom",
-      "description": "Large delay value with explicit units and a separate calculation label; no invented forecast.",
-      "html": "<div class=\"ds-result\"><div class=\"ds-result-heading\"><h3>На следующем перегоне</h3><span>Ожидание</span></div><div class=\"ds-delay\"><span>—</span><span>мин<br>ожидаемого опоздания</span></div></div>",
-      "css": ".ds-result{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);border-top:1px solid var(--line,#d5d9ce);padding-top:18px}.ds-result-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.ds-result-heading h3{margin:0;font-size:12px;font-weight:550}.ds-result-heading>span{font-size:11px;color:var(--muted,#58655e)}.ds-delay{display:flex;align-items:center;gap:14px;margin-top:10px;font-variant-numeric:tabular-nums}.ds-delay>span:first-child{font-size:46px;line-height:1.15;font-weight:550;letter-spacing:-.04em}.ds-delay>span:last-child{font-size:11px;color:var(--muted,#58655e)}"
-    },
-    {
-      "name": "Request error",
-      "kind": "custom",
-      "description": "Alert styling for a request failure.",
-      "html": "<p class=\"ds-error\" role=\"alert\">Не удалось загрузить демо. Проверьте запуск сервиса и обновите страницу.</p>",
-      "css": ".ds-error{font-family:Golos,system-ui,sans-serif;line-height:1.55;color:var(--ink,#182925);font-size:14px;color:var(--error,#9b3029);padding:16px;background:#fceee9;border:1px solid #e6b7ad;margin:0 0 16px;max-width:72ch}"
+      "refersTo": "panel",
+      "description": "White instrument surface with source shadow and compact hierarchy.",
+      "html": "<section class=\"ds-panel\"><h2>Журнал событий</h2><p>Действующих ограничений нет</p><small>Учебный сценарий · Казахстан</small></section>",
+      "css": ".ds-panel{background:var(--surface);color:var(--text);border-radius:16px;box-shadow:var(--shadow);padding:16px;font:14px/1.5 Inter,sans-serif;}.ds-panel h2{font-size:16px;line-height:1.4;font-weight:650;margin:0 0 12px}.ds-panel p{margin:0 0 4px}.ds-panel small{font-size:12px;color:var(--secondary)}"
     }
   ],
   "narrative": {
-    "northStar": "Railway engineering test bench",
-    "overview": "An off-white instrument surface, evergreen ink and restrained lime selection support a compact Russian-language analysis workspace. Rules divide related information; controls and measured results sit together without decorative elevation. The visual hierarchy gives the forecast number prominence while keeping its units and limitations nearby.\n\nThis is a record of the built FastAPI-served interface in `services/ai/web`, not a future specification. The user delegated visual decisions; no explicit approval of a design direction is claimed. The Replicate reference informed separation of input and output, while TurkiSib uses its own palette and component shapes. Surface composition and direction history remain in `.impeccable/surfaces/services-ai-web.md`.",
+    "northStar": "Степной свет",
+    "overview": "A light dispatcher workspace places white instruments on a warm cream field. Blue identifies actions and selection; restrained sand detail gives the own-brand rail mark a local visual accent. Inter keeps interface text compact while JetBrains Mono makes changing times and measurements easy to scan.\n\nThe approved world is A, “Степной свет”, with the warm ground and event telegrams from B. The user pinned the cream palette and type families; generic saturation or font detectors do not override that choice. This document records the current dispatcher implementation, not the older green/Golos laboratory.",
     "keyCharacteristics": [
-      "Flat, ruled surfaces with a darker instrument masthead.",
-      "One locally served Cyrillic-capable type family and tabular numerals.",
-      "Linked train selection across route markers, register and inspector.",
-      "Visible model, heuristic, busy and failure states with explicit units."
+      "Light by default, with a token-matched dark theme.",
+      "Own ТүркіСіб rail mark; no subtitle, organizer logo or organizer photography.",
+      "Compact white panels, soft structural shadows and visible keyboard focus.",
+      "Kazakhstan-only SIM context and RU/KK labels with explicit units."
     ],
     "rules": [
       {
         "name": "The State Has Words Rule",
-        "body": "Selection uses pressed state as well as fill; risk, heuristic and failure states retain textual explanations alongside color.",
+        "body": "Train type uses shape, line treatment and blue/purple/brown identity; green, amber and red communicate state with words or symbols alongside color.",
         "section": "colors"
-      },
-      {
-        "name": "The Stable Numbers Rule",
-        "body": "Buttons, tags, outputs, tables, forecast values, risk rows and chart keys use tabular numerals; Russian number formatting and explicit minutes or percentages remain visible.",
-        "section": "typography"
-      },
-      {
-        "name": "The Ruled Surface Rule",
-        "body": "Keep related regions continuous and separate them with borders or background tones; do not add shadows to existing panels.",
-        "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep Russian labels, explicit units and model limitations adjacent to the values they explain.",
-      "Do preserve tabular numerals, visible keyboard focus and reduced-motion behavior.",
-      "Do link route, table and inspector selection through both visual state and accessible pressed state.",
-      "Do retain local table scrolling on narrow screens so numeric column relationships survive."
+      "Do preserve the approved cream/blue world, Inter and JetBrains Mono.",
+      "Do keep Kazakhstan-only SIM context and the advisory footer visible.",
+      "Do give status, unavailable data and selection a readable non-color explanation.",
+      "Do retain local chart scrolling when it preserves label legibility at narrow widths.",
+      "Do use local fonts, icons and map geometry; keep the own rail mark."
     ],
     "donts": [
-      "Don't present demonstration inputs as live train control or heuristic output as ML.",
-      "Don't rename the legacy next-segment proxy as a validated 15-minute conflict probability.",
-      "Don't add decorative shadows or replace the local Golos display face with a system-font identity.",
-      "Don't turn SHAP bars into causal claims or percentage-point contributions."
+      "Don't add English, a brand subtitle, an organizer logo or a dedicated mobile driver screen.",
+      "Don't use sand as a status color or encode train type with red/amber/green.",
+      "Don't present the two-train exercise score as the movement index or a solver benefit.",
+      "Don't claim final visual approval, contrast compliance or the frame-rate budget from source inspection alone."
     ]
   }
 }

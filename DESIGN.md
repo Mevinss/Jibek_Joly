@@ -1,247 +1,215 @@
 ---
-name: TurkiSib
-description: Russian-language railway scenario workbench for an advisory ML demo.
+name: ТүркіСіб
+description: Kazakhstan synthetic dispatch workspace in Russian and Kazakh.
 colors:
-  paper: "#f3f2ec"
-  white: "#fffefa"
-  ink: "#182925"
-  muted: "#58655e"
-  line: "#d5d9ce"
-  green: "#146b50"
-  lime: "#dbea8b"
-  wash: "#eaf0e5"
-  amber: "#895019"
-  error: "#9b3029"
-  inspector: "#f8f9f3"
-  track: "#dce3d6"
-  green-hover: "#0d523d"
-  button-text: "#ffffff"
+  bg: "#f5f3ee"
+  surface: "#fff"
+  surface2: "#faf8f4"
+  border: "#e3ded3"
+  text: "#1a2230"
+  secondary: "#566070"
+  muted: "#8a93a1"
+  primary: "#1d5fa8"
+  sand: "#e8dcc2"
+  ok: "#176c47"
+  warning: "#965900"
+  critical: "#c0392b"
+  ok-bg: "#e9f5ee"
+  warn-bg: "#fff1d9"
+  critical-bg: "#fceae6"
+  passenger: "#6b4fbb"
+  freight: "#7a5c3e"
+  dark-bg: "#141c26"
+  dark-surface: "#1d2835"
+  dark-surface2: "#243140"
+  dark-border: "#394859"
+  dark-text: "#edf1f7"
+  dark-secondary: "#bcc7d5"
+  dark-muted: "#98a5b6"
+  dark-primary: "#88baff"
+  dark-sand: "#605846"
+  dark-ok: "#81d9a6"
+  dark-warning: "#ffc979"
+  dark-critical: "#ffaaa1"
+  dark-ok-bg: "#213d32"
+  dark-warn-bg: "#423823"
+  dark-critical-bg: "#482d31"
+  dark-passenger: "#bea8ff"
+  dark-freight: "#dab08a"
 typography:
   display:
-    fontFamily: "Golos, system-ui, sans-serif"
-    fontSize: "clamp(26px, 3vw, 40px)"
-    fontWeight: 550
-    lineHeight: 1.18
-    letterSpacing: "-0.035em"
+    fontFamily: "Inter, sans-serif"
+    fontSize: "28px"
+    fontWeight: 650
+    lineHeight: 1.2
+    letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Golos, system-ui, sans-serif"
-    fontSize: "18px"
-    fontWeight: 550
-    lineHeight: 1.35
-    letterSpacing: "-0.02em"
+    fontFamily: "Inter, sans-serif"
+    fontSize: "20px"
+    fontWeight: 700
   title:
-    fontFamily: "Golos, system-ui, sans-serif"
-    fontSize: "14px"
-    fontWeight: 550
-    lineHeight: 1.55
+    fontFamily: "Inter, sans-serif"
+    fontSize: "16px"
+    fontWeight: 650
+    lineHeight: 1.4
   body:
-    fontFamily: "Golos, system-ui, sans-serif"
+    fontFamily: "Inter, sans-serif"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.5
   label:
-    fontFamily: "Golos, system-ui, sans-serif"
+    fontFamily: "Inter, sans-serif"
     fontSize: "12px"
     fontWeight: 400
-    lineHeight: 1.55
-  caption:
-    fontFamily: "Golos, system-ui, sans-serif"
-    fontSize: "11px"
+  numeric:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: "20px"
     fontWeight: 400
-    lineHeight: 1.6
-  result:
-    fontFamily: "Golos, system-ui, sans-serif"
-    fontSize: "46px"
-    fontWeight: 550
-    lineHeight: 1.15
-    letterSpacing: "-0.04em"
 rounded:
-  bar: "2px"
-  compact: "4px"
-  control: "8px"
-  container: "12px"
-spacing:
-  small: "8px"
+  badge: "6px"
+  tooltip: "8px"
   control: "12px"
-  medium: "16px"
-  panel: "20px"
+  panel: "16px"
+spacing:
+  small: "4px"
+  compact: "8px"
+  control: "12px"
+  panel: "16px"
+  wide-panel: "20px"
   section: "24px"
-  gutter: "28px"
+  wide-gutter: "32px"
 components:
   button-primary:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.button-text}"
-    rounded: "{rounded.control}"
-    padding: "10px 14px"
-  button-primary-hover:
-    backgroundColor: "{colors.green-hover}"
-  button-default:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "10px 14px"
-  button-quiet:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "5px"
-  search-field:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.surface}"
     rounded: "{rounded.control}"
     padding: "8px 12px"
-    width: "150px"
-  tag:
-    backgroundColor: "{colors.wash}"
-    textColor: "{colors.green}"
-    rounded: "{rounded.compact}"
-    padding: "3px 9px"
-  workbench:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.container}"
-  train-marker:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.compact}"
-    padding: "4px 2px"
-  train-marker-selected:
-    backgroundColor: "{colors.lime}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.compact}"
-    padding: "4px 2px"
+  button-default:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.control}"
+    padding: "8px 12px"
+  text-field:
+    backgroundColor: "{colors.surface2}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.control}"
+    padding: "12px"
+  navigation-current:
+    backgroundColor: "{colors.surface2}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.control}"
+    padding: "10px 4px"
+  badge:
+    backgroundColor: "{colors.surface2}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.badge}"
+    padding: "4px 8px"
+  status-normal:
+    backgroundColor: "{colors.ok-bg}"
+    textColor: "{colors.ok}"
+    rounded: "{rounded.badge}"
+    padding: "4px 6px"
+  panel:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.panel}"
+    padding: "16px"
 ---
-
-# Design System: TurkiSib
+# Design System: ТүркіСіб
 
 ## Overview
 
-**Creative North Star: "Railway engineering test bench"**
+**Creative North Star: "Степной свет"**
 
-An off-white instrument surface, evergreen ink and restrained lime selection support a compact Russian-language analysis workspace. Rules divide related information; controls and measured results sit together without decorative elevation. The visual hierarchy gives the forecast number prominence while keeping its units and limitations nearby.
+A light dispatcher workspace places white instruments on a warm cream field. Blue identifies actions and selection; restrained sand detail gives the own-brand rail mark a local visual accent. Inter keeps interface text compact while JetBrains Mono makes changing times and measurements easy to scan.
 
-This is a record of the built FastAPI-served interface in `services/ai/web`, not a future specification. The Kazakhstan dispatcher is the entry surface in `index.html`, `dispatch.css` and `dispatch.js`; the original model laboratory now lives in `lab.html`, `style.css` and `app.js`. The dispatcher extends the incumbent paper/green world. The frontmatter and `.impeccable/design.json` retain the incumbent tokens and laboratory component examples; this extension records surface-specific behavior in prose without replacing that system. The user delegated visual decisions; no explicit approval of a design direction is claimed. The Replicate reference informed separation of input and output, while TurkiSib uses its own palette and component shapes. Surface composition and direction history remain in `.impeccable/surfaces/services-ai-web.md`.
+The approved world is A, “Степной свет”, with the warm ground and event telegrams from B. The user pinned the cream palette and type families; generic saturation or font detectors do not override that choice. This document records the current dispatcher implementation, not the older green/Golos laboratory.
 
 **Key Characteristics:**
-- Flat, ruled surfaces with a darker instrument masthead.
-- One locally served Cyrillic-capable type family and tabular numerals.
-- Linked train selection across the dispatch map, train diagram, station scheme and inspector; the laboratory retains its linked register.
-- Visible model, heuristic, busy and failure states with explicit units.
+- Light by default, with a token-matched dark theme.
+- Own ТүркіСіб rail mark; no subtitle, organizer logo or organizer photography.
+- Compact white panels, soft structural shadows and visible keyboard focus.
+- Kazakhstan-only SIM context and RU/KK labels with explicit units.
+
+The normative primitives above are extracted from `services/ai/web/dispatch.css`. The `dark-` color entries represent that file's `[data-theme=dark]` overrides, not additional accent roles. `.impeccable/design.json` adds motion, shadow, breakpoint and component-preview metadata. Surface composition is recorded in `.impeccable/surfaces/services-ai-web.md`; product boundaries are in `PRODUCT.md`.
 
 ## Colors
 
-Warm paper neutrals provide the field; green carries actions and model output, while lime locates the current selection.
-
 ### Primary
-- **Evergreen** (`green`): primary actions, heading accent, range controls, focus, model curves and ordinary risk values. `green-hover` is the primary-button hover state.
-- **Selection lime** (`lime`): selected train marker, current chart point, brand mark, connection text, text selection and skip-link background.
+
+**Rail blue** (`primary`) identifies actions, selected controls, focus and high-speed trains. **Sand** (`sand`) is a restrained brand ornament and text-selection fill, not a severity signal.
 
 ### Secondary
-- **Warning amber** (`amber`): values above the configured threshold, positive feature contributions and heuristic notes. It communicates a state, not a second action hierarchy.
-- **Error red** (`error`): request-failure text. The error panel also uses its existing pale warm fill and border, carried in the sidecar example.
+
+**Passenger purple** (`passenger`) and **freight brown** (`freight`) distinguish train type together with marker shape. **State green**, **state amber** and **critical red** (`ok`, `warning`, `critical`) pair with their corresponding soft backgrounds. The implemented light green and amber are darker than the original brief for legible small status text; the frontmatter records the CSS values actually shipped.
 
 ### Neutral
-- **Paper** (`paper`): page field and sticky table headings.
-- **Warm white** (`white`): workbench, conversation and form controls; primary button text uses the separate pure-white token already in CSS.
-- **Evergreen ink** (`ink`): body text, masthead, station discs and current-point outline.
-- **Muted ink** (`muted`): supporting labels and explanations.
-- **Rule** (`line`): panel borders, section separators and chart grid.
-- **Selection wash** (`wash`): selected register row, tags, user messages and ordinary button hover.
-- **Inspector tint** (`inspector`): the model inspector within the continuous workbench.
-- **Track** (`track`): unfilled risk and contribution bars.
 
-**The State Has Words Rule.** Selection uses pressed state as well as fill; risk, heuristic and failure states retain textual explanations alongside color.
+**Cream ground** (`bg`), **white instrument** (`surface`) and **warm secondary field** (`surface2`) establish depth. `border` separates rows and tools. `text` is primary ink; `secondary` supports readable captions and labels. `muted` exists for nonessential content and must not replace supporting text indiscriminately.
+
+**The State Has Words Rule.** Train type uses shape, line treatment and blue/purple/brown identity; green, amber and red communicate state with words or symbols alongside color.
 
 ## Typography
 
-Golos is the display and body face, served from `/fonts/GolosText.ttf` with `font-display: swap` and the declared weight range 400–900. The repository includes the Google Fonts OFL license. System UI and sans-serif are fallbacks, not an alternative display identity. No shipping raster images are used; the brand and plots are vector or CSS elements.
+Inter is locally served in Latin, Cyrillic and Cyrillic Extended subsets with weight range 100–900 and swap loading. JetBrains Mono uses matching local subsets for time, IDs, outputs, numeric facts and prediction values. The body and form controls use tabular numerals. Local font licenses remain with the assets.
 
-The type is compact and legible, with moderate heading weight and tightened display tracking. Frontmatter records the incumbent laboratory hierarchy. In the laboratory, the page heading becomes 30px at the narrow breakpoint; evidence headings are 16px. The chat introduction uses 26px and the explanatory heading 28px, both reducing to 25px on smaller layouts. Paragraphs have a maximum width of 72ch. Conversation text is 13px; table values are 12px, reducing to 11px on narrow screens. Laboratory tags use 11px/500 with 0.015em tracking.
+The main heading uses the display role; section headings use the title role. Body text is 14px and supporting labels 12px. The brand is 20px/700, reducing to 16px in compact headers. Drawer/tour headings and the quality state use 20px; the score inside the ring is 28px mono with weight 600. At the narrow breakpoint the main heading becomes 20px. Paragraphs have a 75ch maximum width.
 
-The dispatcher uses a 24–36px responsive page heading, 18px section headings, 14px body and 12px supporting labels; its forecast number is 36px. Map labels render at 12px. A runtime `ResizeObserver` compensates the train-diagram and station-scheme SVG label sizes for their 880- and 400-unit viewBoxes, retaining an effective minimum of 12 CSS pixels at the displayed width. Do not infer rendered legibility from viewBox font units alone.
-
-**The Stable Numbers Rule.** Buttons, tags, outputs, tables, forecast values, risk rows and chart keys use tabular numerals; Russian number formatting and explicit minutes or percentages remain visible.
+Kazakh glyph samples in Settings cover ә ғ қ ң ө ұ ү һ і and uppercase forms. Earlier screenshots show the glyphs, but current post-fix captures remain pending. The diagram keeps an 880px minimum canvas in a local horizontal scroller; the resize observer protects an effective 12px SVG label floor. Do not shrink the whole diagram to fit a phone.
 
 ## Layout
 
-The laboratory main container is centered with a maximum width of 1440px and base padding of 34px 28px 0. Its workbench joins a flexible dispatch region and a 350px inspector with a single border; both have 24px internal padding. Section spacing is context-specific, using recurring 8, 12, 16, 20, 24 and 28px steps rather than claiming an exclusive mathematical scale.
+A sticky 56px header, fixed left navigation rail and fixed advisory footer frame the desktop workspace. The rail is 104px wide; main content starts after it with 24px gutters and a 2000px maximum width. The overview pairs a flexible map with an index/event column, followed by the diagram and train register. The baseline grid is 1.6fr / minmax(320px, 1fr) with a 16px gap. Panels use 16px padding. The train/station drawer is 420px wide, bounded by the viewport, with 24px padding.
 
-In the laboratory, at 1100px and below the inspector becomes 310px and panel padding becomes 20px. At 800px and below the inspector follows the register, with its form and output temporarily in two columns; navigation occupies a second masthead row. Main side gutters become 18px. At 540px and below the inspector, evidence, chat introduction and explanation stack; scenario controls form one column and the chat submit button spans the width. The chart's internal label size becomes 19px in its 620-unit SVG viewBox to remain readable when scaled down.
+At 1700px and above, the grid becomes 1.65fr / minmax(400px, 1fr), panel padding becomes 20px and main side gutters 32px. The final CSS override makes the map 320px high at this size. At 1400px and below the rail becomes 88px, main padding becomes 20px 16px, the map is 340px high, and the clock stacks its UTC+5 label. At 1100px and below the role and connection indicators are hidden in the topbar; the grid becomes 1.3fr / minmax(280px, 1fr), and evidence stacks.
 
-The register intentionally scrolls within its own container. Its narrow layout preserves a 410px minimum table width and a 265px maximum scroll height, so columns retain their meaning through local horizontal scrolling. The ordinary scroll height is 356px, increasing to 360px at 1550px. This is not page-wide overflow.
-
-The dispatcher has a 1600px maximum-width container and 24px 28px padding. Its first work area pairs a flexible 410px-high map with a 300px inspector. The next continuous ruled area pairs the train diagram with the station scheme. Chat follows in two columns; readiness notes use three. At 1050px and below the inspector is 270px, map controls wrap and the station heading and replay controls can wrap. At 760px and below the work areas, chat and readiness notes stack, navigation gains a full-width row, main gutters become 16px and the map is 370px high. The diagram keeps a 560px minimum width inside its own horizontal scroller; it must not create page-wide overflow.
+At 760px and below the header wraps, the rail becomes a horizontally scrollable row in document flow, and content stacks with 12px side gutters. The drawer fills the width; choices and the chat form stack. The diagram's own scroll container preserves its 880px minimum width; register/table scrollers remain local. This is a responsive dispatcher, not a dedicated driver product.
 
 ## Elevation & Depth
 
-The built interface uses no box shadows. Tonal fields, thin rules and whitespace separate the paper page, warm-white workspace and tinted inspector. A sticky laboratory table header is functional layering, not a floating card treatment. The keyboard-focus outline is 3px evergreen, with a 4px offset in the laboratory and 3px in the dispatcher.
+Panels and the tour use the two-part ambient shadow defined by `--shadow`; the dark theme uses a single softer shadow. The fixed drawer has a separate directional shadow. Thin borders continue to organize tables, header, footer and controls. Exact shadow values are stored in the sidecar extensions, which are copied from the CSS.
 
-**The Ruled Surface Rule.** Keep related regions continuous and separate them with borders or background tones; do not add shadows to existing panels.
-
-The laboratory risk fill transitions its horizontal scale over 0.35s using `cubic-bezier(.16,1,.3,1)`. Smooth anchor scrolling is the other deliberate laboratory motion. Its reduced-motion preference disables transitions and animation and changes scrolling to immediate movement. The dispatcher interpolates between scenario snapshots and pulses an incident ring; reduced motion disables interpolation and the pulse, and makes scripted map and explanation navigation immediate. Values and state labels remain understandable without motion.
+Buttons transition transform and opacity over 160ms with the declared easing; drawer and decision entrances use a 360ms horizontal fade. The incident pulse runs at 1.5s and stops after acknowledgement. The score count-up is 360ms in JavaScript; camera incident focus is 400ms and map positions use frame interpolation. Reduced-motion preference and the explicit Settings control suppress animations; JavaScript switches to immediate updates. These describe implementation, not verified frame-rate or latency guarantees.
 
 ## Shapes
 
-Controls use the control radius. In the laboratory, user messages share that radius, larger workspace and conversation containers use the container radius, and tags and train markers use the compact radius. Risk and contribution bars use the bar radius. The dispatcher's joined work areas and conversation log have square ruled boundaries; its controls and error/hover panels retain rounded corners. Circles belong to station discs, plotted points and small state indicators. Borders are generally 1px. These circles are meaningful schematic marks, not a mandate to turn controls into pills.
+Controls and the map window use gently rounded 12px corners. Panels, incident banners and the tour use 16px corners. Badges and statuses use 6px corners; hover panels use 8px. The own brand SVG is paired with a small sand rail ornament in the wider header. Circles express station occupancy, train status and gauges. Marker shapes distinguish passenger, high-speed and freight services.
 
 ## Components
 
-### Buttons
+### Buttons and fields
 
-Laboratory primary buttons are filled evergreen with pure-white, 12px/500 text. Standard buttons are warm white with a rule border and inherit body typography. Both use 10px 14px padding and a 42px minimum height; chat submission uses 44px. Quiet actions have an underline, transparent background, no border, 5px padding and a 32px minimum height. Disabled laboratory buttons use a wait cursor and 0.55 opacity. Every variant retains the visible-focus outline. Dispatcher controls retain the color and shape roles, with a 40px default minimum height, 8px 12px padding and smaller 32–34px map/replay controls. Active map mode and follow controls expose pressed state with lime fill. Disabled dispatcher controls use 0.5 opacity and a wait cursor.
+Buttons, selects and numeric fields have a 40px minimum height, a thin border and 8px 12px padding. The primary and pressed variants use blue fill with surface-colored text. Default hover uses the secondary surface; primary hover lowers opacity to 0.9; active buttons move down 1px. Disabled controls use 0.5 opacity and the wait cursor. A 3px blue focus outline with a 3px offset is shared across keyboard targets.
 
-### Inputs / Fields
+The chat field uses the secondary surface, 12px padding, a 56px minimum height and vertical resizing. Native range and checkbox accents use the primary color. Labels remain associated with controls, including visually hidden labels.
 
-Search, numeric fields, selects and the chat textarea use warm-white fill, a rule border and the control radius. Laboratory search is 150px wide with 8px 12px padding, reducing to 120px on narrow screens. Select padding leaves room for the native indicator. Range sliders and checkboxes use evergreen native accents. Numeric validation uses the browser's validity feedback. The laboratory chat textarea resizes vertically between 66px and 160px; labels remain associated even when visually hidden. The dispatcher uses native train, station, speed and incident selects, labelled delay/reserve ranges, and a vertically resizable chat field.
+### Navigation and containers
 
-### Navigation
+The rail uses line SVG icons above compact text. The current page receives secondary fill and blue, heavier text; it also has `aria-current`. On narrow screens it becomes a row. Panels group one instrument at a time; rows and telegram events are divided with thin rules. Badges provide context; status chips pair a symbol and readable value with semantic color.
 
-The laboratory evergreen-ink masthead combines an inline SVG brand mark, text links and a textual connection status. Its navigation is 13px with 24px gaps; hover turns links lime and keyboard focus remains outlined. It has no persistent selected-tab style. The dispatcher masthead uses a text brand, 12px links to the diagram, laboratory and readiness notes, and a written connection state. On smaller screens links occupy a full-width row.
+### Linked railway views
 
-### Tags
+Map markers, diagram lines, register buttons and the inspector share the selected train. Selecting it updates the next-station context. The map uses local country geometry and route vectors, with MapLibre or a selectable SVG mode. Shapes, direction arrows, selected identity and written track occupancy carry meaning alongside color. Source notes disclose approximate geometry. Map collision avoidance and leader-line code have been patched, but final rendered legibility is not yet confirmed.
 
-Laboratory tags are compact, non-interactive wash-filled labels for sandbox, model and version context. They use green text, 3px 9px padding and compact corners. Heuristic mode changes the label to “Правило · не ML”; the written distinction must remain. Dispatcher tags use 12px text and 3px 7px padding; its “Правило” badge is paired with the explicit heuristic explanation below the forecast.
+The diagram separates thin timetable, bold recorded positions and dashed current-speed extrapolation. It offers station/kilometer axes, 30/60-minute tick steps, crosshair text, drag zoom, recorded-history replay and CSV export. Dashed continuation is explicitly not a solver plan. The chart's local scroller is keyboard focusable.
 
-### Containers and register
+### Movement index, exercise and inspection
 
-The laboratory workbench is a continuous bordered panel with an inspector division. Its conversation uses the same container radius and border with 20px padding, reducing to 16px on narrow screens. Its register uses sticky paper-colored column headers, right-aligned numeric columns and a wash-filled selected row. Train identifiers are real buttons with pressed state, and rerendering restores focus to the selected control.
+The movement ring renders the backend's transparent demo formula and point deductions with a short history sparkline. The timed incident banner is a separate two-train exercise with its own score relative to FIFO; it does not update movement on the map. Unavailable solver output is written out in comparison cells. Forecast loading, suppressed/unreliable values and request errors have separate written states; failed forecasts clear dependent fields and offer retry.
 
-### Linked train markers
-
-Laboratory route markers are compact warm-white buttons, at least 28px tall. The selected marker becomes lime with a green border and 650 weight; warning markers have a small amber dot. Route and register choices update the same inspector. The laboratory schematic explicitly describes a demonstration snapshot, not a running simulation.
-
-### Kazakhstan dispatcher views
-
-The geographic view uses locally bundled MapLibre and an SVG overlay, with an explicit “Без WebGL” alternative and optional online OSM background. Kazakhstan-only geometry, visible SIM context and the approximate-geometry note stay beside the map. Selected trains share state across map, diagram, station scheme, native train picker and inspector. A train selection synchronizes the station picker to that train's next station; an explicit station choice can then inspect another station. SVG train controls support keyboard activation and restore focus after redraw.
-
-The train diagram uses evenly spaced station rows, not a uniform kilometer scale. It shows ten minutes of recorded history and fifteen minutes ahead; the dashed continuation is labelled as current-speed extrapolation, not a solver result. The station drawing uses labelled schematic tracks and written occupancy from the simulation. Keep the effective 12px SVG label floor described in Typography as panels resize.
-
-Playback controls expose pause, tempo, reset and demo incidents. SSE connection state is textual; a stream failure freezes positions, reports the failure and retries. Recorded history retains up to fifteen minutes of scenario time and supports replay, return to the latest recorded snapshot and CSV export. These are demo-stream controls, not operational railway commands. Input experiments pause playback, recalculate actual model requests and leave the timetable unchanged.
-
-The inspector keeps the PKP delay forecast and heuristic status next to their limitations, with the separate synthetic KZ scheduled-segment duration below. The readiness area labels their evaluation populations separately. Preserve the legacy next-segment proxy explanation and synthetic schedule distinction from PRODUCT.md; neither a map location nor a shared panel establishes Kazakhstan validation.
-
-### Forecast and evidence
-
-The forecast pairs a large tabular delay with a compact unit label. In the laboratory, the risk bar has an independent threshold tick and written threshold status. Its sensitivity plot uses a green line, amber dashed threshold and lime current point. Contribution bars pair signed numbers with direction color; the explanation identifies pre-calibration classifier log-odds rather than causal effects or percentage points. Data comes from actual requests; pending, unavailable and rule-based output have visible labels.
-
-### Chat and failures
-
-Laboratory user messages use a wash-filled compact container; assistant text sits directly on the warm-white conversation surface. Speaker and scenario context identify the response. A request failure has a warm error panel with `role="alert"`; chat failure messages remain in the conversation. Initial, empty and busy states use plain Russian explanations. Snapshots, forecasts and units must remain attributable to the displayed scenario.
-
-In the dispatcher, user messages use green text rather than the laboratory's filled bubble. The conversation scrolls within a 190px log, the submit button disables while waiting, and a context line names the submission-time snapshot and selected SIM train. The “Объяснить прогноз” action opens that conversation with the current train. Pending forecasts, unavailable models, stream reconnects and interrupted chat responses have written states; no visual fallback may substitute unrelated snapshot data.
+The drawer opens on selection, focuses its close control and restores focus to its opener when closed. It contains either train facts and model boundaries or a schematic station track view. Technical IDs and domain details sit in a disclosure. Escape closes it. The own-brand footer remains visible across app sections.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep Russian labels, explicit units and model limitations adjacent to the values they explain.
-- **Do** preserve tabular numerals, visible keyboard focus and reduced-motion behavior.
-- **Do** link route, table and inspector selection through both visual state and accessible pressed state.
-- **Do** retain local table scrolling on narrow screens so numeric column relationships survive.
+- **Do** preserve the approved cream/blue world, Inter and JetBrains Mono.
+- **Do** keep Kazakhstan-only SIM context and the advisory footer visible.
+- **Do** give status, unavailable data and selection a readable non-color explanation.
+- **Do** retain local chart scrolling when it preserves label legibility at narrow widths.
+- **Do** use local fonts, icons and map geometry; keep the own rail mark.
 
 ### Don't:
-- **Don't** present demonstration inputs as live train control or heuristic output as ML.
-- **Don't** rename the legacy next-segment proxy as a validated 15-minute conflict probability.
-- **Don't** add decorative shadows or replace the local Golos display face with a system-font identity.
-- **Don't** turn SHAP bars into causal claims or percentage-point contributions.
-
-Source of truth: `services/ai/web/index.html`, `dispatch.css` and `dispatch.js` for the Kazakhstan entry surface's structure, Russian copy, responsive rules, linked selection, SSE/history, fallback map and snapshot chat; `services/ai/web/lab.html`, `style.css` and `app.js` for the retained laboratory. The frontmatter and sidecar retain the incumbent laboratory token vocabulary and examples. Dispatcher heading/result sizes, control dimensions, tag treatment and focus offset are observed surface variations, not an unrequested token redesign. The sidecar's synthesized tonal ramps are preview metadata, not extra shipped palette tokens. Existing arrow glyphs in laboratory links are not canonized as an icon system; they are retained implementation debt outside this documentation-only pass.
+- **Don't** add English, a brand subtitle, an organizer logo or a dedicated mobile driver screen.
+- **Don't** use sand as a status color or encode train type with red/amber/green.
+- **Don't** present the two-train exercise score as the movement index or a solver benefit.
+- **Don't** claim final visual approval, contrast compliance or the frame-rate budget from source inspection alone.
