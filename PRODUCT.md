@@ -1,9 +1,17 @@
 <!-- impeccable:product-schema 1 -->
 # Jibek Joly
 
+Current branch `codex/jibekjoly-eco-demo` restores the user's actual team reference
+as the main entry point, branded **JibekJoly**. It retains the continuous nine-station
+3D corridor and original navigation, and adds synthetic freight Eco-driving,
+station arrival boards and calculated scenario comparisons. Its live motion is a
+browser simulation; the Eco API computes from submitted inputs. This branch's
+current scope and run instructions are in `docs/REFERENCE_ECO_DEMO.md`. Earlier
+workspace descriptions below apply to preserved legacy pages and prior branches.
+
 Jibek Joly is an advisory hackathon railway dispatch demo for presenters, judges and people exploring dispatch decisions. It is not a train control or railway safety system. The own rail SVG and the name Jibek Joly are the only brand identity: no subtitle, organizer logo, organizer slogan or organizer photos are authorized.
 
-The main product is the FastAPI-served dispatcher in `frontend/index.html`, using the shared `services/ai/web/dispatch.css` and `dispatch.js`. Both `/` and `/frontend/` show this single page, so future dashboard panels can be added without a second copy of the interface or its API logic. Plain HTML/CSS/JavaScript, locally bundled i18next/MapLibre and local fonts require no Node build or runtime CDN. Light theme and Russian are defaults; a saved preference can select dark theme or Kazakh. RU and KK are the only requested interface languages. Kazakh translation review by a native speaker remains a separate quality requirement. The desktop-first workspace adapts to narrow screens; no dedicated mobile driver interface is in scope. Dispatcher and manager roles change presentation only, not permissions.
+The original dispatcher, preserved in this branch at `/dispatch-original.html`, is the FastAPI-served workspace, using the shared `services/ai/web/dispatch.css` and `dispatch.js`. Both `/` and `/frontend/` show this single page, so future dashboard panels can be added without a second copy of the interface or its API logic. Plain HTML/CSS/JavaScript, locally bundled i18next/MapLibre and local fonts require no Node build or runtime CDN. Light theme and Russian are defaults; a saved preference can select dark theme or Kazakh. RU and KK are the only requested interface languages. Kazakh translation review by a native speaker remains a separate quality requirement. The desktop-first workspace adapts to narrow screens; no dedicated mobile driver interface is in scope. Dispatcher and manager roles change presentation only, not permissions.
 
 The working screen links map, timetable diagram, train register and one train/station drawer. The 28 visible SIM services run on the demonstration Көкшетау — Астана — Алматы corridor, entirely inside Kazakhstan. Source station coordinates and local Natural Earth country geometry support an offline vector map and a “Без WebGL” SVG mode. Connections, kilometer positions, movements, station track layouts and the uploaded timetable are approximate or synthetic, not operational ҚТЖ data. Short train labels retain SIM context and full identifiers remain in technical details.
 
@@ -20,3 +28,9 @@ The assistant uses the snapshot captured at submission; it must not substitute f
 Success means a presenter can follow one SIM train, explain an incident and known wait, distinguish measured/model/demo quantities, inspect honest model evidence and understand unavailable capabilities. The current source contains the review correction batch for forecast failures, score wording, map collisions, narrow diagram scrolling, UTC+5, dynamic language state and laboratory theme changes. The integration panel has been checked in a local browser at 1366 and 600 px; a full post-integration visual matrix and performance acceptance remain pending. No 60 fps guarantee or sub-500 ms update guarantee is claimed. Current integration checks and limits are in `docs/UNIFIED_INTERFACE_STATUS.md`; the prior visual review is in `docs/design/VALIDATION.md`.
 
 Run with Python 3.11: install `services/ai/requirements.txt`, then `python -m services.ai.main` from the repository root. Follow repository tests and schema-export instructions when changing backend behavior or contracts. Product and design context do not mandate a particular skill or plugin.
+
+## Combined preview branch
+
+On `codex/combined-demo`, `frontend/index.html` now serves a single realtime workspace. The diagram, Kazakhstan map, all nine main-branch stations, actual Three.js scene and arrival board use the same 28-train backend snapshot. The diagram leads the screen and distinguishes timetable, recorded movement and constant-speed continuation. Station lanes in 3D are illustrative. The reference game, independent fixture scenarios, dashboards and model panel have been removed from this entry point. Existing laboratory and original dispatcher remain separate archival pages.
+
+One-hertz synthetic SSE supports pause, ×1/×10 tempo, incidents, history up to 15 virtual minutes, CSV and managed reconnection without clock rollback. Language/theme changes preserve the active session. Mean speed advice is computed from the selected live train; it is not a physical ATO or energy estimate. Five quality factors are disclosed; block overlaps are counted separately. Real pair planning runs on captured state; full 28-train validity and unsupported incidents remain explicit. Pair plans do not control playback. See `docs/COMBINED_DEMO.md` for case coverage, limits and remaining team priorities.

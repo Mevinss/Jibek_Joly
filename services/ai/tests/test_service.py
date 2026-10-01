@@ -82,10 +82,14 @@ def test_read_only_tools():
 
 def test_demo_assets_and_state(client):
     assert client.get('/').status_code == 200
-    assert 'Jibek Joly' in client.get('/').text
-    assert 'runtime-decisions' in client.get('/').text
-    assert client.get('/frontend/').text == client.get('/legacy').text
+    assert 'JibekJoly' in client.get('/').text
+    assert client.get('/jibekjoly/app.js').status_code == 200
+    assert client.get('/jibekjoly/locales/ru.json').status_code == 200
+    assert client.get('/frontend/').text == client.get('/').text
     assert client.get('/frontend/index.html').status_code == 200
+    assert 'runtime-decisions' in client.get('/dispatch-dashboard.html').text
+    assert 'Jibek Joly' in client.get('/legacy').text
+    assert client.get('/dispatch-dashboard.html').status_code == 200
     assert client.get('/dispatch.css').status_code == 200
     assert client.get('/dispatch.js').status_code == 200
     assert client.get('/app.js').status_code == 200

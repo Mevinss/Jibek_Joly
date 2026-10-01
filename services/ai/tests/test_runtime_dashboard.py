@@ -61,7 +61,7 @@ def test_runtime_incident_preview_apply_and_history_share_one_run(tmp_path, monk
 def test_runtime_root_and_auxiliary_views_use_live_snapshot(tmp_path, monkeypatch):
     monkeypatch.setenv("TURKISIB_DB", str(tmp_path / "runtime.sqlite3"))
     with TestClient(app) as client:
-        assert 'id="runtime-decisions"' in client.get("/").text
+        assert 'id="runtime-decisions"' in client.get("/dispatch-dashboard.html").text
         assert client.get("/dashboard.mjs").headers["content-type"].startswith("application/javascript")
         assert client.get("/legacy").status_code == 200
         state = client.get("/api/runtime/state").json()

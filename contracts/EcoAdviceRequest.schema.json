@@ -1,0 +1,66 @@
+{
+  "properties": {
+    "train_id": {
+      "maxLength": 80,
+      "minLength": 5,
+      "pattern": "^SIM-[\\w-]+$",
+      "title": "Train Id",
+      "type": "string"
+    },
+    "distance_km": {
+      "maximum": 200,
+      "minimum": 0,
+      "title": "Distance Km",
+      "type": "number"
+    },
+    "current_speed_kmh": {
+      "maximum": 200,
+      "minimum": 0,
+      "title": "Current Speed Kmh",
+      "type": "number"
+    },
+    "speed_limit_kmh": {
+      "exclusiveMinimum": 0,
+      "maximum": 200,
+      "title": "Speed Limit Kmh",
+      "type": "number"
+    },
+    "now_min": {
+      "maximum": 500,
+      "minimum": 0,
+      "title": "Now Min",
+      "type": "number"
+    },
+    "signal_open_min": {
+      "anyOf": [
+        {
+          "maximum": 600,
+          "minimum": -1,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Signal Open Min"
+    },
+    "mass_tons": {
+      "default": 1000,
+      "exclusiveMinimum": 0,
+      "maximum": 20000,
+      "title": "Mass Tons",
+      "type": "number"
+    }
+  },
+  "required": [
+    "train_id",
+    "distance_km",
+    "current_speed_kmh",
+    "speed_limit_kmh",
+    "now_min"
+  ],
+  "title": "EcoAdviceRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

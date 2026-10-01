@@ -1,0 +1,120 @@
+{
+  "package_id": "kz-eco-synthetic-v1",
+  "seed": 20261002,
+  "synthetic_only": true,
+  "method": "Same initial state, 200 model minutes. After: repair/reserve/priority plus freight Eco. No ML accuracy or real fuel claims.",
+  "scenarios": [
+    {
+      "scenario": 0,
+      "title": "Отказ сигнала у Ақкөл",
+      "before": {
+        "total": 236.26428571426777,
+        "weighted": 513.8642857142472,
+        "avg": 39.37738095237796,
+        "waiting": 0,
+        "finished": 6,
+        "index": 55,
+        "passengerMinutes": 67166.99999999476,
+        "energy_proxy_units": 681.838625747587,
+        "full_stops": 16,
+        "full_stop_avoided": 0
+      },
+      "after": {
+        "total": 157.01428571427226,
+        "weighted": 281.0142857142604,
+        "avg": 26.169047619045376,
+        "waiting": 0,
+        "finished": 6,
+        "index": 61,
+        "passengerMinutes": 33821.99999999665,
+        "energy_proxy_units": 654.234533484546,
+        "full_stops": 12,
+        "full_stop_avoided": 1
+      }
+    },
+    {
+      "scenario": 1,
+      "title": "Ограничение скорости у Қарағанды",
+      "before": {
+        "total": 200.81428571426977,
+        "weighted": 450.3642857142508,
+        "avg": 33.469047619044964,
+        "waiting": 0,
+        "finished": 6,
+        "index": 55,
+        "passengerMinutes": 61026.99999999511,
+        "energy_proxy_units": 635.9819605117257,
+        "full_stops": 13,
+        "full_stop_avoided": 0
+      },
+      "after": {
+        "total": 124.4142857142741,
+        "weighted": 237.66428571426286,
+        "avg": 20.73571428571235,
+        "waiting": 0,
+        "finished": 6,
+        "index": 69,
+        "passengerMinutes": 22235.99999999731,
+        "energy_proxy_units": 640.8782399517911,
+        "full_stops": 12,
+        "full_stop_avoided": 1
+      }
+    },
+    {
+      "scenario": 2,
+      "title": "Заблокирован подход к Алматы",
+      "before": {
+        "total": 173.41428571427133,
+        "weighted": 394.3642857142539,
+        "avg": 28.902380952378554,
+        "waiting": 0,
+        "finished": 6,
+        "index": 59,
+        "passengerMinutes": 46567.999999995925,
+        "energy_proxy_units": 668.5312314623376,
+        "full_stops": 13,
+        "full_stop_avoided": 0
+      },
+      "after": {
+        "total": 153.11428571427248,
+        "weighted": 269.764285714261,
+        "avg": 25.519047619045413,
+        "waiting": 0,
+        "finished": 6,
+        "index": 62,
+        "passengerMinutes": 32065.999999996755,
+        "energy_proxy_units": 654.4513271393768,
+        "full_stops": 11,
+        "full_stop_avoided": 1
+      }
+    },
+    {
+      "scenario": 3,
+      "title": "Неисправность на загруженном участке",
+      "before": {
+        "total": 237.16428571426772,
+        "weighted": 502.31428571424783,
+        "avg": 39.52738095237795,
+        "waiting": 0,
+        "finished": 6,
+        "index": 55,
+        "passengerMinutes": 64326.99999999492,
+        "energy_proxy_units": 675.8793535128891,
+        "full_stops": 15,
+        "full_stop_avoided": 0
+      },
+      "after": {
+        "total": 149.4142857142727,
+        "weighted": 283.66428571426025,
+        "avg": 24.90238095237878,
+        "waiting": 0,
+        "finished": 6,
+        "index": 63,
+        "passengerMinutes": 32292.999999996744,
+        "energy_proxy_units": 648.7000564506945,
+        "full_stops": 14,
+        "full_stop_avoided": 0
+      }
+    }
+  ]
+}
