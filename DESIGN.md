@@ -213,3 +213,7 @@ The drawer opens on selection, focuses its close control and restores focus to i
 - **Don't** use sand as a status color or encode train type with red/amber/green.
 - **Don't** present the two-train exercise score as the movement index or a solver benefit.
 - **Don't** claim final visual approval, contrast compliance or the frame-rate budget from source inspection alone.
+
+## Combined preview branch
+
+The combined preview uses `services/ai/web/combined/combined.css` over the imported team reference CSS. Preserve Jibek Joly logo, local Inter/JetBrains Mono and the existing cream/blue light and dark palettes. Desktop has a 224 px navigation column; narrow screens use horizontal navigation and locally scrollable diagrams/tables. API workspace and imported training models have explicit source boundaries. Reference feature preservation, especially the actual 3D station, is user-authorized. The original workspace remains at `/dispatch-original.html`.
