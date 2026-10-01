@@ -99,8 +99,8 @@
       map=new maplibregl.Map({container:'stage1-map',style,center:config.center,zoom:config.zoom,attributionControl:false});
       map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
       map.on('load',setupLayers);
-      map.on('error',()=>{if(!offline&&!styleFallback){styleFallback=true;offline=true;$('stage1-map-state').textContent=T('stage1Offline');map.setStyle(localStyle());}});
-    } catch(error) {$('stage1-error').hidden=false;$('stage1-error').textContent=T('stage1MapError')+' '+error.message;}
+      map.on('error',()=>{if(!offline&&!styleFallback){styleFallback=true;offline=true;$('stage1-map-state').textContent=T('stage1Offline');$('stage1-attribution').textContent=T('stage1LocalCredit');map.remove();map=null;paint();}});
+    } catch(error) {offline=true;map=null;$('stage1-map-state').textContent=T('stage1Offline');$('stage1-attribution').textContent=T('stage1LocalCredit');paint();}
   }
   function setupLayers() {
     if(!map||!source)return;
