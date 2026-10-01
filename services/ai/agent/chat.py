@@ -107,6 +107,13 @@ async def stream_chat(request, tools, *, use_llm=True, responder=respond):
                 evidence.append(data)
                 yield 'tool_result', {'name': name, 'result': data}
         text = template(evidence)
+    # Render scenario metrics directly: numeric membership alone cannot distinguish
+    # total delay from added delay or establish a FIFO comparison.
+    variants = [e for e in evidence if isinstance(e.get('data'), dict) and 'variants' in e['data']]
+    if variants:
+        text, mode = template(variants), 'tool_summary'
+    elif evidence and any(e.get('source') == 'fixture' for e in evidence) and mode == 'llm':
+        text = 'Демонстрационные данные из фикстур; не живое состояние.\n\n' + text
     # Buffer model output until grounding completes; then deliver checked text over SSE.
     for pos in range(0, len(text), 100):
         yield 'token', {'text': text[pos:pos + 100]}

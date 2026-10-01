@@ -34,6 +34,7 @@ async def evaluate(live=False):
         print(('PASS' if row['pass'] else 'FAIL'), case['question'], mode, flush=True)
     summary = {'mode': 'live_openai' if live else 'deterministic_fallback_only', 'passed': sum(r['pass'] for r in results),
                'llm_answers': sum(r['mode'] == 'llm' for r in results),
+               'tool_summaries': sum(r['mode'] == 'tool_summary' for r in results),
                'note': 'Pass covers end-to-end service including fallback. llm_answers counts actual LLM answers separately.', 'total': len(results), 'results': results}
     (SERVICE / 'reports' / ('agent_eval_live.json' if live else 'agent_eval_offline.json')).write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
     return summary
@@ -41,4 +42,5 @@ async def evaluate(live=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--live', action='store_true')
-    asyncio.run(evaluate(parser.parse_args().live))
+    summary = asyncio.run(evaluate(parser.parse_args().live))
+    raise SystemExit(0 if summary['passed'] / summary['total'] >= .9 else 1)

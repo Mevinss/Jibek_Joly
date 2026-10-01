@@ -1,7 +1,8 @@
 {
   "mode": "live_openai",
   "passed": 19,
-  "llm_answers": 12,
+  "llm_answers": 10,
+  "tool_summaries": 2,
   "note": "Pass covers end-to-end service including fallback. llm_answers counts actual LLM answers separately.",
   "total": 20,
   "results": [
@@ -41,7 +42,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "llm",
+      "mode": "grounding_fallback",
       "calls": [
         "list_trains"
       ],
@@ -137,9 +138,10 @@
       "checks": {
         "grounded_numbers": true,
         "no_secret": true,
-        "tool": true
+        "tool": true,
+        "variants_returned": true
       },
-      "mode": "llm",
+      "mode": "tool_summary",
       "calls": [
         "list_trains",
         "run_whatif"
@@ -152,9 +154,10 @@
       "checks": {
         "grounded_numbers": true,
         "no_secret": true,
-        "tool": true
+        "tool": true,
+        "variants_returned": true
       },
-      "mode": "llm",
+      "mode": "tool_summary",
       "calls": [
         "list_trains",
         "run_whatif"
@@ -186,7 +189,7 @@
         "tool": true,
         "unavailable": true
       },
-      "mode": "grounding_fallback",
+      "mode": "llm",
       "calls": [
         "get_train_status"
       ],

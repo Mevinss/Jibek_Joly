@@ -89,6 +89,7 @@ async def test_whatif_fallback_and_no_mutation():
     assert any(e[0] == 'tool_call' and e[1]['name'] == 'run_whatif' for e in events)
     text = ''.join(p['text'] for e, p in events if e == 'token')
     assert '720' in text and 'фикстуры' in text
+    assert events[-1][1]['mode'] == 'tool_summary'
     assert before == tools.fixture('state')
 
 

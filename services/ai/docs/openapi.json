@@ -417,9 +417,7 @@
             "title": "Target Id"
           },
           "params": {
-            "additionalProperties": true,
-            "type": "object",
-            "title": "Params"
+            "$ref": "#/components/schemas/IncidentParams"
           },
           "ts": {
             "type": "string",
@@ -435,6 +433,27 @@
           "ts"
         ],
         "title": "Incident"
+      },
+      "IncidentParams": {
+        "properties": {
+          "minutes": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1440.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minutes",
+            "description": "Длительность закрытия или задержки в минутах; поле называется minutes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "IncidentParams"
       },
       "Infra": {
         "properties": {
