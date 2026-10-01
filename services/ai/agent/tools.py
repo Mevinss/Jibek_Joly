@@ -3,6 +3,7 @@ from copy import deepcopy
 from urllib.parse import quote
 import httpx
 import logging
+from functools import lru_cache
 from jsonschema import validate
 from ..settings import SERVICE, settings
 from ..api.schemas import State, Incident
@@ -18,6 +19,7 @@ SPECS = {
     'get_train_status': ('Состояние конкретного поезда', TRAIN),
     'list_trains': ('Список поездов', EMPTY),
     'get_forecast': ('Прогноз прокси-риска; не подтверждённый конфликт', {'type': 'object', 'properties': {'train_id': {'type': 'string'}}, 'additionalProperties': False}),
+    'get_schedule_forecast': ('Учебная модель KZ: время целого перегона по синтетическому расписанию. Не реальные задержки.', TRAIN),
     'get_advice': ('Консультативный профиль скорости из солвера', TRAIN),
     'get_incidents': ('Зарегистрированные инциденты', EMPTY),
     'run_whatif': ('Песочница; не меняет живое состояние. Длительность задаётся incident.params.minutes.', WHATIF_SCHEMA),
@@ -26,6 +28,12 @@ SPECS = {
 
 def tool_schemas():
     return [{'name': name, 'description': desc, 'input_schema': schema} for name, (desc, schema) in SPECS.items()]
+
+
+@lru_cache
+def schedule_model():
+    from ..ml.kz_schedule import ScheduleForecaster
+    return ScheduleForecaster()
 
 
 class Tools:
@@ -58,6 +66,9 @@ class Tools:
             raise
 
     async def _call(self, name, args):
+        if name == 'get_schedule_forecast':
+            if self.snapshot is None:return {'error':'snapshot_required'}
+            return [r for r in schedule_model().forecast(self.snapshot) if r['train_id']==args['train_id']]
         if self.snapshot is not None:
             state = self.snapshot.model_dump(mode='json')
             if name == 'list_trains': return state['trains']

@@ -92,3 +92,12 @@ DISPLIB 2025 — внешний benchmark солвера участника 2; �
 - Реальные API платформы и солвера пока не предоставлены. Их пути и предлагаемые контракты описаны в `services/ai/docs/integration.md`; текущие фикстуры не заменяют интеграционный прогон.
 
 Для сильного общего демо нужны один snapshot и seed, валидные FIFO/CP-SAT планы, измеренная разница задержки, UI с явным происхождением данных и затем объяснение результата агентом. Заранее заданные цифры фикстур не использовать как итоговые метрики на защите.
+
+
+## Kazakhstan map and uploaded-archive model
+
+Open `http://127.0.0.1:8002/` for Kazakhstan-only map, 28 SIM trains, SSE playback, linked diagram, station scheme and snapshot chat. The previous parameter laboratory is `/lab.html`. MapLibre and country/route geometry are local; optional OSM background requires internet. `/infra/geometry` returns the56synthetic fixture blocks.
+
+The uploaded KZ archive contains only scheduled times. `kz-synthetic-schedule-v1` therefore learns **synthetic scheduled segment duration**, not actual delay. It is served separately at `POST /forecast/schedule`; metadata at `/forecast/schedule-info`. Reproduce with `python -m services.ai.training.train_kz_schedule --data-dir data/kz-upload/data/KZ`. The PKP delay model remains separate; its accuracy is not validated for Kazakhstan.
+
+See [full training, readiness and credit audit](services/ai/reports/kz_demo_readiness.md). Train movement is timetable playback, not a conflict-free optimizer. ATO, solver alternatives and quality-index integration remain team work.

@@ -5,6 +5,8 @@
 - Keep the dispatch scenario labelled as demonstration input. Predict with the actual model; never hard-code improved predictions or optimizer benefits.
 - `p_conflict_15m` is a legacy contract name for a next-segment proxy. It is not a validated 15-minute conflict probability. Explain that distinction in UI and chat.
 - Unsupported train types use `rule_fallback`; label that as a heuristic, not ML.
+- Geographic demo and train routes must be Kazakhstan-only. Keep SIM identifiers visible; the uploaded Kazakhstan package is synthetic, not operational ҚТЖ data.
+- `kz-synthetic-schedule-v1` learns scheduled segment duration, not delay. Its synthetic test MAE must never be presented as accuracy on real Kazakhstan journeys. Keep it separate from the PKP delay forecaster.
 - SHAP contributions describe classifier log-odds before calibration, not causality or percentage-point contributions.
 - Chat with a supplied snapshot must only use that snapshot for state and forecasts. Do not substitute unrelated fixture plans or solver results.
 

@@ -24,7 +24,9 @@ def fallback_calls(question):
         return [('run_whatif', {'incident': {'id': 'whatif-demo', 'kind': 'block_closed',
                  'target_id': block, 'params': {'minutes': int(minutes.group(1))},
                  'ts': datetime.now(timezone.utc).isoformat()}})]
-    train = re.search(r'(?<!\d)(\d{3,6})(?!\d)', q)
+    train = re.search(r'(SIM-[A-Z_]+-[FR]\d+)', question, re.I) or re.search(r'(?<!\d)(\d{3,6})(?!\d)', q)
+    if train and ('учебн' in q or 'расписан' in q or 'kz' in q):
+        return [('get_schedule_forecast', {'train_id': train.group(1)})]
     if 'скорост' in q or 'профиль' in q:
         return [('get_advice', {'train_id': train.group(1)})] if train else []
     if 'прогноз' in q or 'риск' in q or 'конфликт' in q:
@@ -57,6 +59,9 @@ def template(evidence):
                              'Это прогноз модели; он не подтверждает конфликт и не определяет причину задержки.')
                 if row.get('top_features'):
                     lines.append('На оценку повлияли: ' + ', '.join(x['name'].lower() for x in row['top_features']) + '.')
+        elif isinstance(data, list) and data and all('scheduled_segment_travel_min' in r for r in data):
+            for row in data:
+                lines.append(f"Поезд {row['train_id']}: учебная модель KZ оценивает время всего перегона {row['segment_id']} в {row['scheduled_segment_travel_min']} мин. Это синтетическое расписание, без учёта инцидентов; не прогноз фактической задержки и не подтверждённая точность для ҚТЖ.")
         elif isinstance(data, dict) and 'variants' in data:
             for v in data['variants']:
                 lines.append(f"Вариант {v['label']} ({v['profile']}): суммарная задержка {v['plan']['metrics']['total_delay_s']} с, индекс {v['index']['score']}.")
@@ -122,7 +127,7 @@ async def stream_chat(request, tools, *, use_llm=True, responder=respond):
     # total delay from added delay or establish a FIFO comparison.
     variants = [e for e in evidence if isinstance(e.get('data'), dict) and 'variants' in e['data']]
     forecasts = [e for e in evidence if isinstance(e.get('data'), list) and e['data']
-                 and all(isinstance(row, dict) and 'expected_delay_s' in row for row in e['data'])]
+                 and all(isinstance(row, dict) and ('expected_delay_s' in row or 'scheduled_segment_travel_min' in row) for row in e['data'])]
     if variants:
         text, mode = template(variants), 'tool_summary'
     elif forecasts:

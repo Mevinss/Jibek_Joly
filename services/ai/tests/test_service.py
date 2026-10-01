@@ -77,7 +77,7 @@ def test_health_secrets(client):
 
 
 def test_read_only_tools():
-    assert set(SPECS) == {'get_plan', 'get_index', 'get_train_status', 'list_trains', 'get_forecast', 'get_advice', 'get_incidents', 'run_whatif'}
+    assert set(SPECS) == {'get_plan', 'get_index', 'get_train_status', 'list_trains', 'get_forecast', 'get_schedule_forecast', 'get_advice', 'get_incidents', 'run_whatif'}
 
 
 def test_demo_assets_and_state(client):

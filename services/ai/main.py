@@ -2,8 +2,10 @@ from collections import deque
 from contextlib import asynccontextmanager
 import json
 import time
+import asyncio
+from typing import Literal
 import numpy as np
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -14,6 +16,8 @@ from .ml.infer import Forecaster
 from .agent.tools import Tools
 from .agent.chat import stream_chat
 from .texts.generate import telegram_template, report_template, polish
+from .demo.simulation import geometry, snapshot
+from .ml.kz_schedule import ScheduleForecaster
 
 latencies = deque(maxlen=2000)
 requests = deque()
@@ -23,6 +27,10 @@ requests = deque()
 async def lifespan(app):
     app.state.forecaster = Forecaster()
     app.state.tools = Tools(app.state.forecaster)
+    try:
+        app.state.schedule_forecaster = ScheduleForecaster()
+    except (OSError, ValueError):
+        app.state.schedule_forecaster = None
     yield
 
 
@@ -60,6 +68,18 @@ def model_info():
     return app.state.forecaster.info
 
 
+@app.get('/forecast/schedule-info')
+def schedule_info():
+    if app.state.schedule_forecaster is None: raise HTTPException(503, 'Schedule model unavailable')
+    return app.state.schedule_forecaster.info
+
+
+@app.post('/forecast/schedule')
+def schedule_forecast(state: State):
+    if app.state.schedule_forecaster is None: raise HTTPException(503, 'Schedule model unavailable')
+    return app.state.schedule_forecaster.forecast(state)
+
+
 @app.get('/metrics')
 def metrics():
     return {'forecast_calls_retained': len(latencies),
@@ -94,6 +114,31 @@ async def report(request: ReportRequest):
 @app.get('/demo/state')
 def demo_state():
     return {'source': 'fixture', 'state': app.state.tools.fixture('state')}
+
+
+@app.get('/infra/geometry')
+def infra_geometry():
+    return geometry()
+
+
+@app.get('/demo/snapshot')
+def demo_snapshot(elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
+                  incident: Literal['none','closure','restriction','chaos']='none',
+                  incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False)):
+    return snapshot(elapsed, incident, incident_at)
+
+
+@app.get('/demo/stream')
+async def demo_stream(request: Request, elapsed: float = Query(0, ge=0, le=86400, allow_inf_nan=False),
+                      speed: Literal['1','10']='1', incident: Literal['none','closure','restriction','chaos']='none',
+                      incident_at: float = Query(0, ge=0, le=86400, allow_inf_nan=False)):
+    async def events():
+        start=time.monotonic()
+        while not await request.is_disconnected():
+            clock=min(86400.,elapsed+(time.monotonic()-start)*int(speed))
+            yield 'event: state\ndata: '+json.dumps(snapshot(clock,incident,incident_at),ensure_ascii=False)+'\n\n'
+            await asyncio.sleep(1)
+    return StreamingResponse(events(),media_type='text/event-stream',headers={'Cache-Control':'no-cache','X-Accel-Buffering':'no'})
 
 
 if (SERVICE / 'web').is_dir():
