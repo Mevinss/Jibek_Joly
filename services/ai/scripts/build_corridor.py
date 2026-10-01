@@ -16,7 +16,7 @@ COORDINATES = {
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('--data-dir',type=Path,default=ROOT/'data/kz-upload/data/KZ')
+    parser.add_argument('--data-dir',type=Path,default=ROOT/('data/kz-upload/data/KZ' if (ROOT/'data/kz-upload/data/KZ').exists() else 'data/kz_demo/KZ'))
     base=parser.parse_args().data_dir
     def read(name):
         with (base/(name+'.csv')).open(encoding='utf-8-sig') as f: return list(csv.DictReader(f))

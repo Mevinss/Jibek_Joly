@@ -24,7 +24,7 @@ There are no `actual_arrival`, `actual_departure`, measured delay changes or con
 
 The last result is the central limitation: the model largely learns this timetable's relationships. It is an educational model, not accepted for operational use. It cannot establish accuracy for actual ҚТЖ delays. The scheduled CSV remains the source of truth for playback; the model does not overwrite it.
 
-Artifacts: `models/kz_schedule_demo/model.txt`, `metrics.json`; reproducible training: `python -m services.ai.training.train_kz_schedule --data-dir data/kz-upload/data/KZ`. No external API or OpenAI credit is needed to train this tabular model.
+Artifacts: `models/kz_schedule_demo/model.txt`, `metrics.json`; reproducible training: `python -m services.ai.training.train_kz_schedule --data-dir data/kz_demo/KZ`. No external API or OpenAI credit is needed to train this tabular model.
 
 ## Existing delay model quality
 
@@ -76,3 +76,7 @@ At the checked [GPT-4.1 mini rates](https://developers.openai.com/api/docs/model
 ## Sources and distribution
 
 Station coordinate sources are recorded individually in `demo/corridor.json` under `coordinate_source` (Railwayz.info; linked attribution, noncommercial presentation use). Country boundary: Natural Earth, public domain. Optional OSM raster tiles are fetched only for the viewed map; attribution is visible; no bulk download or offline tile cache is implemented, following the [tile policy](https://operations.osmfoundation.org/policies/tiles/). Uploaded KZ schedule is explicitly synthetic. PKP dataset attribution remains with the original model.
+
+## Merge validation
+
+The AI branch was combined with main commit `298694c0dccc564bc686560a9e98bbaae3c76900`, preserving the platform and its datasets. Fixed the platform simulator's stale Chaos scenario path to use its configured data root. Aligned pytest to 8.4.2, compatible with both requirement files. Combined check: `python -m pytest services/ai/tests tests -q` — 36 passed; one upstream Starlette/httpx deprecation warning. This verifies the modules together, not a completed live integration between the two simulators.

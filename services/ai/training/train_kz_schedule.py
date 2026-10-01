@@ -28,7 +28,7 @@ def rows(base):
     return pd.DataFrame(data)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--data-dir',type=Path,default=ROOT/'data/kz-upload/data/KZ');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--data-dir',type=Path,default=ROOT/('data/kz-upload/data/KZ' if (ROOT/'data/kz-upload/data/KZ').exists() else 'data/kz_demo/KZ'));args=parser.parse_args()
     data=rows(args.data_dir);ids=data.train_id.to_numpy();x=data[FEATURES];y=data.target
     trainval,test=next(GroupShuffleSplit(n_splits=1,test_size=.25,random_state=42).split(x,y,ids))
     aa,bb=next(GroupShuffleSplit(n_splits=1,test_size=.25,random_state=43).split(x.iloc[trainval],y.iloc[trainval],ids[trainval]));train,val=trainval[aa],trainval[bb]

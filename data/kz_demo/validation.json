@@ -1,0 +1,19 @@
+{
+  "stations": 9,
+  "major_segments": 8,
+  "blocks": 56,
+  "signals": 112,
+  "trains": 28,
+  "scheduled_stops": 156,
+  "incident_types": 4,
+  "scenarios": 5,
+  "directions": {
+    "forward": 14,
+    "reverse": 14
+  },
+  "patterns": {
+    "KOK_AST": 12,
+    "AST_ALM": 12,
+    "KOK_ALM": 4
+  }
+}

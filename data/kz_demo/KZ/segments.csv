@@ -1,0 +1,9 @@
+﻿segment_id,corridor_id,from_station_id,to_station_id,demo_distance_km,demo_travel_min,block_count,direction_lock,source_type
+KOK-BOR,NORTH,KOK,BOR,65,55,3,one_direction_at_a_time,SIMULATED_AGGREGATION
+BOR-AKK,NORTH,BOR,AKK,109,98,4,one_direction_at_a_time,SIMULATED_AGGREGATION
+AKK-AST,NORTH,AKK,AST,95,88,4,one_direction_at_a_time,SIMULATED_AGGREGATION
+AST-KAR,SOUTH,AST,KAR,220,174,7,one_direction_at_a_time,SIMULATED_AGGREGATION
+KAR-AKD,SOUTH,KAR,AKD,230,188,8,one_direction_at_a_time,SIMULATED_AGGREGATION
+AKD-SAR,SOUTH,AKD,SAR,245,205,9,one_direction_at_a_time,SIMULATED_AGGREGATION
+SAR-SHU,SOUTH,SAR,SHU,330,260,11,one_direction_at_a_time,SIMULATED_AGGREGATION
+SHU-ALM,SOUTH,SHU,ALM,310,226,10,one_direction_at_a_time,SIMULATED_AGGREGATION

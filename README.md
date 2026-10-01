@@ -1,103 +1,55 @@
-# TurkiSib — Автодиспетчер
+# TurkiSib demo simulator
 
-Сервис участника №3: ML-прогноз задержки и прокси-риска, OpenAI-агент «Старший диспетчер», телеграммы и рапорт. Работает автономно на явно помеченных фикстурах платформы/солвера.
+Көкшетау–Астана–Алматы дәлізінің **синтетикалық** диспетчерлік демосы. Негізгі деректер бір жерде: `data/kz_demo/{KZ,mock,scenarios}`. Олар Қазақстандағы нақты пойыз қозғалысы емес. PKP дерегі тек статистикалық калибрлеуге, DISPLIB тек алгоритм benchmark-іне арналған; екеуі де симулятор пойыздарына қосылмайды.
 
-**Демонстрационная консультативная система. Не заменяет сертифицированные системы безопасности движения и СЦБ.**
+## Windows-та іске қосу
 
-## Запуск
-
-Python 3.11, без Docker. Windows PowerShell:
+PowerShell ішінде, репозиторий түбірінен:
 
 ```powershell
-python -m venv .venv
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe scripts\import_kz_demo.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
+```
+
+Егер `py` launcher орнатылмаса, бірінші жолда орнатылған `python.exe` толық жолын пайдаланыңыз. Docker қажет емес. Демо деректер репозиторийде `data/kz_demo/` ішінде дайын тұр; аргументсіз importer оларды тексереді және көшірме жасамайды. Нақты ZIP қолжетімді болса: `python scripts\import_kz_demo.py --zip C:\path\to\kz_kokshetau_astana_almaty_data.zip`. Importer ZIP мүшелерінің жолдарын және міндетті файлдарды тексереді. `validation.json` мен деректер README-і сол каталогта сақталады.
+
+Сыртқы екі дерек көзін тікелей жүктеу:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\fetch_external_data.py
+```
+
+Нәтиже `data/source_manifest.json` ішінде көрсетіледі. PKP ZIP үшін жарияланған MD5 міндетті түрде тексеріледі. DISPLIB толық ZIP алынбаса, ресми екі JSON fallback қолданылады және manifest оған `full_downloaded` деп жазбайды. `data/external/` git-ке кірмейді; `data/kz_demo/` — репозиторийдегі жалғыз негізгі демо дерек орны.
+
+## API
+
+`GET /health`, `GET /metrics`, `GET /api/state`, `POST /api/scenarios/{id}/reset`, `POST /api/scenarios/{id}/start?speed=60`, `POST /api/scenarios/{id}/pause`, `GET /api/history?scenario_id=SCN-ALL&from=...&to=...`, `GET /api/replay?scenario_id=SCN-ALL&at=...`, `POST /api/human-actions`, `WS /ws/state?last_sequence=...`.
+
+Start жылдамдықтары: `1`, `10`, `60` виртуалды секунд / нақты секунд. Reset сценарийді тоқтатады; start қайта жүргізеді. WebSocket әр нақты секундта snapshot немесе heartbeat жібереді; `stale_after_ms=3500`. Қайта қосылған клиент `last_sequence` бойынша 100 оқиғаға дейін алады, одан көп болса толық snapshot алады. [Шағын браузер клиенті](examples/ws_client.html) reconnect пен байланыс үзілуін көрсетеді. History/replay ағымдағы run-ды көрсетеді; бұрынғы run үшін `run_id` жіберуге болады. Replay live күйді өзгертпейді. SQLite соңғы күйді және sequence-ті процесс қайта қосылғанда қалпына келтіреді.
+
+`SCN-01`–`SCN-04` төрт оқиғаны жеке, `SCN-ALL` бірге іске қосады. `SCN-CHAOS` негізгі demo seed-тен бөлек, төрт түрдің әрқайсысынан 10 түрлі оқиға жасайды. Инцидент толық жабылған блоктағы пойызды көшірмейді: ағымдағы блокты аяқтауға рұқсат, жаңа жабық блокқа кіруге тыйым салынады. Қозғалыс логикасы [engine.py](backend/simulator/engine.py) ішінде; optimizer осы `can_enter` ережесін қолдануы керек.
+
+## Тексеру және шектеулер
+
+`python -m unittest discover -s tests -v` бір seed детерминизмін, блоктағы жалғыз occupancy-ді, маршрут прогресін, инциденттердің басталып аяқталуын, Chaos fixture-ді, SQLite restart/replay-ді тексереді. FastAPI мен WebSocket үшін қосымша интеграциялық тексеру `python -m pytest tests/test_api.py` командасында.
+
+Бұл repository-де тапсырма атаған бастапқы `PROJECT_IDEA.md` және `CONTRACTS_AND_METRICS.md` болмады. Екіншісі осы жұмыста нақты интерфейс сипаттамасы ретінде жасалды. Симулятор уақытын 60 секундтан аспайтын қадаммен есептейді; ұсақ қозғалыс пен бекетте тұру уақыты қарапайымдандырылған. Бастапқы кесте синтетикалық, нақты диспетчерлік шешімге арналмаған.
+
+
+## ML/LLM service and Kazakhstan web demo
+
+The platform above remains on port8000. A separate advisory AI service serves the Kazakhstan-only map, linked train diagram, station scheme and chat on port8002:
+
+```powershell
 .\.venv\Scripts\python.exe -m pip install -r services/ai/requirements.txt
-Copy-Item .env.example .env  # только если .env ещё нет
-# Внесите LLM_API_KEY локально; не публикуйте ключ.
-.\run_ai.ps1
+.\.venv\Scripts\python.exe -m services.ai.main
 ```
 
-macOS: `python3.11 -m venv .venv`, `.venv/bin/python -m pip install -r services/ai/requirements.txt`, `cp .env.example .env`, `sh run_ai.sh`. Для LightGBM на macOS может потребоваться OpenMP (`brew install libomp`).
+Open http://127.0.0.1:8002/. Its current SSE demo is independent timetable playback, not the platform's conflict-free scheduler; platform integration is pending. The previous ML parameter laboratory is `/lab.html`. Models are committed; runtime does not need raw datasets. Local map/SVG and ML work without external internet; OpenAI chat and optional OSM tiles need internet.
 
-Swagger: http://127.0.0.1:8002/docs. Проверка: http://127.0.0.1:8002/health. В VS Code есть конфигурация **AI service :8002**; для F5 нужен Python Debugger extension. Из терминала VS Code доступен тот же run_ai.ps1.
+The uploaded Kazakhstan archive contains synthetic schedules, not observed delays. `kz-synthetic-schedule-v1` learns scheduled segment duration (test MAE0.566min on SIM services; unseen-segment diagnostic38.245min). It is separate from the PKP delay/proxy model, whose accuracy is unvalidated for Kazakhstan.
 
-## Интерактивный экран
-
-Откройте **http://127.0.0.1:8002/** после запуска сервиса. UI работает на HTML/CSS/JavaScript рядом с FastAPI; установка Node.js не требуется. Шрифт Golos Text включён локально под OFL.
-
-1. Выберите поезд на схеме или в таблице.
-2. Измените опоздание, резерв расписания или условия перегона. Таблица, прогноз и график чувствительности используют настоящий `/forecast`.
-3. Переключите тип на грузовой, чтобы увидеть явно помеченный резервный режим правил.
-4. Нажмите «Объяснить прогноз в чате»: OpenAI-агент получает копию текущего состояния. Старый ответ сохраняет номер своего сценария. При недоступности API используется понятная шаблонная сводка.
-
-Это самостоятельная лаборатория ML с диспетчерским представлением снимка, не движущийся симулятор. На этом экране не рассчитываются планы CP-SAT, индекс или выигрыш у FIFO. Чат со снимком не подставляет вместо них старые фикстуры. Ключ остаётся в серверном `.env`.
-
-Второй терминал — воспроизводимый показ:
-
-```powershell
-.\.venv\Scripts\python.exe -m services.ai.scripts.demo
-```
-
-Демо прогнозирует 25 поездов, затем задаёт агенту вопрос о закрытии Б–В на 20 минут. Чат показывает вызов `run_whatif` и значения ответа. В режиме фикстур это заранее подготовленный пример интеграции, **не измеренная победа оптимизатора над FIFO**. Полноценный симулятор/CP-SAT/UI выполняют участники 1, 2, 4.
-
-## Проверено
-
-Модель A LightGBM обучена на 530 887 строках после удаления дубликатов и восстановленных предыдущих задержек. Использован официальный split по рейсам. MAE изменения задержки на test: **0.586 минуты**, baseline delta=0: **0.653**, baseline медианы перегона: **0.647**. ROC-AUC прокси-класса: **0.880**, PR-AUC **0.266**. При пороге, выбранном на val: recall **0.756**, precision **0.198** — ложных предупреждений много, это ограничение обязательно озвучивать.
-
-Отдельная проверка март → апрель → май: MAE **0.823**, ROC-AUC **0.838**. Это hold-out месяца, не последних двух недель: календарные даты рейсов отсутствуют в опубликованном архиве.
-
-25 поездов, 100 прогонов после прогрева: HTTP TestClient p95 **6.80 мс**, вычисления **4.23 мс** на этой машине. Это локальный замер, не сетевой SLA. Подробности и воспроизводимый benchmark — `services/ai/reports/latency.json`.
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest services/ai/tests -q
-.\.venv\Scripts\python.exe -m services.ai.eval.run_agent_eval
-.\.venv\Scripts\python.exe -m services.ai.eval.run_agent_eval --live
-.\.venv\Scripts\python.exe -m services.ai.scripts.benchmark
-```
-
-`--live` использует платный OpenAI API. Отчёт отдельно считает ответы LLM и резервные ответы: успешный fallback не означает успешный вызов LLM.
-
-## Данные и обучение
-
-Текущая версия `pkp-main-298694c` переобучена из проверенного снимка `main` (коммит `298694c0dccc564bc686560a9e98bbaae3c76900`). PKP в нём совпал с прежним набором после нормализации переносов строк Git; новых реальных обучающих примеров нет. Результаты воспроизвелись без улучшения или ухудшения. [Отчёт переобучения](services/ai/reports/main_retraining.md) объясняет, почему DISPLIB и синтетическое расписание KZ не являются дополнительными размеченными примерами.
-
-```powershell
-.\.venv\Scripts\python.exe -m services.ai.scripts.sync_main_data --ref 298694c0dccc564bc686560a9e98bbaae3c76900
-.\.venv\Scripts\python.exe -m services.ai.training.train --data-dir data/main-source/data/external/pkp/pkp_intercity_delays_dataset --output-dir services/ai/models/forecast_main --model-version pkp-main-298694c --source-commit 298694c0dccc564bc686560a9e98bbaae3c76900
-```
-
-Для новой итерации выбирайте отдельный `--output-dir`, проверьте метрики и только после этого меняйте `model_directory` в `services/ai/config/forecast.yaml`. Предыдущие артефакты `forecast_v1` сохранены для сравнения/отката. `--output-dir` не меняет порог работающей модели; инференс использует порог из загруженного артефакта. `sync_main_data --ref main` фиксирует текущий SHA, проверяет Git blob SHA каждого файла и сохраняет документы/данные в gitignored `data/main-source`.
-
-```powershell
-.\.venv\Scripts\python.exe services/ai/scripts/download_data.py
-.\.venv\Scripts\python.exe services/ai/scripts/audit_data.py
-.\.venv\Scripts\python.exe -m services.ai.training.train
-.\.venv\Scripts\python.exe -m services.ai.training.train --temporal
-```
-
-PKP: [Marek Kostrz, PKP Intercity delays, Zenodo](https://doi.org/10.5281/zenodo.21700869), CC BY 4.0; источник указывает учебное/некоммерческое академическое использование. Архив 64 492 235 байт, MD5 `7628d3022ec6f257864492ef9d1b3262`. Скрипт поддерживает повторную загрузку частями и проверяет MD5 перед распаковкой. Сырые данные в `data/` не коммитятся. Малые текстовые модели и отчёты включены.
-
-HF `data-2025-07.parquet`: 2 051 978 строк; файл скопирован локально в `data/hf`. Исключён из обучения и внешней валидации из-за несовместимой задачи и неизвестного происхождения/лицензии. См. `services/ai/reports/data_audit.md`.
-
-DISPLIB 2025 — внешний benchmark солвера участника 2; для ML не используется.
-
-## Ограничения и следующий этап
-
-- Обучение на реальных пассажирских данных PKP; применение к синтетическому участку не валидировано. Грузовые и неизвестные типы обслуживаются правилами.
-- `p_conflict_15m` — имя контракта для прокси ближайшего перегона, не достоверная вероятность конфликта за 15 минут. `horizon_min=null` делает это явным.
-- `difficulty_id` — только метка. Статистики пересчитаны с исключением test/val; обучающие значения получены по группам без собственного рейса.
-- Без дат PKP нельзя вычислить загрузку ±30 минут или двухнедельный hold-out. block_load не включён в модель. Потребуется таблица `run_id → service_date`.
-- Модель B на всех 57 колонках не построена: среди них есть таргет, постфактум-метка и идентификаторы. Для корректного расширенного benchmark нужен отдельный отбор признаков. P90-регрессия и Optuna пока не добавлены.
-- Числовой grounding не доказывает корректность смысловой привязки цифры. Текст проверяется до SSE-отправки; при ошибке возвращается шаблон.
-- Телеграммы и рапорты в текущей версии шаблонные. Сервис ничего не отправляет в Telegram и не изменяет движение.
-- Реальные API платформы и солвера пока не предоставлены. Их пути и предлагаемые контракты описаны в `services/ai/docs/integration.md`; текущие фикстуры не заменяют интеграционный прогон.
-
-Для сильного общего демо нужны один snapshot и seed, валидные FIFO/CP-SAT планы, измеренная разница задержки, UI с явным происхождением данных и затем объяснение результата агентом. Заранее заданные цифры фикстур не использовать как итоговые метрики на защите.
-
-
-## Kazakhstan map and uploaded-archive model
-
-Open `http://127.0.0.1:8002/` for Kazakhstan-only map, 28 SIM trains, SSE playback, linked diagram, station scheme and snapshot chat. The previous parameter laboratory is `/lab.html`. MapLibre and country/route geometry are local; optional OSM background requires internet. `/infra/geometry` returns the56synthetic fixture blocks.
-
-The uploaded KZ archive contains only scheduled times. `kz-synthetic-schedule-v1` therefore learns **synthetic scheduled segment duration**, not actual delay. It is served separately at `POST /forecast/schedule`; metadata at `/forecast/schedule-info`. Reproduce with `python -m services.ai.training.train_kz_schedule --data-dir data/kz-upload/data/KZ`. The PKP delay model remains separate; its accuracy is not validated for Kazakhstan.
-
-See [full training, readiness and credit audit](services/ai/reports/kz_demo_readiness.md). Train movement is timetable playback, not a conflict-free optimizer. ATO, solver alternatives and quality-index integration remain team work.
+See [AI instructions](services/ai/README.md), [full readiness/model audit](services/ai/reports/kz_demo_readiness.md), and `POST /forecast/schedule`, `GET /forecast/schedule-info`, `GET /infra/geometry` in the AI OpenAPI docs. Tests: `python -m pytest services/ai/tests tests -q`.
