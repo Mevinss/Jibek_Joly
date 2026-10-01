@@ -79,6 +79,7 @@ class Message(DataModel):
 class ChatRequest(DataModel):
     messages: list[Message] = Field(min_length=1, max_length=20)
     session_id: str = Field(default='demo', max_length=80)
+    state: State | None = None
 
     @model_validator(mode='after')
     def user_last(self):

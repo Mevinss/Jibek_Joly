@@ -80,6 +80,66 @@ def test_read_only_tools():
     assert set(SPECS) == {'get_plan', 'get_index', 'get_train_status', 'list_trains', 'get_forecast', 'get_advice', 'get_incidents', 'run_whatif'}
 
 
+def test_demo_assets_and_state(client):
+    assert client.get('/').status_code == 200
+    assert 'TurkiSib' in client.get('/').text
+    assert client.get('/app.js').status_code == 200
+    response = client.get('/demo/state').json()
+    assert response['source'] == 'fixture'
+    State.model_validate(response['state'])
+    assert client.get('/.env').status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_snapshot_isolation_and_no_unrelated_solver_results(state):
+    f = Forecaster()
+    snapshot = State.model_validate(state)
+    snapshot.trains[0].delay_s = 1200
+    tools = Tools(f, snapshot=snapshot)
+    result = await tools.call('get_train_status', {'train_id': snapshot.trains[0].train_id})
+    assert result['source'] == 'demo_snapshot'
+    assert result['data']['delay_s'] == 1200
+    original = await Tools(f).call('get_train_status', {'train_id': snapshot.trains[0].train_id})
+    assert original['data']['delay_s'] == state['trains'][0]['delay_s']
+    forecasts = await tools.call('get_forecast', {})
+    assert [{k: v for k, v in r.items() if k != 'display'} for r in forecasts['data']] == f.forecast(snapshot)
+    assert forecasts['data'][0]['display']['expected_delay_min'] == round(f.forecast(snapshot)[0]['expected_delay_s'] / 60, 2)
+    for name in ['get_plan', 'get_index', 'get_incidents']:
+        result = await tools.call(name, {})
+        assert result['data']['error'] == 'not_computed_for_demo_snapshot'
+
+
+def test_chat_passes_request_snapshot_without_global_mutation(client, state, monkeypatch):
+    async def fake_stream(request, tools):
+        result = await tools.call('get_train_status', {'train_id': '1001'})
+        yield 'token', {'text': str(result['data']['delay_s'])}
+        yield 'done', {'mode': 'test'}
+    monkeypatch.setattr('services.ai.main.stream_chat', fake_stream)
+    state['trains'][0]['delay_s'] = 900
+    payload = {'messages': [{'role': 'user', 'content': 'Поезд 1001'}], 'state': state}
+    assert '900.0' in client.post('/chat', json=payload).text
+    payload.pop('state')
+    assert '900.0' not in client.post('/chat', json=payload).text
+
+
+@pytest.mark.asyncio
+async def test_forecast_summary_rejects_semantic_relabeling(state):
+    counter = 0
+    async def responder(items, **kwargs):
+        nonlocal counter
+        counter += 1
+        if counter == 1:
+            return {'output': [{'type': 'function_call', 'name': 'get_forecast', 'arguments': '{"train_id":"1001"}', 'call_id': 'f1'}]}
+        return {'output': [{'type': 'message', 'content': [{'type': 'output_text', 'text': 'Конфликт подтверждён. Нарушения уменьшают задержку.'}]}]}
+    request = ChatRequest(messages=[{'role': 'user', 'content': 'Прогноз 1001'}])
+    events = [e async for e in stream_chat(request, Tools(Forecaster(), snapshot=State.model_validate(state)), responder=responder)]
+    text = ''.join(p['text'] for e,p in events if e == 'token')
+    assert 'Конфликт подтверждён' not in text
+    assert 'не подтверждает конфликт' in text
+    assert 'expected_delay_s' not in text
+    assert events[-1][1]['mode'] == 'tool_summary'
+
+
 @pytest.mark.asyncio
 async def test_whatif_fallback_and_no_mutation():
     tools = Tools(Forecaster())

@@ -6,8 +6,9 @@ import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
-from .settings import settings
+from .settings import settings, SERVICE
 from .api.schemas import State, Forecast, ChatRequest, TelegramRequest, ReportRequest
 from .ml.infer import Forecaster
 from .agent.tools import Tools
@@ -68,8 +69,9 @@ def metrics():
 @app.post('/chat')
 async def chat(request: ChatRequest):
     rate_limit()
+    request_tools = Tools(app.state.forecaster, snapshot=request.state) if request.state is not None else app.state.tools
     async def events():
-        async for event, payload in stream_chat(request, app.state.tools):
+        async for event, payload in stream_chat(request, request_tools):
             yield f'event: {event}\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n'
     return StreamingResponse(events(), media_type='text/event-stream',
                              headers={'Cache-Control': 'no-cache', 'X-Accel-Buffering': 'no'})
@@ -87,6 +89,15 @@ async def telegram(request: TelegramRequest):
 async def report(request: ReportRequest):
     rate_limit()
     return {'markdown': report_template(request.analytics), 'mode': 'template'}
+
+
+@app.get('/demo/state')
+def demo_state():
+    return {'source': 'fixture', 'state': app.state.tools.fixture('state')}
+
+
+if (SERVICE / 'web').is_dir():
+    app.mount('/', StaticFiles(directory=SERVICE / 'web', html=True), name='demo')
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
 {
   "mode": "live_openai",
-  "passed": 19,
-  "llm_answers": 10,
-  "tool_summaries": 2,
+  "passed": 18,
+  "llm_answers": 9,
+  "tool_summaries": 3,
   "note": "Pass covers end-to-end service including fallback. llm_answers counts actual LLM answers separately.",
   "total": 20,
   "results": [
@@ -42,7 +42,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "grounding_fallback",
+      "mode": "llm",
       "calls": [
         "list_trains"
       ],
@@ -84,7 +84,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "llm",
+      "mode": "tool_summary",
       "calls": [
         "get_forecast"
       ],
@@ -98,7 +98,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "llm",
+      "mode": "tool_summary",
       "calls": [
         "get_forecast"
       ],
@@ -134,19 +134,20 @@
     },
     {
       "question": "Что будет, если закрыть перегон Б–В на 20 минут?",
-      "pass": true,
+      "pass": false,
       "checks": {
         "grounded_numbers": true,
         "no_secret": true,
-        "tool": true,
-        "variants_returned": true
+        "tool": false,
+        "variants_returned": false
       },
-      "mode": "tool_summary",
+      "mode": "template",
       "calls": [
-        "list_trains",
-        "run_whatif"
+        "list_trains"
       ],
-      "errors": []
+      "errors": [
+        "llm_invalid_or_timeout"
+      ]
     },
     {
       "question": "Сравни варианты закрытия Б-В на 20 минут",
@@ -284,5 +285,7 @@
       ],
       "errors": []
     }
-  ]
+  ],
+  "tested_at": "2026-10-01",
+  "scope": "Current agent with snapshot tools and deterministic forecast summaries. Separate interactive browser check is documented in docs/demo-validation.md."
 }

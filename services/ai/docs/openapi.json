@@ -203,6 +203,22 @@
           }
         }
       }
+    },
+    "/demo/state": {
+      "get": {
+        "summary": "Demo State",
+        "operationId": "demo_state_demo_state_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -290,6 +306,16 @@
             "maxLength": 80,
             "title": "Session Id",
             "default": "demo"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/State"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",

@@ -29,9 +29,10 @@ def tool_schemas():
 
 
 class Tools:
-    def __init__(self, forecaster, config=settings):
+    def __init__(self, forecaster, config=settings, snapshot=None):
         self.forecaster = forecaster
         self.config = config
+        self.snapshot = snapshot
 
     def fixture(self, name):
         return json.loads((SERVICE / 'fixtures' / f'{name}.json').read_text(encoding='utf-8'))
@@ -43,7 +44,10 @@ class Tools:
         try:
             validate(args, SPECS[name][1])
             data = await self._call(name, args)
-            return {'source': 'fixture' if self.config.use_fixtures else 'api', 'data': data}
+            if name == 'get_forecast' and isinstance(data, list):
+                data = [dict(row, display={'expected_delay_min': round(row['expected_delay_s'] / 60, 2),
+                                          'proxy_probability_percent': round(row['p_conflict_15m'] * 100, 2)}) for row in data]
+            return {'source': 'demo_snapshot' if self.snapshot is not None else ('fixture' if self.config.use_fixtures else 'api'), 'data': data}
         except (httpx.HTTPError, OSError, ValueError, KeyError) as exc:
             # Do not expose HTTP exception text, headers, credentials or upstream bodies.
             return {'error': 'tool_unavailable', 'tool': name}
@@ -54,6 +58,15 @@ class Tools:
             raise
 
     async def _call(self, name, args):
+        if self.snapshot is not None:
+            state = self.snapshot.model_dump(mode='json')
+            if name == 'list_trains': return state['trains']
+            if name == 'get_train_status':
+                return next((t for t in state['trains'] if t['train_id'] == args['train_id']), {'error': 'train_not_found'})
+            if name == 'get_forecast':
+                results = self.forecaster.forecast(self.snapshot)
+                return [r for r in results if not args.get('train_id') or r['train_id'] == args['train_id']]
+            return {'error': 'not_computed_for_demo_snapshot', 'reason': 'Для отредактированного сценария доступны состояние поездов и прогноз ML. План, индекс и оптимизация не рассчитывались.'}
         if self.config.use_fixtures:
             state = self.fixture('state')
             if name == 'get_plan': return self.fixture('plan')

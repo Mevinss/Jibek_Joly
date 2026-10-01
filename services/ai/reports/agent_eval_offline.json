@@ -2,7 +2,7 @@
   "mode": "deterministic_fallback_only",
   "passed": 20,
   "llm_answers": 0,
-  "tool_summaries": 2,
+  "tool_summaries": 4,
   "note": "Pass covers end-to-end service including fallback. llm_answers counts actual LLM answers separately.",
   "total": 20,
   "results": [
@@ -94,7 +94,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "template",
+      "mode": "tool_summary",
       "calls": [
         "get_forecast"
       ],
@@ -110,7 +110,7 @@
         "no_secret": true,
         "tool": true
       },
-      "mode": "template",
+      "mode": "tool_summary",
       "calls": [
         "get_forecast"
       ],

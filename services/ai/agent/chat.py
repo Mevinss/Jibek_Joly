@@ -41,11 +41,22 @@ def fallback_calls(question):
 def template(evidence):
     if not evidence:
         return 'Недостаточно данных для ответа. Уточните поезд или перегон и длительность сценария. Могу показать план, индекс, прогноз или инциденты.'
-    lines = ['Консультативная сводка. ' + ('Используются демонстрационные фикстуры.' if any(e.get('source') == 'fixture' for e in evidence) else 'Данные получены через API.')]
+    lines = ['Консультативная сводка. ' + ('Используется сценарий из интерактивного демо.' if any(e.get('source') == 'demo_snapshot' for e in evidence) else 'Используются демонстрационные фикстуры.' if any(e.get('source') == 'fixture' for e in evidence) else 'Данные получены через API.')]
     for result in evidence:
         data = result.get('data', {})
         if result.get('error') or isinstance(data, dict) and data.get('error'):
             lines.append('Запрошенные сведения недоступны; результат не рассчитан.')
+        elif isinstance(data, list) and data and all('expected_delay_s' in r for r in data):
+            for row in data:
+                display = row.get('display')
+                if display:
+                    lines.append(f"Поезд {row['train_id']}: ожидаемое опоздание на следующем перегоне — {display['expected_delay_min']} мин. Оценка риска прокси-события — {display['proxy_probability_percent']}%.")
+                else:
+                    lines.append(f"Поезд {row['train_id']}: ожидаемое опоздание {row['expected_delay_s']} с; вероятность прокси-события {row['p_conflict_15m']}.")
+                lines.append('Это эвристическая оценка по правилам, а не ML.' if row.get('degraded') else
+                             'Это прогноз модели; он не подтверждает конфликт и не определяет причину задержки.')
+                if row.get('top_features'):
+                    lines.append('На оценку повлияли: ' + ', '.join(x['name'].lower() for x in row['top_features']) + '.')
         elif isinstance(data, dict) and 'variants' in data:
             for v in data['variants']:
                 lines.append(f"Вариант {v['label']} ({v['profile']}): суммарная задержка {v['plan']['metrics']['total_delay_s']} с, индекс {v['index']['score']}.")
@@ -110,8 +121,14 @@ async def stream_chat(request, tools, *, use_llm=True, responder=respond):
     # Render scenario metrics directly: numeric membership alone cannot distinguish
     # total delay from added delay or establish a FIFO comparison.
     variants = [e for e in evidence if isinstance(e.get('data'), dict) and 'variants' in e['data']]
+    forecasts = [e for e in evidence if isinstance(e.get('data'), list) and e['data']
+                 and all(isinstance(row, dict) and 'expected_delay_s' in row for row in e['data'])]
     if variants:
         text, mode = template(variants), 'tool_summary'
+    elif forecasts:
+        # Numeric grounding alone cannot stop SHAP classifier effects being described
+        # as causes of delay, or proxy risk being relabelled as conflict probability.
+        text, mode = template(evidence), 'tool_summary'
     elif evidence and any(e.get('source') == 'fixture' for e in evidence) and mode == 'llm':
         text = 'Демонстрационные данные из фикстур; не живое состояние.\n\n' + text
     # Buffer model output until grounding completes; then deliver checked text over SSE.
