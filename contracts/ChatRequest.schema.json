@@ -1,0 +1,51 @@
+{
+  "$defs": {
+    "Message": {
+      "properties": {
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "content": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "content"
+      ],
+      "title": "Message",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "messages": {
+      "items": {
+        "$ref": "#/$defs/Message"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Messages",
+      "type": "array"
+    },
+    "session_id": {
+      "default": "demo",
+      "maxLength": 80,
+      "title": "Session Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "messages"
+  ],
+  "title": "ChatRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

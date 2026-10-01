@@ -1,0 +1,87 @@
+{
+  "$defs": {
+    "FeatureImpact": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "impact": {
+          "title": "Impact",
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "impact"
+      ],
+      "title": "FeatureImpact",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "train_id": {
+      "title": "Train Id",
+      "type": "string"
+    },
+    "p_conflict_15m": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "P Conflict 15M",
+      "type": "number"
+    },
+    "expected_delay_s": {
+      "minimum": 0,
+      "title": "Expected Delay S",
+      "type": "number"
+    },
+    "top_features": {
+      "items": {
+        "$ref": "#/$defs/FeatureImpact"
+      },
+      "title": "Top Features",
+      "type": "array"
+    },
+    "model_version": {
+      "default": "unknown",
+      "title": "Model Version",
+      "type": "string"
+    },
+    "horizon_min": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Horizon Min"
+    },
+    "alert": {
+      "default": false,
+      "title": "Alert",
+      "type": "boolean"
+    },
+    "degraded": {
+      "default": false,
+      "title": "Degraded",
+      "type": "boolean"
+    },
+    "horizon_semantics": {
+      "default": "next_segment_proxy_not_validated_15m",
+      "title": "Horizon Semantics",
+      "type": "string"
+    }
+  },
+  "required": [
+    "train_id",
+    "p_conflict_15m",
+    "expected_delay_s",
+    "top_features"
+  ],
+  "title": "Forecast",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

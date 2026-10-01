@@ -1,0 +1,26 @@
+{
+  "features": [
+    "train_kind",
+    "prev_delay_departure_min",
+    "time_reserve_min",
+    "min_technical_time_min",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week",
+    "is_track_closure",
+    "is_speed_warning",
+    "active_disruption_group",
+    "num_platform_tracks",
+    "is_passing_loop",
+    "is_node",
+    "edge_delta_delay_P50",
+    "edge_delta_delay_P90",
+    "edge_delta_delay_MAD",
+    "station_delta_stop_min_P50",
+    "station_delta_stop_min_P90"
+  ],
+  "categorical": [
+    "train_kind",
+    "active_disruption_group"
+  ]
+}

@@ -1,0 +1,676 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Автодиспетчер — ML/LLM",
+    "description": "Демонстрационная консультативная система. Не заменяет СЦБ.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/forecast": {
+      "post": {
+        "summary": "Forecast",
+        "operationId": "forecast_forecast_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/State"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Forecast"
+                  },
+                  "type": "array",
+                  "title": "Response Forecast Forecast Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/forecast/model-info": {
+      "get": {
+        "summary": "Model Info",
+        "operationId": "model_info_forecast_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "summary": "Metrics",
+        "operationId": "metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chat": {
+      "post": {
+        "summary": "Chat",
+        "operationId": "chat_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/telegram": {
+      "post": {
+        "summary": "Telegram",
+        "operationId": "telegram_telegram_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TelegramRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/report": {
+      "post": {
+        "summary": "Report",
+        "operationId": "report_report_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Block": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "occupied": {
+            "type": "boolean",
+            "title": "Occupied",
+            "default": false
+          },
+          "closed": {
+            "type": "boolean",
+            "title": "Closed",
+            "default": false
+          },
+          "speed_limit": {
+            "type": "number",
+            "maximum": 500.0,
+            "minimum": 0.0,
+            "title": "Speed Limit",
+            "default": 100
+          },
+          "block_load": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 1000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Block Load"
+          },
+          "num_platform_tracks": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Num Platform Tracks",
+            "default": 2
+          },
+          "is_passing_loop": {
+            "type": "boolean",
+            "title": "Is Passing Loop",
+            "default": true
+          },
+          "is_node": {
+            "type": "boolean",
+            "title": "Is Node",
+            "default": false
+          },
+          "active_disruption_group": {
+            "type": "integer",
+            "maximum": 7.0,
+            "minimum": 0.0,
+            "title": "Active Disruption Group",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "Block"
+      },
+      "ChatRequest": {
+        "properties": {
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Messages"
+          },
+          "session_id": {
+            "type": "string",
+            "maxLength": 80,
+            "title": "Session Id",
+            "default": "demo"
+          }
+        },
+        "type": "object",
+        "required": [
+          "messages"
+        ],
+        "title": "ChatRequest"
+      },
+      "FeatureImpact": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "impact": {
+            "type": "number",
+            "title": "Impact"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "impact"
+        ],
+        "title": "FeatureImpact"
+      },
+      "Forecast": {
+        "properties": {
+          "train_id": {
+            "type": "string",
+            "title": "Train Id"
+          },
+          "p_conflict_15m": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "P Conflict 15M"
+          },
+          "expected_delay_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Expected Delay S"
+          },
+          "top_features": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureImpact"
+            },
+            "type": "array",
+            "title": "Top Features"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "default": "unknown"
+          },
+          "horizon_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Horizon Min"
+          },
+          "alert": {
+            "type": "boolean",
+            "title": "Alert",
+            "default": false
+          },
+          "degraded": {
+            "type": "boolean",
+            "title": "Degraded",
+            "default": false
+          },
+          "horizon_semantics": {
+            "type": "string",
+            "title": "Horizon Semantics",
+            "default": "next_segment_proxy_not_validated_15m"
+          }
+        },
+        "type": "object",
+        "required": [
+          "train_id",
+          "p_conflict_15m",
+          "expected_delay_s",
+          "top_features"
+        ],
+        "title": "Forecast"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Incident": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "title": "Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "delay",
+              "signal_fault",
+              "block_closed"
+            ],
+            "title": "Kind"
+          },
+          "target_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Target Id"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          },
+          "ts": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Ts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "target_id",
+          "ts"
+        ],
+        "title": "Incident"
+      },
+      "Infra": {
+        "properties": {
+          "blocks": {
+            "items": {
+              "$ref": "#/components/schemas/Block"
+            },
+            "type": "array",
+            "title": "Blocks"
+          },
+          "signals": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Signals"
+          },
+          "switches": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Switches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "blocks"
+        ],
+        "title": "Infra"
+      },
+      "Message": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "title": "Role"
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "Message"
+      },
+      "Position": {
+        "properties": {
+          "block_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Block Id"
+          },
+          "km": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Km",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "block_id"
+        ],
+        "title": "Position"
+      },
+      "ReportRequest": {
+        "properties": {
+          "analytics": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Analytics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "analytics"
+        ],
+        "title": "ReportRequest"
+      },
+      "State": {
+        "properties": {
+          "trains": {
+            "items": {
+              "$ref": "#/components/schemas/Train"
+            },
+            "type": "array",
+            "maxItems": 500,
+            "title": "Trains"
+          },
+          "infra": {
+            "$ref": "#/components/schemas/Infra"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trains",
+          "infra"
+        ],
+        "title": "State"
+      },
+      "TelegramRequest": {
+        "properties": {
+          "incident": {
+            "$ref": "#/components/schemas/Incident"
+          },
+          "context": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "incident"
+        ],
+        "title": "TelegramRequest"
+      },
+      "Train": {
+        "properties": {
+          "train_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[\\w-]+$",
+            "title": "Train Id"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "priority": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Priority",
+            "default": 1
+          },
+          "position": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "speed": {
+            "type": "number",
+            "maximum": 500.0,
+            "minimum": 0.0,
+            "title": "Speed",
+            "default": 0
+          },
+          "delay_s": {
+            "type": "number",
+            "maximum": 604800.0,
+            "minimum": 0.0,
+            "title": "Delay S"
+          },
+          "ts": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Ts"
+          },
+          "min_technical_time_min": {
+            "type": "number",
+            "maximum": 180.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Min Technical Time Min",
+            "default": 10
+          },
+          "time_reserve_min": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": 0.0,
+            "title": "Time Reserve Min",
+            "default": 2
+          }
+        },
+        "type": "object",
+        "required": [
+          "train_id",
+          "type",
+          "position",
+          "delay_s",
+          "ts"
+        ],
+        "title": "Train"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "train_kind": 0.0,
+  "prev_delay_departure_min": 0.07079946756365138,
+  "time_reserve_min": 0.006786809706669589,
+  "min_technical_time_min": 0.0535760248461242,
+  "hour_sin": 0.00024200859285469496,
+  "hour_cos": 0.0,
+  "day_of_week": 0.0,
+  "is_track_closure": 0.0,
+  "is_speed_warning": 0.0037231978047039273,
+  "active_disruption_group": 0.2456815601074158,
+  "num_platform_tracks": 0.0034143162391019758,
+  "is_passing_loop": 0.006586810719454827,
+  "is_node": 0.0,
+  "edge_delta_delay_P50": 0.0,
+  "edge_delta_delay_P90": 0.11979720652918632,
+  "edge_delta_delay_MAD": 0.0013249738877180491,
+  "station_delta_stop_min_P50": 0.0,
+  "station_delta_stop_min_P90": 0.008738924152472446
+}

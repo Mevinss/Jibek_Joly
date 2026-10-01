@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+httpx
+pydantic-settings
+python-dotenv
+numpy
+pandas
+pyarrow
+lightgbm
+scikit-learn
+matplotlib
+PyYAML
+jsonschema
+pytest
+pytest-asyncio

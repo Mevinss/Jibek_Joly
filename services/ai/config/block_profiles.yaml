@@ -1,0 +1,5 @@
+default: median
+A-B: low
+B-C: high
+А-Б: low
+Б-В: high

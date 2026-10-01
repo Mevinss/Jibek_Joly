@@ -1,0 +1,10 @@
+{
+  "plan_id": "fixture-plan",
+  "profile": "balance",
+  "slots": [],
+  "conflicts": [],
+  "metrics": {
+    "total_delay_s": 600,
+    "energy_kwh": 120
+  }
+}
